@@ -9,10 +9,10 @@ var CheckArea = function(props) {
   return (
     <div>
       <Col sm={6} style={{borderRight: '1px solid #95989A'}}>
-        <SelectArea checkInformation={props.checkInformation} />
+        <SelectArea checkInformation={props.checkInformation} actions={props.actions} />
       </Col>
       <Col sm={6}>
-        <DirectionsArea quote={props.checkInformation.quote} />
+        <DirectionsArea quote={props.checkInformation.phrase} />
       </Col>
     </div>
   )

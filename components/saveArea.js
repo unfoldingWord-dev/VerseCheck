@@ -6,10 +6,14 @@ var SaveArea = function(props) {
   return (
     <div>
       <Col sm={6}>
-        <Button>Save and Previous</Button>
+        <Button onClick={props.actions.goToPrevious}>
+          Save and Previous
+        </Button>
       </Col>
       <Col sm={6}>
-        <Button bsStyle="primary">Save & Continue</Button>
+        <Button bsStyle="primary" onClick={props.actions.goToNext}>
+          Save & Continue
+        </Button>
       </Col>
     </div>
   )

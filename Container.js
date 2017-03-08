@@ -9,10 +9,16 @@ const NAMESPACE = "VerseCheck";
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 
 class VerseCheck extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props)
     this.state = {
-    };
+    }
+
+    this.actions = {
+      goToNext: props.goToNext,
+      goToPrevious: props.goToPrevious,
+      updateCurrentCheck: props.updateCurrentCheck,
+    }
   }
 
   componentWillMount() {
@@ -42,12 +48,9 @@ class VerseCheck extends React.Component {
   render() {
     return (
       <MuiThemeProvider>
-      <View
-        updateCheckStatus={this.props.updateCheckStatus.bind(this)}
-        currentCheck={this.props.currentCheck}
-        goToNext={this.props.goToNext}
-        goToPrevious={this.props.goToPrevious}
-      />
+        <View actions={this.actions}
+          checkInformation={this.props.currentCheck}
+        />
       </MuiThemeProvider>
     );
   }
