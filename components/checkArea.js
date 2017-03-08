@@ -7,11 +7,11 @@ const DirectionsArea = require('./directionsArea')
 
 var CheckArea = function(props) {
   return (
-    <div>
-      <Col sm={6} style={{borderRight: '1px solid #95989A'}}>
-        <SelectArea checkInformation={props.checkInformation} actions={props.actions} />
+    <div style={{fontSize: '1.1em'}}>
+      <Col sm={6} style={{borderRight: '1px solid #ccc', paddingTop: '5px'}}>
+        <SelectArea checkInformation={props.checkInformation} direction={props.direction} actions={props.actions} />
       </Col>
-      <Col sm={6}>
+      <Col sm={6} style={{height: '100%'}}>
         <DirectionsArea quote={props.checkInformation.phrase} />
       </Col>
     </div>

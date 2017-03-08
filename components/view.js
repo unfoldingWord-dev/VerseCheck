@@ -30,11 +30,11 @@ class View extends React.Component {
         <Card zDepth={2}>
           <CardHeader
             style={{ background: '#2196F3', padding: "10px"}}
-            textStyle={{display: "block"}}
+            textStyle={{display: 'block'}}
             children={title}
           />
         <Row style={{marginLeft: '0px', marginRight: '0px', height: "100%", borderBottom: '1px solid #eee'}}>
-          <CheckArea checkInformation={this.props.checkInformation}  actions={this.props.actions} />
+          <CheckArea checkInformation={this.props.checkInformation} direction={this.props.direction}  actions={this.props.actions} />
         </Row>
         <Row style={{marginLeft: '0px', marginRight: '0px', height: "100%"}}>
           <ActionsArea actions={this.props.actions} />

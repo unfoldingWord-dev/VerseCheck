@@ -13,7 +13,7 @@ class VerseCheck extends React.Component {
     super(props)
     this.state = {
     }
-
+    console.log(props)
     this.actions = {
       goToNext: props.goToNext,
       goToPrevious: props.goToPrevious,
@@ -46,10 +46,14 @@ class VerseCheck extends React.Component {
   }
 
   render() {
+    let checkInformation = this.props.currentCheck
+    checkInformation.book = this.props.bookName
+
     return (
       <MuiThemeProvider>
         <View actions={this.actions}
-          checkInformation={this.props.currentCheck}
+          checkInformation={checkInformation}
+          direction={this.props.direction}
         />
       </MuiThemeProvider>
     );

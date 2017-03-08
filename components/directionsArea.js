@@ -2,10 +2,10 @@ const React = require('react')
 
 var DirectionsArea = function(props) {
   return (
-    <div>
-      Select the correct translation for:
+    <div style={{paddingTop: '5em', textAlign: 'center'}}>
+      Please select the correct translation for:
       <br />
-      <strong>"{props.quote}"</strong>
+      <strong style={{color: '#2196F3'}}>"{props.quote}"</strong>
     </div>
   )
 }

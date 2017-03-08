@@ -71,23 +71,23 @@ class SelectArea extends React.Component {
     if (checkInformation.selectedText && checkInformation.selectedText.length > 0) {
       var selectionArray = SelectionHelpers.selectionArray(checkInformation.targetLanguage, checkInformation.selectedText)
       verseText = selectionArray.map((selection, index) =>
-        <span key={index} style={selection.selected ? { backgroundColor: '#FDD910', cursor: 'pointer', fontWeight: 'bold' } : {}}
+        <span key={index} style={selection.selected ? { backgroundColor: '#FDD910', cursor: 'pointer' } : {}}
           onClick={selection.selected ? () => this.removeSelection(selection) : () => { }}>
           {selection.text}
         </span>
       )
 
       return (
-        <span onMouseUp={() => this.getSelectionText()} onMouseLeave={()=>this.inDisplayBox(false)} onMouseEnter={()=>this.inDisplayBox(true)}>
+        <div onMouseUp={() => this.getSelectionText()} onMouseLeave={()=>this.inDisplayBox(false)} onMouseEnter={()=>this.inDisplayBox(true)}>
           {verseText}
-        </span>
+        </div>
       );
     } else {
       verseText = this.props.checkInformation.targetLanguage;
       return (
-        <span onMouseUp={() => this.getSelectionText()} onMouseLeave={()=>this.inDisplayBox(false)} onMouseEnter={()=>this.inDisplayBox(true)}>
+        <div onMouseUp={() => this.getSelectionText()} onMouseLeave={()=>this.inDisplayBox(false)} onMouseEnter={()=>this.inDisplayBox(true)}>
           {verseText}
-        </span>
+        </div>
       );
     }
   }
@@ -102,20 +102,20 @@ class SelectArea extends React.Component {
 
   render() {
     const verseDisplay = (
-      <div>
-        <strong>{this.props.checkInformation.chapter + ':' + this.props.checkInformation.verse} </strong>
-        <span>{this.displayText()}</span>
+      <div style={this.props.direction === 'ltr' ? style.pane.contentLTR : style.pane.contentRTL}>
+        {this.displayText()}
       </div>
     )
 
     return (
       <div>
-        <span style={style.pane.title}>
-          {this.props.checkInformation.version}
-        </span>
-        <div style={style.pane.contentLTR}>
-          {verseDisplay}
+        <div style={{fontWeight: 'bold'}}>
+          Target Language
         </div>
+        <div style={{color: "#747474"}}>
+          {this.props.checkInformation.book} {this.props.checkInformation.chapter + ':' + this.props.checkInformation.verse}
+        </div>
+        {verseDisplay}
       </div>
     )
   }
