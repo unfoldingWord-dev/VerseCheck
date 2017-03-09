@@ -11,13 +11,43 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 class VerseCheck extends React.Component {
   constructor(props) {
     super(props)
+
+    let checkInformation = props.currentCheck
+
     this.state = {
+      mode: 'select',
+      comment: checkInformation.comment
     }
-    console.log(props)
+
+    let that = this
     this.actions = {
       goToNext: props.goToNext,
       goToPrevious: props.goToPrevious,
-      updateCurrentCheck: props.updateCurrentCheck,
+      saveCheckInformation: function(checkInformation) {
+        props.updateCurrentCheck(checkInformation)
+      },
+      changeMode: function(mode) {
+        let newState = that.state
+        newState.mode = mode
+        that.setState(newState)
+      },
+      handleComment: function(e) {
+        const comment = e.target.value
+        let newState = that.state
+        newState.comment = comment
+        that.setState(newState)
+      },
+      cancelComment: function(e) {
+        let newState = that.state
+        newState.comment = checkInformation.comment
+        that.setState(newState)
+        that.actions.changeMode('select')
+      },
+      saveComment: function() {
+        checkInformation.comment = that.state.comment
+        that.actions.saveCheckInformation(checkInformation)
+        that.actions.changeMode('select')
+      }
     }
   }
 
@@ -54,6 +84,8 @@ class VerseCheck extends React.Component {
         <View actions={this.actions}
           checkInformation={checkInformation}
           direction={this.props.direction}
+          mode={this.state.mode}
+          comment={this.state.comment}
         />
       </MuiThemeProvider>
     );
