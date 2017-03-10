@@ -12,17 +12,30 @@ class VerseCheck extends React.Component {
   constructor(props) {
     super(props)
 
-    let checkInformation = props.currentCheck
-
     this.state = {
-      mode: 'select',
-      comment: checkInformation.comment
+      mode: undefined,
+      comment: undefined,
+      verseText: undefined
     }
 
     let that = this
     this.actions = {
-      goToNext: props.goToNext,
-      goToPrevious: props.goToPrevious,
+      reset: function() {
+        let newState = {
+          mode: undefined,
+          comment: undefined,
+          verseText: undefined
+        }
+        that.setState(newState)
+      },
+      goToNext: function() {
+        props.goToNext()
+        that.actions.reset()
+      },
+      goToPrevious: function() {
+        props.goToPrevious()
+        that.actions.reset()
+      },
       saveCheckInformation: function(checkInformation) {
         props.updateCurrentCheck(checkInformation)
       },
@@ -39,13 +52,30 @@ class VerseCheck extends React.Component {
       },
       cancelComment: function(e) {
         let newState = that.state
-        newState.comment = checkInformation.comment
+        newState.comment = props.currentCheck.comment
         that.setState(newState)
         that.actions.changeMode('select')
       },
       saveComment: function() {
-        checkInformation.comment = that.state.comment
-        that.actions.saveCheckInformation(checkInformation)
+        props.currentCheck.comment = that.state.comment
+        that.actions.saveCheckInformation(props.currentCheck)
+        that.actions.changeMode('select')
+      },
+      handleEditVerse: function(e) {
+        const verseText = e.target.value
+        let newState = that.state
+        newState.verseText = verseText
+        that.setState(newState)
+      },
+      cancelEditVerse: function(e) {
+        let newState = that.state
+        newState.verseText = props.currentCheck.targetLanguage
+        that.setState(newState)
+        that.actions.changeMode('select')
+      },
+      saveEditVerse: function() {
+        props.currentCheck.targetLanguage = that.state.verseText
+        that.actions.saveCheckInformation(props.currentCheck)
         that.actions.changeMode('select')
       }
     }
@@ -76,16 +106,16 @@ class VerseCheck extends React.Component {
   }
 
   render() {
-    let checkInformation = this.props.currentCheck
-    checkInformation.book = this.props.bookName
 
     return (
       <MuiThemeProvider>
         <View actions={this.actions}
-          checkInformation={checkInformation}
+          book={this.props.bookName}
+          checkInformation={this.props.currentCheck}
           direction={this.props.direction}
           mode={this.state.mode}
-          comment={this.state.comment}
+          comment={this.state.comment !== undefined ? this.state.comment : this.props.currentCheck.comment}
+          verseText={this.state.verseText !== undefined ? this.state.verseText : this.props.currentCheck.targetLanguage}
         />
       </MuiThemeProvider>
     );

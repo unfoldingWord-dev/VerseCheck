@@ -18,7 +18,22 @@ var ActionsArea = function(props) {
     </div>
   )
 
-  const confirmArea = (
+  const confirmEditVerseArea = (
+    <div style={{textAlign: 'right'}}>
+      <Col sm={3} smOffset={6}>
+        <Button onClick={props.actions.cancelEditVerse.bind(this)}>
+          Cancel
+        </Button>
+      </Col>
+      <Col sm={3}>
+        <Button onClick={props.actions.saveEditVerse.bind(this)}>
+          Save Changes
+        </Button>
+      </Col>
+    </div>
+  )
+
+  const confirmCommentArea = (
     <div style={{textAlign: 'right'}}>
       <Col sm={3} smOffset={6}>
         <Button onClick={props.actions.cancelComment.bind(this)}>
@@ -36,10 +51,10 @@ var ActionsArea = function(props) {
   let modeArea
   switch(props.mode) {
     case 'edit':
-    modeArea = confirmArea
+    modeArea = confirmEditVerseArea
     break
     case 'comment':
-    modeArea = confirmArea
+    modeArea = confirmCommentArea
     break
     case 'select':
     modeArea = changeModeArea

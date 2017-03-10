@@ -12,7 +12,7 @@ class SelectArea extends React.Component {
   }
 
   getSelectionText() {
-    let verseText = this.props.checkInformation.targetLanguage;
+    let verseText = this.props.verseText
     let text = "";
     var selection = window.getSelection();
     var indexOfTextSelection = selection.getRangeAt(0).startOffset;
@@ -50,7 +50,7 @@ class SelectArea extends React.Component {
       let checkInformation = this.props.checkInformation;
       // optimize the selections to address potential issues and save
       checkInformation.selectedText = SelectionHelpers.optimizeSelections(verseText, newSelectedTextArray);
-      this.props.actions.updateCurrentCheck(checkInformation);
+      this.props.actions.saveCheckInformation(checkInformation);
     }
   }
 
@@ -61,15 +61,16 @@ class SelectArea extends React.Component {
       selection.occurrence !== selectionObject.occurrence || selection.text !== selectionObject.text
     )
     // optimize the selections to address potential issues and save
-    checkInformation.selectedText = SelectionHelpers.optimizeSelections(this.props.checkInformation.targetLanguage, newSelectedTextArray);
-    this.props.actions.updateCurrentCheck(checkInformation);
+    checkInformation.selectedText = SelectionHelpers.optimizeSelections(this.props.verseText, newSelectedTextArray);
+    this.props.actions.saveCheckInformation(checkInformation);
   }
 
   displayText() {
     let verseText = '';
     let { checkInformation } = this.props;
+    verseText = this.props.verseText
     if (checkInformation.selectedText && checkInformation.selectedText.length > 0) {
-      var selectionArray = SelectionHelpers.selectionArray(checkInformation.targetLanguage, checkInformation.selectedText)
+      var selectionArray = SelectionHelpers.selectionArray(verseText, checkInformation.selectedText)
       verseText = selectionArray.map((selection, index) =>
         <span key={index} style={selection.selected ? { backgroundColor: '#FDD910', cursor: 'pointer' } : {}}
           onClick={selection.selected ? () => this.removeSelection(selection) : () => { }}>
@@ -83,7 +84,7 @@ class SelectArea extends React.Component {
         </div>
       );
     } else {
-      verseText = this.props.checkInformation.targetLanguage;
+      verseText = this.props.verseText;
       return (
         <div onMouseUp={() => this.getSelectionText()} onMouseLeave={()=>this.inDisplayBox(false)} onMouseEnter={()=>this.inDisplayBox(true)}>
           {verseText}
@@ -113,7 +114,7 @@ class SelectArea extends React.Component {
           Target Language
         </div>
         <div style={{color: "#747474"}}>
-          {this.props.checkInformation.book} {this.props.checkInformation.chapter + ':' + this.props.checkInformation.verse}
+          {this.props.book} {this.props.checkInformation.chapter + ':' + this.props.checkInformation.verse}
         </div>
         {verseDisplay}
       </div>
