@@ -21,22 +21,27 @@ class View extends React.Component {
 
     let modeColor
     let titleText
+    let saveArea
     switch(this.props.mode) {
       case 'edit':
       modeColor = '#8BC34A'
       titleText = 'Edit Verse'
+      saveArea = <div></div>
       break
       case 'comment':
       modeColor = '#F9C000'
       titleText = 'Comment'
+      saveArea = <div></div>
       break
       case 'select':
       modeColor = '#2196F3'
       titleText = 'Step 2. Select'
+      saveArea = <SaveArea actions={this.props.actions} />
       break
       default:
       modeColor = '#2196F3'
       titleText = 'Step 2. Select'
+      saveArea = <SaveArea actions={this.props.actions} />
     }
 
     const title = (
@@ -70,8 +75,8 @@ class View extends React.Component {
           <ActionsArea mode={this.props.mode} actions={this.props.actions} />
         </Row>
         </Card>
-        <Row style={{marginLeft: '0px', marginRight: '0px', height: '100%'}}>
-          <SaveArea actions={this.props.actions} />
+        <Row style={{marginLeft: '0px', marginRight: '0px'}}>
+          {saveArea}
         </Row>
       </div>
     )
