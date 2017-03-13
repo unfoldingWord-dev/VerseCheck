@@ -28,7 +28,7 @@ var CheckArea = function(props) {
 
   return (
     <div style={{fontSize: '1.1em'}}>
-      <Col sm={6} style={{borderRight: '1px solid #ccc', paddingTop: '5px'}}>
+      <Col sm={6} style={{ paddingTop: '5px' }}>
         <SelectArea
           verseText={props.verseText}
           book={props.book}
@@ -37,7 +37,7 @@ var CheckArea = function(props) {
           actions={props.actions}
         />
       </Col>
-      <Col sm={6} style={{height: '100%', paddingTop: '5px'}}>
+      <Col sm={6} style={{ borderLeft: '1px solid #ccc', height: '100%', paddingTop: '5px' }}>
         {modeArea}
       </Col>
     </div>

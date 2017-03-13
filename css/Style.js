@@ -4,14 +4,12 @@ var style = {
       marginTop: "5px",
       overflowY: 'scroll',
       width: '100%',
-      height: '180px',
       direction: 'ltr'
     },
     contentRTL: {
       marginTop: "5px",
       overflowY: 'scroll',
       width: '100%',
-      height: '180px',
       direction: 'rtl'
     },
     header: {
