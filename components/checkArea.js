@@ -20,10 +20,10 @@ var CheckArea = function(props) {
     modeArea = <CommentArea comment={props.comment} actions={props.actions} />
     break
     case 'select':
-    modeArea = <DirectionsArea quote={props.checkInformation.phrase} />
+    modeArea = <DirectionsArea quote={props.quote} />
     break
     default:
-    modeArea = <DirectionsArea quote={props.checkInformation.phrase} />
+    modeArea = <DirectionsArea quote={props.quote} />
   }
 
   return (

@@ -55,12 +55,13 @@ class View extends React.Component {
           />
         <Row style={{marginLeft: '0px', marginRight: '0px', height: '100%', borderBottom: '1px solid #eee'}}>
           <CheckArea
-            actions={this.props.actions}
             checkInformation={this.props.checkInformation}
+            actions={this.props.actions}
             book={this.props.book}
-            direction={this.props.direction}
             mode={this.props.mode}
+            quote={this.props.quote}
             comment={this.props.comment}
+            direction={this.props.direction}
             verseText={this.props.verseText}
             tags={this.props.tags}
           />

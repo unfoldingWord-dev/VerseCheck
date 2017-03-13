@@ -11,47 +11,17 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 class VerseCheck extends React.Component {
   constructor(props) {
     super(props)
+    this.state = {}
 
-    this.tagList = [
-      ["spelling","Spelling"],
-      ["punctuation","Punctuation"],
-      ["grammar","Grammar"],
-      ["meaning","Meaning"],
-      ["wordChoice","Word Choice"],
-      ["other","Other"]
-    ]
-    let tags = []
-    this.tagList.forEach(function(tag){
-      if (props.currentCheck[tag[0]]) {
-        tags.push(tag[1])
-      }
-    })
-
-    this.state = {
-      mode: undefined,
-      comment: undefined,
-      verseText: undefined,
-      tags: tags
-    }
+    this.lastCheck = props.currentCheck
 
     let that = this
     this.actions = {
-      reset: function() {
-        let newState = {
-          mode: undefined,
-          comment: undefined,
-          verseText: undefined,
-          tags: tags
-        }
-        that.setState(newState)
-      },
       goToNext: function() {
         props.goToNext()
-        that.actions.reset()
       },
       goToPrevious: function() {
         props.goToPrevious()
-        that.actions.reset()
       },
       saveCheckInformation: function(checkInformation) {
         props.updateCurrentCheck(checkInformation)
@@ -103,13 +73,11 @@ class VerseCheck extends React.Component {
         that.actions.changeMode('select')
       },
       saveEditVerse: function() {
-        if (that.state.verseText !== undefined) {
-          props.currentCheck.targetLanguage = that.state.verseText
-        }
+        let checkInformation = props.currentCheck
         that.tagList.forEach(function(tag) {
-          props.currentCheck[tag[0]] = that.state.tags.includes(tag[0])
+          checkInformation[tag[0]] = that.state.tags.includes(tag[0])
         })
-        that.actions.saveCheckInformation(props.currentCheck)
+        that.actions.saveCheckInformation(checkInformation)
         that.actions.changeMode('select')
       }
     }
@@ -117,25 +85,39 @@ class VerseCheck extends React.Component {
 
   componentWillMount() {
     //get default resources (originalLang, targetLang, gatewayLang) content
-    this.getContentFromCheckStore();
+    this.resetState();
   }
 
   componentWillReceiveProps(nextProps) {
-    this.getContentFromCheckStore();
+    this.resetState();
   }
 
-  shouldComponentUpdate(nextProps, nextState) {
-    // Stops ScripturePane from re-rendering when the check module changes state
-    return nextState !== this.state;
-  }
-  /**
-  * @description This gets the default panes' Content From CheckStore, and target
-  * lang direction as well as the the settings for the current resources in the
-  * scripture pane.
-  * @return {state} panes' content, target lang direction and currentPaneSettings.
-  *******************************************************************************/
-  getContentFromCheckStore(){
+  // shouldComponentUpdate(nextProps, nextState) {
+  //   // Stops ScripturePane from re-rendering when the check module changes state
+  //   return nextProps !== this.props || nextState !== this.state;
+  // }
+
+  resetState(){
+    let that = this
+    this.tagList = [
+      ["spelling","Spelling"],
+      ["punctuation","Punctuation"],
+      ["grammar","Grammar"],
+      ["meaning","Meaning"],
+      ["wordChoice","Word Choice"],
+      ["other","Other"]
+    ]
+    let tags = []
+    this.tagList.forEach(function(tag){
+      if (that.props.currentCheck[tag[0]]) {
+        tags.push(tag[1])
+      }
+    })
     this.setState({
+      mode: undefined,
+      comment: undefined,
+      verseText: undefined,
+      tags: tags
     });
   }
 
@@ -145,6 +127,7 @@ class VerseCheck extends React.Component {
       <MuiThemeProvider>
         <View actions={this.actions}
           book={this.props.bookName}
+          quote={this.props.currentCheck.phrase}
           checkInformation={this.props.currentCheck}
           direction={this.props.direction}
           mode={this.state.mode}
