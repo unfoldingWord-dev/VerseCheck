@@ -1,17 +1,25 @@
 const React = require('react')
 const RB = api.ReactBootstrap
-const {Col, Button} = RB
+const {Col, Button, Glyphicon} = RB
 
 var ActionsArea = function(props) {
   const changeModeArea = (
-    <div>
+    <div style={{ fontSize: '1.1em'}}>
       <Col sm={2}>
-        <Button onClick={props.actions.changeMode.bind(this,'edit')}>
+        <Button bsStyle='link'
+          onClick={props.actions.changeMode.bind(this,'edit')}
+          style={{color: '#747474'}}
+        >
+          <Glyphicon glyph='pencil' style={{color: '#747474', marginRight: '5px'}} />
           Edit
         </Button>
       </Col>
       <Col sm={2}>
-        <Button onClick={props.actions.changeMode.bind(this,'comment')}>
+        <Button bsStyle='link'
+          onClick={props.actions.changeMode.bind(this,'comment')}
+          style={{color: '#747474'}}
+        >
+          <Glyphicon glyph='comment' style={{color: '#747474', marginRight: '5px'}} />
           Comment
         </Button>
       </Col>
@@ -21,12 +29,19 @@ var ActionsArea = function(props) {
   const confirmEditVerseArea = (
     <div style={{textAlign: 'right'}}>
       <Col sm={3} smOffset={6}>
-        <Button onClick={props.actions.cancelEditVerse.bind(this)}>
+        <Button bsStyle='link'
+          style={{color: '#747474'}}
+          onClick={props.actions.cancelEditVerse.bind(this)}
+        >
           Cancel
         </Button>
       </Col>
       <Col sm={3}>
-        <Button onClick={props.actions.saveEditVerse.bind(this)}>
+        <Button bsStyle='link'
+          style={{color: '#8BC34A'}}
+          onClick={props.actions.saveEditVerse.bind(this)}
+        >
+          <Glyphicon glyph='ok' style={{color: '#8BC34A', marginRight: '5px'}} />
           Save Changes
         </Button>
       </Col>
@@ -36,12 +51,19 @@ var ActionsArea = function(props) {
   const confirmCommentArea = (
     <div style={{textAlign: 'right'}}>
       <Col sm={3} smOffset={6}>
-        <Button onClick={props.actions.cancelComment.bind(this)}>
+        <Button bsStyle='link'
+          style={{color: '#747474'}}
+          onClick={props.actions.cancelComment.bind(this)}
+        >
           Cancel
         </Button>
       </Col>
       <Col sm={3}>
-        <Button onClick={props.actions.saveComment.bind(this)}>
+        <Button bsStyle='link'
+          style={{color: '#8BC34A'}}
+          onClick={props.actions.saveComment.bind(this)}
+        >
+          <Glyphicon glyph='ok' style={{color: '#8BC34A', marginRight: '5px'}} />
           Save Changes
         </Button>
       </Col>

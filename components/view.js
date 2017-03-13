@@ -21,7 +21,7 @@ class View extends React.Component {
 
     let modeColor
     let titleText
-    switch(this.state.mode) {
+    switch(this.props.mode) {
       case 'edit':
       modeColor = '#8BC34A'
       titleText = 'Edit Verse'
@@ -40,7 +40,7 @@ class View extends React.Component {
     }
 
     const title = (
-      <div style={{'fontSize':'16px', 'fontWeight':'bold', color: '#ffffff', margin: "0px"}}>
+      <div style={{'fontSize':'16px', 'fontWeight':'bold', color: '#ffffff', margin: '0px'}}>
         <span>{titleText}</span>
       </div>
     )
@@ -49,11 +49,11 @@ class View extends React.Component {
       <div style={{ margin: '10px' }}>
         <Card zDepth={2}>
           <CardHeader
-            style={{ background: modeColor, padding: "10px"}}
+            style={{ background: modeColor, padding: '10px'}}
             textStyle={{display: 'block'}}
             children={title}
           />
-        <Row style={{marginLeft: '0px', marginRight: '0px', height: "100%", borderBottom: '1px solid #eee'}}>
+        <Row style={{marginLeft: '0px', marginRight: '0px', height: '100%', borderBottom: '1px solid #eee'}}>
           <CheckArea
             actions={this.props.actions}
             checkInformation={this.props.checkInformation}
@@ -64,11 +64,11 @@ class View extends React.Component {
             verseText={this.props.verseText}
           />
         </Row>
-        <Row style={{marginLeft: '0px', marginRight: '0px', height: "100%"}}>
+        <Row style={{marginLeft: '0px', marginRight: '0px', height: '100%'}}>
           <ActionsArea mode={this.props.mode} actions={this.props.actions} />
         </Row>
         </Card>
-        <Row style={{marginLeft: '0px', marginRight: '0px', height: "100%"}}>
+        <Row style={{marginLeft: '0px', marginRight: '0px', height: '100%'}}>
           <SaveArea actions={this.props.actions} />
         </Row>
       </div>

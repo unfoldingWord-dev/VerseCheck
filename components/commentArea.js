@@ -1,12 +1,13 @@
 const api = window.ModuleApi
 const React = api.React
 const RB = api.ReactBootstrap
-const {FormGroup, FormControl} = RB
+const {FormGroup, FormControl, Glyphicon} = RB
 
 var CommentArea = function(props) {
   return (
     <div>
       <div style={{fontWeight: 'bold'}}>
+        <Glyphicon glyph='comment' style={{marginRight: '5px'}} />
         Comment
       </div>
       <FormGroup controlId="formControlsTextarea">
