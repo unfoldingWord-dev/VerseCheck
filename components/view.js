@@ -62,6 +62,7 @@ class View extends React.Component {
             mode={this.props.mode}
             comment={this.props.comment}
             verseText={this.props.verseText}
+            tags={this.props.tags}
           />
         </Row>
         <Row style={{marginLeft: '0px', marginRight: '0px', height: '100%'}}>

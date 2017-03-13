@@ -12,10 +12,26 @@ class VerseCheck extends React.Component {
   constructor(props) {
     super(props)
 
+    this.tagList = [
+      ["spelling","Spelling"],
+      ["punctuation","Punctuation"],
+      ["grammar","Grammar"],
+      ["meaning","Meaning"],
+      ["wordChoice","Word Choice"],
+      ["other","Other"]
+    ]
+    let tags = []
+    this.tagList.forEach(function(tag){
+      if (props.currentCheck[tag[0]]) {
+        tags.push(tag[1])
+      }
+    })
+
     this.state = {
       mode: undefined,
       comment: undefined,
-      verseText: undefined
+      verseText: undefined,
+      tags: tags
     }
 
     let that = this
@@ -24,7 +40,8 @@ class VerseCheck extends React.Component {
         let newState = {
           mode: undefined,
           comment: undefined,
-          verseText: undefined
+          verseText: undefined,
+          tags: tags
         }
         that.setState(newState)
       },
@@ -61,6 +78,18 @@ class VerseCheck extends React.Component {
         that.actions.saveCheckInformation(props.currentCheck)
         that.actions.changeMode('select')
       },
+      handleEditVerseCheckbox: function(tag, e) {
+        let newState = that.state
+        const checked = e.target.value == 'on'
+        console.log(tag, checked)
+        if (checked && !newState.tags.includes(tag)) {
+          newState.tags.push(tag)
+          that.setState(newState)
+        } else {
+          newState.tags = newState.tags.filter( _tag => _tag === tag)
+          that.setState(newState)
+        }
+      },
       handleEditVerse: function(e) {
         const verseText = e.target.value
         let newState = that.state
@@ -74,7 +103,12 @@ class VerseCheck extends React.Component {
         that.actions.changeMode('select')
       },
       saveEditVerse: function() {
-        props.currentCheck.targetLanguage = that.state.verseText
+        if (that.state.verseText !== undefined) {
+          props.currentCheck.targetLanguage = that.state.verseText
+        }
+        that.tagList.forEach(function(tag) {
+          props.currentCheck[tag[0]] = that.state.tags.includes(tag[0])
+        })
         that.actions.saveCheckInformation(props.currentCheck)
         that.actions.changeMode('select')
       }
@@ -116,6 +150,7 @@ class VerseCheck extends React.Component {
           mode={this.state.mode}
           comment={this.state.comment !== undefined ? this.state.comment : this.props.currentCheck.comment}
           verseText={this.state.verseText !== undefined ? this.state.verseText : this.props.currentCheck.targetLanguage}
+          tags={this.state.tags}
         />
       </MuiThemeProvider>
     );

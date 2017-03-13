@@ -8,11 +8,13 @@ const EditVerseArea = require('./editVerseArea')
 const CommentArea = require('./commentArea')
 
 var CheckArea = function(props) {
-
   let modeArea
   switch(props.mode) {
     case 'edit':
-    modeArea = <EditVerseArea verseText={props.verseText} actions={props.actions} />
+    modeArea = <EditVerseArea
+      tags={props.tags}
+      verseText={props.verseText}
+      actions={props.actions} />
     break
     case 'comment':
     modeArea = <CommentArea comment={props.comment} actions={props.actions} />
