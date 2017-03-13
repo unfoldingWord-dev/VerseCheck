@@ -1,8 +1,7 @@
-const React = require('react')
-const RB = api.ReactBootstrap
-const {Col, Button, Glyphicon} = RB
+import React from 'react'
+import {Col, Button, Glyphicon} from 'react-bootstrap'
 
-var ActionsArea = function(props) {
+let ActionsArea = (props) => {
   const changeModeArea = (
     <div style={{ fontSize: '1.1em'}}>
       <Col sm={2}>

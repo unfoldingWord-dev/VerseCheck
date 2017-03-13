@@ -2,9 +2,8 @@
   * @author Christopher Klpap
   * @description This component displays the Verse so selection, edit and comments can be made
   ******************************************************************************/
-const api = window.ModuleApi;
-const React = api.React;
-const View = require('./components/View');
+import React from 'react'
+import View from './components/View'
 const NAMESPACE = "VerseCheck";
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 
@@ -51,7 +50,6 @@ class VerseCheck extends React.Component {
       handleEditVerseCheckbox: function(tag, e) {
         let newState = that.state
         const checked = e.target.value == 'on'
-        console.log(tag, checked)
         if (checked && !newState.tags.includes(tag)) {
           newState.tags.push(tag)
           that.setState(newState)
@@ -84,18 +82,12 @@ class VerseCheck extends React.Component {
   }
 
   componentWillMount() {
-    //get default resources (originalLang, targetLang, gatewayLang) content
     this.resetState();
   }
 
   componentWillReceiveProps(nextProps) {
     this.resetState();
   }
-
-  // shouldComponentUpdate(nextProps, nextState) {
-  //   // Stops ScripturePane from re-rendering when the check module changes state
-  //   return nextProps !== this.props || nextState !== this.state;
-  // }
 
   resetState(){
     let that = this

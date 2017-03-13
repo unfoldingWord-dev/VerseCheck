@@ -1,14 +1,11 @@
-
-const api = window.ModuleApi
-const React = api.React
-const RB = api.ReactBootstrap
-const {Row, Glyphicon, Col, Button} = RB
+import React from 'react'
+import {Row, Glyphicon, Col, Button} from 'react-bootstrap'
 import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card'
 
-const style = require('../css/style')
-const CheckArea = require('./checkArea')
-const ActionsArea = require('./actionsArea')
-const SaveArea = require('./saveArea')
+import style from '../css/style'
+import CheckArea from './checkArea'
+import ActionsArea from './actionsArea'
+import SaveArea from './saveArea'
 
 class View extends React.Component {
   constructor(props) {

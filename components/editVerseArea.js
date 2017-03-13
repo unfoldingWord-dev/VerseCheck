@@ -1,10 +1,7 @@
-const api = window.ModuleApi
-const React = api.React
-const RB = api.ReactBootstrap
-const {FormGroup, FormControl, Glyphicon, Checkbox} = RB
+import React from 'react'
+import {Checkbox, Glyphicon, FormGroup, FormControl} from 'react-bootstrap'
 
-var EditVerseArea = function(props) {
-
+let EditVerseArea = (props) => {
   const tagList = [
     ["spelling","Spelling"],
     ["punctuation","Punctuation"],

@@ -1,7 +1,7 @@
-const React = require('react')
+import React from 'react'
 
-const style = require('../css/style')
-const SelectionHelpers = require('../utils/selectionHelpers')
+import style from '../css/style'
+import SelectionHelpers from '../utils/selectionHelpers'
 
 class SelectArea extends React.Component {
   constructor() {

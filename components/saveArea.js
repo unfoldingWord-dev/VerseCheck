@@ -1,8 +1,7 @@
-const React = require('react')
-const RB = api.ReactBootstrap
-const {Row, Col, Button, Glyphicon} = RB
+import React from 'react'
+import {Row, Glyphicon, Col, Button} from 'react-bootstrap'
 
-var SaveArea = function(props) {
+let SaveArea = (props) => {
   return (
     <Row style={{paddingTop: '15px'}}>
       <Col sm={6} style={{textAlign: 'left'}}>

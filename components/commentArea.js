@@ -1,9 +1,7 @@
-const api = window.ModuleApi
-const React = api.React
-const RB = api.ReactBootstrap
-const {FormGroup, FormControl, Glyphicon} = RB
+import React from 'react'
+import {FormGroup, FormControl, Glyphicon} from 'react-bootstrap'
 
-var CommentArea = function(props) {
+let CommentArea = (props) => {
   return (
     <div>
       <div style={{fontWeight: 'bold'}}>

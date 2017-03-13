@@ -1,13 +1,12 @@
-const React = require('react')
-const RB = api.ReactBootstrap
-const {Col} = RB
+import React from 'react'
+import {Col} from 'react-bootstrap'
 
-const SelectArea = require('./selectArea')
-const DirectionsArea = require('./directionsArea')
-const EditVerseArea = require('./editVerseArea')
-const CommentArea = require('./commentArea')
+import SelectArea from './selectArea'
+import DirectionsArea from './directionsArea'
+import EditVerseArea from './editVerseArea'
+import CommentArea from './commentArea'
 
-var CheckArea = function(props) {
+let CheckArea = (props) => {
   let modeArea
   switch(props.mode) {
     case 'edit':

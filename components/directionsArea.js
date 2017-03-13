@@ -1,6 +1,6 @@
-const React = require('react')
+import React from 'react'
 
-var DirectionsArea = function(props) {
+let DirectionsArea = (props) => {
   return (
     <div style={{ height: '12em', paddingTop: '4em', textAlign: 'center'}}>
       Please select the correct translation for:
