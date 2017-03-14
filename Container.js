@@ -10,11 +10,24 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 class VerseCheck extends React.Component {
   constructor(props) {
     super(props)
-    this.state = {}
-
-    this.lastCheck = props.currentCheck
+    this.state = {
+      mode: 'select',
+      comment: undefined,
+      verseText: undefined,
+      tags: undefined
+    }
 
     let that = this
+
+    this.tagList = [
+      ["spelling", "Spelling"],
+      ["punctuation", "Punctuation"],
+      ["grammar", "Grammar"],
+      ["meaning", "Meaning"],
+      ["wordChoice", "Word Choice"],
+      ["other", "Other"]
+    ]
+
     this.actions = {
       goToNext: function() {
         props.goToNext()
@@ -37,26 +50,36 @@ class VerseCheck extends React.Component {
         that.setState(newState)
       },
       cancelComment: function(e) {
-        let newState = that.state
-        newState.comment = props.currentCheck.comment
-        that.setState(newState)
-        that.actions.changeMode('select')
+        that.setState({
+          mode: 'select',
+          comment: undefined
+        })
       },
       saveComment: function() {
-        props.currentCheck.comment = that.state.comment
-        that.actions.saveCheckInformation(props.currentCheck)
-        that.actions.changeMode('select')
+        let checkInformation = props.currentCheck
+        checkInformation.comment = that.state.comment
+        that.actions.saveCheckInformation(checkInformation)
+        that.setState({
+          mode: 'select',
+          comment: undefined
+        })
       },
       handleEditVerseCheckbox: function(tag, e) {
+        let checkInformation = props.currentCheck
+        let tags = []
+        that.tagList.forEach(function(tag){
+          if (checkInformation[tag[0]]) {
+            tags.push(tag[0])
+          }
+        })
         let newState = that.state
-        const checked = e.target.value == 'on'
-        if (checked && !newState.tags.includes(tag)) {
+        if (newState.tags === undefined) newState.tags = tags
+        if (!newState.tags.includes(tag)) {
           newState.tags.push(tag)
-          that.setState(newState)
         } else {
-          newState.tags = newState.tags.filter( _tag => _tag === tag)
-          that.setState(newState)
+          newState.tags = newState.tags.filter( _tag => _tag !== tag)
         }
+        that.setState(newState)
       },
       handleEditVerse: function(e) {
         const verseText = e.target.value
@@ -65,55 +88,64 @@ class VerseCheck extends React.Component {
         that.setState(newState)
       },
       cancelEditVerse: function(e) {
-        let newState = that.state
-        newState.verseText = props.currentCheck.targetLanguage
-        that.setState(newState)
-        that.actions.changeMode('select')
+        that.setState({
+          mode: 'select',
+          verseText: undefined,
+          tags: undefined
+        })
       },
       saveEditVerse: function() {
         let checkInformation = props.currentCheck
+        let newState = that.state
+        if (newState.tags === undefined) {
+          let tags = []
+          that.tagList.forEach(function(tag){
+            if (checkInformation[tag[0]]) {
+              tags.push(tag[0])
+            }
+          })
+          newState.tags = tags
+        }
         that.tagList.forEach(function(tag) {
-          checkInformation[tag[0]] = that.state.tags.includes(tag[0])
+          checkInformation[tag[0]] = newState.tags.includes(tag[0])
         })
         that.actions.saveCheckInformation(checkInformation)
-        that.actions.changeMode('select')
+        that.setState({
+          mode: 'select',
+          verseText: undefined,
+          tags: undefined
+        })
       }
     }
   }
 
   componentWillMount() {
-    this.resetState();
+    this.setState({
+      mode: undefined,
+      comments: undefined,
+      verseText: undefined,
+      tags: undefined
+    })
   }
 
   componentWillReceiveProps(nextProps) {
-    this.resetState();
-  }
-
-  resetState(){
-    let that = this
-    this.tagList = [
-      ["spelling","Spelling"],
-      ["punctuation","Punctuation"],
-      ["grammar","Grammar"],
-      ["meaning","Meaning"],
-      ["wordChoice","Word Choice"],
-      ["other","Other"]
-    ]
-    let tags = []
-    this.tagList.forEach(function(tag){
-      if (that.props.currentCheck[tag[0]]) {
-        tags.push(tag[1])
-      }
-    })
     this.setState({
       mode: undefined,
-      comment: undefined,
+      comments: undefined,
       verseText: undefined,
-      tags: tags
-    });
+      tags: undefined
+    })
   }
 
   render() {
+    let that = this
+
+    let tags = []
+    that.tagList.forEach(function(tag){
+      if (that.props.currentCheck[tag[0]]) {
+        tags.push(tag[0])
+      }
+    })
 
     return (
       <MuiThemeProvider>
@@ -125,7 +157,7 @@ class VerseCheck extends React.Component {
           mode={this.state.mode}
           comment={this.state.comment !== undefined ? this.state.comment : this.props.currentCheck.comment}
           verseText={this.state.verseText !== undefined ? this.state.verseText : this.props.currentCheck.targetLanguage}
-          tags={this.state.tags}
+          tags={this.state.tags !== undefined ? this.state.tags : tags}
         />
       </MuiThemeProvider>
     );

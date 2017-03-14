@@ -3,12 +3,12 @@ import {Checkbox, Glyphicon, FormGroup, FormControl} from 'react-bootstrap'
 
 let EditVerseArea = (props) => {
   const tagList = [
-    ["spelling","Spelling"],
-    ["punctuation","Punctuation"],
-    ["grammar","Grammar"],
-    ["meaning","Meaning"],
-    ["wordChoice","Word Choice"],
-    ["other","Other"]
+    ["spelling", "Spelling"],
+    ["punctuation", "Punctuation"],
+    ["grammar", "Grammar"],
+    ["meaning", "Meaning"],
+    ["wordChoice", "Word Choice"],
+    ["other", "Other"]
   ]
   const checkboxes = tagList.map( tag =>
     <Checkbox key={tag[0]} inline checked={props.tags.includes(tag[0])}
