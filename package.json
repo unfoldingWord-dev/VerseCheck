@@ -1,0 +1,16 @@
+{
+  "name": "VerseCheck",
+  "version": "1.0.0",
+  "description": "Sub component for Tools to select, edit, comment, bookmarking verses.",
+  "main": "container.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git"
+  },
+  "dependencies": {
+    "babel-preset-react": "^6.16.0",
+    "usfm-parser": "^0.1.6"
+  }
+}
