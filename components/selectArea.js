@@ -12,6 +12,10 @@ class SelectArea extends React.Component {
   }
 
   getSelectionText() {
+    if (this.props.checkInformation.selectedText.length >= 4) {
+      alert('To select more than 4 words, highlight phrases instead of individual words.')
+      return false
+    }
     let verseText = this.props.verseText
     let text = "";
     var selection = window.getSelection();
