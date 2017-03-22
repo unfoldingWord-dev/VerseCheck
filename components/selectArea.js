@@ -45,7 +45,12 @@ class SelectArea extends React.Component {
       if (foundRepeatedSelection) {
         //dont add object to array
       } else {
-        newSelectedTextArray.push(selectedText);
+        if (this.props.checkInformation.selectedText.length >= 4) {
+          alert('To select more than 4 words, highlight phrases instead of individual words.')
+          return false
+        } else {
+          newSelectedTextArray.push(selectedText);
+        }
       }
       let checkInformation = this.props.checkInformation;
       // optimize the selections to address potential issues and save
