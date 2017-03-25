@@ -46,7 +46,7 @@ class View extends React.Component {
         <span>{titleText}</span>
       </div>
     )
-
+    console.log(this.props)
     return (
       <div style={{ margin: '10px' }}>
         <Card zDepth={2}>

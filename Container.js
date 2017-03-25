@@ -146,7 +146,6 @@ class VerseCheck extends React.Component {
         tags.push(tag[0])
       }
     })
-
     return (
       <MuiThemeProvider>
         <View actions={this.actions}
