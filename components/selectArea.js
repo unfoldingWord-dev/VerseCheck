@@ -1,7 +1,6 @@
 import React from 'react'
 
 import style from '../css/style'
-import SelectionHelpers from '../utils/selectionHelpers'
 
 class SelectArea extends React.Component {
   constructor() {
@@ -14,14 +13,14 @@ class SelectArea extends React.Component {
   getSelectionText() {
     let verseText = this.props.verseText
     let text = "";
-    var selection = window.getSelection();
-    var indexOfTextSelection = selection.getRangeAt(0).startOffset;
-    if (selection) {
+    var selectedString = window.getSelection();
+    var indexOfTextSelection = selectedString.getRangeAt(0).startOffset;
+    if (selectedString) {
       text = window.getSelection().toString();
     } else if (document.selection && document.selection.type != "Control") {
       text = document.selection.createRange().text;
     }
-    if (text === "" || text === " ") {
+    if (text === "") {
       //do nothing since an empty space was selected
     } else {
       let expression = '/' + text + '/g';
@@ -35,47 +34,40 @@ class SelectArea extends React.Component {
         occurrence = 1;
       }
 
-      let selectedText = {
+      let selection = {
         text: text,
         occurrence: occurrence,
         occurrences: occurrences
-      };
-      let newSelectedTextArray = this.props.checkInformation.selectedText;
-      let foundRepeatedSelection = newSelectedTextArray.find(item => item.text === text && item.occurrence === occurrence);
-      if (foundRepeatedSelection) {
-        //dont add object to array
-      } else {
-        if (this.props.checkInformation.selectedText.length >= 4) {
-          alert('To select more than 4 words, highlight phrases instead of individual words.')
-          return false
-        } else {
-          newSelectedTextArray.push(selectedText);
-        }
       }
-      let checkInformation = this.props.checkInformation;
-      // optimize the selections to address potential issues and save
-      checkInformation.selectedText = SelectionHelpers.optimizeSelections(verseText, newSelectedTextArray);
-      this.props.actions.saveCheckInformation(checkInformation);
+      addSelection(selection)
     }
   }
 
-  removeSelection(selectionObject) {
-    var newSelectedTextArray = [];
-    var checkInformation = this.props.checkInformation;
-    newSelectedTextArray = checkInformation.selectedText.filter(selection =>
-      selection.occurrence !== selectionObject.occurrence || selection.text !== selectionObject.text
+  addSelection(selection) {
+    let selections = this.props.selections;
+    if (this.props.selections.length >= 4) {
+      alert('Click a previous selection to remove it before adding a new one. To select more than 4 words, highlight phrases instead of individual words.')
+      return false
+    } else {
+      selections.push(selection);
+    }
+    this.props.actions.changeSelections(selections);
+  }
+
+  removeSelection(selection) {
+    var selections = [];
+    selections = this.props.selections.filter(_selection =>
+      _selection.occurrence !== selection.occurrence || _selection.text !== selection.text
     )
-    // optimize the selections to address potential issues and save
-    checkInformation.selectedText = SelectionHelpers.optimizeSelections(this.props.verseText, newSelectedTextArray);
-    this.props.actions.saveCheckInformation(checkInformation);
+    this.props.actions.changeSelections(selections);
   }
 
   displayText() {
     let verseText = '';
-    let { checkInformation } = this.props;
+    let { selections } = this.props.selectionsReducer;
     verseText = this.props.verseText
-    if (checkInformation.selectedText && checkInformation.selectedText.length > 0) {
-      var selectionArray = SelectionHelpers.selectionArray(verseText, checkInformation.selectedText)
+    if (selections && checkInformation.selectedText.length > 0) {
+      var selectionArray = SelectionHelpers.selectionArray(verseText, this.props.selections)
       verseText = selectionArray.map((selection, index) =>
         <span key={index} style={selection.selected ? { backgroundColor: '#FDD910', cursor: 'pointer' } : {}}
           onClick={selection.selected ? () => this.removeSelection(selection) : () => { }}>
@@ -107,21 +99,18 @@ class SelectArea extends React.Component {
   }
 
   render() {
-    const verseDisplay = (
-      <div style={this.props.direction === 'ltr' ? style.pane.contentLTR : style.pane.contentRTL}>
-        {this.displayText()}
-      </div>
-    )
-
+    let reference = this.props.contextIdReducer.contextId.reference
     return (
       <div>
         <div style={{fontWeight: 'bold'}}>
           Target Language
         </div>
         <div style={{color: "#747474"}}>
-          {this.props.book} {this.props.checkInformation.chapter + ':' + this.props.checkInformation.verse}
+          {reference.bookId} {reference.chapter + ':' + reference.verse}
         </div>
-        {verseDisplay}
+        <div style={this.props.projectDetailsReducer.params.direction === 'ltr' ? style.pane.contentLTR : style.pane.contentRTL}>
+          {this.displayText()}
+        </div>
       </div>
     )
   }
