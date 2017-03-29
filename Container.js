@@ -59,7 +59,7 @@ class VerseCheck extends React.Component {
         })
       },
       saveComment: function() {
-        props.actions.addComment(that.state.comment, that.props.loginReducer.userdata.username)
+        that.props.actions.addComment(that.state.comment, that.props.loginReducer.userdata.username)
         that.setState({
           mode: 'select',
           comment: undefined
