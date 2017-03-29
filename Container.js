@@ -56,9 +56,10 @@ class VerseCheck extends React.Component {
         })
       },
       saveComment: function() {
-        let checkInformation = props.currentCheck
-        checkInformation.comment = that.state.comment
-        that.actions.saveCheckInformation(checkInformation)
+        // let checkInformation = props.currentCheck
+        // checkInformation.comment = that.state.comment
+        // that.actions.saveCheckInformation(checkInformation)
+        that.props.addComment(that.state.comment, that.props.userdata.username)
         that.setState({
           mode: 'select',
           comment: undefined
@@ -155,7 +156,7 @@ class VerseCheck extends React.Component {
           checkInformation={this.props.currentCheck}
           direction={this.props.direction}
           mode={this.state.mode}
-          comment={this.state.comment !== undefined ? this.state.comment : this.props.currentCheck.comment}
+          comment={this.state.comment !== undefined ? this.state.comment : this.props.text}
           verseText={this.state.verseText !== undefined ? this.state.verseText : this.props.currentCheck.targetLanguage}
           tags={this.state.tags !== undefined ? this.state.tags : tags}
         />
