@@ -56,17 +56,7 @@ class View extends React.Component {
             children={title}
           />
         <Row style={{marginLeft: '0px', marginRight: '0px', height: '100%', borderBottom: '1px solid #eee'}}>
-          <CheckArea
-            checkInformation={this.props.checkInformation}
-            actions={this.props.actions}
-            book={this.props.book}
-            mode={this.props.mode}
-            quote={this.props.quote}
-            comment={this.props.comment}
-            direction={this.props.direction}
-            verseText={this.props.verseText}
-            tags={this.props.tags}
-          />
+          <CheckArea {...this.props} />
         </Row>
         <Row style={{marginLeft: '0px', marginRight: '0px', height: '100%'}}>
           <ActionsArea mode={this.props.mode} actions={this.props.actions} />
