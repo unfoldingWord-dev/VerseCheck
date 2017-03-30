@@ -6,6 +6,7 @@ import React from 'react'
 import View from './components/View'
 const NAMESPACE = "VerseCheck";
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
+import SelectionHelpers from './utils/selectionHelpers'
 
 class VerseCheck extends React.Component {
   constructor(props) {
@@ -14,7 +15,7 @@ class VerseCheck extends React.Component {
       mode: 'select',
       comment: undefined,
       verseText: undefined,
-      tags: undefined
+      tags: []
     }
 
     let that = this
@@ -35,8 +36,10 @@ class VerseCheck extends React.Component {
       goToPrevious: function() {
         props.goToPrevious()
       },
-      saveCheckInformation: function(checkInformation) {
-        props.updateCurrentCheck(checkInformation)
+      changeSelection: function(selections) {
+        // optimize the selections to address potential issues and save
+        selections = SelectionHelpers.optimizeSelections(verseText, selections);
+        props.changeSelection(selections)
       },
       changeMode: function(mode) {
         let newState = that.state
@@ -56,25 +59,15 @@ class VerseCheck extends React.Component {
         })
       },
       saveComment: function() {
-        // let checkInformation = props.currentCheck
-        // checkInformation.comment = that.state.comment
-        // that.actions.saveCheckInformation(checkInformation)
-        that.props.addComment(that.state.comment, that.props.userdata.username)
+        that.props.actions.addComment(that.state.comment, that.props.loginReducer.userdata.username)
         that.setState({
           mode: 'select',
           comment: undefined
         })
       },
-      handleEditVerseCheckbox: function(tag, e) {
-        let checkInformation = props.currentCheck
-        let tags = []
-        that.tagList.forEach(function(tag){
-          if (checkInformation[tag[0]]) {
-            tags.push(tag[0])
-          }
-        })
+      handleTagsCheckbox: function(tag, e) {
         let newState = that.state
-        if (newState.tags === undefined) newState.tags = tags
+        if (newState.tags === undefined) newState.tags = []
         if (!newState.tags.includes(tag)) {
           newState.tags.push(tag)
         } else {
@@ -92,29 +85,18 @@ class VerseCheck extends React.Component {
         that.setState({
           mode: 'select',
           verseText: undefined,
-          tags: undefined
+          tags: []
         })
       },
       saveEditVerse: function() {
-        let checkInformation = props.currentCheck
-        let newState = that.state
-        if (newState.tags === undefined) {
-          let tags = []
-          that.tagList.forEach(function(tag){
-            if (checkInformation[tag[0]]) {
-              tags.push(tag[0])
-            }
-          })
-          newState.tags = tags
-        }
-        that.tagList.forEach(function(tag) {
-          checkInformation[tag[0]] = newState.tags.includes(tag[0])
-        })
-        that.actions.saveCheckInformation(checkInformation)
+        let {targetVerse, loginReducer, actions} = that.props
+        let before = targetVerse
+        let username = loginReducer.userdata.username
+        actions.addVerseEdit(before, that.state.verseText, that.state.tags, username)
         that.setState({
           mode: 'select',
           verseText: undefined,
-          tags: undefined
+          tags: []
         })
       }
     }
@@ -123,42 +105,32 @@ class VerseCheck extends React.Component {
   componentWillMount() {
     this.setState({
       mode: undefined,
-      comments: undefined,
-      verseText: undefined,
-      tags: undefined
+      comments: undefined
     })
   }
 
   componentWillReceiveProps(nextProps) {
     this.setState({
       mode: undefined,
-      comments: undefined,
-      verseText: undefined,
-      tags: undefined
+      comments: undefined
     })
   }
 
   render() {
     let that = this
-
     let tags = []
     that.tagList.forEach(function(tag){
       if (that.props.currentCheck[tag[0]]) {
         tags.push(tag[0])
       }
     })
-
     return (
       <MuiThemeProvider>
-        <View actions={this.actions}
-          book={this.props.bookName}
-          quote={this.props.currentCheck.phrase}
-          checkInformation={this.props.currentCheck}
-          direction={this.props.direction}
+        <View {...this.props} actions={this.actions}
           mode={this.state.mode}
-          comment={this.state.comment !== undefined ? this.state.comment : this.props.text}
-          verseText={this.state.verseText !== undefined ? this.state.verseText : this.props.currentCheck.targetLanguage}
-          tags={this.state.tags !== undefined ? this.state.tags : tags}
+          comment={this.state.comment !== undefined ? this.state.comment : this.props.commentsReducer.text}
+          verseText={this.state.verseText !== undefined ? this.state.verseText : this.props.targetVerse}
+          tags={this.state.tags}
         />
       </MuiThemeProvider>
     );

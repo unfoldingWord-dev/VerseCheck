@@ -28,13 +28,7 @@ let CheckArea = (props) => {
   return (
     <div style={{fontSize: '1.1em'}}>
       <Col sm={6} style={{ paddingTop: '5px' }}>
-        <SelectArea
-          verseText={props.verseText}
-          book={props.book}
-          checkInformation={props.checkInformation}
-          direction={props.direction}
-          actions={props.actions}
-        />
+        <SelectArea {...props} />
       </Col>
       <Col sm={6} style={{ borderLeft: '1px solid #ccc', height: '100%', paddingTop: '5px' }}>
         {modeArea}

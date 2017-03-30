@@ -13,7 +13,7 @@ let EditVerseArea = (props) => {
   const checkboxes = tagList.map( tag =>
     <Checkbox key={tag[0]} inline checked={props.tags.includes(tag[0])}
       style={{width: '33.3%', marginLeft: '0px'}}
-      onChange={props.actions.handleEditVerseCheckbox.bind(this, tag[0])}
+      onChange={props.actions.handleTagsCheckbox.bind(this, tag[0])}
     >
       {tag[1]}
     </Checkbox>
