@@ -1,6 +1,7 @@
 import React from 'react'
 
 import style from '../css/style'
+import SelectionHelpers from '../utils/selectionHelpers'
 
 class SelectArea extends React.Component {
   constructor() {
@@ -39,13 +40,13 @@ class SelectArea extends React.Component {
         occurrence: occurrence,
         occurrences: occurrences
       }
-      addSelection(selection)
+      this.addSelection(selection)
     }
   }
 
   addSelection(selection) {
-    let selections = this.props.selections;
-    if (this.props.selections.length >= 4) {
+    let selections = this.props.selectionsReducer.selections;
+    if (selections.length >= 4) {
       alert('Click a previous selection to remove it before adding a new one. To select more than 4 words, highlight phrases instead of individual words.')
       return false
     } else {
@@ -55,8 +56,8 @@ class SelectArea extends React.Component {
   }
 
   removeSelection(selection) {
-    var selections = [];
-    selections = this.props.selections.filter(_selection =>
+    let selections = this.props.selectionsReducer.selections;
+    selections = selections.filter(_selection =>
       _selection.occurrence !== selection.occurrence || _selection.text !== selection.text
     )
     this.props.actions.changeSelections(selections);
@@ -66,8 +67,8 @@ class SelectArea extends React.Component {
     let verseText = '';
     let { selections } = this.props.selectionsReducer;
     verseText = this.props.verseText
-    if (selections && checkInformation.selectedText.length > 0) {
-      var selectionArray = SelectionHelpers.selectionArray(verseText, this.props.selections)
+    if (selections && selections.length > 0) {
+      var selectionArray = SelectionHelpers.selectionArray(verseText, selections)
       verseText = selectionArray.map((selection, index) =>
         <span key={index} style={selection.selected ? { backgroundColor: '#FDD910', cursor: 'pointer' } : {}}
           onClick={selection.selected ? () => this.removeSelection(selection) : () => { }}>

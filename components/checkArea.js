@@ -19,10 +19,10 @@ let CheckArea = (props) => {
     modeArea = <CommentArea comment={props.comment} actions={props.actions} />
     break
     case 'select':
-    modeArea = <DirectionsArea quote={props.quote} />
+    modeArea = <DirectionsArea quote={props.contextIdReducer.contextId.quote} />
     break
     default:
-    modeArea = <DirectionsArea quote={props.quote} />
+    modeArea = <DirectionsArea quote={props.contextIdReducer.contextId.quote} />
   }
 
   return (

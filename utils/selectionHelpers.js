@@ -56,7 +56,7 @@ module.exports.spliceStringOnRanges = function(string, ranges) {
 module.exports.selectionsToRanges = function(string, selections) {
   var ranges = []
     selections.forEach(function(selection) {
-      if (string.includes(selection.text)) {
+      if (string !== undefined && string.includes(selection.text)) {
         var splitArray = string.split(selection.text)
         var beforeSelection = splitArray.slice(0,selection.occurrence).join(selection.text)
         var start = beforeSelection.length

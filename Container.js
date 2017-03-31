@@ -20,6 +20,9 @@ class VerseCheck extends React.Component {
 
     let that = this
 
+    let {chapter, verse} = this.props.contextIdReducer.contextId.reference
+    this.verseText = this.props.resourcesReducer.bibles.targetLanguage[chapter][verse]
+
     this.tagList = [
       ["spelling", "Spelling"],
       ["punctuation", "Punctuation"],
@@ -36,10 +39,10 @@ class VerseCheck extends React.Component {
       goToPrevious: function() {
         props.goToPrevious()
       },
-      changeSelection: function(selections) {
+      changeSelections: function(selections) {
         // optimize the selections to address potential issues and save
-        selections = SelectionHelpers.optimizeSelections(verseText, selections);
-        props.changeSelection(selections)
+        selections = SelectionHelpers.optimizeSelections(that.verseText, selections);
+        props.actions.changeSelections(selections, props.loginReducer.userdata.username)
       },
       changeMode: function(mode) {
         let newState = that.state
@@ -118,18 +121,13 @@ class VerseCheck extends React.Component {
 
   render() {
     let that = this
-    let tags = []
-    that.tagList.forEach(function(tag){
-      if (that.props.currentCheck[tag[0]]) {
-        tags.push(tag[0])
-      }
-    })
+
     return (
       <MuiThemeProvider>
         <View {...this.props} actions={this.actions}
           mode={this.state.mode}
           comment={this.state.comment !== undefined ? this.state.comment : this.props.commentsReducer.text}
-          verseText={this.state.verseText !== undefined ? this.state.verseText : this.props.targetVerse}
+          verseText={this.state.verseText !== undefined ? this.state.verseText : this.verseText}
           tags={this.state.tags}
         />
       </MuiThemeProvider>
