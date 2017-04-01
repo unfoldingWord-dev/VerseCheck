@@ -33,11 +33,11 @@ class VerseCheck extends React.Component {
     ]
 
     this.actions = {
-      goToNext: function() {
-        props.goToNext()
+      handleGoToNext: function() {
+        props.actions.goToNext()
       },
-      goToPrevious: function() {
-        props.goToPrevious()
+      handleGoToPrevious: function() {
+        props.actions.goToPrevious()
       },
       changeSelections: function(selections) {
         // optimize the selections to address potential issues and save

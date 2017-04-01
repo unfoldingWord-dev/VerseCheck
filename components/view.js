@@ -23,22 +23,22 @@ class View extends React.Component {
       case 'edit':
       modeColor = '#8BC34A'
       titleText = 'Edit Verse'
-      saveArea = <div></div>
+      saveArea = <div />
       break
       case 'comment':
       modeColor = '#F9C000'
       titleText = 'Comment'
-      saveArea = <div></div>
+      saveArea = <div />
       break
       case 'select':
       modeColor = '#2196F3'
       titleText = 'Step 2. Select'
-      saveArea = <SaveArea actions={this.props.actions} />
+      saveArea = <SaveArea {...this.props} />
       break
       default:
       modeColor = '#2196F3'
       titleText = 'Step 2. Select'
-      saveArea = <SaveArea actions={this.props.actions} />
+      saveArea = <SaveArea {...this.props} />
     }
 
     const title = (
