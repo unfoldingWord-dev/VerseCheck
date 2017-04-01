@@ -6,7 +6,7 @@ let SaveArea = (props) => {
     <Row style={{paddingTop: '15px'}}>
       <Col sm={6} style={{textAlign: 'left'}}>
         <Button bsStyle='link'
-          onClick={props.actions.goToPrevious}
+          onClick={props.actions.handleGoToPrevious}
           style={{color: '#747474'}}
         >
           <Glyphicon glyph='share-alt' style={{color: '#747474', marginRight: '5px', transform: 'scaleX(-1)'}} />
@@ -15,7 +15,7 @@ let SaveArea = (props) => {
       </Col>
       <Col sm={6} style={{textAlign: 'right'}}>
         <Button bsStyle='primary'
-          onClick={props.actions.goToNext}
+          onClick={props.actions.handleGoToNext}
           style={{background: '#2196F3', border: 'none'}}
         >
           Save & Continue
