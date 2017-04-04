@@ -20,9 +20,6 @@ class VerseCheck extends React.Component {
 
     let that = this
 
-    let {chapter, verse} = this.props.contextIdReducer.contextId.reference
-    this.verseText = this.props.resourcesReducer.bibles.targetLanguage[chapter][verse]
-
     this.tagList = [
       ["spelling", "Spelling"],
       ["punctuation", "Punctuation"],
@@ -105,25 +102,22 @@ class VerseCheck extends React.Component {
     }
   }
 
-  componentWillMount() {
-    this.setState({
-      mode: undefined,
-      comments: undefined
-    })
-  }
-
   componentWillReceiveProps(nextProps) {
-    this.setState({
-      mode: undefined,
-      comments: undefined,
-      verseText: undefined
-    })
-    let {chapter, verse} = this.props.contextIdReducer.contextId.reference
-    this.verseText = this.props.resourcesReducer.bibles.targetLanguage[chapter][verse]
+    if (nextProps.contextIdReducer.contextId != this.props.contextIdReducer.contextId) {
+      this.setState({
+        mode: 'select',
+        comments: undefined,
+        verseText: undefined,
+        tags: []
+      })
+    }
   }
 
   render() {
     let that = this
+
+    let {chapter, verse} = this.props.contextIdReducer.contextId.reference
+    this.verseText = this.props.resourcesReducer.bibles.targetLanguage[chapter][verse]
 
     return (
       <MuiThemeProvider>
