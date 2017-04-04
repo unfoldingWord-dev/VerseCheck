@@ -115,8 +115,11 @@ class VerseCheck extends React.Component {
   componentWillReceiveProps(nextProps) {
     this.setState({
       mode: undefined,
-      comments: undefined
+      comments: undefined,
+      verseText: undefined
     })
+    let {chapter, verse} = this.props.contextIdReducer.contextId.reference
+    this.verseText = this.props.resourcesReducer.bibles.targetLanguage[chapter][verse]
   }
 
   render() {
