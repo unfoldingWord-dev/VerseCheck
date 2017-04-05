@@ -131,8 +131,8 @@ module.exports.optimizeRanges = function(ranges) {
 }
 //
 // Use the following lines to test the previous function
-var ranges = [[1,1],[5,9],[3,4],[7,10],[20,40],[15,16],[14,17]]
-console.log(module.exports.optimizeRanges(ranges))
+// var ranges = [[1,1],[5,9],[3,4],[7,10],[20,40],[15,16],[14,17]]
+// console.log(module.exports.optimizeRanges(ranges))
 // => [ [ 1, 1 ], [ 3, 10 ], [ 14, 17 ], [ 20, 40 ] ]
 
 /**
