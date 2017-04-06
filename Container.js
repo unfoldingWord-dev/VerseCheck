@@ -120,7 +120,11 @@ class VerseCheck extends React.Component {
     let that = this
 
     let {chapter, verse} = this.props.contextIdReducer.contextId.reference
-    this.verseText = this.props.resourcesReducer.bibles.targetLanguage[chapter][verse]
+    if (this.props.resourcesReducer.bibles.targetLanguage) {
+      this.verseText = this.props.resourcesReducer.bibles.targetLanguage[chapter][verse];
+    } else {
+      this.verseText = null;
+    }
 
     return (
       <MuiThemeProvider>
