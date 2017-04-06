@@ -98,6 +98,9 @@ class VerseCheck extends React.Component {
           verseText: undefined,
           tags: []
         })
+      },
+      toggleReminder: function() {
+        that.props.actions.toggleReminder(that.props.loginReducer.userdata.username)
       }
     }
   }
