@@ -48,7 +48,7 @@ class View extends React.Component {
             'float': "right",
              color: this.props.remindersReducer.enabled ? "#F44242" : "#FFFFFF"
            }}
-          onClick={this.actions.toggleReminder}
+          onClick={this.props.actions.toggleReminder}
           />
       </div>
     )
