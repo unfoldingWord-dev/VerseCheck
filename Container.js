@@ -11,6 +11,7 @@ import SelectionHelpers from './utils/selectionHelpers'
 class VerseCheck extends React.Component {
   constructor(props) {
     super(props)
+    console.log(this.props.actions)
     this.state = {
       mode: 'select',
       comment: undefined,

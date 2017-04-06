@@ -15,7 +15,6 @@ class View extends React.Component {
 
   render() {
     let { currentCheck } = this.props
-
     let modeColor
     let titleText
     let saveArea
@@ -44,6 +43,7 @@ class View extends React.Component {
     const title = (
       <div style={{'fontSize':'16px', 'fontWeight':'bold', color: '#ffffff', margin: '0px'}}>
         <span>{titleText}</span>
+        <Glyphicon glyph="bookmark" style={{'float': "right", color: this.props.remindersReducer.enabled ? "#F44242" : "#FFFFFF"}} />
       </div>
     )
     return (
