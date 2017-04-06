@@ -14,7 +14,6 @@ class View extends React.Component {
   }
 
   render() {
-    console.log(this.props)
     let { currentCheck } = this.props
     let modeColor
     let titleText
