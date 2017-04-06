@@ -11,7 +11,7 @@ import SelectionHelpers from './utils/selectionHelpers'
 class VerseCheck extends React.Component {
   constructor(props) {
     super(props)
-    console.log(this.props.actions)
+    console.log(props.actions)
     this.state = {
       mode: 'select',
       comment: undefined,
@@ -99,6 +99,9 @@ class VerseCheck extends React.Component {
           verseText: undefined,
           tags: []
         })
+      },
+      toggleReminder: function() {
+        actions.toggleReminder(that.props.loginReducer.userdata.username)
       }
     }
   }

@@ -43,7 +43,13 @@ class View extends React.Component {
     const title = (
       <div style={{'fontSize':'16px', 'fontWeight':'bold', color: '#ffffff', margin: '0px'}}>
         <span>{titleText}</span>
-        <Glyphicon glyph="bookmark" style={{'float': "right", color: this.props.remindersReducer.enabled ? "#F44242" : "#FFFFFF"}} />
+        <Glyphicon glyph="bookmark"
+          style={{
+            'float': "right",
+             color: this.props.remindersReducer.enabled ? "#F44242" : "#FFFFFF"
+           }}
+          onClick={this.actions.toggleReminder}
+          />
       </div>
     )
     return (
