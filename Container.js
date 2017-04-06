@@ -100,7 +100,7 @@ class VerseCheck extends React.Component {
         })
       },
       toggleReminder: function() {
-        actions.toggleReminder(that.props.loginReducer.userdata.username)
+        that.props.actions.toggleReminder(that.props.loginReducer.userdata.username)
       }
     }
   }
