@@ -130,7 +130,7 @@ class SelectArea extends React.Component {
           {modal}
         </div>
         <div style={{fontWeight: "bold"}}>
-          Target Languagebb
+          Target Language
         </div>     
         <div style={{color: "#747474"}}>
           {reference.bookId} {reference.chapter + ':' + reference.verse}
