@@ -105,6 +105,7 @@ class SelectArea extends React.Component {
     let reference = this.props.contextIdReducer.contextId.reference
     let bibles = this.props.resourcesReducer.bibles
     let modal = <div/>
+
     if (this.state.modalVisibility) {
       modal = (
         <MyLanguageModal
