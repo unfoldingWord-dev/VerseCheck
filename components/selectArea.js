@@ -123,13 +123,13 @@ class SelectArea extends React.Component {
 
     return (
       <div>
-        <div style={{float: 'right'}} onClick={() => {
+        <div style={{float: "right"}} onClick={() => {
           this.setState({modalVisibility: true})
         }}>
-          <Glyphicon glyph='fullscreen' style={{cursor: 'pointer'}}/>
+          <Glyphicon glyph="fullscreen" style={{cursor: "pointer"}}/>
           {modal}
         </div>
-        <div style={{fontWeight: 'bold'}}>
+        <div style={{fontWeight: "bold"}}>
           Target Languagebb
         </div>     
         <div style={{color: "#747474"}}>
