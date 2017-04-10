@@ -1,13 +1,15 @@
 import React from 'react'
-
+import {Glyphicon} from 'react-bootstrap'
 import style from '../css/style'
 import SelectionHelpers from '../utils/selectionHelpers'
+import MyLanguageModal from './MyLanguageModal'
 
 class SelectArea extends React.Component {
   constructor() {
     super();
     this.state = {
-      inBox: false
+      inBox: false,
+      modalVisibility: false
     }
   }
 
@@ -22,7 +24,7 @@ class SelectArea extends React.Component {
       text = document.selection.createRange().text;
     }
     if (text === "") {
-      //do nothing since an empty space was selected
+      // do nothing since an empty space was selected
     } else {
       let expression = '/' + text + '/g';
       let wordOccurencesArray = verseText.match(eval(expression));
@@ -101,11 +103,35 @@ class SelectArea extends React.Component {
 
   render() {
     let reference = this.props.contextIdReducer.contextId.reference
+    let bibles = this.props.resourcesReducer.bibles
+    let modal = <div/>
+    if (this.state.modalVisibility) {
+      modal = (
+        <MyLanguageModal
+          show={this.state.modalVisibility}
+          targetLangBible={bibles.targetLanguage}
+          chapter={reference.chapter}
+          currentVerse={reference.verse}
+          onHide={
+            () => {
+              this.setState({modalVisibility: false})
+            }
+          }
+        />
+      )
+    }
+
     return (
       <div>
-        <div style={{fontWeight: 'bold'}}>
-          Target Language
+        <div style={{float: 'right'}} onClick={() => {
+          this.setState({modalVisibility: true})
+        }}>
+          <Glyphicon glyph='fullscreen' style={{cursor: 'pointer'}}/>
+          {modal}
         </div>
+        <div style={{fontWeight: 'bold'}}>
+          Target Languagebb
+        </div>     
         <div style={{color: "#747474"}}>
           {reference.bookId} {reference.chapter + ':' + reference.verse}
         </div>
@@ -117,4 +143,4 @@ class SelectArea extends React.Component {
   }
 }
 
-module.exports = SelectArea
+export default SelectArea
