@@ -89,13 +89,12 @@ class VerseCheck extends React.Component {
         })
       },
       saveEditVerse: function() {
-        let {targetVerse, loginReducer, actions} = that.props
+        let {targetVerse, loginReducer, actions, contextIdReducer, projectDetailsReducer} = that.props
         let before = targetVerse
         let username = loginReducer.userdata.username
-        actions.addVerseEdit(before, that.state.verseText, that.state.tags, username)
+        actions.addVerseEdit(before, that.state.verseText, that.state.tags, username, contextIdReducer.contextId, projectDetailsReducer.projectSaveLocation);
         that.setState({
           mode: 'select',
-          verseText: undefined,
           tags: []
         })
       },
@@ -118,7 +117,6 @@ class VerseCheck extends React.Component {
 
   render() {
     let that = this
-
     let {chapter, verse} = this.props.contextIdReducer.contextId.reference
     if (this.props.resourcesReducer.bibles.targetLanguage) {
       this.verseText = this.props.resourcesReducer.bibles.targetLanguage[chapter][verse];
