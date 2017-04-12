@@ -105,6 +105,7 @@ class SelectArea extends React.Component {
     let reference = this.props.contextIdReducer.contextId.reference
     let bibles = this.props.resourcesReducer.bibles
     let modal = <div/>
+
     if (this.state.modalVisibility) {
       modal = (
         <MyLanguageModal
@@ -130,7 +131,7 @@ class SelectArea extends React.Component {
           {modal}
         </div>
         <div style={{fontWeight: "bold"}}>
-          Target Languagebb
+          Target Language
         </div>     
         <div style={{color: "#747474"}}>
           {reference.bookId} {reference.chapter + ':' + reference.verse}
