@@ -1,43 +1,39 @@
 import React from 'react'
 import {Row, Glyphicon, Col, Button} from 'react-bootstrap'
 import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card'
-
 import style from '../css/style'
 import CheckArea from './checkArea'
 import ActionsArea from './actionsArea'
 import SaveArea from './saveArea'
+import DialogComponent from './DialogComponent'
 
 class View extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {}
-  }
 
   render() {
     let { currentCheck } = this.props
     let modeColor
     let titleText
     let saveArea
-    switch(this.props.mode) {
+    switch (this.props.mode) {
       case 'edit':
-      modeColor = '#8BC34A'
-      titleText = 'Edit Verse'
-      saveArea = <div />
-      break
+        modeColor = '#8BC34A'
+        titleText = 'Edit Verse'
+        saveArea = <div />
+        break
       case 'comment':
-      modeColor = '#F9C000'
-      titleText = 'Comment'
-      saveArea = <div />
-      break
+        modeColor = '#F9C000'
+        titleText = 'Comment'
+        saveArea = <div />
+        break
       case 'select':
-      modeColor = '#2196F3'
-      titleText = 'Step 2. Select'
-      saveArea = <SaveArea {...this.props} />
-      break
+        modeColor = '#2196F3'
+        titleText = 'Step 2. Select'
+        saveArea = <SaveArea {...this.props} />
+        break
       default:
-      modeColor = '#2196F3'
-      titleText = 'Step 2. Select'
-      saveArea = <SaveArea {...this.props} />
+        modeColor = '#2196F3'
+        titleText = 'Step 2. Select'
+        saveArea = <SaveArea {...this.props} />
     }
 
     const title = (
@@ -54,6 +50,14 @@ class View extends React.Component {
     )
     return (
       <div style={{ margin: '10px' }}>
+        <DialogComponent 
+          dialogModalVisibility={this.props.dialogModalVisibility}
+          handleOpen={this.props.actions.handleOpenDialog}
+          handleClose={this.props.actions.handleCloseDialog}
+          goToNextOrPrevious={this.props.goToNextOrPrevious}
+          skipToNext={this.props.actions.skipToNext}
+          skipToPrevious={this.props.actions.skipToPrevious}
+        />
         <Card zDepth={2}>
           <CardHeader
             style={{ background: modeColor, padding: '10px'}}
@@ -75,4 +79,4 @@ class View extends React.Component {
   }
 }
 
-module.exports = View
+export default View

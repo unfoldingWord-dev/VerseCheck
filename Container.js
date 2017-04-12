@@ -4,9 +4,10 @@
   ******************************************************************************/
 import React from 'react'
 import View from './components/View'
-const NAMESPACE = "VerseCheck";
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import SelectionHelpers from './utils/selectionHelpers'
+// constant declaration
+const NAMESPACE = "VerseCheck";
 
 class VerseCheck extends React.Component {
   constructor(props) {
@@ -15,7 +16,9 @@ class VerseCheck extends React.Component {
       mode: 'select',
       comment: undefined,
       verseText: undefined,
-      tags: []
+      tags: [],
+      dialogModalVisibility: false,
+      goToNextOrPrevious: null
     }
 
     let that = this
@@ -34,6 +37,21 @@ class VerseCheck extends React.Component {
         props.actions.goToNext()
       },
       handleGoToPrevious: function() {
+        props.actions.goToPrevious()
+      },
+      handleOpenDialog(goToNextOrPrevious) {
+        that.setState({goToNextOrPrevious})
+        that.setState({dialogModalVisibility: true});
+      },
+      handleCloseDialog() {
+        that.setState({dialogModalVisibility: false});
+      },
+      skipToNext() {
+        that.setState({dialogModalVisibility: false});
+        props.actions.goToNext()
+      },
+      skipToPrevious() {
+        that.setState({dialogModalVisibility: false});
         props.actions.goToPrevious()
       },
       changeSelections: function(selections) {
@@ -89,14 +107,14 @@ class VerseCheck extends React.Component {
         })
       },
       saveEditVerse: function() {
-        let {targetVerse, loginReducer, actions, contextIdReducer, projectDetailsReducer} = that.props
-        let before = targetVerse
-        let username = loginReducer.userdata.username
-        actions.addVerseEdit(before, that.state.verseText, that.state.tags, username, contextIdReducer.contextId, projectDetailsReducer.projectSaveLocation);
+        let {targetVerse, loginReducer, actions} = that.props
+        let before = targetVerse;
+        let username = loginReducer.userdata.username;
+        actions.addVerseEdit(before, that.state.verseText, that.state.tags, username);
         that.setState({
           mode: 'select',
           tags: []
-        })
+        });
       },
       toggleReminder: function() {
         that.props.actions.toggleReminder(that.props.loginReducer.userdata.username)
@@ -116,7 +134,6 @@ class VerseCheck extends React.Component {
   }
 
   render() {
-    let that = this
     let {chapter, verse} = this.props.contextIdReducer.contextId.reference
     if (this.props.resourcesReducer.bibles.targetLanguage) {
       this.verseText = this.props.resourcesReducer.bibles.targetLanguage[chapter][verse];
@@ -131,6 +148,8 @@ class VerseCheck extends React.Component {
           comment={this.state.comment !== undefined ? this.state.comment : this.props.commentsReducer.text}
           verseText={this.state.verseText !== undefined ? this.state.verseText : this.verseText}
           tags={this.state.tags}
+          dialogModalVisibility={this.state.dialogModalVisibility}
+          goToNextOrPrevious={this.state.goToNextOrPrevious}
         />
       </MuiThemeProvider>
     );
