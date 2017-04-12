@@ -5,6 +5,7 @@ class MyTargetVerse extends Component {
 
   render() {
     let { chapter, verse, verseText, styles} = this.props
+
     return (
       <Col md={12} sm={12} xs={12} lg={12} style={styles}>
         <div>
