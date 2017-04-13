@@ -2,6 +2,10 @@ import React, { Component, PropTypes } from 'react'
 import {Dialog, FlatButton} from 'material-ui'
 
 class DialogComponent extends Component {
+  constructor(props) {
+    super(props)
+    this.handleSkip = this.handleSkip.bind(this)
+  }
 
   handleSkip() {
     if (this.props.goToNextOrPrevious == "next") {
@@ -20,13 +24,23 @@ class DialogComponent extends Component {
       <FlatButton
         label="Skip"
         primary={true}
-        onClick={this.handleSkip.bind(this)}
+        onTouchTap={
+          (e) => {
+            e.preventDefault();
+            this.handleSkip();
+          }
+        }
       />,
       <FlatButton
         label="Close"
         primary={true}
         keyboardFocused={true}
-        onClick={this.props.handleClose}
+        onTouchTap={
+          (e) => {
+            e.preventDefault();
+            this.props.handleClose()
+          }
+        }
       />
     ];
 
