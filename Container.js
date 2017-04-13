@@ -108,14 +108,13 @@ class VerseCheck extends React.Component {
       },
       saveEditVerse: function() {
         let {targetVerse, loginReducer, actions} = that.props
-        let before = targetVerse
-        let username = loginReducer.userdata.username
-        actions.addVerseEdit(before, that.state.verseText, that.state.tags, username)
+        let before = targetVerse;
+        let username = loginReducer.userdata.username;
+        actions.addVerseEdit(before, that.state.verseText, that.state.tags, username);
         that.setState({
           mode: 'select',
-          verseText: undefined,
           tags: []
-        })
+        });
       },
       toggleReminder: function() {
         that.props.actions.toggleReminder(that.props.loginReducer.userdata.username)
