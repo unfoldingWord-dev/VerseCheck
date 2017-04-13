@@ -1,12 +1,7 @@
 import React, { Component, PropTypes } from 'react'
-import injectTapEventPlugin from 'react-tap-event-plugin';
 import {Dialog, FlatButton} from 'material-ui'
 
 class DialogComponent extends Component {
-  constructor(props) {
-    injectTapEventPlugin();
-    super(props);
-  }
 
   handleSkip() {
     if (this.props.goToNextOrPrevious == "next") {
@@ -25,13 +20,13 @@ class DialogComponent extends Component {
       <FlatButton
         label="Skip"
         primary={true}
-        onTouchTap={this.handleSkip.bind(this)}
+        onClick={this.handleSkip.bind(this)}
       />,
       <FlatButton
         label="Close"
         primary={true}
         keyboardFocused={true}
-        onTouchTap={this.props.handleClose}
+        onClick={this.props.handleClose}
       />
     ];
 
