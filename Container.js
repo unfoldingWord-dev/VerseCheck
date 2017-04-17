@@ -116,6 +116,9 @@ class VerseCheck extends React.Component {
           tags: []
         });
       },
+      validateSelections: function(verseText) {
+        that.props.actions.validateSelections(verseText)
+      },
       toggleReminder: function() {
         that.props.actions.toggleReminder(that.props.loginReducer.userdata.username)
       }

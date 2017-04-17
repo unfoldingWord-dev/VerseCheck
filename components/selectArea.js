@@ -102,6 +102,9 @@ class SelectArea extends React.Component {
   }
 
   render() {
+    let {verseText} = this.props
+    this.props.actions.validateSelections(verseText)
+
     let reference = this.props.contextIdReducer.contextId.reference
     let bibles = this.props.resourcesReducer.bibles
     let modal = <div/>
@@ -132,7 +135,7 @@ class SelectArea extends React.Component {
         </div>
         <div style={{fontWeight: "bold"}}>
           Target Language
-        </div>     
+        </div>
         <div style={{color: "#747474"}}>
           {reference.bookId} {reference.chapter + ':' + reference.verse}
         </div>
