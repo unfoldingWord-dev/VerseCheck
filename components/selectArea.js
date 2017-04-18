@@ -102,6 +102,9 @@ class SelectArea extends React.Component {
   }
 
   render() {
+    let {verseText} = this.props
+    this.props.actions.validateSelections(verseText)
+
     let reference = this.props.contextIdReducer.contextId.reference
     let bibles = this.props.resourcesReducer.bibles
     let modal = <div/>
