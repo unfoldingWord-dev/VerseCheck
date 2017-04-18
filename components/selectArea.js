@@ -27,8 +27,8 @@ class SelectArea extends React.Component {
       // do nothing since an empty space was selected
     } else {
       let expression = '/' + text + '/g';
-      let wordOccurencesArray = verseText.match(eval(expression));
-      let occurrences = wordOccurencesArray.length;
+      let wordoccurrencesArray = verseText.match(eval(expression));
+      let occurrences = wordoccurrencesArray.length;
       let occurrence;
       let textBeforeSelection = verseText.slice(0, indexOfTextSelection);
       if (textBeforeSelection.match(eval(expression))) {
@@ -132,7 +132,7 @@ class SelectArea extends React.Component {
         </div>
         <div style={{fontWeight: "bold"}}>
           Target Language
-        </div>     
+        </div>
         <div style={{color: "#747474"}}>
           {reference.bookId} {reference.chapter + ':' + reference.verse}
         </div>
