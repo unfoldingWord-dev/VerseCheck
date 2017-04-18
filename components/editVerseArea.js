@@ -30,7 +30,7 @@ let EditVerseArea = (props) => {
           componentClass='textarea'
           type='text'
           defaultValue={props.verseText}
-          style={{height: '9em'}}
+          style={{height: '9em', direction: props.dir}}
           onBlur={props.actions.handleEditVerse.bind(this)}
         />
       <div style={{marginTop: '5px', marginBottom: '-2px', fontSize: '0.9em'}}>
