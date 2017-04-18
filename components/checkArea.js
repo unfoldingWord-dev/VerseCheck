@@ -13,7 +13,8 @@ let CheckArea = (props) => {
     modeArea = <EditVerseArea
       tags={props.tags}
       verseText={props.verseText}
-      actions={props.actions} />
+      actions={props.actions}
+      dir = {props.projectDetailsReducer.manifest.target_language.direction} />
     break
     case 'comment':
     modeArea = <CommentArea comment={props.comment} actions={props.actions} />
