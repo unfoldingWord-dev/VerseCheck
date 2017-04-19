@@ -107,8 +107,10 @@ class VerseCheck extends React.Component {
         })
       },
       saveEditVerse: function() {
-        let {targetVerse, loginReducer, actions} = that.props
-        let before = targetVerse;
+        let {loginReducer, actions, contextIdReducer, projectDetailsReducer, resourcesReducer} = that.props;
+        let {chapter, verse, bookId} = contextIdReducer.contextId.reference;
+        let bookAbbr = projectDetailsReducer.params.bookAbbr;
+        let before = resourcesReducer.bibles.targetLanguage[chapter][verse];
         let username = loginReducer.userdata.username;
         actions.addVerseEdit(before, that.state.verseText, that.state.tags, username);
         that.setState({
