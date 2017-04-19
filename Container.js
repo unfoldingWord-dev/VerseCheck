@@ -18,6 +18,7 @@ class VerseCheck extends React.Component {
       verseText: undefined,
       tags: [],
       dialogModalVisibility: false,
+      alertOpen: false,
       goToNextOrPrevious: null
     }
 
@@ -53,6 +54,9 @@ class VerseCheck extends React.Component {
       skipToPrevious() {
         that.setState({dialogModalVisibility: false});
         props.actions.goToPrevious()
+      },
+      closeDialogAlert() {
+        that.setState({alertOpen: false});
       },
       changeSelections: function(selections) {
         // optimize the selections to address potential issues and save
@@ -107,16 +111,23 @@ class VerseCheck extends React.Component {
         })
       },
       saveEditVerse: function() {
-        let {loginReducer, actions, contextIdReducer, projectDetailsReducer, resourcesReducer} = that.props;
-        let {chapter, verse, bookId} = contextIdReducer.contextId.reference;
-        let bookAbbr = projectDetailsReducer.params.bookAbbr;
+        let {loginReducer, actions, contextIdReducer, resourcesReducer} = that.props;
+        let {chapter, verse} = contextIdReducer.contextId.reference;
         let before = resourcesReducer.bibles.targetLanguage[chapter][verse];
         let username = loginReducer.userdata.username;
-        actions.addVerseEdit(before, that.state.verseText, that.state.tags, username);
-        that.setState({
-          mode: 'select',
-          tags: []
-        });
+
+        if (that.state.tags.length > 0) {
+          // verseText state is undefined if no changes are made in the text box.
+          if (that.state.verseText) {
+            actions.addVerseEdit(before, that.state.verseText, that.state.tags, username);
+          }
+          that.setState({
+            mode: 'select',
+            tags: []
+          });
+        } else {
+          that.setState({alertOpen: true})
+        }
       },
       validateSelections: function(verseText) {
         that.props.actions.validateSelections(verseText)
@@ -155,6 +166,7 @@ class VerseCheck extends React.Component {
           verseText={this.verseText}
           tags={this.state.tags}
           dialogModalVisibility={this.state.dialogModalVisibility}
+          alertOpen={this.state.alertOpen}
           goToNextOrPrevious={this.state.goToNextOrPrevious}
         />
       </MuiThemeProvider>
