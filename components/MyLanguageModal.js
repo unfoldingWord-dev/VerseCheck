@@ -41,6 +41,7 @@ class MyLanguageModal extends Component {
               verse={parseInt(key, 10)}
               verseText={verseText}
               styles={versePaneStyle}
+              dir={this.props.dir}
               ref={chapter.toString() + key.toString()}
             />
           )

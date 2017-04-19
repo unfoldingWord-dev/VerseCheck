@@ -109,6 +109,8 @@ class SelectArea extends React.Component {
     let bibles = this.props.resourcesReducer.bibles
     let modal = <div/>
 
+    let dir = this.props.projectDetailsReducer.manifest.target_language.direction
+
     if (this.state.modalVisibility) {
       modal = (
         <MyLanguageModal
@@ -116,6 +118,7 @@ class SelectArea extends React.Component {
           targetLangBible={bibles.targetLanguage}
           chapter={reference.chapter}
           currentVerse={reference.verse}
+          dir = {dir ? dir : "ltr"}
           onHide={
             () => {
               this.setState({modalVisibility: false})
