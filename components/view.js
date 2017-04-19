@@ -50,7 +50,7 @@ class View extends React.Component {
     )
     return (
       <div style={{ margin: '10px' }}>
-        <DialogComponent 
+        <DialogComponent
           dialogModalVisibility={this.props.dialogModalVisibility}
           handleOpen={this.props.actions.handleOpenDialog}
           handleClose={this.props.actions.handleCloseDialog}
@@ -68,7 +68,7 @@ class View extends React.Component {
           <CheckArea {...this.props} />
         </Row>
         <Row style={{marginLeft: '0px', marginRight: '0px', height: '100%'}}>
-          <ActionsArea mode={this.props.mode} actions={this.props.actions} />
+          <ActionsArea {...this.props} />
         </Row>
         </Card>
         <Row style={{marginLeft: '0px', marginRight: '0px'}}>

@@ -149,8 +149,8 @@ class VerseCheck extends React.Component {
       <MuiThemeProvider>
         <View {...this.props} actions={this.actions}
           mode={this.state.mode}
-          comment={this.state.comment !== undefined ? this.state.comment : this.props.commentsReducer.text}
-          verseText={this.state.verseText !== undefined ? this.state.verseText : this.verseText}
+          comment={this.props.commentsReducer.text}
+          verseText={this.verseText}
           tags={this.state.tags}
           dialogModalVisibility={this.state.dialogModalVisibility}
           goToNextOrPrevious={this.state.goToNextOrPrevious}
