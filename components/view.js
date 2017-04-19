@@ -6,6 +6,7 @@ import CheckArea from './checkArea'
 import ActionsArea from './actionsArea'
 import SaveArea from './saveArea'
 import DialogComponent from './DialogComponent'
+import DialogAlert from './DialogAlert'
 
 class View extends React.Component {
 
@@ -57,6 +58,10 @@ class View extends React.Component {
           goToNextOrPrevious={this.props.goToNextOrPrevious}
           skipToNext={this.props.actions.skipToNext}
           skipToPrevious={this.props.actions.skipToPrevious}
+        />
+        <DialogAlert
+          open={this.props.alertOpen}
+          handleClose={this.props.actions.closeDialogAlert}
         />
         <Card zDepth={2}>
           <CardHeader
