@@ -115,8 +115,12 @@ class VerseCheck extends React.Component {
         let {chapter, verse} = contextIdReducer.contextId.reference;
         let before = resourcesReducer.bibles.targetLanguage[chapter][verse];
         let username = loginReducer.userdata.username;
+
         if (that.state.tags.length > 0) {
-          actions.addVerseEdit(before, that.state.verseText, that.state.tags, username);
+          // verseText state is undefined if no changes are made in the text box.
+          if (that.state.verseText) {
+            actions.addVerseEdit(before, that.state.verseText, that.state.tags, username);
+          }
           that.setState({
             mode: 'select',
             tags: []
