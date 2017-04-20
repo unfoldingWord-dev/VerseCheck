@@ -108,7 +108,7 @@ class SelectArea extends React.Component {
     let reference = this.props.contextIdReducer.contextId.reference
     let bibles = this.props.resourcesReducer.bibles
     let languageName = projectDetailsReducer.manifest.target_language.name
-    let bookName = projectDetailsReducer.manifest.project.name
+    let bookName = projectDetailsReducer.bookName;
     let modal = <div/>
 
     let dir = this.props.projectDetailsReducer.manifest.target_language.direction
