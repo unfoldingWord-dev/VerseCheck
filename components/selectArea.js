@@ -102,11 +102,13 @@ class SelectArea extends React.Component {
   }
 
   render() {
-    let {verseText} = this.props
+    let {verseText, projectDetailsReducer} = this.props
     this.props.actions.validateSelections(verseText)
 
     let reference = this.props.contextIdReducer.contextId.reference
     let bibles = this.props.resourcesReducer.bibles
+    let languageName = projectDetailsReducer.manifest.target_language.name
+    let bookName = projectDetailsReducer.manifest.project.name
     let modal = <div/>
 
     let dir = this.props.projectDetailsReducer.manifest.target_language.direction
@@ -137,10 +139,10 @@ class SelectArea extends React.Component {
           {modal}
         </div>
         <div style={{fontWeight: "bold"}}>
-          Target Language
+          {languageName}
         </div>
         <div style={{color: "#747474"}}>
-          {reference.bookId} {reference.chapter + ':' + reference.verse}
+          {bookName} {reference.chapter + ':' + reference.verse}
         </div>
         <div style={this.props.projectDetailsReducer.params.direction === 'ltr' ? style.pane.contentLTR : style.pane.contentRTL}>
           {this.displayText()}
