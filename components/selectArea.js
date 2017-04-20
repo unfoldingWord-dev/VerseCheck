@@ -104,14 +104,14 @@ class SelectArea extends React.Component {
   render() {
     let {verseText, projectDetailsReducer} = this.props
     this.props.actions.validateSelections(verseText)
+    const { manifest, bookName } = projectDetailsReducer
 
     let reference = this.props.contextIdReducer.contextId.reference
     let bibles = this.props.resourcesReducer.bibles
-    let languageName = projectDetailsReducer.manifest.target_language.name
-    let bookName = projectDetailsReducer.manifest.project.name
+    let languageName = manifest.target_language ? manifest.target_language.name : null;
     let modal = <div/>
 
-    let dir = this.props.projectDetailsReducer.manifest.target_language.direction
+    let dir = manifest.target_language ? manifest.target_language.direction : null;
 
     if (this.state.modalVisibility) {
       modal = (
