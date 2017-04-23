@@ -1,10 +1,10 @@
 import React from 'react'
 import {Col} from 'react-bootstrap'
 
-import SelectArea from './selectArea'
-import DirectionsArea from './directionsArea'
-import EditVerseArea from './editVerseArea'
-import CommentArea from './commentArea'
+import SelectArea from './SelectArea'
+import DirectionsArea from './DirectionsArea'
+import EditVerseArea from './EditVerseArea'
+import CommentArea from './CommentArea'
 
 let CheckArea = (props) => {
   let modeArea
