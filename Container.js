@@ -3,7 +3,7 @@
   * @description This component displays the Verse so selection, edit and comments can be made
   ******************************************************************************/
 import React from 'react'
-import View from './components/View'
+import View from './components/view'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import SelectionHelpers from './utils/selectionHelpers'
 // constant declaration
