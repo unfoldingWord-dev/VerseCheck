@@ -1,6 +1,6 @@
 import React from 'react'
 import {Glyphicon} from 'react-bootstrap'
-import style from '../css/style'
+import style from '../css/Style'
 import SelectionHelpers from '../utils/selectionHelpers'
 import MyLanguageModal from './MyLanguageModal'
 
