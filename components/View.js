@@ -1,7 +1,7 @@
 import React from 'react'
 import {Row, Glyphicon, Col, Button} from 'react-bootstrap'
 import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card'
-import style from '../css/style'
+import style from '../css/Style'
 import CheckArea from './CheckArea'
 import ActionsArea from './ActionsArea'
 import SaveArea from './SaveArea'
