@@ -15,6 +15,7 @@ let CommentArea = (props) => {
           defaultValue={props.comment}
           style={{height: '13.5em'}}
           onBlur={props.actions.handleComment.bind(this)}
+          onInput={props.actions.checkComment.bind(this)}
         />
       </FormGroup>
     </div>
