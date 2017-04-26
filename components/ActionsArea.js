@@ -59,6 +59,7 @@ let ActionsArea = (props) => {
       </Col>
       <Col sm={3}>
         <Button bsStyle='link'
+          disabled={!props.commentChanged}
           style={{color: '#8BC34A'}}
           onClick={props.actions.saveComment.bind(this)}
         >

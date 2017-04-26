@@ -15,6 +15,7 @@ class VerseCheck extends React.Component {
     this.state = {
       mode: 'select',
       comment: undefined,
+      commentChanged: false,
       verseText: undefined,
       tags: [],
       dialogModalVisibility: false,
@@ -74,17 +75,27 @@ class VerseCheck extends React.Component {
         newState.comment = comment
         that.setState(newState)
       },
+      checkComment: function(e) {
+        const newcomment = e.target.value || "";
+        const oldcomment = that.props.commentsReducer.text || "";
+
+        that.setState({
+          commentChanged: newcomment !== oldcomment
+        })
+      },
       cancelComment: function(e) {
         that.setState({
           mode: 'select',
-          comment: undefined
+          comment: undefined,
+          commentChanged: false,
         })
       },
       saveComment: function() {
         that.props.actions.addComment(that.state.comment, that.props.loginReducer.userdata.username)
         that.setState({
           mode: 'select',
-          comment: undefined
+          comment: undefined,
+          commentChanged: false,
         })
       },
       handleTagsCheckbox: function(tag, e) {
@@ -163,6 +174,7 @@ class VerseCheck extends React.Component {
         <View {...this.props} actions={this.actions}
           mode={this.state.mode}
           comment={this.props.commentsReducer.text}
+          commentChanged={this.state.commentChanged}
           verseText={this.verseText}
           tags={this.state.tags}
           dialogModalVisibility={this.state.dialogModalVisibility}
