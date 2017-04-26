@@ -17,6 +17,7 @@ class VerseCheck extends React.Component {
       comment: undefined,
       commentChanged: false,
       verseText: undefined,
+      verseChanged: false,
       tags: [],
       dialogModalVisibility: false,
       alertOpen: false,
@@ -114,10 +115,27 @@ class VerseCheck extends React.Component {
         newState.verseText = verseText
         that.setState(newState)
       },
+      checkVerse: function(e) {
+        let {chapter, verse} = that.props.contextIdReducer.contextId.reference;
+        const newverse = e.target.value || "";
+        const oldverse = that.props.resourcesReducer.bibles.targetLanguage[chapter][verse] || "";
+
+        if (newverse === oldverse) {
+          that.setState({
+            verseChanged: false,
+            tags: []
+          })
+        } else {
+          that.setState({
+            verseChanged: true
+          })
+        }
+      },
       cancelEditVerse: function(e) {
         that.setState({
           mode: 'select',
           verseText: undefined,
+          verseChanged: false,
           tags: []
         })
       },
@@ -134,6 +152,8 @@ class VerseCheck extends React.Component {
           }
           that.setState({
             mode: 'select',
+            verseText: undefined,
+            verseChanged: false,
             tags: []
           });
         } else {
@@ -176,6 +196,7 @@ class VerseCheck extends React.Component {
           comment={this.props.commentsReducer.text}
           commentChanged={this.state.commentChanged}
           verseText={this.verseText}
+          verseChanged={this.state.verseChanged}
           tags={this.state.tags}
           dialogModalVisibility={this.state.dialogModalVisibility}
           alertOpen={this.state.alertOpen}

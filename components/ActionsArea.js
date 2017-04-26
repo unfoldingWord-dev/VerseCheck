@@ -37,6 +37,7 @@ let ActionsArea = (props) => {
       </Col>
       <Col sm={3}>
         <Button bsStyle='link'
+          disabled={!props.tags.length}
           style={{color: '#8BC34A'}}
           onClick={props.actions.saveEditVerse.bind(this)}
         >

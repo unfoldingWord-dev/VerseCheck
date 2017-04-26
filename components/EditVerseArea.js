@@ -12,12 +12,15 @@ let EditVerseArea = (props) => {
   ]
   const checkboxes = tagList.map( tag =>
     <Checkbox key={tag[0]} inline checked={props.tags.includes(tag[0])}
-      style={{width: '33.3%', marginLeft: '0px'}}
+      disabled={!props.verseChanged}
+      style={props.verseChanged ? {width: '33.3%', marginLeft: '0px', color: 'black'} : {width: '33.3%', marginLeft: '0px', color: '#cccccc'}}
       onChange={props.actions.handleTagsCheckbox.bind(this, tag[0])}
     >
       {tag[1]}
     </Checkbox>
   )
+
+  let checkBoxText = props.verseChanged ? "Next, select reason(s) for change" : "First, make changes to verse above";
 
   return (
     <div>
@@ -32,9 +35,10 @@ let EditVerseArea = (props) => {
           defaultValue={props.verseText}
           style={{height: '9em', direction: props.dir}}
           onBlur={props.actions.handleEditVerse.bind(this)}
+          onInput={props.actions.checkVerse.bind(this)}
         />
       <div style={{marginTop: '5px', marginBottom: '-2px', fontSize: '0.9em'}}>
-          This change addresses:
+          {checkBoxText}
           <br />
           {checkboxes}
         </div>
