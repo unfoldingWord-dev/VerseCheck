@@ -20,7 +20,6 @@ class VerseCheck extends React.Component {
       verseChanged: false,
       tags: [],
       dialogModalVisibility: false,
-      alertOpen: false,
       goToNextOrPrevious: null
     }
 
@@ -57,9 +56,6 @@ class VerseCheck extends React.Component {
         that.setState({dialogModalVisibility: false});
         props.actions.goToPrevious()
       },
-      closeDialogAlert() {
-        that.setState({alertOpen: false});
-      },
       changeSelections: function(selections) {
         // optimize the selections to address potential issues and save
         selections = SelectionHelpers.optimizeSelections(that.verseText, selections);
@@ -88,7 +84,7 @@ class VerseCheck extends React.Component {
         that.setState({
           mode: 'select',
           comment: undefined,
-          commentChanged: false,
+          commentChanged: false
         })
       },
       saveComment: function() {
@@ -144,21 +140,16 @@ class VerseCheck extends React.Component {
         let {chapter, verse} = contextIdReducer.contextId.reference;
         let before = resourcesReducer.bibles.targetLanguage[chapter][verse];
         let username = loginReducer.userdata.username;
-
-        if (that.state.tags.length > 0) {
-          // verseText state is undefined if no changes are made in the text box.
-          if (that.state.verseText) {
-            actions.addVerseEdit(before, that.state.verseText, that.state.tags, username);
-          }
-          that.setState({
-            mode: 'select',
-            verseText: undefined,
-            verseChanged: false,
-            tags: []
-          });
-        } else {
-          that.setState({alertOpen: true})
+        // verseText state is undefined if no changes are made in the text box.
+        if (that.state.verseText) {
+          actions.addVerseEdit(before, that.state.verseText, that.state.tags, username);
         }
+        that.setState({
+          mode: 'select',
+          verseText: undefined,
+          verseChanged: false,
+          tags: []
+        });
       },
       validateSelections: function(verseText) {
         that.props.actions.validateSelections(verseText)
@@ -199,7 +190,6 @@ class VerseCheck extends React.Component {
           verseChanged={this.state.verseChanged}
           tags={this.state.tags}
           dialogModalVisibility={this.state.dialogModalVisibility}
-          alertOpen={this.state.alertOpen}
           goToNextOrPrevious={this.state.goToNextOrPrevious}
         />
       </MuiThemeProvider>
