@@ -13,6 +13,7 @@ let CheckArea = (props) => {
     modeArea = <EditVerseArea
       tags={props.tags}
       verseText={props.verseText}
+      verseChanged={props.verseChanged}
       actions={props.actions}
       dir = {props.projectDetailsReducer.manifest.target_language.direction} />
     break
