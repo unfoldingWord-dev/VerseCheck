@@ -14,21 +14,19 @@ let SaveArea = (props) => {
   return (
     <Row style={{paddingTop: '15px'}}>
       <Col sm={6} style={{textAlign: 'left'}}>
-        <Button bsStyle='link'
+        <Button bsStyle='second'
           onClick={handlePrevious}
-          style={{color: '#747474'}}
         >
-          <Glyphicon glyph='share-alt' style={{color: '#747474', marginRight: '5px', transform: 'scaleX(-1)'}} />
+          <Glyphicon glyph='share-alt' style={{marginRight: '10px', transform: 'scaleX(-1)'}} />
           Save & Previous
         </Button>
       </Col>
       <Col sm={6} style={{textAlign: 'right'}}>
-        <Button bsStyle='primary'
+        <Button bsStyle='prime'
           onClick={handleNext}
-          style={{background: '#2196F3', border: 'none'}}
         >
           Save & Continue
-          <Glyphicon glyph='share-alt' style={{marginLeft: '5px'}} />
+          <Glyphicon glyph='share-alt' style={{marginLeft: '10px'}} />
         </Button>
       </Col>
     </Row>
