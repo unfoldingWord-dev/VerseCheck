@@ -1,7 +1,6 @@
 import React from 'react'
 import {Row, Glyphicon, Col, Button} from 'react-bootstrap'
 import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card'
-import style from '../css/Style'
 import CheckArea from './CheckArea'
 import ActionsArea from './ActionsArea'
 import SaveArea from './SaveArea'
@@ -16,33 +15,33 @@ class View extends React.Component {
     let saveArea
     switch (this.props.mode) {
       case 'edit':
-        modeColor = '#8BC34A'
+        modeColor = 'var(--completed-color)'
         titleText = 'Edit Verse'
         saveArea = <div />
         break
       case 'comment':
-        modeColor = '#F9C000'
+        modeColor = 'var(--highlight-color)'
         titleText = 'Comment'
         saveArea = <div />
         break
       case 'select':
-        modeColor = '#2196F3'
+        modeColor = 'var(--accent-color)'
         titleText = 'Step 2. Select'
         saveArea = <SaveArea {...this.props} />
         break
       default:
-        modeColor = '#2196F3'
+        modeColor = 'var(--accent-color)'
         titleText = 'Step 2. Select'
         saveArea = <SaveArea {...this.props} />
     }
 
     const title = (
-      <div style={{'fontSize':'16px', 'fontWeight':'bold', color: '#ffffff', margin: '0px'}}>
+      <div style={{'fontSize':'16px', 'fontWeight':'bold', color: 'var(--reverse-color)', margin: '0px'}}>
         <span>{titleText}</span>
         <Glyphicon glyph="bookmark"
           style={{
             'float': "right",
-             color: this.props.remindersReducer.enabled ? "#F44242" : "#FFFFFF"
+             color: this.props.remindersReducer.enabled ? "var(--warning-color)" : "var(--reverse-color)"
            }}
           onClick={this.props.actions.toggleReminder}
           />
@@ -64,7 +63,7 @@ class View extends React.Component {
             textStyle={{display: 'block'}}
             children={title}
           />
-        <Row style={{marginLeft: '0px', marginRight: '0px', height: '100%', borderBottom: '1px solid #eee'}}>
+        <Row style={{marginLeft: '0px', marginRight: '0px', height: '100%', borderBottom: '1px solid var(--border-color)'}}>
           <CheckArea {...this.props} />
         </Row>
         <Row style={{marginLeft: '0px', marginRight: '0px', height: '100%'}}>
