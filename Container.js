@@ -151,11 +151,15 @@ class VerseCheck extends React.Component {
           tags: []
         });
       },
-      validateSelections: function(verseText) {
+      validateSelections: (verseText) => {
         that.props.actions.validateSelections(verseText)
       },
-      toggleReminder: function() {
+      toggleReminder: () => {
         that.props.actions.toggleReminder(that.props.loginReducer.userdata.username)
+      },
+      openAlertDialog: (message) => {
+        console.log(message)
+        that.props.actions.openAlertDialog(message)
       }
     }
   }
