@@ -72,7 +72,7 @@ class SelectArea extends React.Component {
     if (selections && selections.length > 0) {
       var selectionArray = SelectionHelpers.selectionArray(verseText, selections)
       verseText = selectionArray.map((selection, index) =>
-        <span key={index} style={selection.selected ? { backgroundColor: '#FDD910', cursor: 'pointer' } : {}}
+        <span key={index} style={selection.selected ? { backgroundColor: 'var(--highlight-color)', cursor: 'pointer' } : {}}
           onClick={selection.selected ? () => this.removeSelection(selection) : () => { }}>
           {selection.text}
         </span>
@@ -141,7 +141,7 @@ class SelectArea extends React.Component {
         <div style={{fontWeight: "bold"}}>
           {languageName}
         </div>
-        <div style={{color: "#747474"}}>
+        <div style={{color: "var(--text-color-light)"}}>
           {bookName} {reference.chapter + ':' + reference.verse}
         </div>
         <div style={this.props.projectDetailsReducer.params.direction === 'ltr' ? style.pane.contentLTR : style.pane.contentRTL}>
