@@ -131,7 +131,7 @@ class SelectArea extends React.Component {
     }
 
     return (
-      <div style={{maxHeight: "185px", overflowY: "scroll"}}>
+      <div style={{maxHeight: "185px", overflowY: "hidden"}}>
         <div style={{float: "right"}} onClick={() => {
           this.setState({modalVisibility: true})
         }}>

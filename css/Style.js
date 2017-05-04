@@ -2,12 +2,14 @@ var style = {
   pane: {
     contentLTR: {
       marginTop: "5px",
+      height: "130px",
       overflowY: 'auto',
       width: '100%',
       direction: 'ltr'
     },
     contentRTL: {
       marginTop: "5px",
+      height: "130px",
       overflowY: 'auto',
       width: '100%',
       direction: 'rtl'
