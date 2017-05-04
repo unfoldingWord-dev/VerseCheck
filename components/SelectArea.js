@@ -49,7 +49,7 @@ class SelectArea extends React.Component {
   addSelection(selection) {
     let selections = this.props.selectionsReducer.selections;
     if (selections.length >= 4) {
-      alert('Click a previous selection to remove it before adding a new one. To select more than 4 words, highlight phrases instead of individual words.')
+      this.props.actions.openAlertDialog('Click a previous selection to remove it before adding a new one. To select more than 4 words, highlight phrases instead of individual words.')
       return false
     } else {
       selections.push(selection);
