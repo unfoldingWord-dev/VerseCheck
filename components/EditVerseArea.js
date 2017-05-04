@@ -29,7 +29,7 @@ let EditVerseArea = (props) => {
         Edit Verse
       </div>
       <FormGroup controlId='formControlsTextarea'>
-        <FormControl
+        <FormControl autoFocus
           componentClass='textarea'
           type='text'
           defaultValue={props.verseText}
