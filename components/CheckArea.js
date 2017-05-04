@@ -32,7 +32,7 @@ let CheckArea = (props) => {
       <Col sm={6} style={{ paddingTop: '5px' }}>
         <SelectArea {...props} />
       </Col>
-      <Col sm={6} style={{ borderLeft: '1px solid #ccc', height: '100%', paddingTop: '5px' }}>
+      <Col sm={6} style={{ borderLeft: '1px solid var(--border-color)', height: '100%', paddingTop: '5px' }}>
         {modeArea}
       </Col>
     </div>

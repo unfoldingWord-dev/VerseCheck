@@ -13,7 +13,7 @@ let EditVerseArea = (props) => {
   const checkboxes = tagList.map( tag =>
     <Checkbox key={tag[0]} inline checked={props.tags.includes(tag[0])}
       disabled={!props.verseChanged}
-      style={props.verseChanged ? {width: '33.3%', marginLeft: '0px', color: 'black'} : {width: '33.3%', marginLeft: '0px', color: '#cccccc'}}
+      style={props.verseChanged ? {width: '33.3%', marginLeft: '0px', color: 'var(--text-color-dark)'} : {width: '33.3%', marginLeft: '0px', color: 'var(--text-color-light)'}}
       onChange={props.actions.handleTagsCheckbox.bind(this, tag[0])}
     >
       {tag[1]}
