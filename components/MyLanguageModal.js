@@ -61,7 +61,7 @@ class MyLanguageModal extends Component {
           {MyTargetLanguage}
         </Modal.Body>
         <Modal.Footer style={{ backgroundColor: "var(--reverse-color)" }}>
-          <Button bsStyle="second" onClick={onHide}>Close</Button>
+          <Button bsStyle="prime" onClick={onHide}>Close</Button>
         </Modal.Footer>
       </Modal>
     )
