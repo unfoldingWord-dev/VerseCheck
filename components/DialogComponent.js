@@ -42,7 +42,7 @@ class DialogComponent extends Component {
           }
         }
       >
-      close
+      Close
       </button>
     ];
 
