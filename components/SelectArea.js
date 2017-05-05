@@ -1,7 +1,7 @@
 import React from 'react'
 import {Glyphicon} from 'react-bootstrap'
 import style from '../css/Style'
-import SelectionHelpers from '../utils/selectionHelpers'
+import {selectionArray, occurrencesInString} from '../utils/selectionHelpers'
 import MyLanguageModal from './MyLanguageModal'
 
 class SelectArea extends React.Component {
@@ -20,9 +20,16 @@ class SelectArea extends React.Component {
     let windowSelection = window.getSelection();
     // getSelection is limited by same innerText node, and does not include span siblings
     // indexOfTextSelection is broken by any other previous selection since it only knows its innerText node.
-    let indexOfTextSelection = windowSelection.getRangeAt(0).startOffset;
+    let selectionRange = windowSelection.getRangeAt(0)
+    let indexOfTextSelection = selectionRange.startOffset;
+    let textForSelection = selectionRange.commonAncestorContainer;
+
+    console.log('textForSelection', textForSelection);
+    console.log('selectionRange', selectionRange);
+
+    let postPrescedingText = textForSelection ? textForSelection.slice(0,indexOfTextSelection) : '';
     // must find length of text prior to it.
-    let selectionContainer = windowSelection.getRangeAt(0).commonAncestorContainer.parentElement;
+    let selectionContainer = selectionRange.commonAncestorContainer.parentElement;
     let prescedingText = '';
     // get the current span's innerText
     if (selectionContainer) {
@@ -32,26 +39,15 @@ class SelectArea extends React.Component {
         prescedingText = previousSibling.innerText + prescedingText;
         previousSibling = previousSibling.previousSibling;
       }
-      console.log(prescedingText)
     }
     if (text === "") {
       // do nothing since an empty space was selected
     } else {
-      let expression = '/' + text + '/g';
-      let wordoccurrencesArray = verseText.match(eval(expression));
-      let occurrences = wordoccurrencesArray.length;
-
-      let occurrence;
-      let textBeforeSelection = verseText.slice(0, indexOfTextSelection);
-      textBeforeSelection = prescedingText + textBeforeSelection;
-      if (textBeforeSelection.match(eval(expression))) {
-        occurrence = textBeforeSelection.match(eval(expression)).length;
-        if (prescedingText === '') {
-          occurrence = occurrence + 1
-        }
-      } else {
-        occurrence = 1;
-      }
+      // There can be a gap between prescedingText and current selection
+      let textBeforeSelection = prescedingText + postPrescedingText + text;
+      console.log('textBeforeSelection', textBeforeSelection);
+      let occurrence = occurrencesInString(textBeforeSelection, text);
+      let occurrences = occurrencesInString(verseText, text)
 
       let selection = {
         text: text,
@@ -87,8 +83,8 @@ class SelectArea extends React.Component {
     let { selections } = this.props.selectionsReducer;
     verseText = this.props.verseText
     if (selections && selections.length > 0) {
-      var selectionArray = SelectionHelpers.selectionArray(verseText, selections)
-      verseText = selectionArray.map((selection, index) =>
+      let _selectionArray = selectionArray(verseText, selections)
+      verseText = _selectionArray.map((selection, index) =>
         <span key={index} style={selection.selected ? { backgroundColor: '#FDD910', cursor: 'pointer' } : {}}
           onClick={selection.selected ? () => this.removeSelection(selection) : () => { }}>
           {selection.text}

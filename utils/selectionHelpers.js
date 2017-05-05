@@ -5,7 +5,7 @@ const _ = require('lodash')
  * @param {array}  ranges - array of ranges [[int,int],...]
  * @returns {array} - array of objects [obj,...]
  */
-module.exports.spliceStringOnRanges = function(string, ranges) {
+export const spliceStringOnRanges = (string, ranges) => {
   var selectionArray = [] // response
   // sort ranges - this ensures we build the string correctly and don't miss selections
   // concat overlaps - should not be a concern here but might help rendering bugs
@@ -53,7 +53,7 @@ module.exports.spliceStringOnRanges = function(string, ranges) {
  * @param {array} selections - array of selections [obj,...]
  * @returns {array} - array of range objects
  */
-module.exports.selectionsToRanges = function(string, selections) {
+export const selectionsToRanges = (string, selections) => {
   var ranges = []
     selections.forEach(function(selection) {
       if (string !== undefined && string.includes(selection.text)) {
@@ -85,7 +85,7 @@ module.exports.selectionsToRanges = function(string, selections) {
  * @param {array} selections - array of selections [obj,...]
  * @returns {array} - array of objects
  */
-module.exports.selectionArray = function(string, selections) {
+export const selectionArray = (string, selections) => {
   var selectionArray = []
   var ranges = module.exports.selectionsToRanges(string, selections)
   selectionArray = module.exports.spliceStringOnRanges(string, ranges)
@@ -105,7 +105,7 @@ module.exports.selectionArray = function(string, selections) {
  * @param {array}  ranges - array of ranges [[int,int],...]
  * @returns {array} - array of optimized ranges [[int,int],...]
  */
-module.exports.optimizeRanges = function(ranges) {
+export const optimizeRanges = (ranges) => {
   var optimizedRanges = [] // response
   ranges = _.sortBy(ranges, function(range) { return range[1] })// order ranges by end char index as secondary
   ranges = _.sortBy(ranges, function(range) { return range[0] })// order ranges by start char index as primary
@@ -141,7 +141,7 @@ module.exports.optimizeRanges = function(ranges) {
  * @param {array} ranges - array of ranges [[int,int],...]
  * @returns {array} - array of selection objects
  */
- module.exports.rangesToSelections = function(string, ranges) {
+ export const rangesToSelections = (string, ranges) => {
    let selections = []
    ranges.forEach(function(range, index) {
      let start = range[0], end = range[1]
@@ -177,7 +177,7 @@ module.exports.optimizeRanges = function(ranges) {
  * @param {array}  selections - array of selection objects [Obj,...]
  * @returns {array} - array of selection objects
  */
-module.exports.optimizeSelections = function(string, selections) {
+export const optimizeSelections = (string, selections) => {
   let optimizedSelections // return
   var ranges = module.exports.selectionsToRanges(string, selections).map( rangeObject => rangeObject.range ) // get char ranges of each selection
   ranges = module.exports.optimizeRanges(ranges) // optimize the ranges
@@ -208,7 +208,25 @@ module.exports.optimizeSelections = function(string, selections) {
 // ]
 // console.log(module.exports.optimizeSelections(string, selections))
 
-
+/**
+ * @description Function that count occurrences of a substring in a string
+ * @param {String} string - The string to search in
+ * @param {String} subString - The sub string to search for
+ * @returns {Integer} - the count of the occurrences
+ * @see http://stackoverflow.com/questions/4009756/how-to-count-string-occurrence-in-string/7924240#7924240
+ * modified to fit our use cases, return zero for '' substring, and no use case for overlapping.
+ */
+export const occurrencesInString = (string, subString) => {
+ if (subString.length <= 0) return 0
+ var n = 0, pos = 0, step = subString.length
+ while (true) {
+   pos = string.indexOf(subString, pos)
+   if (pos === -1) break
+   ++n
+   pos += step
+ }
+ return n
+}
 
 
 
