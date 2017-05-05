@@ -14,14 +14,25 @@ class SelectArea extends React.Component {
   }
 
   getSelectionText() {
-    let verseText = this.props.verseText
+    let verseText = this.props.verseText;
     let text = "";
-    var selectedString = window.getSelection();
-    var indexOfTextSelection = selectedString.getRangeAt(0).startOffset;
-    if (selectedString) {
+    // windowSelection is an object with lots of data
+    let windowSelection = window.getSelection();
+    // getSelection is limited by same innerText node, and does not include span siblings
+    // indexOfTextSelection is broken by any other previous selection since it only knows its innerText node.
+    let indexOfTextSelection = windowSelection.getRangeAt(0).startOffset;
+    // must find length of text prior to it.
+    let selectionContainer = windowSelection.getRangeAt(0).commonAncestorContainer.parentElement;
+    let prescedingText = '';
+    // get the current span's innerText
+    if (selectionContainer) {
       text = window.getSelection().toString();
-    } else if (document.selection && document.selection.type != "Control") {
-      text = document.selection.createRange().text;
+      let previousSibling = selectionContainer.previousSibling;
+      while (previousSibling) {
+        prescedingText = previousSibling.innerText + prescedingText;
+        previousSibling = previousSibling.previousSibling;
+      }
+      console.log(prescedingText)
     }
     if (text === "") {
       // do nothing since an empty space was selected
@@ -29,10 +40,15 @@ class SelectArea extends React.Component {
       let expression = '/' + text + '/g';
       let wordoccurrencesArray = verseText.match(eval(expression));
       let occurrences = wordoccurrencesArray.length;
+
       let occurrence;
       let textBeforeSelection = verseText.slice(0, indexOfTextSelection);
+      textBeforeSelection = prescedingText + textBeforeSelection;
       if (textBeforeSelection.match(eval(expression))) {
-        occurrence = textBeforeSelection.match(eval(expression)).length + 1;
+        occurrence = textBeforeSelection.match(eval(expression)).length;
+        if (prescedingText === '') {
+          occurrence = occurrence + 1
+        }
       } else {
         occurrence = 1;
       }
@@ -42,7 +58,8 @@ class SelectArea extends React.Component {
         occurrence: occurrence,
         occurrences: occurrences
       }
-      this.addSelection(selection)
+      console.log(selection);
+      this.addSelection(selection);
     }
   }
 

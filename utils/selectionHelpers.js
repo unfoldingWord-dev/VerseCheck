@@ -187,7 +187,6 @@ module.exports.optimizeSelections = function(string, selections) {
 //
 // Use the following lines to test the previous function
 // var string = "0123456789qwertyuiopasdfghjklzxcvbnmtyui01234567890"
-// var string = "0123456789qwertyuiopasdfghjklzxcvbnmtyui01234567890"
 // var selections = [
 //   { text: '234', occurrence: 2, occurrences: 2 },
 // ]
@@ -200,6 +199,12 @@ module.exports.optimizeSelections = function(string, selections) {
 //   { text: 'yui', occurrence: 1, occurrences: 2 },
 //   { text: 'yui', occurrence: 2, occurrences: 2 },
 //   { text: 'asdfghjklzxcvbnmtyui0', occurrence: 1, occurrences: 1 }
+// ]
+// the following tests a repeated occurrence after an early selection is made
+// var selections = [
+//   { text: '234', occurrence: 1, occurrences: 2 },
+//   { text: 'yui', occurrence: 2, occurrences: 2 },
+//   { text: '0', occurrence: 3, occurrences: 3 }
 // ]
 // console.log(module.exports.optimizeSelections(string, selections))
 
