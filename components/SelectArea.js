@@ -126,8 +126,6 @@ class SelectArea extends React.Component {
   render() {
     let {verseText, projectDetailsReducer} = this.props
     this.props.actions.validateSelections(verseText)
-    const { manifest, bookName } = projectDetailsReducer
-    console.log(this.props)
 
     let reference = this.props.contextIdReducer.contextId.reference
     let bibles = this.props.resourcesReducer.bibles
