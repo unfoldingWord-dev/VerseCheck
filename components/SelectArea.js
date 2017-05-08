@@ -16,7 +16,7 @@ class SelectArea extends React.Component {
   getSelectionText() {
     if (!this.props.loginReducer.loggedInUser) {
       this.props.actions.selectModalTab(1, 1, true);
-      this.props.actions.showNotification("You must be logged in to make a selection", 5);
+      this.props.actions.openAlertDialog("You must be logged in to make a selection");
       return;
     }
     let verseText = this.props.verseText

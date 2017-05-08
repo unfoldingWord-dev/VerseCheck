@@ -38,7 +38,7 @@ class VerseCheck extends React.Component {
       handleGoToNext: function() {
         if (!that.props.loginReducer.loggedInUser) {
           that.props.actions.selectModalTab(1, 1, true);
-          that.props.actions.showNotification("You must be logged in to save progress", 5);
+          that.props.actions.openAlertDialog("You must be logged in to save progress");
           return;
         }
         props.actions.goToNext()
@@ -46,7 +46,7 @@ class VerseCheck extends React.Component {
       handleGoToPrevious: function() {
         if (!that.props.loginReducer.loggedInUser) {
           that.props.actions.selectModalTab(1, 1, true);
-          that.props.actions.showNotification("You must be logged in to save progress", 5);
+          that.props.actions.openAlertDialog("You must be logged in to save progress");
           return;
         }
         props.actions.goToPrevious()
@@ -100,7 +100,7 @@ class VerseCheck extends React.Component {
       saveComment: function() {
         if (!that.props.loginReducer.loggedInUser) {
           that.props.actions.selectModalTab(1, 1, true);
-          that.props.actions.showNotification("You must be logged in to leave a comment", 5);
+          that.props.actions.openAlertDialog("You must be logged in to leave a comment", 5);
           return;
         }
         that.props.actions.addComment(that.state.comment, that.props.loginReducer.userdata.username)
@@ -158,7 +158,7 @@ class VerseCheck extends React.Component {
         // verseText state is undefined if no changes are made in the text box.
         if (!loginReducer.loggedInUser) {
           that.props.actions.selectModalTab(1, 1, true);
-          that.props.actions.showNotification("You must be logged in to edit a verse", 5);
+          that.props.actions.openAlertDialog("You must be logged in to edit a verse");
           return;
         }
         if (that.state.verseText) {
