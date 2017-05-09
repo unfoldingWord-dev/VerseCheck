@@ -15,22 +15,18 @@ class View extends React.Component {
     let saveArea
     switch (this.props.mode) {
       case 'edit':
-        modeColor = 'var(--completed-color)'
         titleText = 'Edit Verse'
         saveArea = <div />
         break
       case 'comment':
-        modeColor = 'var(--highlight-color)'
         titleText = 'Comment'
         saveArea = <div />
         break
       case 'select':
-        modeColor = 'var(--accent-color)'
         titleText = 'Step 2. Select'
         saveArea = <SaveArea {...this.props} />
         break
       default:
-        modeColor = 'var(--accent-color)'
         titleText = 'Step 2. Select'
         saveArea = <SaveArea {...this.props} />
     }
@@ -59,7 +55,7 @@ class View extends React.Component {
         />
         <Card zDepth={2}>
           <CardHeader
-            style={{ background: modeColor, padding: '10px'}}
+            style={{ background: 'var(--accent-color-dark)', padding: '10px'}}
             textStyle={{display: 'block'}}
             children={title}
           />
