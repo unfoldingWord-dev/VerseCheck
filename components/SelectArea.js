@@ -76,25 +76,47 @@ class SelectArea extends React.Component {
     verseText = this.props.verseText
     if (selections && selections.length > 0) {
       var selectionArray = SelectionHelpers.selectionArray(verseText, selections)
-      verseText = selectionArray.map((selection, index) =>
-        <span key={index} style={selection.selected ? { backgroundColor: 'var(--highlight-color)', cursor: 'pointer' } : {}}
-          onClick={selection.selected ? () => this.removeSelection(selection) : () => { }}>
-          {selection.text}
-        </span>
-      )
+      if(this.props.mode == "select"){
+        verseText = selectionArray.map((selection, index) =>
+          <span key={index} style={selection.selected ? { backgroundColor: 'var(--highlight-color)', cursor: 'pointer' } : {}}
+            onClick={selection.selected ? () => this.removeSelection(selection) : () => { }}>
+            {selection.text}
+          </span>
+        )
 
-      return (
-        <div onMouseUp={() => this.getSelectionText()} onMouseLeave={()=>this.inDisplayBox(false)} onMouseEnter={()=>this.inDisplayBox(true)}>
-          {verseText}
-        </div>
-      );
+        return (
+          <div onMouseUp={() => this.getSelectionText()} onMouseLeave={()=>this.inDisplayBox(false)} onMouseEnter={()=>this.inDisplayBox(true)}>
+            {verseText}
+          </div>
+        );
+      } else {
+        verseText = selectionArray.map((selection, index) =>
+          <span key={index} style={selection.selected ? { backgroundColor: 'var(--highlight-color)', cursor: 'pointer' } : {}}>
+            {selection.text}
+          </span>
+        )
+
+        return (
+          <div>
+            {verseText}
+          </div>
+        )
+      }
     } else {
       verseText = this.props.verseText;
-      return (
-        <div onMouseUp={() => this.getSelectionText()} onMouseLeave={()=>this.inDisplayBox(false)} onMouseEnter={()=>this.inDisplayBox(true)}>
-          {verseText}
-        </div>
-      );
+      if(this.props.mode == "select"){
+        return (
+          <div onMouseUp={() => this.getSelectionText()} onMouseLeave={()=>this.inDisplayBox(false)} onMouseEnter={()=>this.inDisplayBox(true)}>
+            {verseText}
+          </div>
+        );
+      } else {
+        return (
+          <div>
+            {verseText}
+          </div>
+        )
+      }
     }
   }
 
@@ -110,7 +132,7 @@ class SelectArea extends React.Component {
     let {verseText, projectDetailsReducer} = this.props
     this.props.actions.validateSelections(verseText)
     const { manifest, bookName } = projectDetailsReducer
-
+    
     let reference = this.props.contextIdReducer.contextId.reference
     let bibles = this.props.resourcesReducer.bibles
     let languageName = manifest.target_language ? manifest.target_language.name : null;
