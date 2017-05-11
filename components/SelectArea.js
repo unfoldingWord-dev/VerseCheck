@@ -14,6 +14,11 @@ class SelectArea extends React.Component {
   }
 
   getSelectionText() {
+    if (!this.props.loginReducer.loggedInUser) {
+      this.props.actions.selectModalTab(1, 1, true);
+      this.props.actions.openAlertDialog("You must be logged in to make a selection");
+      return;
+    }
     let verseText = this.props.verseText;
     let text = "";
     // windowSelection is an object with lots of data
@@ -62,7 +67,7 @@ class SelectArea extends React.Component {
   addSelection(selection) {
     let selections = this.props.selectionsReducer.selections;
     if (selections.length >= 4) {
-      alert('Click a previous selection to remove it before adding a new one. To select more than 4 words, highlight phrases instead of individual words.')
+      this.props.actions.openAlertDialog('Click a previous selection to remove it before adding a new one. To select more than 4 words, highlight phrases instead of individual words.')
       return false
     } else {
       selections.push(selection);
@@ -83,6 +88,7 @@ class SelectArea extends React.Component {
     let { selections } = this.props.selectionsReducer;
     verseText = this.props.verseText
     if (selections && selections.length > 0) {
+<<<<<<< HEAD
       let _selectionArray = selectionArray(verseText, selections)
       verseText = _selectionArray.map((selection, index) =>
         <span key={index} style={selection.selected ? { backgroundColor: '#FDD910', cursor: 'pointer' } : {}}
@@ -90,19 +96,50 @@ class SelectArea extends React.Component {
           {selection.text}
         </span>
       )
+=======
+      var selectionArray = SelectionHelpers.selectionArray(verseText, selections)
+      if(this.props.mode == "select"){
+        verseText = selectionArray.map((selection, index) =>
+          <span key={index} style={selection.selected ? { backgroundColor: 'var(--highlight-color)', cursor: 'pointer' } : {}}
+            onClick={selection.selected ? () => this.removeSelection(selection) : () => { }}>
+            {selection.text}
+          </span>
+        )
+>>>>>>> master
 
-      return (
-        <div onMouseUp={() => this.getSelectionText()} onMouseLeave={()=>this.inDisplayBox(false)} onMouseEnter={()=>this.inDisplayBox(true)}>
-          {verseText}
-        </div>
-      );
+        return (
+          <div onMouseUp={() => this.getSelectionText()} onMouseLeave={()=>this.inDisplayBox(false)} onMouseEnter={()=>this.inDisplayBox(true)}>
+            {verseText}
+          </div>
+        );
+      } else {
+        verseText = selectionArray.map((selection, index) =>
+          <span key={index} style={selection.selected ? { backgroundColor: 'var(--highlight-color)', cursor: 'pointer' } : {}}>
+            {selection.text}
+          </span>
+        )
+
+        return (
+          <div>
+            {verseText}
+          </div>
+        )
+      }
     } else {
       verseText = this.props.verseText;
-      return (
-        <div onMouseUp={() => this.getSelectionText()} onMouseLeave={()=>this.inDisplayBox(false)} onMouseEnter={()=>this.inDisplayBox(true)}>
-          {verseText}
-        </div>
-      );
+      if(this.props.mode == "select"){
+        return (
+          <div onMouseUp={() => this.getSelectionText()} onMouseLeave={()=>this.inDisplayBox(false)} onMouseEnter={()=>this.inDisplayBox(true)}>
+            {verseText}
+          </div>
+        );
+      } else {
+        return (
+          <div>
+            {verseText}
+          </div>
+        )
+      }
     }
   }
 
@@ -144,7 +181,7 @@ class SelectArea extends React.Component {
     }
 
     return (
-      <div>
+      <div style={{maxHeight: "185px", overflowY: "hidden"}}>
         <div style={{float: "right"}} onClick={() => {
           this.setState({modalVisibility: true})
         }}>
@@ -154,7 +191,7 @@ class SelectArea extends React.Component {
         <div style={{fontWeight: "bold"}}>
           {languageName}
         </div>
-        <div style={{color: "#747474"}}>
+        <div style={{color: "var(--text-color-light)"}}>
           {bookName} {reference.chapter + ':' + reference.verse}
         </div>
         <div style={this.props.projectDetailsReducer.params.direction === 'ltr' ? style.pane.contentLTR : style.pane.contentRTL}>

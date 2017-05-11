@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react'
-import {Dialog, FlatButton} from 'material-ui'
+import {Dialog, FlatButton, CardHeader} from 'material-ui'
+import {Glyphicon} from 'react-bootstrap';
 
 class DialogComponent extends Component {
   constructor(props) {
@@ -21,38 +22,54 @@ class DialogComponent extends Component {
     let {dialogModalVisibility} = this.props
 
     const actions = [
-      <FlatButton
-        label="Skip"
-        primary={true}
-        onTouchTap={
+      <button
+        className="btn-second"
+        onClick={
           (e) => {
             e.preventDefault();
             this.handleSkip();
           }
         }
-      />,
-      <FlatButton
-        label="Close"
-        primary={true}
-        keyboardFocused={true}
-        onTouchTap={
+      >
+      Skip
+      </button>,
+      <button
+        className="btn-prime"
+        onClick={
           (e) => {
             e.preventDefault();
             this.props.handleClose()
           }
         }
-      />
+      >
+      Close
+      </button>
     ];
+
+    const headerContent = (
+      <div>
+        <span>{"Attention:"}</span>
+        <Glyphicon
+          onClick={this.props.handleClose}
+          glyph={"remove"}
+          style={{color: "#ffffff", cursor: "pointer", fontSize: "18px", float: "right"}}
+        />
+       </div>
+    );
 
     return (
       <div>
         <Dialog
-          title="Attention:"
+          style={{padding: "0px"}}
           actions={actions}
           modal={false}
           open={dialogModalVisibility}
           onRequestClose={this.props.handleClose}
         >
+        <CardHeader
+          style={{ color: "var(--reverse-color)", backgroundColor: 'var(--accent-color-dark)', padding: '15px', margin: "-44px -24px -24px -24px"}}
+          children={headerContent}
+        /><br /><br />
           <div>
             <p>
               Please <span style={{color: "#03a9f4", fontWeight: "bold"}}>select </span>

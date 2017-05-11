@@ -25,14 +25,14 @@ class MyLanguageModal extends Component {
           let versePaneStyle = {};
           if (key == currentVerse) {
             if (key % 2 == 0) {
-              versePaneStyle = {borderLeft: '6px solid #2196F3', backgroundColor: '#e7e7e7', marginTop: '10px', color: '#000000', padding: '10px'}
+              versePaneStyle = {borderLeft: '6px solid var(--accent-color)', backgroundColor: 'var(--background-color-light)', marginTop: '10px', color: 'var(--text-color-dark)', padding: '10px'}
             } else {
-              versePaneStyle = {borderLeft: '6px solid #2196F3', marginTop: '10px', color: '#000000', padding: '10px'}
+              versePaneStyle = {borderLeft: '6px solid var(--accent-color)', marginTop: '10px', color: 'var(--text-color-dark)', padding: '10px'}
             }
           } else if (key % 2 == 0) {
-            versePaneStyle = {backgroundColor: '#e7e7e7', marginTop: '10px', color: '#000000', padding: '10px'}
+            versePaneStyle = {backgroundColor: 'var(--background-color-light)', marginTop: '10px', color: 'var(--text-color-dark)', padding: '10px'}
           } else {
-            versePaneStyle = {marginTop: '10px', color: '#000000', padding: '10px'}
+            versePaneStyle = {marginTop: '10px', color: 'var(--text-color-dark)', padding: '10px'}
           }
           MyTargetLanguage.push(
             <MyTargetVerse
@@ -51,17 +51,17 @@ class MyLanguageModal extends Component {
 
     return (
       <Modal show={show} onHide={onHide} bsSize="lg" aria-labelledby="contained-modal-title-sm">
-        <Modal.Header style={{ backgroundColor: "#333333" }} closeButton>
+        <Modal.Header style={{ backgroundColor: "var(--accent-color-dark)" }} closeButton>
           <Modal.Title id="contained-modal-title-sm"
-            style={{ textAlign: "center", color: "#FFFFFF" }}>
+            style={{ textAlign: "center", color: "var(--reverse-color)" }}>
 
           </Modal.Title>
         </Modal.Header>
-        <Modal.Body style={{padding: '0px', height: "550px", backgroundColor: "#FFFFFF", overflowY: "auto"}}>
+        <Modal.Body style={{padding: '0px', height: "550px", backgroundColor: "var(--reverse-color)", overflowY: "auto"}}>
           {MyTargetLanguage}
         </Modal.Body>
-        <Modal.Footer style={{ backgroundColor: "#333333" }}>
-          <Button bsStyle="danger" onClick={onHide}>Close</Button>
+        <Modal.Footer style={{ backgroundColor: "var(--reverse-color)" }}>
+          <Button bsStyle="prime" onClick={onHide}>Close</Button>
         </Modal.Footer>
       </Modal>
     )

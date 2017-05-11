@@ -9,7 +9,7 @@ let CommentArea = (props) => {
         Comment
       </div>
       <FormGroup controlId="formControlsTextarea">
-        <FormControl
+        <FormControl autoFocus
           componentClass='textarea'
           type='text'
           defaultValue={props.comment}

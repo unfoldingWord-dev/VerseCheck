@@ -3,72 +3,54 @@ import {Col, Button, Glyphicon} from 'react-bootstrap'
 
 let ActionsArea = (props) => {
   const changeModeArea = (
-    <div style={{ fontSize: '1.1em'}}>
-      <Col sm={2}>
-        <Button bsStyle='link'
-          onClick={props.actions.changeMode.bind(this,'edit')}
-          style={{color: '#747474'}}
-        >
-          <Glyphicon glyph='pencil' style={{color: '#747474', marginRight: '5px'}} />
-          Edit
-        </Button>
-      </Col>
-      <Col sm={2}>
-        <Button bsStyle='link'
-          onClick={props.actions.changeMode.bind(this,'comment')}
-          style={{color: '#747474'}}
-        >
-          <Glyphicon glyph='comment' style={{color: '#747474', marginRight: '5px'}} />
-          Comment
-        </Button>
-      </Col>
+    <div style={{ display: 'flex', justifyContent: 'flex-end'}}>
+      <Button bsStyle='second'
+              onClick={props.actions.changeMode.bind(this,'edit')}
+      >
+        <Glyphicon glyph='pencil' style={{marginRight: '10px'}} />
+        Edit Verse
+      </Button>
+      <Button bsStyle='second'
+              onClick={props.actions.changeMode.bind(this,'comment')}
+      >
+        <Glyphicon glyph='comment' style={{marginRight: '10px'}} />
+        Comment
+      </Button>
     </div>
   )
 
   const confirmEditVerseArea = (
-    <div style={{textAlign: 'right'}}>
-      <Col sm={3} smOffset={6}>
-        <Button bsStyle='link'
-          style={{color: '#747474'}}
-          onClick={props.actions.cancelEditVerse.bind(this)}
+      <div style={{ display: 'flex', justifyContent: 'flex-end'}}>
+        <Button bsStyle='second'
+                onClick={props.actions.cancelEditVerse.bind(this)}
         >
           Cancel
         </Button>
-      </Col>
-      <Col sm={3}>
-        <Button bsStyle='link'
-          disabled={!props.tags.length}
-          style={{color: '#8BC34A'}}
-          onClick={props.actions.saveEditVerse.bind(this)}
+        <Button bsStyle='prime'
+                disabled={!props.tags.length}
+                onClick={props.actions.saveEditVerse.bind(this)}
         >
-          <Glyphicon glyph='ok' style={{color: '#8BC34A', marginRight: '5px'}} />
+          <Glyphicon glyph='ok' style={{marginRight: '10px'}} />
           Save Changes
         </Button>
-      </Col>
-    </div>
+      </div>
   )
 
   const confirmCommentArea = (
-    <div style={{textAlign: 'right'}}>
-      <Col sm={3} smOffset={6}>
-        <Button bsStyle='link'
-          style={{color: '#747474'}}
-          onClick={props.actions.cancelComment.bind(this)}
+      <div style={{ display: 'flex', justifyContent: 'flex-end'}}>
+        <Button bsStyle='second'
+                onClick={props.actions.cancelComment.bind(this)}
         >
           Cancel
         </Button>
-      </Col>
-      <Col sm={3}>
-        <Button bsStyle='link'
-          disabled={!props.commentChanged}
-          style={{color: '#8BC34A'}}
-          onClick={props.actions.saveComment.bind(this)}
+        <Button bsStyle='prime'
+                disabled={!props.commentChanged}
+                onClick={props.actions.saveComment.bind(this)}
         >
-          <Glyphicon glyph='ok' style={{color: '#8BC34A', marginRight: '5px'}} />
+          <Glyphicon glyph='ok' style={{marginRight: '10px'}} />
           Save Changes
         </Button>
-      </Col>
-    </div>
+      </div>
   )
 
   let modeArea

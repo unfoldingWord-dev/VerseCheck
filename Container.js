@@ -36,9 +36,19 @@ class VerseCheck extends React.Component {
 
     this.actions = {
       handleGoToNext: function() {
+        if (!that.props.loginReducer.loggedInUser) {
+          that.props.actions.selectModalTab(1, 1, true);
+          that.props.actions.openAlertDialog("You must be logged in to save progress");
+          return;
+        }
         props.actions.goToNext()
       },
       handleGoToPrevious: function() {
+        if (!that.props.loginReducer.loggedInUser) {
+          that.props.actions.selectModalTab(1, 1, true);
+          that.props.actions.openAlertDialog("You must be logged in to save progress");
+          return;
+        }
         props.actions.goToPrevious()
       },
       handleOpenDialog(goToNextOrPrevious) {
@@ -88,6 +98,11 @@ class VerseCheck extends React.Component {
         })
       },
       saveComment: function() {
+        if (!that.props.loginReducer.loggedInUser) {
+          that.props.actions.selectModalTab(1, 1, true);
+          that.props.actions.openAlertDialog("You must be logged in to leave a comment", 5);
+          return;
+        }
         that.props.actions.addComment(that.state.comment, that.props.loginReducer.userdata.username)
         that.setState({
           mode: 'select',
@@ -141,6 +156,11 @@ class VerseCheck extends React.Component {
         let before = resourcesReducer.bibles.targetLanguage[chapter][verse];
         let username = loginReducer.userdata.username;
         // verseText state is undefined if no changes are made in the text box.
+        if (!loginReducer.loggedInUser) {
+          that.props.actions.selectModalTab(1, 1, true);
+          that.props.actions.openAlertDialog("You must be logged in to edit a verse");
+          return;
+        }
         if (that.state.verseText) {
           actions.addVerseEdit(before, that.state.verseText, that.state.tags, username);
         }
@@ -151,11 +171,21 @@ class VerseCheck extends React.Component {
           tags: []
         });
       },
-      validateSelections: function(verseText) {
+      validateSelections: (verseText) => {
         that.props.actions.validateSelections(verseText)
       },
-      toggleReminder: function() {
+      toggleReminder: () => {
         that.props.actions.toggleReminder(that.props.loginReducer.userdata.username)
+      },
+      openAlertDialog: (message) => {
+        console.log(message)
+        that.props.actions.openAlertDialog(message)
+      },
+      showNotification: (message, duration) => {
+        that.props.actions.showNotification(message, duration);
+      },
+      selectModalTab: (tab, section, vis) => {
+        that.props.actions.selectModalTab(tab, section, vis);
       }
     }
   }
