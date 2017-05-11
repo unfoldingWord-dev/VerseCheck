@@ -88,24 +88,13 @@ class SelectArea extends React.Component {
     let { selections } = this.props.selectionsReducer;
     verseText = this.props.verseText
     if (selections && selections.length > 0) {
-<<<<<<< HEAD
       let _selectionArray = selectionArray(verseText, selections)
       verseText = _selectionArray.map((selection, index) =>
-        <span key={index} style={selection.selected ? { backgroundColor: '#FDD910', cursor: 'pointer' } : {}}
+        <span key={index} style={selection.selected ? { backgroundColor: 'var(--highlight-color)', cursor: 'pointer' } : {}}
           onClick={selection.selected ? () => this.removeSelection(selection) : () => { }}>
           {selection.text}
         </span>
       )
-=======
-      var selectionArray = SelectionHelpers.selectionArray(verseText, selections)
-      if(this.props.mode == "select"){
-        verseText = selectionArray.map((selection, index) =>
-          <span key={index} style={selection.selected ? { backgroundColor: 'var(--highlight-color)', cursor: 'pointer' } : {}}
-            onClick={selection.selected ? () => this.removeSelection(selection) : () => { }}>
-            {selection.text}
-          </span>
-        )
->>>>>>> master
 
         return (
           <div onMouseUp={() => this.getSelectionText()} onMouseLeave={()=>this.inDisplayBox(false)} onMouseEnter={()=>this.inDisplayBox(true)}>
