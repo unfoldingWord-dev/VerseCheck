@@ -19,47 +19,61 @@ class SelectArea extends React.Component {
       this.props.actions.openAlertDialog("You must be logged in to make a selection");
       return;
     }
-    let verseText = this.props.verseText;
-    let text = "";
-    // windowSelection is an object with lots of data
-    let windowSelection = window.getSelection();
+
+    // Implementation notes on why you can't just use the window.getSelection()
     // getSelection is limited by same innerText node, and does not include span siblings
     // indexOfTextSelection is broken by any other previous selection since it only knows its innerText node.
-    let selectionRange = windowSelection.getRangeAt(0)
-    let indexOfTextSelection = selectionRange.startOffset;
-    let textForSelection = selectionRange.commonAncestorContainer;
 
-    console.log('textForSelection', textForSelection);
-    console.log('selectionRange', selectionRange);
+    // windowSelection is an object with lots of data
+    let windowSelection = window.getSelection();
+    // get the current text selected
+    let selectedText = windowSelection.toString();
 
-    let postPrescedingText = textForSelection ? textForSelection.slice(0,indexOfTextSelection) : '';
-    // must find length of text prior to it.
-    let selectionContainer = selectionRange.commonAncestorContainer.parentElement;
-    let prescedingText = '';
-    // get the current span's innerText
-    if (selectionContainer) {
-      text = window.getSelection().toString();
-      let previousSibling = selectionContainer.previousSibling;
-      while (previousSibling) {
-        prescedingText = previousSibling.innerText + prescedingText;
-        previousSibling = previousSibling.previousSibling;
-      }
-    }
-    if (text === "") {
+    if (selectedText === '') {
       // do nothing since an empty space was selected
     } else {
+      // get the text after the presceding selection and current span selection is in.
+      let selectionRange = windowSelection.getRangeAt(0)
+      // get the index of what is selected
+      let indexOfTextSelection = selectionRange.startOffset;
+      // get the container of the selection
+      let textContainer = selectionRange.commonAncestorContainer;
+      // get all of the text in the selection
+      let textContent = textContainer.textContent;
+      // get the text presceding the selection but after the selection just prior to it
+      let postPrescedingText = textContainer ? textContent.slice(0,indexOfTextSelection) : '';
+      // must find length of text prior to it.
+      let prescedingText = '';
+      // get the parent that contains the textContainer
+      let textSpan = textContainer ? textContainer.parentElement : undefined;
+      // if we have a span that holds text, see what we can get
+      if (textSpan) {
+        // get the previous sibling to start the loop
+        let previousSibling = textSpan.previousSibling;
+        // loop through previous spans to get their text
+        while (previousSibling) {
+          // prepend the spans innerText to the prescedingText
+          prescedingText = previousSibling.innerText + prescedingText;
+          // move to the previous span, if none, it ends the loop
+          previousSibling = previousSibling.previousSibling;
+        }
+      }
+
       // There can be a gap between prescedingText and current selection
-      let textBeforeSelection = prescedingText + postPrescedingText + text;
-      console.log('textBeforeSelection', textBeforeSelection);
-      let occurrence = occurrencesInString(textBeforeSelection, text);
-      let occurrences = occurrencesInString(verseText, text)
+      let textBeforeSelection = prescedingText + postPrescedingText + selectedText;
+      // get the occurrence of the selection
+      let occurrence = occurrencesInString(textBeforeSelection, selectedText);
+      // verseText is used to get all of the occurrences
+      let verseText = this.props.verseText;
+      // get the total occurrences from the verse
+      let occurrences = occurrencesInString(verseText, selectedText)
 
       let selection = {
-        text: text,
+        text: selectedText,
         occurrence: occurrence,
         occurrences: occurrences
       }
-      console.log(selection);
+      // add the selection to the selections
       this.addSelection(selection);
     }
   }
@@ -96,24 +110,11 @@ class SelectArea extends React.Component {
         </span>
       )
 
-        return (
-          <div onMouseUp={() => this.getSelectionText()} onMouseLeave={()=>this.inDisplayBox(false)} onMouseEnter={()=>this.inDisplayBox(true)}>
-            {verseText}
-          </div>
-        );
-      } else {
-        verseText = selectionArray.map((selection, index) =>
-          <span key={index} style={selection.selected ? { backgroundColor: 'var(--highlight-color)', cursor: 'pointer' } : {}}>
-            {selection.text}
-          </span>
-        )
-
-        return (
-          <div>
-            {verseText}
-          </div>
-        )
-      }
+      return (
+        <div onMouseUp={() => this.getSelectionText()} onMouseLeave={()=>this.inDisplayBox(false)} onMouseEnter={()=>this.inDisplayBox(true)}>
+          {verseText}
+        </div>
+      );
     } else {
       verseText = this.props.verseText;
       if(this.props.mode == "select"){
