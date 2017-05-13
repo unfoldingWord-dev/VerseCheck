@@ -1,7 +1,7 @@
 import React from 'react'
 import {Glyphicon} from 'react-bootstrap'
 import style from '../css/Style'
-import {selectionArray, occurrencesInString} from '../utils/selectionHelpers'
+import {selectionArray, occurrencesInString, normalizeString} from '../utils/selectionHelpers'
 import MyLanguageModal from './MyLanguageModal'
 
 class SelectArea extends React.Component {
@@ -12,26 +12,25 @@ class SelectArea extends React.Component {
       modalVisibility: false
     }
   }
-
+/*
+ * @description
+ * Implementation notes on why you can't just use the window.getSelection()
+ * getSelection is limited by same innerText node, and does not include span siblings
+ * indexOfTextSelection is broken by any other previous selection since it only knows its innerText node.
+ */
   getSelectionText() {
     if (!this.props.loginReducer.loggedInUser) {
       this.props.actions.selectModalTab(1, 1, true);
       this.props.actions.openAlertDialog("You must be logged in to make a selection");
       return;
     }
-
-    // Implementation notes on why you can't just use the window.getSelection()
-    // getSelection is limited by same innerText node, and does not include span siblings
-    // indexOfTextSelection is broken by any other previous selection since it only knows its innerText node.
-
     // windowSelection is an object with lots of data
     let windowSelection = window.getSelection();
     // get the current text selected
     let selectedText = windowSelection.toString();
 
-    if (selectedText === '') {
-      // do nothing since an empty space was selected
-    } else {
+    // do nothing since an empty space was selected
+    if (selectedText === '') {} else {
       // get the text after the presceding selection and current span selection is in.
       let selectionRange = windowSelection.getRangeAt(0)
       // get the index of what is selected
@@ -65,14 +64,15 @@ class SelectArea extends React.Component {
       let occurrence = occurrencesInString(textBeforeSelection, selectedText);
       // verseText is used to get all of the occurrences
       let verseText = this.props.verseText;
+      // replace more than one contiguous space with a single one since HTML/selection only renders 1
+      verseText = normalizeString(verseText);
       // get the total occurrences from the verse
-      let occurrences = occurrencesInString(verseText, selectedText)
-
+      let occurrences = occurrencesInString(verseText, selectedText);
       let selection = {
         text: selectedText,
         occurrence: occurrence,
         occurrences: occurrences
-      }
+      };
       // add the selection to the selections
       this.addSelection(selection);
     }
@@ -98,39 +98,35 @@ class SelectArea extends React.Component {
   }
 
   displayText() {
-    let verseText = '';
     let { selections } = this.props.selectionsReducer;
-    verseText = this.props.verseText
+    let verseText = this.props.verseText;
+    // normalize whitespace for text rendering in order to display highlights with more than one space since html selections show one space
+    verseText = normalizeString(verseText);
+    let verseTextSpans = <span>{verseText}</span>;
     if (selections && selections.length > 0) {
-      let _selectionArray = selectionArray(verseText, selections)
-      verseText = _selectionArray.map((selection, index) =>
+      let _selectionArray = selectionArray(verseText, selections);
+      verseTextSpans = _selectionArray.map((selection, index) =>
         <span key={index} style={selection.selected ? { backgroundColor: 'var(--highlight-color)', cursor: 'pointer' } : {}}
           onClick={selection.selected ? () => this.removeSelection(selection) : () => { }}>
           {selection.text}
         </span>
       )
+    }
 
+    if (this.props.mode == "select") {
       return (
         <div onMouseUp={() => this.getSelectionText()} onMouseLeave={()=>this.inDisplayBox(false)} onMouseEnter={()=>this.inDisplayBox(true)}>
-          {verseText}
+          {verseTextSpans}
         </div>
       );
     } else {
-      verseText = this.props.verseText;
-      if(this.props.mode == "select"){
-        return (
-          <div onMouseUp={() => this.getSelectionText()} onMouseLeave={()=>this.inDisplayBox(false)} onMouseEnter={()=>this.inDisplayBox(true)}>
-            {verseText}
-          </div>
-        );
-      } else {
-        return (
-          <div>
-            {verseText}
-          </div>
-        )
-      }
+      return (
+        <div>
+          {verseTextSpans}
+        </div>
+      )
     }
+
   }
 
   inDisplayBox(insideDisplayBox) {
@@ -143,13 +139,16 @@ class SelectArea extends React.Component {
 
   render() {
     let {verseText, projectDetailsReducer} = this.props
-    this.props.actions.validateSelections(verseText)
-    const { manifest, bookName } = projectDetailsReducer
+    // normalize whitespace, since html selections will not include more than 1 contiguous space
+    verseText = normalizeString(verseText);
+    // validate selections and remove ones that do not apply
+    this.props.actions.validateSelections(verseText);
+    const { manifest, bookName } = projectDetailsReducer;
 
-    let reference = this.props.contextIdReducer.contextId.reference
-    let bibles = this.props.resourcesReducer.bibles
+    let reference = this.props.contextIdReducer.contextId.reference;
+    let bibles = this.props.resourcesReducer.bibles;
     let languageName = manifest.target_language ? manifest.target_language.name : null;
-    let modal = <div/>
+    let modal = <div/>;
 
     let dir = manifest.target_language ? manifest.target_language.direction : null;
 

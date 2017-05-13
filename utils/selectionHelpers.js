@@ -227,6 +227,15 @@ export const occurrencesInString = (string, subString) => {
  }
  return n
 }
+/**
+ * @description Function that normalizes a string including whitespace
+ * @param {String} string - the string to normalize
+ * @preturns {String} - The returned normalized string
+ */
+export const normalizeString = (string) => {
+  string = string.replace(/\s+/g, ' ');
+  return string;
+}
 
 
 
