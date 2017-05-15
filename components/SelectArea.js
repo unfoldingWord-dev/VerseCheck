@@ -33,19 +33,19 @@ class SelectArea extends React.Component {
     if (selectedText === '') {} else {
       // get the text after the presceding selection and current span selection is in.
       let selectionRange = windowSelection.getRangeAt(0)
-      // get the index of what is selected
+      // get the character index of what is selected in context of the span it is in.
       let indexOfTextSelection = selectionRange.startOffset;
-      // get the container of the selection
+      // get the container of the selection, this is a strange object, that logs as a string.
       let textContainer = selectionRange.commonAncestorContainer;
-      // get all of the text in the selection
-      let textContent = textContainer.textContent;
-      // get the text presceding the selection but after the selection just prior to it
-      let postPrescedingText = textContainer ? textContent.slice(0,indexOfTextSelection) : '';
-      // must find length of text prior to it.
-      let prescedingText = '';
-      // get the parent that contains the textContainer
+      // get the parent span that contains the textContainer.
       let textSpan = textContainer ? textContainer.parentElement : undefined;
-      // if we have a span that holds text, see what we can get
+      // get all of the text in the selection's container similar to the span's innerText.
+      let textSpanContent = textSpan.innerText;
+      // get the text presceding the selection but after the selection just prior to it.
+      let postPrescedingText = textContainer ? textSpanContent.slice(0,indexOfTextSelection) : '';
+      // start with an empty string to prepend to for text presceding current span selection is in.
+      let prescedingText = '';
+      // if we have a span that holds text, see what presceding text we can extract.
       if (textSpan) {
         // get the previous sibling to start the loop
         let previousSibling = textSpan.previousSibling;
