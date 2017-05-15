@@ -5,7 +5,7 @@
 import React from 'react'
 import View from './components/View'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
-import SelectionHelpers from './utils/selectionHelpers'
+import {optimizeSelections, normalizeString} from './utils/selectionHelpers'
 // constant declaration
 const NAMESPACE = "VerseCheck";
 
@@ -68,7 +68,9 @@ class VerseCheck extends React.Component {
       },
       changeSelections: function(selections) {
         // optimize the selections to address potential issues and save
-        selections = SelectionHelpers.optimizeSelections(that.verseText, selections);
+        // normalize whitespace in case selection has contiguous whitespace that isn't captured
+        let verseText = normalizeString(that.verseText);
+        selections = optimizeSelections(verseText, selections);
         props.actions.changeSelections(selections, props.loginReducer.userdata.username)
       },
       changeMode: function(mode) {
