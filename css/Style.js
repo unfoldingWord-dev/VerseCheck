@@ -80,10 +80,38 @@ var style = {
     }
   },
   headingDescription:{
-    color: "#747474",
+    color: "var(--text-color-light)",
     fontStyle: 'bold',
     fontFamily: "noto sans"
   },
+  verseCheck: {
+    flex: '1 1 200px',
+    margin: '10px',
+  },
+  verseCheckCard: {
+    flex: 'auto',
+    display: 'flex',
+    flexDirection: 'column',
+    boxShadow: '0 3px 10px var(--background-color)',
+    borderRadius: '2px',
+  },
+  titleBar: {
+    flex: '0 0 40px',
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    padding: '10px',
+    color: 'var(--reverse-color)',
+    backgroundColor: 'var(--accent-color-dark)',
+    fontSize: '16px',
+    fontWeight: 'bold',
+  },
+  verseTitle: {
+    flex: '0 0 35px',
+    display: 'flex',
+    justifyContent: 'space-between',
+    margin: '5px 10px 5px 15px'
+  }
 };
 
 module.exports = style;
