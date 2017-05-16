@@ -31,28 +31,39 @@ class View extends React.Component {
         saveArea = <SaveArea {...this.props} />
     }
 
-    const title = (
-      <div style={{'fontSize':'16px', 'fontWeight':'bold', color: 'var(--reverse-color)', margin: '0px'}}>
-        <span>{titleText}</span>
-        <Glyphicon glyph="bookmark"
-          style={{
-            'float': "right",
-             color: this.props.remindersReducer.enabled ? "var(--warning-color)" : "var(--reverse-color)"
-           }}
-          onClick={this.props.actions.toggleReminder}
-          />
-      </div>
-    )
     return (
+      <div>
+        <div style={{height: '100%', display: 'flex', flexDirection: 'column'}}>
+            <div style={{'fontSize':'16px', 'fontWeight':'bold', color: 'var(--reverse-color)', margin: '0px'}}>
+                <span>{titleText}</span>
+                <Glyphicon glyph="bookmark"
+                           style={{
+                               'float': "right",
+                               color: this.props.remindersReducer.enabled ? "var(--warning-color)" : "var(--reverse-color)"
+                           }}
+                           onClick={this.props.actions.toggleReminder}
+                />
+            </div>
+            <CheckArea {...this.props} />
+            <ActionsArea {...this.props} />
+
+        </div>
+          <DialogComponent
+              dialogModalVisibility={this.props.dialogModalVisibility}
+              handleOpen={this.props.actions.handleOpenDialog}
+              handleClose={this.props.actions.handleCloseDialog}
+              goToNextOrPrevious={this.props.goToNextOrPrevious}
+              skipToNext={this.props.actions.skipToNext}
+              skipToPrevious={this.props.actions.skipToPrevious}
+          />
+
+      </div>
+
+
+
+
       <div style={{ margin: '10px' }}>
-        <DialogComponent
-          dialogModalVisibility={this.props.dialogModalVisibility}
-          handleOpen={this.props.actions.handleOpenDialog}
-          handleClose={this.props.actions.handleCloseDialog}
-          goToNextOrPrevious={this.props.goToNextOrPrevious}
-          skipToNext={this.props.actions.skipToNext}
-          skipToPrevious={this.props.actions.skipToPrevious}
-        />
+
         <Card zDepth={2}>
           <CardHeader
             style={{ background: 'var(--accent-color-dark)', padding: '10px'}}
@@ -60,10 +71,10 @@ class View extends React.Component {
             children={title}
           />
         <Row style={{marginLeft: '0px', marginRight: '0px', height: '100%', borderBottom: '1px solid var(--border-color)'}}>
-          <CheckArea {...this.props} />
+
         </Row>
         <Row style={{marginLeft: '0px', marginRight: '0px', height: '100%'}}>
-          <ActionsArea {...this.props} />
+
         </Row>
         </Card>
         <Row style={{marginLeft: '0px', marginRight: '0px'}}>
