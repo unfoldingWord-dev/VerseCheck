@@ -158,18 +158,22 @@ class SelectArea extends React.Component {
     }
 
     return (
-      <div style={{maxHeight: "185px", overflowY: "hidden"}}>
-        <div style={{float: "right"}} onClick={() => {
-          this.setState({modalVisibility: true})
-        }}>
-          <Glyphicon glyph="fullscreen" style={{cursor: "pointer"}}/>
-          {modal}
-        </div>
-        <div style={{fontWeight: "bold"}}>
-          {languageName}
-        </div>
-        <div style={{color: "var(--text-color-light)"}}>
-          {bookName} {reference.chapter + ':' + reference.verse}
+      <div style={{flex: 1, display: 'flex', flexDirection: 'column'}}>
+        <div style={style.verseTitle}>
+          <div style={{display: 'flex', flexDirection: 'column'}}>
+              <span style={style.pane.title}>
+                {languageName}
+              </span>
+              <span style={style.pane.subtitle}>
+                {bookName} {reference.chapter + ':' + reference.verse}
+              </span>
+          </div>
+          <div style={{float: "right"}} onClick={() => {
+            this.setState({modalVisibility: true})
+          }}>
+            <Glyphicon glyph="fullscreen" style={{cursor: "pointer"}}/>
+            {modal}
+          </div>
         </div>
         <div style={this.props.projectDetailsReducer.params.direction === 'ltr' ? style.pane.contentLTR : style.pane.contentRTL}>
           {this.displayText()}

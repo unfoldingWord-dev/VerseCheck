@@ -1,88 +1,23 @@
 var style = {
   pane: {
     contentLTR: {
-      marginTop: "5px",
-      height: "130px",
       overflowY: 'auto',
-      width: '100%',
-      direction: 'ltr'
+      direction: 'ltr',
+      flex: 'auto',
+      padding: '0 15px 10px',
     },
     contentRTL: {
-      marginTop: "5px",
-      height: "130px",
       overflowY: 'auto',
-      width: '100%',
-      direction: 'rtl'
-    },
-    header: {
-      margin: '5px 0',
-      width: '100%',
-      color: '#44c6ff',
-      fontWeight: 'bold',
-      fontSize: '28px'
+      direction: 'rtl',
+      flex: 'auto',
+      padding: '0 15px 10px',
     },
     title: {
-      fontWeight: '700',
-      fontSize: '14px',
-      marginBottom: "-5px",
-      marginTop: "5px",
-      display: "flex",
-    }
-  },
-  dropzone: {
-    active: {
-      border: '2px solid #727272',
-      backgroundColor: '#f5f5f5'
+      fontWeight: 'bold',
     },
-    text: {
-      lineHeight: '200px',
-      verticalAlign: 'middle',
-      width: '100%'
+    subtitle:{
+      color: "var(--text-color-light)",
     },
-    main: {
-      width: '100%',
-      color: '#212121',
-      height: '200px',
-      border: '2px dashed #727272',
-      borderRadius: '5px',
-      fontSize: '25px'
-    }
-  },
-  menuItem: {
-    text: {
-      cursor: 'pointer'
-    },
-    flag: {
-      enabled: {
-        color: '#CC0000',
-        visibility: 'visible'
-      },
-      disabled: {
-        visibility: 'hidden'
-      }
-    },
-    statusIcon: {
-      correct: {
-        color: 'green',
-        display: 'initial'
-      },
-      replaced: {
-        color: 'gold',
-        display: 'initial'
-      },
-      flagged: {
-        color: 'red',
-        display: 'initial'
-      },
-      unchecked: {
-        display: 'none'
-      }
-    }
-  },
-  headingDescription:{
-    color: "var(--text-color-light)",
-    fontStyle: 'bold',
-    fontFamily: "noto sans"
   },
   verseCheck: {
     flex: '1 1 200px',
@@ -112,13 +47,13 @@ var style = {
     justifyContent: 'flex-end',
   },
   checkArea: {
-    flex: 'auto',
+    flex: '0 0 135px',
     display: 'flex',
     fontSize: '1.1em',
     borderBottom: '1px solid var(--border-color)',
   },
   verseTitle: {
-    flex: '0 0 35px',
+    flex: '0 0 45px',
     display: 'flex',
     justifyContent: 'space-between',
     margin: '5px 10px 5px 15px'
