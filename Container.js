@@ -206,10 +206,10 @@ class VerseCheck extends React.Component {
   render() {
     let {chapter, verse, bookId} = this.props.contextIdReducer.contextId.reference
     let bookAbbr = this.props.projectDetailsReducer.params.bookAbbr;
-    if (this.props.resourcesReducer.bibles.targetLanguage && bookId == bookAbbr) {
-      this.verseText = this.props.resourcesReducer.bibles.targetLanguage[chapter][verse];
+    if (this.props.resourcesReducer.bibles.targetLanguage && this.props.resourcesReducer.bibles.targetLanguage[chapter] && bookId == bookAbbr) {
+      this.verseText = this.props.resourcesReducer.bibles.targetLanguage[chapter][verse] || "";
     } else {
-      this.verseText = null;
+      this.verseText = "";
     }
 
     return (
