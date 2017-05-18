@@ -57,6 +57,12 @@ var style = {
     display: 'flex',
     justifyContent: 'space-between',
     margin: '5px 10px 5px 15px'
+  },
+  saveArea: {
+    flex: '0 0 60px',
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
   }
 };
 
