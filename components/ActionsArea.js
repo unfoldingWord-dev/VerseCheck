@@ -1,9 +1,10 @@
 import React from 'react'
 import {Col, Button, Glyphicon} from 'react-bootstrap'
+import style from '../css/Style';
 
 let ActionsArea = (props) => {
   const changeModeArea = (
-    <div style={{ display: 'flex', justifyContent: 'flex-end'}}>
+    <div style={style.actionsArea}>
       <Button bsStyle='second'
               onClick={props.actions.changeMode.bind(this,'edit')}
       >
@@ -20,7 +21,7 @@ let ActionsArea = (props) => {
   )
 
   const confirmEditVerseArea = (
-      <div style={{ display: 'flex', justifyContent: 'flex-end'}}>
+      <div style={style.actionsArea}>
         <Button bsStyle='second'
                 onClick={props.actions.cancelEditVerse.bind(this)}
         >
@@ -37,7 +38,7 @@ let ActionsArea = (props) => {
   )
 
   const confirmCommentArea = (
-      <div style={{ display: 'flex', justifyContent: 'flex-end'}}>
+      <div style={style.actionsArea}>
         <Button bsStyle='second'
                 onClick={props.actions.cancelComment.bind(this)}
         >

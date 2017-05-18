@@ -106,6 +106,17 @@ var style = {
     fontSize: '16px',
     fontWeight: 'bold',
   },
+  actionsArea: {
+    flex: '0 0 55px',
+    display: 'flex',
+    justifyContent: 'flex-end',
+  },
+  checkArea: {
+    flex: 'auto',
+    display: 'flex',
+    fontSize: '1.1em',
+    borderBottom: '1px solid var(--border-color)',
+  },
   verseTitle: {
     flex: '0 0 35px',
     display: 'flex',
