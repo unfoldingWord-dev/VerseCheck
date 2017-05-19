@@ -1,5 +1,6 @@
 import React from 'react'
 import {Row, Glyphicon, Col, Button} from 'react-bootstrap'
+import style from '../css/Style'
 
 let SaveArea = (props) => {
 
@@ -12,24 +13,20 @@ let SaveArea = (props) => {
   };
 
   return (
-    <Row style={{paddingTop: '15px'}}>
-      <Col sm={6} style={{textAlign: 'left'}}>
-        <Button bsStyle='second'
-          onClick={handlePrevious}
-        >
-          <Glyphicon glyph='share-alt' style={{marginRight: '10px', transform: 'scaleX(-1)'}} />
-          Save & Previous
-        </Button>
-      </Col>
-      <Col sm={6} style={{textAlign: 'right'}}>
-        <Button bsStyle='prime'
-          onClick={handleNext}
-        >
-          Save & Continue
-          <Glyphicon glyph='share-alt' style={{marginLeft: '10px'}} />
-        </Button>
-      </Col>
-    </Row>
+    <div style={style.saveArea}>
+      <button className='btn-second'
+              onClick={handlePrevious}
+      >
+        <Glyphicon glyph='share-alt' style={{marginRight: '10px', transform: 'scaleX(-1)'}} />
+        Save & Previous
+      </button>
+      <button className='btn-prime'
+              onClick={handleNext}
+      >
+        Save & Continue
+        <Glyphicon glyph='share-alt' style={{marginLeft: '10px'}} />
+      </button>
+    </div>
   )
 }
 

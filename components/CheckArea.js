@@ -5,6 +5,7 @@ import SelectArea from './SelectArea'
 import DirectionsArea from './DirectionsArea'
 import EditVerseArea from './EditVerseArea'
 import CommentArea from './CommentArea'
+import style from '../css/Style';
 
 let CheckArea = (props) => {
   let modeArea
@@ -28,13 +29,11 @@ let CheckArea = (props) => {
   }
 
   return (
-    <div style={{fontSize: '1.1em'}}>
-      <Col sm={6} style={{ paddingTop: '5px' }}>
-        <SelectArea {...props} />
-      </Col>
-      <Col sm={6} style={{ borderLeft: '1px solid var(--border-color)', height: '100%', paddingTop: '5px' }}>
+    <div style={style.checkArea}>
+      <SelectArea {...props} />
+      <div style={{ borderLeft: '1px solid var(--border-color)', flex: 1, display: 'flex' }}>
         {modeArea}
-      </Col>
+      </div>
     </div>
   )
 }
