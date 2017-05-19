@@ -1,11 +1,11 @@
 import React from 'react'
+import style from '../css/Style';
 
 let DirectionsArea = (props) => {
   return (
-    <div style={{ height: '12em', paddingTop: '4em', textAlign: 'center'}}>
-      Please select the correct translation for:
-      <br />
-      <strong style={{color: 'var(--accent-color)'}}>"{props.quote}"</strong>
+    <div style={style.directionsArea}>
+      <span>Please select the correct translation for:</span>
+      <span><strong style={{color: 'var(--accent-color)'}}>"{props.quote}"</strong></span>
     </div>
   )
 }

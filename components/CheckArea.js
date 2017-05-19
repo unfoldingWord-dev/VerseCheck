@@ -31,7 +31,7 @@ let CheckArea = (props) => {
   return (
     <div style={style.checkArea}>
       <SelectArea {...props} />
-      <div style={{ borderLeft: '1px solid var(--border-color)', flex: 1 }}>
+      <div style={{ borderLeft: '1px solid var(--border-color)', flex: 1, display: 'flex' }}>
         {modeArea}
       </div>
     </div>

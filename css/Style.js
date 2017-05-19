@@ -20,8 +20,8 @@ var style = {
     },
   },
   verseCheck: {
-    flex: '1 1 200px',
-    margin: '10px',
+    flex: '2 0 290px',
+    margin: '10px 10px 0 10px',
   },
   verseCheckCard: {
     flex: 'auto',
@@ -47,7 +47,7 @@ var style = {
     justifyContent: 'flex-end',
   },
   checkArea: {
-    flex: '0 0 135px',
+    flex: '1 0 135px',
     display: 'flex',
     fontSize: '1.1em',
     borderBottom: '1px solid var(--border-color)',
@@ -62,6 +62,13 @@ var style = {
     flex: '0 0 60px',
     display: 'flex',
     justifyContent: 'space-between',
+    alignItems: 'center',
+  },
+  directionsArea: {
+    flex: 'auto',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
     alignItems: 'center',
   }
 };
