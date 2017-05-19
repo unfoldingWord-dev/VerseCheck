@@ -5,7 +5,7 @@
 import React from 'react'
 import View from './components/View'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
-import SelectionHelpers from './utils/selectionHelpers'
+import {optimizeSelections, normalizeString} from './utils/selectionHelpers'
 // constant declaration
 const NAMESPACE = "VerseCheck";
 
@@ -68,7 +68,9 @@ class VerseCheck extends React.Component {
       },
       changeSelections: function(selections) {
         // optimize the selections to address potential issues and save
-        selections = SelectionHelpers.optimizeSelections(that.verseText, selections);
+        // normalize whitespace in case selection has contiguous whitespace that isn't captured
+        let verseText = normalizeString(that.verseText);
+        selections = optimizeSelections(verseText, selections);
         props.actions.changeSelections(selections, props.loginReducer.userdata.username)
       },
       changeMode: function(mode) {
@@ -204,10 +206,10 @@ class VerseCheck extends React.Component {
   render() {
     let {chapter, verse, bookId} = this.props.contextIdReducer.contextId.reference
     let bookAbbr = this.props.projectDetailsReducer.params.bookAbbr;
-    if (this.props.resourcesReducer.bibles.targetLanguage && bookId == bookAbbr) {
-      this.verseText = this.props.resourcesReducer.bibles.targetLanguage[chapter][verse];
+    if (this.props.resourcesReducer.bibles.targetLanguage && this.props.resourcesReducer.bibles.targetLanguage[chapter] && bookId == bookAbbr) {
+      this.verseText = this.props.resourcesReducer.bibles.targetLanguage[chapter][verse] || "";
     } else {
-      this.verseText = null;
+      this.verseText = "";
     }
 
     return (
