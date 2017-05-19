@@ -20,7 +20,7 @@ var style = {
     },
   },
   verseCheck: {
-    flex: '2 0 250px',
+    flex: '2 0 290px',
     margin: '10px',
   },
   verseCheckCard: {
@@ -47,7 +47,7 @@ var style = {
     justifyContent: 'flex-end',
   },
   checkArea: {
-    flex: '1 0 100px',
+    flex: '1 0 140px',
     display: 'flex',
     fontSize: '1.1em',
     borderBottom: '1px solid var(--border-color)',
@@ -63,6 +63,7 @@ var style = {
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
+    marginBottom: '-10px',
   },
   directionsArea: {
     flex: 'auto',
@@ -76,7 +77,13 @@ var style = {
     display: 'flex',
     flexDirection: 'column',
     padding: '5px 15px 0 15px'
-  }
+  },
+  editArea: {
+    flex: 'auto',
+    display: 'flex',
+    flexDirection: 'column',
+    padding: '5px 15px 0 15px'
+  },
 };
 
 module.exports = style;

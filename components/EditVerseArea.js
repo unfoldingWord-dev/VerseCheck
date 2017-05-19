@@ -1,5 +1,6 @@
 import React from 'react'
 import {Checkbox, Glyphicon, FormGroup, FormControl} from 'react-bootstrap'
+import style from '../css/Style';
 
 let EditVerseArea = (props) => {
   const tagList = [
@@ -23,21 +24,21 @@ let EditVerseArea = (props) => {
   let checkBoxText = props.verseChanged ? "Next, select reason(s) for change" : "First, make changes to verse above";
 
   return (
-    <div>
+    <div style={style.editArea}>
       <div style={{fontWeight: 'bold'}}>
         <Glyphicon glyph='pencil' style={{marginRight: '5px'}} />
         Edit Verse
       </div>
-      <FormGroup controlId='formControlsTextarea'>
+      <FormGroup style={{flex: 'auto', display: 'flex', flexDirection: 'column', marginBottom: '5px'}} controlId='formControlsTextarea'>
         <FormControl autoFocus
           componentClass='textarea'
           type='text'
           defaultValue={props.verseText}
-          style={{height: '9em', direction: props.dir}}
+          style={{flex: 'auto', direction: props.dir}}
           onBlur={props.actions.handleEditVerse.bind(this)}
           onInput={props.actions.checkVerse.bind(this)}
         />
-      <div style={{marginTop: '5px', marginBottom: '-2px', fontSize: '0.9em'}}>
+      <div style={{flex: '0 0 65px', marginTop: '5px', fontSize: '0.9em'}}>
           {checkBoxText}
           <br />
           {checkboxes}
