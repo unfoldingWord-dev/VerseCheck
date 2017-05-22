@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react'
-import { Modal, Button } from 'react-bootstrap'
+import { Modal, Glyphicon } from 'react-bootstrap'
 import MyTargetVerse from './MyTargetVerse'
 import ReactDOM from 'react-dom'
 
@@ -51,17 +51,20 @@ class MyLanguageModal extends Component {
 
     return (
       <Modal show={show} onHide={onHide} bsSize="lg" aria-labelledby="contained-modal-title-sm">
-        <Modal.Header style={{ backgroundColor: "var(--accent-color-dark)" }} closeButton>
-          <Modal.Title id="contained-modal-title-sm"
-            style={{ textAlign: "center", color: "var(--reverse-color)" }}>
-
+        <Modal.Header style={{ backgroundColor: "var(--accent-color-dark)" }}>
+          <Modal.Title id="contained-modal-title-sm">
+            <Glyphicon
+                onClick={onHide}
+                glyph={"remove"}
+                style={{color: "var(--reverse-color)", cursor: "pointer", fontSize: "18px", float: "right"}}
+            />
           </Modal.Title>
         </Modal.Header>
-        <Modal.Body style={{padding: '0px', height: "550px", backgroundColor: "var(--reverse-color)", overflowY: "auto"}}>
+        <Modal.Body style={{padding: '0px', height: "500px", backgroundColor: "var(--reverse-color)", overflowY: "auto"}}>
           {MyTargetLanguage}
         </Modal.Body>
-        <Modal.Footer style={{ backgroundColor: "var(--reverse-color)" }}>
-          <Button bsStyle="prime" onClick={onHide}>Close</Button>
+        <Modal.Footer style={{ padding: '0', backgroundColor: "var(--reverse-color)" }}>
+          <button className="btn-prime" onClick={onHide}>Close</button>
         </Modal.Footer>
       </Modal>
     )
