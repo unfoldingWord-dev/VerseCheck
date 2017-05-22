@@ -37,7 +37,8 @@ class View extends React.Component {
                 <div style={style.titleBar}>
                     <span>{titleText}</span>
                     <Glyphicon glyph="bookmark"
-                               style={{color: this.props.remindersReducer.enabled ? "var(--warning-color)" : "var(--reverse-color)"}}
+                               style={{cursor: 'pointer', color: this.props.remindersReducer.enabled ? "var(--warning-color)" : "var(--reverse-color)"}}
+                               title={this.props.remindersReducer.enabled ? "Remove bookmark from this check" : "Bookmark this check for further review later"}
                                onClick={this.props.actions.toggleReminder}
                     />
                 </div>

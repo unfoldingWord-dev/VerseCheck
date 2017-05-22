@@ -180,10 +180,10 @@ class SelectArea extends React.Component {
                 {bookName} {reference.chapter + ':' + reference.verse}
               </span>
           </div>
-          <div style={{float: "right"}} onClick={() => {
+          <div onClick={() => {
             this.setState({modalVisibility: true})
           }}>
-            <Glyphicon glyph="fullscreen" style={{cursor: "pointer"}}/>
+            <Glyphicon glyph="fullscreen" title="Click to show expanded verses" style={{cursor: "pointer"}}/>
             {modal}
           </div>
         </div>
