@@ -71,6 +71,8 @@ var style = {
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
+    padding: '20px',
+    textAlign: 'center',
   },
   commentArea: {
     flex: 'auto',
