@@ -20,7 +20,7 @@ var style = {
     },
   },
   verseCheck: {
-    flex: '2 0 290px',
+    flex: '2 0 280px',
     margin: '10px',
   },
   verseCheckCard: {
@@ -47,7 +47,7 @@ var style = {
     justifyContent: 'flex-end',
   },
   checkArea: {
-    flex: '1 0 140px',
+    flex: '1 0 130px',
     display: 'flex',
     fontSize: '1.1em',
     borderBottom: '1px solid var(--border-color)',
