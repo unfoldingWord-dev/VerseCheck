@@ -52,7 +52,7 @@ class DialogComponent extends Component {
         <Glyphicon
           onClick={this.props.handleClose}
           glyph={"remove"}
-          style={{color: "#ffffff", cursor: "pointer", fontSize: "18px", float: "right"}}
+          style={{color: "var(--reverse-color)", cursor: "pointer", fontSize: "18px", float: "right"}}
         />
        </div>
     );
@@ -72,12 +72,12 @@ class DialogComponent extends Component {
         /><br /><br />
           <div>
             <p>
-              Please <span style={{color: "#03a9f4", fontWeight: "bold"}}>select </span>
+              Please <span style={{color: "var(--accent-color)", fontWeight: "bold"}}>select </span>
               the correct translation for your current check.
             </p>
             <p>
               If you are unable to perform this check, you may
-              <span style={{color: "#03a9f4", fontWeight: "bold"}}> skip it </span>
+              <span style={{color: "var(--accent-color)", fontWeight: "bold"}}> skip it </span>
               and come back to it later.
             </p>
           </div>

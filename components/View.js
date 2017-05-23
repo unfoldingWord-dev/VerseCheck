@@ -1,5 +1,5 @@
 import React from 'react'
-import {Row, Glyphicon, Col, Button} from 'react-bootstrap'
+import {Row, Glyphicon, Col} from 'react-bootstrap'
 import style from '../css/Style';
 import CheckArea from './CheckArea'
 import ActionsArea from './ActionsArea'
