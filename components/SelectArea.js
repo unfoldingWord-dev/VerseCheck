@@ -108,7 +108,6 @@ class SelectArea extends React.Component {
       selections.forEach(selection => {
         if (!verseText.includes(selection.text)) {
           // validate selections and remove ones that do not apply
-          console.log(verseText, selection);
           this.props.actions.validateSelections(verseText);
         }
       })
