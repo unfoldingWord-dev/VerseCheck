@@ -105,6 +105,12 @@ class SelectArea extends React.Component {
     let verseTextSpans = <span>{verseText}</span>;
     if (selections && selections.length > 0) {
       let _selectionArray = selectionArray(verseText, selections);
+      selections.forEach(selection => {
+        if (occurrencesInString(verseText,selection.text) !== selection.occurrences) {
+          // validate selections and remove ones that do not apply
+          this.props.actions.validateSelections(verseText);
+        }
+      })
       verseTextSpans = _selectionArray.map((selection, index) =>
         <span key={index} style={selection.selected ? { backgroundColor: 'var(--highlight-color)', cursor: 'pointer' } : {}}
           onClick={selection.selected ? () => this.removeSelection(selection) : () => { }}>
@@ -141,8 +147,6 @@ class SelectArea extends React.Component {
     let {verseText, projectDetailsReducer} = this.props
     // normalize whitespace, since html selections will not include more than 1 contiguous space
     verseText = normalizeString(verseText);
-    // validate selections and remove ones that do not apply
-    this.props.actions.validateSelections(verseText);
     const { manifest, bookName } = projectDetailsReducer;
 
     let reference = this.props.contextIdReducer.contextId.reference;
