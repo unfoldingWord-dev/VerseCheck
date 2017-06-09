@@ -183,9 +183,6 @@ class VerseCheck extends React.Component {
         console.log(message)
         that.props.actions.openAlertDialog(message)
       },
-      showNotification: (message, duration) => {
-        that.props.actions.showNotification(message, duration);
-      },
       selectModalTab: (tab, section, vis) => {
         that.props.actions.selectModalTab(tab, section, vis);
       }
