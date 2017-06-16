@@ -163,15 +163,28 @@ class VerseCheck extends React.Component {
           that.props.actions.openAlertDialog("You must be logged in to edit a verse");
           return;
         }
-        if (that.state.verseText) {
+
+        const save = () => {
           actions.addVerseEdit(before, that.state.verseText, that.state.tags, username);
+          that.setState({
+            mode: 'select',
+            verseText: undefined,
+            verseChanged: false,
+            tags: []
+          });
         }
-        that.setState({
-          mode: 'select',
-          verseText: undefined,
-          verseChanged: false,
-          tags: []
-        });
+
+        if (that.state.verseText) {  // if verseText === "" is false
+          save();
+        } else {
+          // alert the user if the text is blank
+          let message = 'You are saving a blank verses. Please confirm.';
+          that.props.actions.openOptionDialog(message, (option)=> {
+            if (option !== "Cancel") save();
+            that.props.actions.closeAlertDialog();
+          }, "Save Blank Verse", "Cancel");
+        }
+
       },
       validateSelections: (verseText) => {
         that.props.actions.validateSelections(verseText)
