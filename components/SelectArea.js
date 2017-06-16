@@ -111,12 +111,17 @@ class SelectArea extends React.Component {
           this.props.actions.validateSelections(verseText);
         }
       })
-      verseTextSpans = _selectionArray.map((selection, index) =>
-        <span key={index} style={selection.selected ? { backgroundColor: 'var(--highlight-color)', cursor: 'pointer' } : {}}
-          onClick={selection.selected ? () => this.removeSelection(selection) : () => { }}>
-          {selection.text}
-        </span>
-      )
+      verseTextSpans = _selectionArray.map((selection, index) => {
+        let selectMode = this.props.mode === "select"; // use selectMode to conditionally use highlight and remove
+        let style = selection.selected ? { backgroundColor: 'var(--highlight-color)' } : {};
+        if (selectMode) style.cursor = 'pointer'; // only show hand if in select mode
+        let callback = (selection.selected && selectMode) ? () => this.removeSelection(selection) : () => {}; // only have callback when in select mode
+        return (
+          <span key={index} style={ style } onClick={callback}>
+            {selection.text}
+          </span>
+        );
+      })
     }
 
     if (this.props.mode == "select") {
@@ -127,7 +132,7 @@ class SelectArea extends React.Component {
       );
     } else {
       return (
-        <div>
+        <div style={{userSelect: 'none'}}>
           {verseTextSpans}
         </div>
       )
