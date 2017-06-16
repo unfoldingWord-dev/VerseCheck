@@ -1,7 +1,7 @@
   /**
   * @author Christopher Klpap
   * @description This component displays the Verse so selection, edit and comments can be made
-  ******************************************************************************/
+  */
 import React from 'react'
 import View from './components/View'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
@@ -180,7 +180,6 @@ class VerseCheck extends React.Component {
         that.props.actions.toggleReminder(that.props.loginReducer.userdata.username)
       },
       openAlertDialog: (message) => {
-        console.log(message)
         that.props.actions.openAlertDialog(message)
       },
       selectModalTab: (tab, section, vis) => {
@@ -201,8 +200,10 @@ class VerseCheck extends React.Component {
   }
 
   render() {
-    let {chapter, verse, bookId} = this.props.contextIdReducer.contextId.reference
+    let {chapter, verse, bookId} = this.props.contextIdReducer.contextId.reference;
+    let bibles = this.props.resourcesReducer.bibles;
     let bookAbbr = this.props.projectDetailsReducer.params.bookAbbr;
+
     if (this.props.resourcesReducer.bibles.targetLanguage && this.props.resourcesReducer.bibles.targetLanguage[chapter] && bookId == bookAbbr) {
       this.verseText = this.props.resourcesReducer.bibles.targetLanguage[chapter][verse] || "";
     } else {
