@@ -178,7 +178,7 @@ class VerseCheck extends React.Component {
           save();
         } else {
           // alert the user if the text is blank
-          let message = 'You are saving a blank verses. Please confirm.';
+          let message = 'You are saving a blank verse. Please confirm.';
           that.props.actions.openOptionDialog(message, (option)=> {
             if (option !== "Cancel") save();
             that.props.actions.closeAlertDialog();
