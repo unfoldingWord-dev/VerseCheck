@@ -69,7 +69,7 @@ class VerseCheck extends React.Component {
       changeSelections: function(selections) {
         // optimize the selections to address potential issues and save
         // normalize whitespace in case selection has contiguous whitespace that isn't captured
-        let verseText = normalizeString(that.verseText);
+        let verseText = normalizeString(that.verseText());
         selections = optimizeSelections(verseText, selections);
         props.actions.changeSelections(selections, props.loginReducer.userdata.username)
       },
