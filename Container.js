@@ -67,9 +67,8 @@ class VerseCheck extends React.Component {
         props.actions.goToPrevious()
       },
       changeSelections: function(selections) {
+        let verseText = that.verseText();
         // optimize the selections to address potential issues and save
-        // normalize whitespace in case selection has contiguous whitespace that isn't captured
-        let verseText = normalizeString(that.verseText());
         selections = optimizeSelections(verseText, selections);
         props.actions.changeSelections(selections, props.loginReducer.userdata.username)
       },
@@ -219,6 +218,8 @@ class VerseCheck extends React.Component {
     let verseText = "";
     if (targetLanguage && targetLanguage[chapter] && bookId == bookAbbr) {
       verseText = targetLanguage[chapter][verse];
+      // normalize whitespace in case selection has contiguous whitespace that isn't captured
+      verseText = normalizeString(verseText);
     }
     return verseText
   }
