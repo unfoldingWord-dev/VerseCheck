@@ -12,6 +12,12 @@ class SelectArea extends React.Component {
       modalVisibility: false
     }
   }
+
+  componentWillReceiveProps(nextProps) {
+    if (this.props !== nextProps) {
+      this.displayTextOutput = this.displayText();
+    }
+  }
 /*
  * @description
  * Implementation notes on why you can't just use the window.getSelection()
@@ -197,7 +203,7 @@ class SelectArea extends React.Component {
           </div>
         </div>
         <div style={this.props.projectDetailsReducer.params.direction === 'ltr' ? style.pane.contentLTR : style.pane.contentRTL}>
-          {this.displayText()}
+          {this.displayTextOutput}
         </div>
       </div>
     )
