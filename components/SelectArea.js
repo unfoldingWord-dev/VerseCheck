@@ -12,6 +12,12 @@ class SelectArea extends React.Component {
       modalVisibility: false
     }
   }
+
+  componentWillReceiveProps(nextProps) {
+    if (this.props !== nextProps) {
+      this.displayTextOutput = this.displayText(nextProps.verseText, nextProps.selectionsReducer.selections);
+    }
+  }
 /*
  * @description
  * Implementation notes on why you can't just use the window.getSelection()
@@ -97,9 +103,7 @@ class SelectArea extends React.Component {
     this.props.actions.changeSelections(selections);
   }
 
-  displayText() {
-    let { selections } = this.props.selectionsReducer;
-    let verseText = this.props.verseText;
+  displayText(verseText, selections) {
     // normalize whitespace for text rendering in order to display highlights with more than one space since html selections show one space
     verseText = normalizeString(verseText);
     let verseTextSpans = <span>{verseText}</span>;
@@ -114,7 +118,7 @@ class SelectArea extends React.Component {
       verseTextSpans = _selectionArray.map((selection, index) => {
         let selectMode = this.props.mode === "select"; // use selectMode to conditionally use highlight and remove
         let style = selection.selected ? { backgroundColor: 'var(--highlight-color)' } : {};
-        if (selectMode) style.cursor = 'pointer'; // only show hand if in select mode
+        if (selection.selected && selectMode) style.cursor = 'pointer'; // only show hand if in select mode
         let callback = (selection.selected && selectMode) ? () => this.removeSelection(selection) : () => {}; // only have callback when in select mode
         return (
           <span key={index} style={ style } onClick={callback}>
@@ -149,17 +153,15 @@ class SelectArea extends React.Component {
   }
 
   render() {
-    let {verseText, projectDetailsReducer} = this.props
-    // normalize whitespace, since html selections will not include more than 1 contiguous space
-    verseText = normalizeString(verseText);
+    const {projectDetailsReducer} = this.props;
     const { manifest, bookName } = projectDetailsReducer;
 
-    let reference = this.props.contextIdReducer.contextId.reference;
-    let bibles = this.props.resourcesReducer.bibles;
-    let languageName = manifest.target_language ? manifest.target_language.name : null;
+    const reference = this.props.contextIdReducer.contextId.reference;
+    const bibles = this.props.resourcesReducer.bibles;
+    const languageName = manifest.target_language ? manifest.target_language.name : null;
     let modal = <div/>;
 
-    let dir = manifest.target_language ? manifest.target_language.direction : null;
+    const dir = manifest.target_language ? manifest.target_language.direction : null;
 
     if (this.state.modalVisibility) {
       modal = (
@@ -197,7 +199,7 @@ class SelectArea extends React.Component {
           </div>
         </div>
         <div style={this.props.projectDetailsReducer.params.direction === 'ltr' ? style.pane.contentLTR : style.pane.contentRTL}>
-          {this.displayText()}
+          {this.displayTextOutput}
         </div>
       </div>
     )

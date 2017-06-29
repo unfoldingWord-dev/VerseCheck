@@ -67,9 +67,8 @@ class VerseCheck extends React.Component {
         props.actions.goToPrevious()
       },
       changeSelections: function(selections) {
+        let verseText = that.verseText();
         // optimize the selections to address potential issues and save
-        // normalize whitespace in case selection has contiguous whitespace that isn't captured
-        let verseText = normalizeString(that.verseText);
         selections = optimizeSelections(verseText, selections);
         props.actions.changeSelections(selections, props.loginReducer.userdata.username)
       },
@@ -109,7 +108,7 @@ class VerseCheck extends React.Component {
         that.setState({
           mode: 'select',
           comment: undefined,
-          commentChanged: false,
+          commentChanged: false
         })
       },
       handleTagsCheckbox: function(tag, e) {
@@ -144,7 +143,7 @@ class VerseCheck extends React.Component {
           })
         }
       },
-      cancelEditVerse: function(e) {
+      cancelEditVerse: function() {
         that.setState({
           mode: 'select',
           verseText: undefined,
@@ -178,7 +177,7 @@ class VerseCheck extends React.Component {
           save();
         } else {
           // alert the user if the text is blank
-          let message = 'You are saving a blank verses. Please confirm.';
+          let message = 'You are saving a blank verse. Please confirm.';
           that.props.actions.openOptionDialog(message, (option)=> {
             if (option !== "Cancel") save();
             that.props.actions.closeAlertDialog();
@@ -212,24 +211,27 @@ class VerseCheck extends React.Component {
     }
   }
 
-  render() {
-    let {chapter, verse, bookId} = this.props.contextIdReducer.contextId.reference;
-    let bibles = this.props.resourcesReducer.bibles;
-    let bookAbbr = this.props.projectDetailsReducer.params.bookAbbr;
-
-    if (this.props.resourcesReducer.bibles.targetLanguage && this.props.resourcesReducer.bibles.targetLanguage[chapter] && bookId == bookAbbr) {
-      this.verseText = this.props.resourcesReducer.bibles.targetLanguage[chapter][verse] || "";
-    } else {
-      this.verseText = "";
+  verseText() {
+    const {chapter, verse, bookId} = this.props.contextIdReducer.contextId.reference;
+    const {bookAbbr} = this.props.projectDetailsReducer.params;
+    const {targetLanguage} = this.props.resourcesReducer.bibles;
+    let verseText = "";
+    if (targetLanguage && targetLanguage[chapter] && bookId == bookAbbr) {
+      verseText = targetLanguage[chapter][verse];
+      // normalize whitespace in case selection has contiguous whitespace that isn't captured
+      verseText = normalizeString(verseText);
     }
+    return verseText
+  }
 
+  render() {
     return (
       <MuiThemeProvider>
         <View {...this.props} actions={this.actions}
           mode={this.state.mode}
           comment={this.props.commentsReducer.text}
           commentChanged={this.state.commentChanged}
-          verseText={this.verseText}
+          verseText={this.verseText()}
           verseChanged={this.state.verseChanged}
           tags={this.state.tags}
           dialogModalVisibility={this.state.dialogModalVisibility}
