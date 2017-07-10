@@ -33,16 +33,16 @@ class View extends React.Component {
     return (
       <div style={style.verseCheck}>
         <div style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
-        <div style={style.verseCheckCard}>
-          <div style={style.titleBar}>
-            <span>{titleText}</span>
-            <IconIndicators
-              actions={this.props.actions}
-              selectionsReducer={this.props.selectionsReducer}
-              verseEditReducer={this.props.verseEditReducer}
-              commentsReducer={this.props.commentsReducer}
-              remindersReducer={this.props.remindersReducer}
-            />
+          <div style={style.verseCheckCard}>
+            <div style={style.titleBar}>
+              <span>{titleText}</span>
+              <IconIndicators
+                actions={this.props.actions}
+                selectionsReducer={this.props.selectionsReducer}
+                verseEditReducer={this.props.verseEditReducer}
+                commentsReducer={this.props.commentsReducer}
+                remindersReducer={this.props.remindersReducer}
+              />
             </div>
             <CheckArea {...this.props} />
             <ActionsArea {...this.props} />

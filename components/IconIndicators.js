@@ -41,12 +41,10 @@ const IconIndicators = ({
         glyph="bookmark"
         style={{
           margin: '0px 20px',
-          cursor: 'pointer',
           color: "var(--reverse-color)",
           opacity: remindersReducer.enabled ? 1 : 0.2
         }}
-        title={remindersReducer.enabled ? "Remove bookmark from this check" : "Bookmark this check for further review later"}
-        onClick={actions.toggleReminder}
+        title={remindersReducer.enabled ? "This check has been bookmarked for review" : "This check has not been bookmarked for review"}
       />
     </div>
   );
