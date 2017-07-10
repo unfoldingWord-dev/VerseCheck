@@ -4,7 +4,7 @@ import style from '../css/Style'
 import {selectionArray, occurrencesInString, normalizeString} from '../utils/selectionHelpers'
 import MyLanguageModal from './MyLanguageModal'
 
-class SelectArea extends React.Component {
+class DefaultArea extends React.Component {
   constructor() {
     super();
     this.state = {
@@ -206,4 +206,4 @@ class SelectArea extends React.Component {
   }
 }
 
-export default SelectArea
+export default DefaultArea;

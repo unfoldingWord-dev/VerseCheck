@@ -66,12 +66,7 @@ var style = {
     marginBottom: '-10px'
   },
   directionsArea: {
-    flex: 'auto',
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'center',
-    padding: '20px',
+    padding: '10px',
     textAlign: 'center'
   },
   commentArea: {

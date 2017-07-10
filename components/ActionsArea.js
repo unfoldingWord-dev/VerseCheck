@@ -8,22 +8,32 @@ let ActionsArea = ({
   mode,
   actions,
   commentChanged,
+  selctionChanged,
   remindersReducer
 }) => {
   const changeModeArea = (
     <div style={style.actionsArea}>
       <Toggle
         toggled={remindersReducer.enabled}
-        style={{ margin: "auto 10px", display: "flex" }}
+        style={{ margin: "auto 5px", display: "flex" }}
         label="Bookmark"
         labelPosition="right"
-        labelStyle={{ color: 'var(--accent-color-dark)', fontSize: "16px" }}
+        labelStyle={{ color: 'var(--accent-color-dark)', fontWeight: "normal" }}
         thumbSwitchedStyle={{ backgroundColor: 'var(--accent-color-dark)' }}
         trackSwitchedStyle={{ backgroundColor: 'var(--accent-color-dark)', opacity: '0.5' }}
         onToggle={actions.toggleReminder}
       />
-      <div style={{ display: "flex", justifyContent: "flex-end", alignItems: "center" }}>
+      <div style={{ display: "flex" }}>
         <button
+          style={{ width: "140px", marginRigth: "5px" }}
+          className='btn-second'
+          onClick={actions.changeMode.bind(this,'select')}
+        >
+          <Glyphicon glyph='ok' style={{marginRight: '10px'}} />
+          Select
+        </button>
+        <button
+          style={{ width: "140px", marginRigth: "5px" }}
           className='btn-second'
           onClick={actions.changeMode.bind(this,'edit')}
         >
@@ -31,6 +41,7 @@ let ActionsArea = ({
           Edit Verse
         </button>
         <button
+          style={{ width: "140px" }}
           className='btn-second'
           onClick={actions.changeMode.bind(this,'comment')}
         >
@@ -75,19 +86,39 @@ let ActionsArea = ({
       </div>
   )
 
+  const confirmSelectionArea = (
+      <div style={style.actionsArea}>
+        <button className='btn-second'
+                onClick={actions.cancelSelection.bind(this)}
+        >
+          Cancel
+        </button>
+        <button className='btn-prime'
+                disabled={!selctionChanged}
+                onClick={actions.saveSelection.bind(this)}
+        >
+          <Glyphicon glyph='ok' style={{marginRight: '10px'}} />
+          Save Changes
+        </button>
+      </div>
+  )
+
   let modeArea
   switch(mode) {
     case 'edit':
-    modeArea = confirmEditVerseArea
-    break
+      modeArea = confirmEditVerseArea
+      break
     case 'comment':
-    modeArea = confirmCommentArea
-    break
+      modeArea = confirmCommentArea
+      break
     case 'select':
-    modeArea = changeModeArea
-    break
+      modeArea = confirmSelectionArea
+      break
+    case 'default':
+      modeArea = changeModeArea
+      break
     default:
-    modeArea = changeModeArea
+      modeArea = changeModeArea
   }
 
   return modeArea

@@ -13,11 +13,13 @@ class VerseCheck extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      mode: 'select',
+      mode: 'default',
       comment: undefined,
       commentChanged: false,
       verseText: undefined,
       verseChanged: false,
+      selection: undefined,
+      selctionChanged: false,
       tags: [],
       dialogModalVisibility: false,
       goToNextOrPrevious: null
@@ -93,7 +95,7 @@ class VerseCheck extends React.Component {
       },
       cancelComment: function(e) {
         that.setState({
-          mode: 'select',
+          mode: 'default',
           comment: undefined,
           commentChanged: false
         })
@@ -106,7 +108,7 @@ class VerseCheck extends React.Component {
         }
         that.props.actions.addComment(that.state.comment, that.props.loginReducer.userdata.username)
         that.setState({
-          mode: 'select',
+          mode: 'default',
           comment: undefined,
           commentChanged: false
         })
@@ -145,7 +147,7 @@ class VerseCheck extends React.Component {
       },
       cancelEditVerse: function() {
         that.setState({
-          mode: 'select',
+          mode: 'default',
           verseText: undefined,
           verseChanged: false,
           tags: []
@@ -166,7 +168,7 @@ class VerseCheck extends React.Component {
         const save = () => {
           actions.addVerseEdit(before, that.state.verseText, that.state.tags, username);
           that.setState({
-            mode: 'select',
+            mode: 'default',
             verseText: undefined,
             verseChanged: false,
             tags: []
@@ -184,6 +186,16 @@ class VerseCheck extends React.Component {
           }, "Save Blank Verse", "Cancel");
         }
 
+      },
+      cancelSelection: function() {
+        that.setState({
+          mode: 'default',
+          selection: undefined,
+          selctionChanged: false
+        })
+      },
+      saveSelection: function() {
+        console.log("save selection")
       },
       validateSelections: (verseText) => {
         that.props.actions.validateSelections(verseText)
@@ -203,7 +215,7 @@ class VerseCheck extends React.Component {
   componentWillReceiveProps(nextProps) {
     if (nextProps.contextIdReducer.contextId != this.props.contextIdReducer.contextId) {
       this.setState({
-        mode: 'select',
+        mode: 'default',
         comments: undefined,
         verseText: undefined,
         tags: []
