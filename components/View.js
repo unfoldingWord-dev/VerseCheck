@@ -5,11 +5,31 @@ import ActionsArea from './ActionsArea';
 import SaveArea from './SaveArea';
 import DialogComponent from './DialogComponent';
 import IconIndicators from './IconIndicators';
+import isEqual from 'lodash/isEqual'
 
 class View extends React.Component {
 
+  findIfVerseEdited() {
+    const {
+      contextIdReducer: {
+        contextId
+      },
+      groupsDataReducer: {
+        groupsData
+      }
+    } = this.props;
+    let result = false;
+    
+    if (groupsData[contextId.groupId]) {
+      let groupData = groupsData[contextId.groupId].filter(groupData => {
+        return isEqual(groupData.contextId, contextId)
+      });
+      result = groupData[0].verseEdits
+    }
+    return result;
+  }
+
   render() {
-    let { currentCheck } = this.props
     let titleText
     let saveArea
     switch (this.props.mode) {
@@ -38,6 +58,7 @@ class View extends React.Component {
               <span>{titleText}</span>
               <IconIndicators
                 actions={this.props.actions}
+                verseEdited={this.findIfVerseEdited()}
                 selectionsReducer={this.props.selectionsReducer}
                 verseEditReducer={this.props.verseEditReducer}
                 commentsReducer={this.props.commentsReducer}
@@ -62,4 +83,4 @@ class View extends React.Component {
   }
 }
 
-export default View
+export default View;
