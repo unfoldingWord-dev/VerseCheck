@@ -1,15 +1,35 @@
-import React from 'react'
-import {Row, Glyphicon, Col} from 'react-bootstrap'
+import React from 'react';
 import style from '../css/Style';
-import CheckArea from './CheckArea'
-import ActionsArea from './ActionsArea'
-import SaveArea from './SaveArea'
-import DialogComponent from './DialogComponent'
+import CheckArea from './CheckArea';
+import ActionsArea from './ActionsArea';
+import SaveArea from './SaveArea';
+import DialogComponent from './DialogComponent';
+import IconIndicators from './IconIndicators';
+import isEqual from 'lodash/isEqual'
 
 class View extends React.Component {
 
+  findIfVerseEdited() {
+    const {
+      contextIdReducer: {
+        contextId
+      },
+      groupsDataReducer: {
+        groupsData
+      }
+    } = this.props;
+    let result = false;
+    
+    if (groupsData[contextId.groupId]) {
+      let groupData = groupsData[contextId.groupId].filter(groupData => {
+        return isEqual(groupData.contextId, contextId)
+      });
+      result = groupData[0].verseEdits
+    }
+    return result;
+  }
+
   render() {
-    let { currentCheck } = this.props
     let titleText
     let saveArea
     switch (this.props.mode) {
@@ -32,14 +52,17 @@ class View extends React.Component {
 
     return (
       <div style={style.verseCheck}>
-        <div style={{height: '100%', display: 'flex', flexDirection: 'column'}}>
-        <div style={style.verseCheckCard}>
-          <div style={style.titleBar}>
-            <span>{titleText}</span>
-              <Glyphicon glyph="bookmark"
-                style={{cursor: 'pointer', color: this.props.remindersReducer.enabled ? "var(--warning-color)" : "var(--reverse-color)"}}
-                title={this.props.remindersReducer.enabled ? "Remove bookmark from this check" : "Bookmark this check for further review later"}
-                onClick={this.props.actions.toggleReminder}
+        <div style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
+          <div style={style.verseCheckCard}>
+            <div style={style.titleBar}>
+              <span>{titleText}</span>
+              <IconIndicators
+                actions={this.props.actions}
+                verseEdited={this.findIfVerseEdited()}
+                selectionsReducer={this.props.selectionsReducer}
+                verseEditReducer={this.props.verseEditReducer}
+                commentsReducer={this.props.commentsReducer}
+                remindersReducer={this.props.remindersReducer}
               />
             </div>
             <CheckArea {...this.props} />
@@ -60,4 +83,4 @@ class View extends React.Component {
   }
 }
 
-export default View
+export default View;

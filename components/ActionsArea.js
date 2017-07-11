@@ -1,35 +1,56 @@
 import React from 'react'
-import {Col, Glyphicon} from 'react-bootstrap'
+import { Glyphicon } from 'react-bootstrap';
+import { Toggle } from 'material-ui';
 import style from '../css/Style';
 
-let ActionsArea = (props) => {
+let ActionsArea = ({
+  tags,
+  mode,
+  actions,
+  commentChanged,
+  remindersReducer
+}) => {
   const changeModeArea = (
     <div style={style.actionsArea}>
-      <button className='btn-second'
-              onClick={props.actions.changeMode.bind(this,'edit')}
-      >
-        <Glyphicon glyph='pencil' style={{marginRight: '10px'}} />
-        Edit Verse
-      </button>
-      <button className='btn-second'
-              onClick={props.actions.changeMode.bind(this,'comment')}
-      >
-        <Glyphicon glyph='comment' style={{marginRight: '10px'}} />
-        Comment
-      </button>
+      <Toggle
+        toggled={remindersReducer.enabled}
+        style={{ margin: "auto 10px", display: "flex" }}
+        label="Bookmark"
+        labelPosition="right"
+        labelStyle={{ color: 'var(--accent-color-dark)', fontSize: "16px" }}
+        thumbSwitchedStyle={{ backgroundColor: 'var(--accent-color-dark)' }}
+        trackSwitchedStyle={{ backgroundColor: 'var(--accent-color-dark)', opacity: '0.5' }}
+        onToggle={actions.toggleReminder}
+      />
+      <div style={{ display: "flex", justifyContent: "flex-end", alignItems: "center" }}>
+        <button
+          className='btn-second'
+          onClick={actions.changeMode.bind(this,'edit')}
+        >
+          <Glyphicon glyph='pencil' style={{marginRight: '10px'}} />
+          Edit Verse
+        </button>
+        <button
+          className='btn-second'
+          onClick={actions.changeMode.bind(this,'comment')}
+        >
+          <Glyphicon glyph='comment' style={{marginRight: '10px'}} />
+          Comment
+        </button>
+      </div>
     </div>
   )
 
   const confirmEditVerseArea = (
       <div style={style.actionsArea}>
         <button className='btn-second'
-                onClick={props.actions.cancelEditVerse.bind(this)}
+                onClick={actions.cancelEditVerse.bind(this)}
         >
           Cancel
         </button>
         <button className='btn-prime'
-                disabled={!props.tags.length}
-                onClick={props.actions.saveEditVerse.bind(this)}
+                disabled={!tags.length}
+                onClick={actions.saveEditVerse.bind(this)}
         >
           <Glyphicon glyph='ok' style={{marginRight: '10px'}} />
           Save Changes
@@ -40,13 +61,13 @@ let ActionsArea = (props) => {
   const confirmCommentArea = (
       <div style={style.actionsArea}>
         <button className='btn-second'
-                onClick={props.actions.cancelComment.bind(this)}
+                onClick={actions.cancelComment.bind(this)}
         >
           Cancel
         </button>
         <button className='btn-prime'
-                disabled={!props.commentChanged}
-                onClick={props.actions.saveComment.bind(this)}
+                disabled={!commentChanged}
+                onClick={actions.saveComment.bind(this)}
         >
           <Glyphicon glyph='ok' style={{marginRight: '10px'}} />
           Save Changes
@@ -55,7 +76,7 @@ let ActionsArea = (props) => {
   )
 
   let modeArea
-  switch(props.mode) {
+  switch(mode) {
     case 'edit':
     modeArea = confirmEditVerseArea
     break
@@ -72,4 +93,4 @@ let ActionsArea = (props) => {
   return modeArea
 }
 
-module.exports = ActionsArea
+export default ActionsArea;
