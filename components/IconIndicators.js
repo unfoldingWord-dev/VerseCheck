@@ -3,6 +3,7 @@ import { Glyphicon } from 'react-bootstrap';
 
 const IconIndicators = ({
   actions,
+  verseEdited,
   selectionsReducer,
   verseEditReducer,
   commentsReducer,
@@ -24,9 +25,9 @@ const IconIndicators = ({
         style={{
           margin: '0px 20px',
           color: "var(--reverse-color)",
-          opacity: verseEditReducer.verseAfter ? 1 : 0.2
+          opacity: verseEdited ? 1 : 0.2
         }}
-        title={verseEditReducer.verseAfter ? "Verse edits were found for this check" : "No Verse edits were found for this check"}
+        title={verseEdited ? "Verse edits were found for this check" : "No Verse edits were found for this check"}
       />
        <Glyphicon
         glyph="comment"

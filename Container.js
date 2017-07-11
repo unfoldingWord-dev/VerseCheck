@@ -237,6 +237,7 @@ class VerseCheck extends React.Component {
   }
 
   render() {
+    console.log(this.props)
     return (
       <MuiThemeProvider>
         <View {...this.props} actions={this.actions}
