@@ -18,8 +18,7 @@ class VerseCheck extends React.Component {
       commentChanged: false,
       verseText: undefined,
       verseChanged: false,
-      selection: undefined,
-      selctionChanged: false,
+      selections: [],
       tags: [],
       dialogModalVisibility: false,
       goToNextOrPrevious: null
@@ -68,11 +67,8 @@ class VerseCheck extends React.Component {
         that.setState({dialogModalVisibility: false});
         props.actions.goToPrevious()
       },
-      changeSelections: function(selections) {
-        let verseText = that.verseText();
-        // optimize the selections to address potential issues and save
-        selections = optimizeSelections(verseText, selections);
-        props.actions.changeSelections(selections, props.loginReducer.userdata.username)
+      changeSelectionsInLocalState: function(selections) {
+        that.setState({ selections });
       },
       changeMode: function(mode) {
         let newState = that.state
@@ -187,16 +183,6 @@ class VerseCheck extends React.Component {
         }
 
       },
-      cancelSelection: function() {
-        that.setState({
-          mode: 'default',
-          selection: undefined,
-          selctionChanged: false
-        })
-      },
-      saveSelection: function() {
-        console.log("save selection")
-      },
       validateSelections: (verseText) => {
         that.props.actions.validateSelections(verseText)
       },
@@ -212,21 +198,45 @@ class VerseCheck extends React.Component {
     }
   }
 
+  componentWillMount() {
+    let selections = Array.from(this.props.selectionsReducer.selections);
+    this.setState({selections});
+  }
+
   componentWillReceiveProps(nextProps) {
     if (nextProps.contextIdReducer.contextId != this.props.contextIdReducer.contextId) {
+      let selections = Array.from(nextProps.selectionsReducer.selections);
       this.setState({
         mode: 'default',
         comments: undefined,
         verseText: undefined,
+        selections,
         tags: []
       })
     }
   }
 
+  cancelSelection() {
+    this.setState({
+      mode: 'default',
+      selections: this.props.selectionsReducer.selections
+    })
+  }
+
+  saveSelection() {
+    let verseText = this.verseText();
+    // optimize the selections to address potential issues and save
+    let selections = optimizeSelections(verseText, this.state.selections);
+    this.props.actions.changeSelections(selections, this.props.loginReducer.userdata.username);
+    this.setState({
+      mode: 'default'
+    })
+  }
+
   verseText() {
-    const {chapter, verse, bookId} = this.props.contextIdReducer.contextId.reference;
-    const {bookAbbr} = this.props.projectDetailsReducer.params;
-    const {targetLanguage} = this.props.resourcesReducer.bibles;
+    const { chapter, verse, bookId } = this.props.contextIdReducer.contextId.reference;
+    const { bookAbbr } = this.props.projectDetailsReducer.params;
+    const { targetLanguage } = this.props.resourcesReducer.bibles;
     let verseText = "";
     if (targetLanguage && targetLanguage[chapter] && bookId == bookAbbr) {
       verseText = targetLanguage[chapter][verse];
@@ -237,15 +247,17 @@ class VerseCheck extends React.Component {
   }
 
   render() {
-    console.log(this.props)
     return (
       <MuiThemeProvider>
         <View {...this.props} actions={this.actions}
+          cancelSelection={this.cancelSelection.bind(this)}
+          saveSelection={this.saveSelection.bind(this)}
           mode={this.state.mode}
           comment={this.props.commentsReducer.text}
           commentChanged={this.state.commentChanged}
           verseText={this.verseText()}
           verseChanged={this.state.verseChanged}
+          selections={this.state.selections}
           tags={this.state.tags}
           dialogModalVisibility={this.state.dialogModalVisibility}
           goToNextOrPrevious={this.state.goToNextOrPrevious}

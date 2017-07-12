@@ -73,13 +73,15 @@ var style = {
     flex: 'auto',
     display: 'flex',
     flexDirection: 'column',
-    padding: '5px 15px 0 15px'
+    padding: '5px 15px 0 15px',
+    height: "100%" 
   },
   editArea: {
     flex: 'auto',
     display: 'flex',
     flexDirection: 'column',
-    padding: '5px 15px 0 15px'
+    padding: '5px 15px 0 15px',
+    height: "100%"
   }
 };
 

@@ -1,26 +1,21 @@
 import React, { Component } from 'react';
 import DirectionsArea from './DirectionsArea';
+import { selectionArray, occurrencesInString, normalizeString } from '../utils/selectionHelpers';
+import style from '../css/Style';
 
 class SelectionArea extends Component {
-    constructor() {
+  constructor() {
     super();
     this.state = {
-      inBox: false,
-      modalVisibility: false
+      inBox: false
     }
   }
-
-  componentWillReceiveProps(nextProps) {
-    if (this.props !== nextProps) {
-      this.displayTextOutput = this.displayText(nextProps.verseText, nextProps.selectionsReducer.selections);
-    }
-  }
-/*
- * @description
- * Implementation notes on why you can't just use the window.getSelection()
- * getSelection is limited by same innerText node, and does not include span siblings
- * indexOfTextSelection is broken by any other previous selection since it only knows its innerText node.
- */
+  /*
+  * @description
+  * Implementation notes on why you can't just use the window.getSelection()
+  * getSelection is limited by same innerText node, and does not include span siblings
+  * indexOfTextSelection is broken by any other previous selection since it only knows its innerText node.
+  */
   getSelectionText() {
     if (!this.props.loginReducer.loggedInUser) {
       this.props.actions.selectModalTab(1, 1, true);
@@ -82,34 +77,74 @@ class SelectionArea extends Component {
   }
 
   addSelection(selection) {
-    let selections = this.props.selectionsReducer.selections;
+    let selections = Array.from(this.props.selections);
     if (selections.length >= 4) {
       this.props.actions.openAlertDialog('Click a previous selection to remove it before adding a new one. To select more than 4 words, highlight phrases instead of individual words.')
       return false
     } else {
       selections.push(selection);
     }
-    this.props.actions.changeSelections(selections);
+    this.props.actions.changeSelectionsInLocalState(selections);
   }
 
   removeSelection(selection) {
-    let selections = this.props.selectionsReducer.selections;
+    let selections = Array.from(this.props.selections);
     selections = selections.filter(_selection =>
       _selection.occurrence !== selection.occurrence || _selection.text !== selection.text
     )
-    this.props.actions.changeSelections(selections);
+    this.props.actions.changeSelectionsInLocalState(selections);
+  }
+
+  displayText(verseText, selections) {
+    // normalize whitespace for text rendering in order to display highlights with more than one space since html selections show one space
+    verseText = normalizeString(verseText);
+    let verseTextSpans = <span>{verseText}</span>;
+    if (selections && selections.length > 0) {
+      let _selectionArray = selectionArray(verseText, selections);
+      selections.forEach(selection => {
+        if (occurrencesInString(verseText,selection.text) !== selection.occurrences) {
+          // validate selections and remove ones that do not apply
+          this.props.actions.validateSelections(verseText);
+        }
+      })
+      verseTextSpans = _selectionArray.map((selection, index) => {
+        let selectMode = this.props.mode === "select"; // use selectMode to conditionally use highlight and remove
+        let style = selection.selected ? { backgroundColor: 'var(--highlight-color)' } : {};
+        if (selection.selected && selectMode) style.cursor = 'pointer'; // only show hand if in select mode
+        let callback = (selection.selected && selectMode) ? () => this.removeSelection(selection) : () => {}; // only have callback when in select mode
+        return (
+          <span key={index} style={ style } onClick={callback}>
+            {selection.text}
+          </span>
+        );
+      })
+    }
+
+    return (
+      <div onMouseUp={() => this.getSelectionText()} onMouseLeave={()=>this.inDisplayBox(false)} onMouseEnter={()=>this.inDisplayBox(true)}>
+        {verseTextSpans}
+      </div>
+    );
+  }
+
+  inDisplayBox(insideDisplayBox) {
+    this.setState({ inBox: insideDisplayBox });
+    if (!insideDisplayBox && Math.abs(window.getSelection().extentOffset - window.getSelection().baseOffset) > 0) {
+      this.getSelectionText()
+    }
+    window.getSelection().empty();
   }
 
   render() {
-    let { quote } = this.props;
-
     return (
       <div>
         <div style={{ flex: "0.2", justifyContent: "center", alignItems: "center", borderBottom: '1px solid var(--border-color)', width: "100%" }}>
-          <DirectionsArea quote={quote} />
+          <DirectionsArea quote={this.props.quote} />
         </div>
         <div style={{ flex: "0.8", justifyContent: "center", alignItems: "center" }}>
-          "Selection area"
+          <div style={this.props.projectDetailsReducer.params.direction === 'ltr' ? style.pane.contentLTR : style.pane.contentRTL}>
+            {this.displayText(this.props.verseText, this.props.selections)}
+          </div>
         </div>
       </div>
     );

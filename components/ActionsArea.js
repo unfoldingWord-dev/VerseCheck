@@ -1,6 +1,7 @@
 import React from 'react'
 import { Glyphicon } from 'react-bootstrap';
 import { Toggle } from 'material-ui';
+import isEqual from 'lodash/isEqual';
 import style from '../css/Style';
 
 let ActionsArea = ({
@@ -8,8 +9,11 @@ let ActionsArea = ({
   mode,
   actions,
   commentChanged,
-  selctionChanged,
-  remindersReducer
+  selectionsReducer,
+  selections,
+  remindersReducer,
+  saveSelection,
+  cancelSelection
 }) => {
   const changeModeArea = (
     <div style={style.actionsArea}>
@@ -89,13 +93,13 @@ let ActionsArea = ({
   const confirmSelectionArea = (
       <div style={style.actionsArea}>
         <button className='btn-second'
-                onClick={actions.cancelSelection.bind(this)}
+                onClick={cancelSelection.bind(this)}
         >
           Cancel
         </button>
         <button className='btn-prime'
-                disabled={!selctionChanged}
-                onClick={actions.saveSelection.bind(this)}
+                disabled={isEqual(selections, selectionsReducer.selections)}
+                onClick={saveSelection.bind(this)}
         >
           <Glyphicon glyph='ok' style={{marginRight: '10px'}} />
           Save Changes
