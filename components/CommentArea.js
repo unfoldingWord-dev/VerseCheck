@@ -9,7 +9,7 @@ let CommentArea = (props) => {
         <Glyphicon glyph='comment' style={{marginRight: '5px'}} />
         Comment
       </div>
-      <FormGroup style={{flex: 'auto', display: 'flex'}} controlId="formControlsTextarea">
+      <FormGroup style={{flex: 'auto', display: 'flex' }} controlId="formControlsTextarea">
         <FormControl autoFocus
           componentClass='textarea'
           type='text'

@@ -66,25 +66,23 @@ var style = {
     marginBottom: '-10px'
   },
   directionsArea: {
-    flex: 'auto',
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'center',
-    padding: '20px',
-    textAlign: 'center'
+    padding: '5px',
+    textAlign: 'center',
+    overflow: "auto"
   },
   commentArea: {
     flex: 'auto',
     display: 'flex',
     flexDirection: 'column',
-    padding: '5px 15px 0 15px'
+    padding: '5px 15px 0 15px',
+    height: "100%" 
   },
   editArea: {
     flex: 'auto',
     display: 'flex',
     flexDirection: 'column',
-    padding: '5px 15px 0 15px'
+    padding: '5px 15px 0 15px',
+    height: "100%"
   }
 };
 

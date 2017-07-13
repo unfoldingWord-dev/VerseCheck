@@ -1,29 +1,21 @@
-import React from 'react'
-import {Glyphicon} from 'react-bootstrap'
-import style from '../css/Style'
-import {selectionArray, occurrencesInString, normalizeString} from '../utils/selectionHelpers'
-import MyLanguageModal from './MyLanguageModal'
+import React, { Component } from 'react';
+import DirectionsArea from './DirectionsArea';
+import { selectionArray, occurrencesInString, normalizeString } from '../utils/selectionHelpers';
+import style from '../css/Style';
 
-class SelectArea extends React.Component {
+class SelectionArea extends Component {
   constructor() {
     super();
     this.state = {
-      inBox: false,
-      modalVisibility: false
+      inBox: false
     }
   }
-
-  componentWillReceiveProps(nextProps) {
-    if (this.props !== nextProps) {
-      this.displayTextOutput = this.displayText(nextProps.verseText, nextProps.selectionsReducer.selections);
-    }
-  }
-/*
- * @description
- * Implementation notes on why you can't just use the window.getSelection()
- * getSelection is limited by same innerText node, and does not include span siblings
- * indexOfTextSelection is broken by any other previous selection since it only knows its innerText node.
- */
+  /*
+  * @description
+  * Implementation notes on why you can't just use the window.getSelection()
+  * getSelection is limited by same innerText node, and does not include span siblings
+  * indexOfTextSelection is broken by any other previous selection since it only knows its innerText node.
+  */
   getSelectionText() {
     if (!this.props.loginReducer.loggedInUser) {
       this.props.actions.selectModalTab(1, 1, true);
@@ -85,22 +77,22 @@ class SelectArea extends React.Component {
   }
 
   addSelection(selection) {
-    let selections = this.props.selectionsReducer.selections;
+    let selections = Array.from(this.props.selections);
     if (selections.length >= 4) {
       this.props.actions.openAlertDialog('Click a previous selection to remove it before adding a new one. To select more than 4 words, highlight phrases instead of individual words.')
       return false
     } else {
       selections.push(selection);
     }
-    this.props.actions.changeSelections(selections);
+    this.props.actions.changeSelectionsInLocalState(selections);
   }
 
   removeSelection(selection) {
-    let selections = this.props.selectionsReducer.selections;
+    let selections = Array.from(this.props.selections);
     selections = selections.filter(_selection =>
       _selection.occurrence !== selection.occurrence || _selection.text !== selection.text
     )
-    this.props.actions.changeSelections(selections);
+    this.props.actions.changeSelectionsInLocalState(selections);
   }
 
   displayText(verseText, selections) {
@@ -128,20 +120,11 @@ class SelectArea extends React.Component {
       })
     }
 
-    if (this.props.mode == "select") {
-      return (
-        <div onMouseUp={() => this.getSelectionText()} onMouseLeave={()=>this.inDisplayBox(false)} onMouseEnter={()=>this.inDisplayBox(true)}>
-          {verseTextSpans}
-        </div>
-      );
-    } else {
-      return (
-        <div style={{userSelect: 'none'}}>
-          {verseTextSpans}
-        </div>
-      )
-    }
-
+    return (
+      <div style={{ overflow: "auto" }} onMouseUp={() => this.getSelectionText()} onMouseLeave={()=>this.inDisplayBox(false)} onMouseEnter={()=>this.inDisplayBox(true)}>
+        {verseTextSpans}
+      </div>
+    );
   }
 
   inDisplayBox(insideDisplayBox) {
@@ -153,57 +136,19 @@ class SelectArea extends React.Component {
   }
 
   render() {
-    const {projectDetailsReducer} = this.props;
-    const { manifest, bookName } = projectDetailsReducer;
-
-    const reference = this.props.contextIdReducer.contextId.reference;
-    const bibles = this.props.resourcesReducer.bibles;
-    const languageName = manifest.target_language ? manifest.target_language.name : null;
-    let modal = <div/>;
-
-    const dir = manifest.target_language ? manifest.target_language.direction : null;
-
-    if (this.state.modalVisibility) {
-      modal = (
-        <MyLanguageModal
-          show={this.state.modalVisibility}
-          targetLangBible={bibles.targetLanguage}
-          chapter={reference.chapter}
-          currentVerse={reference.verse}
-          dir = {dir ? dir : "ltr"}
-          onHide={
-            () => {
-              this.setState({modalVisibility: false})
-            }
-          }
-        />
-      )
-    }
-
     return (
-      <div style={{flex: 1, display: 'flex', flexDirection: 'column'}}>
-        <div style={style.verseTitle}>
-          <div style={{display: 'flex', flexDirection: 'column'}}>
-              <span style={style.pane.title}>
-                {languageName}
-              </span>
-              <span style={style.pane.subtitle}>
-                {bookName} {reference.chapter + ':' + reference.verse}
-              </span>
-          </div>
-          <div onClick={() => {
-            this.setState({modalVisibility: true})
-          }}>
-            <Glyphicon glyph="fullscreen" title="Click to show expanded verses" style={{cursor: "pointer"}}/>
-            {modal}
-          </div>
+      <div style={{ flex: "1" }}>
+        <div style={{ flex: "0.2", justifyContent: "center", alignItems: "center", borderBottom: '1px solid var(--border-color)', width: "100%" }}>
+          <DirectionsArea selectionsReducer={this.props.selectionsReducer} quote={this.props.quote} />
         </div>
-        <div style={this.props.projectDetailsReducer.params.direction === 'ltr' ? style.pane.contentLTR : style.pane.contentRTL}>
-          {this.displayTextOutput}
+        <div style={{ flex: "0.8", justifyContent: "center", alignItems: "center" }}>
+          <div style={this.props.projectDetailsReducer.params.direction === 'ltr' ? style.pane.contentLTR : style.pane.contentRTL}>
+            {this.displayText(this.props.verseText, this.props.selections)}
+          </div>
         </div>
       </div>
-    )
+    );
   }
 }
 
-export default SelectArea
+export default SelectionArea;
