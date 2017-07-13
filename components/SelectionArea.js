@@ -121,7 +121,7 @@ class SelectionArea extends Component {
     }
 
     return (
-      <div onMouseUp={() => this.getSelectionText()} onMouseLeave={()=>this.inDisplayBox(false)} onMouseEnter={()=>this.inDisplayBox(true)}>
+      <div style={{ overflow: "auto" }} onMouseUp={() => this.getSelectionText()} onMouseLeave={()=>this.inDisplayBox(false)} onMouseEnter={()=>this.inDisplayBox(true)}>
         {verseTextSpans}
       </div>
     );
@@ -137,9 +137,9 @@ class SelectionArea extends Component {
 
   render() {
     return (
-      <div>
+      <div style={{ flex: "1" }}>
         <div style={{ flex: "0.2", justifyContent: "center", alignItems: "center", borderBottom: '1px solid var(--border-color)', width: "100%" }}>
-          <DirectionsArea quote={this.props.quote} />
+          <DirectionsArea selectionsReducer={this.props.selectionsReducer} quote={this.props.quote} />
         </div>
         <div style={{ flex: "0.8", justifyContent: "center", alignItems: "center" }}>
           <div style={this.props.projectDetailsReducer.params.direction === 'ltr' ? style.pane.contentLTR : style.pane.contentRTL}>

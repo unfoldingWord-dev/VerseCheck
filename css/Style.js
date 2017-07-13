@@ -66,8 +66,9 @@ var style = {
     marginBottom: '-10px'
   },
   directionsArea: {
-    padding: '10px',
-    textAlign: 'center'
+    padding: '5px',
+    textAlign: 'center',
+    overflow: "auto"
   },
   commentArea: {
     flex: 'auto',

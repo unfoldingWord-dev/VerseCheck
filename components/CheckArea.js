@@ -17,6 +17,7 @@ class CheckArea extends Component {
       verseChanged,
       comment,
       contextIdReducer,
+      selectionsReducer,
       projectDetailsReducer
     } = this.props;
     let modeArea
@@ -48,7 +49,7 @@ class CheckArea extends Component {
       default:
         modeArea = (
           <div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "100%" }}>
-            <DirectionsArea quote={contextIdReducer.contextId.quote} />
+            <DirectionsArea selectionsReducer={selectionsReducer} quote={contextIdReducer.contextId.quote} />
           </div>
         );
     }
