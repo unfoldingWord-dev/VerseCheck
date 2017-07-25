@@ -1,8 +1,16 @@
-import React from 'react'
-import {Glyphicon} from 'react-bootstrap'
-import style from '../css/Style'
-import {selectionArray, occurrencesInString, normalizeString} from '../utils/selectionHelpers'
+import React from 'react';
+// helpers
+import {
+  selectionArray,
+  occurrencesInString,
+  normalizeString
+} from '../utils/selectionHelpers';
+// components
+import { Glyphicon } from 'react-bootstrap'
+import DirectionsArea from './DirectionsArea';
 import MyLanguageModal from './MyLanguageModal'
+// styling
+import style from '../css/Style';
 
 class DefaultArea extends React.Component {
   constructor() {
@@ -17,7 +25,6 @@ class DefaultArea extends React.Component {
     // normalize whitespace for text rendering in order to display highlights with more than one space since html selections show one space
     verseText = normalizeString(verseText);
     let verseTextSpans = <span>{verseText}</span>;
-    let selectMode = this.props.mode === "select";
     if (selections && selections.length > 0) {
       let _selectionArray = selectionArray(verseText, selections);
       selections.forEach(selection => {
@@ -36,7 +43,7 @@ class DefaultArea extends React.Component {
       })
     }
     return (
-      <div style={{userSelect: 'none', opacity: selectMode ? '0.5' : 1}}>
+      <div>
         {verseTextSpans}
       </div>
     )
@@ -50,6 +57,18 @@ class DefaultArea extends React.Component {
     const languageName = manifest.target_language ? manifest.target_language.name : null;
     const dir = manifest.target_language ? manifest.target_language.direction : null;
 
+
+    if (this.props.mode === "select") {
+      return (
+        <div style={{ display: "flex", flex: "1", justifyContent: "center", alignItems: "center", overflow: "auto" }}>
+          <DirectionsArea
+            dontShowTranslation={true}
+            selectionsReducer={this.props.selectionsReducer}
+            quote={this.props.contextIdReducer.contextId.quote}
+          />
+        </div>
+      );
+    }
     return (
       <div style={{flex: 1, display: 'flex', flexDirection: 'column'}}>
         <div style={style.verseTitle}>

@@ -1,13 +1,11 @@
 var style = {
   pane: {
     contentLTR: {
-      overflowY: 'auto',
       direction: 'ltr',
       flex: 'auto',
       padding: '0 15px 10px'
     },
     contentRTL: {
-      overflowY: 'auto',
       direction: 'rtl',
       flex: 'auto',
       padding: '0 15px 10px'

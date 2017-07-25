@@ -13,7 +13,7 @@ class VerseCheck extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      mode: 'default',
+      mode: props.selectionsReducer.selections.length > 0 ? 'default' : 'select',
       comment: undefined,
       commentChanged: false,
       verseText: undefined,
@@ -207,7 +207,7 @@ class VerseCheck extends React.Component {
     if (nextProps.contextIdReducer.contextId != this.props.contextIdReducer.contextId) {
       let selections = Array.from(nextProps.selectionsReducer.selections);
       this.setState({
-        mode: 'default',
+        mode: nextProps.selectionsReducer.selections.length > 0 ? 'default' : 'select',
         comments: undefined,
         verseText: undefined,
         selections,
@@ -220,6 +220,12 @@ class VerseCheck extends React.Component {
     this.setState({
       mode: 'default',
       selections: this.props.selectionsReducer.selections
+    })
+  }
+
+  clearSelection() {
+    this.setState({
+      selections: []
     })
   }
 
@@ -251,6 +257,7 @@ class VerseCheck extends React.Component {
       <MuiThemeProvider>
         <View {...this.props} actions={this.actions}
           cancelSelection={this.cancelSelection.bind(this)}
+          clearSelection={this.clearSelection.bind(this)}
           saveSelection={this.saveSelection.bind(this)}
           mode={this.state.mode}
           comment={this.props.commentsReducer.text}
