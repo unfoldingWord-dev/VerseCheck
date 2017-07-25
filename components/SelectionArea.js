@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import DirectionsArea from './DirectionsArea';
 import { selectionArray, occurrencesInString, normalizeString } from '../utils/selectionHelpers';
 import style from '../css/Style';
 
@@ -121,7 +120,7 @@ class SelectionArea extends Component {
     }
 
     return (
-      <div style={{ overflow: "auto" }} onMouseUp={() => this.getSelectionText()} onMouseLeave={()=>this.inDisplayBox(false)} onMouseEnter={()=>this.inDisplayBox(true)}>
+      <div onMouseUp={() => this.getSelectionText()} onMouseLeave={()=>this.inDisplayBox(false)} onMouseEnter={()=>this.inDisplayBox(true)}>
         {verseTextSpans}
       </div>
     );
@@ -137,14 +136,9 @@ class SelectionArea extends Component {
 
   render() {
     return (
-      <div style={{ flex: "1" }}>
-        <div style={{ flex: "0.2", justifyContent: "center", alignItems: "center", borderBottom: '1px solid var(--border-color)', width: "100%" }}>
-          <DirectionsArea selectionsReducer={this.props.selectionsReducer} quote={this.props.quote} />
-        </div>
-        <div style={{ flex: "0.8", justifyContent: "center", alignItems: "center" }}>
-          <div style={this.props.projectDetailsReducer.params.direction === 'ltr' ? style.pane.contentLTR : style.pane.contentRTL}>
-            {this.displayText(this.props.verseText, this.props.selections)}
-          </div>
+      <div style={{ flex: "1", justifyContent: "center", alignItems: "center", paddingTop: '10px' }}>
+        <div style={this.props.projectDetailsReducer.params.direction === 'ltr' ? style.pane.contentLTR : style.pane.contentRTL}>
+          {this.displayText(this.props.verseText, this.props.selections)}
         </div>
       </div>
     );

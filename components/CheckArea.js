@@ -57,7 +57,7 @@ class CheckArea extends Component {
     return (
       <div style={style.checkArea}>
         <DefaultArea {...this.props} />
-        <div style={{ borderLeft: '1px solid var(--border-color)', flex: 1 }}>
+        <div style={{ borderLeft: '1px solid var(--border-color)', flex: 1, overflowY: "auto" }}>
           {modeArea}
         </div>
       </div>

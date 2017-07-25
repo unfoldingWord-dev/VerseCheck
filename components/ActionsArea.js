@@ -13,7 +13,8 @@ let ActionsArea = ({
   selections,
   remindersReducer,
   saveSelection,
-  cancelSelection
+  cancelSelection,
+  clearSelection
 }) => {
   const changeModeArea = (
     <div style={style.actionsArea}>
@@ -92,14 +93,25 @@ let ActionsArea = ({
 
   const confirmSelectionArea = (
       <div style={style.actionsArea}>
-        <button className='btn-second'
-                onClick={cancelSelection.bind(this)}
+        <button
+          className='btn-second'
+          style={{ alignSelf: 'flex-start'}}
+          onClick={cancelSelection.bind(this)}
         >
           Cancel
         </button>
-        <button className='btn-prime'
-                disabled={isEqual(selections, selectionsReducer.selections)}
-                onClick={saveSelection.bind(this)}
+        <button
+          className='btn-second'
+          disabled={selections.length > 0 ? false : true}
+          onClick={clearSelection.bind(this)}
+        >
+          <Glyphicon glyph='erase' style={{marginRight: '10px'}} />
+          Clear Selection
+        </button>
+        <button
+          className='btn-prime'
+          disabled={isEqual(selections, selectionsReducer.selections)}
+          onClick={saveSelection.bind(this)}
         >
           <Glyphicon glyph='ok' style={{marginRight: '10px'}} />
           Save Changes
