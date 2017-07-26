@@ -30,4 +30,4 @@ let SaveArea = (props) => {
   )
 }
 
-module.exports = SaveArea
+export default SaveArea;
