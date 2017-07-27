@@ -70,7 +70,7 @@ class DefaultArea extends React.Component {
       );
     }
     return (
-      <div style={{flex: 1, display: 'flex', flexDirection: 'column'}}>
+      <div className='disableHighlight' style={{flex: 1, display: 'flex', flexDirection: 'column'}}>
         <div style={style.verseTitle}>
           <div style={{display: 'flex', flexDirection: 'column'}}>
               <span style={style.pane.title}>
