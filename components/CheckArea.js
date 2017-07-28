@@ -48,7 +48,7 @@ class CheckArea extends Component {
       case 'default':
       default:
         modeArea = (
-          <div className='disableHighlight' style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "100%" }}>
+          <div style={{ WebkitUserSelect:'none', display: "flex", justifyContent: "center", alignItems: "center", height: "100%" }}>
             <DirectionsArea selectionsReducer={selectionsReducer} quote={contextIdReducer.contextId.quote} />
           </div>
         );

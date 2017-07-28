@@ -60,7 +60,7 @@ class DefaultArea extends React.Component {
 
     if (this.props.mode === "select") {
       return (
-        <div className='disableHighlight' style={{ display: "flex", flex: "1", justifyContent: "center", alignItems: "center", overflow: "auto" }}>
+        <div style={{WebkitUserSelect:'none', display: "flex", flex: "1", justifyContent: "center", alignItems: "center", overflow: "auto" }}>
           <DirectionsArea
             dontShowTranslation={true}
             selectionsReducer={this.props.selectionsReducer}
@@ -70,7 +70,7 @@ class DefaultArea extends React.Component {
       );
     }
     return (
-      <div className='disableHighlight' style={{flex: 1, display: 'flex', flexDirection: 'column'}}>
+      <div style={{WebkitUserSelect:'none', flex: 1, display: 'flex', flexDirection: 'column'}}>
         <div style={style.verseTitle}>
           <div style={{display: 'flex', flexDirection: 'column'}}>
               <span style={style.pane.title}>
