@@ -60,7 +60,7 @@ class DefaultArea extends React.Component {
 
     if (this.props.mode === "select") {
       return (
-        <div style={{ display: "flex", flex: "1", justifyContent: "center", alignItems: "center", overflow: "auto" }}>
+        <div className='disableHighlight' style={{ display: "flex", flex: "1", justifyContent: "center", alignItems: "center", overflow: "auto" }}>
           <DirectionsArea
             dontShowTranslation={true}
             selectionsReducer={this.props.selectionsReducer}
