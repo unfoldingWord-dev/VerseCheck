@@ -137,7 +137,7 @@ class SelectionArea extends Component {
   render() {
     return (
       <div style={{ flex: "1", justifyContent: "center", alignItems: "center", paddingTop: '10px' }}>
-        <div style={this.props.projectDetailsReducer.params.direction === 'ltr' ? style.pane.contentLTR : style.pane.contentRTL}>
+        <div style={this.props.projectDetailsReducer.manifest.target_language.direction === 'ltr' ? style.pane.contentLTR : style.pane.contentRTL}>
           {this.displayText(this.props.verseText, this.props.selections)}
         </div>
       </div>
