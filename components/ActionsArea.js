@@ -69,7 +69,7 @@ let ActionsArea = ({
                 onClick={actions.saveEditVerse.bind(this)}
         >
           <Glyphicon glyph='ok' style={{marginRight: '10px'}} />
-          Save Changes
+          Save
         </button>
       </div>
   )
@@ -86,7 +86,7 @@ let ActionsArea = ({
                 onClick={actions.saveComment.bind(this)}
         >
           <Glyphicon glyph='ok' style={{marginRight: '10px'}} />
-          Save Changes
+          Save
         </button>
       </div>
   )
@@ -114,7 +114,7 @@ let ActionsArea = ({
           onClick={saveSelection.bind(this)}
         >
           <Glyphicon glyph='ok' style={{marginRight: '10px'}} />
-          Save Changes
+          Save
         </button>
       </div>
   )
