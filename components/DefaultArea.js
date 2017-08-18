@@ -50,8 +50,12 @@ class DefaultArea extends React.Component {
   }
 
   render() {
-    const { projectDetailsReducer } = this.props;
-    const { manifest, bookName } = projectDetailsReducer;
+    const {
+      projectDetailsReducer: {
+        manifest
+      }
+    } = this.props;
+    const bookName = manifest.project.name;
     const reference = this.props.contextIdReducer.contextId.reference;
     const bibles = this.props.resourcesReducer.bibles;
     const languageName = manifest.target_language ? manifest.target_language.name : null;
@@ -102,7 +106,7 @@ class DefaultArea extends React.Component {
             }
           </div>
         </div>
-        <div style={this.props.projectDetailsReducer.params.direction === 'ltr' ? style.pane.contentLTR : style.pane.contentRTL}>
+        <div style={this.props.projectDetailsReducer.manifest.target_language.direction === 'ltr' ? style.pane.contentLTR : style.pane.contentRTL}>
           {this.displayText(this.props.verseText, this.props.selectionsReducer.selections)}
         </div>
       </div>

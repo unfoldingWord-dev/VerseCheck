@@ -241,7 +241,7 @@ class VerseCheck extends React.Component {
 
   verseText() {
     const { chapter, verse, bookId } = this.props.contextIdReducer.contextId.reference;
-    const { bookAbbr } = this.props.projectDetailsReducer.params;
+    const bookAbbr = this.props.projectDetailsReducer.manifest.project.id;
     const { targetLanguage } = this.props.resourcesReducer.bibles;
     let verseText = "";
     if (targetLanguage && targetLanguage[chapter] && bookId == bookAbbr) {
