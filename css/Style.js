@@ -3,12 +3,14 @@ var style = {
     contentLTR: {
       direction: 'ltr',
       flex: 'auto',
-      padding: '0 15px 10px'
+      padding: '0 15px 10px',
+      overflowY: "auto"
     },
     contentRTL: {
       direction: 'rtl',
       flex: 'auto',
-      padding: '0 15px 10px'
+      padding: '0 15px 10px',
+      overflowY: "auto"
     },
     title: {
       fontWeight: 'bold'
