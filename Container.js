@@ -6,8 +6,6 @@ import React from 'react'
 import View from './components/View'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import {optimizeSelections, normalizeString} from './utils/selectionHelpers'
-// constant declaration
-const NAMESPACE = "VerseCheck";
 
 class VerseCheck extends React.Component {
   constructor(props) {
@@ -274,7 +272,4 @@ class VerseCheck extends React.Component {
   }
 }
 
-module.exports = {
-  name: NAMESPACE,
-  container: VerseCheck
-}
+export default VerseCheck;

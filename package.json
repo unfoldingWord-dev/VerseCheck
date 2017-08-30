@@ -2,7 +2,7 @@
   "name": "VerseCheck",
   "version": "1.0.0",
   "description": "Sub component for Tools to select, edit, comment, bookmarking verses.",
-  "main": "container.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
