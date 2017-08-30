@@ -245,7 +245,7 @@ class VerseCheck extends React.Component {
     const { targetLanguage } = this.props.resourcesReducer.bibles;
     let verseText = "";
     if (targetLanguage && targetLanguage[chapter] && bookId == bookAbbr) {
-      verseText = targetLanguage[chapter][verse];
+      verseText = targetLanguage[chapter][verse] || "";
       // normalize whitespace in case selection has contiguous whitespace that isn't captured
       verseText = normalizeString(verseText);
     }

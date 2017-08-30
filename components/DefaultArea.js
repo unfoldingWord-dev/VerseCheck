@@ -61,18 +61,6 @@ class DefaultArea extends React.Component {
     const languageName = manifest.target_language ? manifest.target_language.name : null;
     const dir = manifest.target_language ? manifest.target_language.direction : null;
 
-
-    if (this.props.mode === "select") {
-      return (
-        <div style={{WebkitUserSelect:'none', display: "flex", flex: "1", justifyContent: "center", alignItems: "center", overflow: "auto" }}>
-          <DirectionsArea
-            dontShowTranslation={true}
-            selectionsReducer={this.props.selectionsReducer}
-            quote={this.props.contextIdReducer.contextId.quote}
-          />
-        </div>
-      );
-    }
     return (
       <div style={{WebkitUserSelect:'none', flex: 1, display: 'flex', flexDirection: 'column'}}>
         <div style={style.verseTitle}>

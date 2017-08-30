@@ -20,8 +20,8 @@ class CheckArea extends Component {
       selectionsReducer,
       projectDetailsReducer
     } = this.props;
-    let modeArea
-    switch(mode) {
+    let modeArea;
+    switch (mode) {
       case 'edit':
         modeArea = (
           <EditVerseArea
@@ -29,35 +29,42 @@ class CheckArea extends Component {
             verseText={verseText}
             verseChanged={verseChanged}
             actions={actions}
-            dir = {projectDetailsReducer.manifest.target_language.direction}
+            dir={projectDetailsReducer.manifest.target_language.direction}
           />
         );
-      break
+        break
       case 'comment':
         modeArea = <CommentArea comment={comment} actions={actions} />
-      break
+        break
       case 'select':
         modeArea = (
-          <SelectionArea
-            {...this.props}
-            actions={actions}
-            quote={contextIdReducer.contextId.quote}
-          />
-        );
-      break
+          <div style={{ WebkitUserSelect: 'none', display: "flex", flex: "1", justifyContent: "center", alignItems: "center", overflow: "auto" }}>
+            <DirectionsArea
+              verseText={verseText}
+              selectionsReducer={selectionsReducer}
+              quote={contextIdReducer.contextId.quote}
+            />
+          </div>);
+        break
       case 'default':
       default:
         modeArea = (
-          <div style={{ WebkitUserSelect:'none', display: "flex", justifyContent: "center", alignItems: "center", height: "100%" }}>
-            <DirectionsArea selectionsReducer={selectionsReducer} quote={contextIdReducer.contextId.quote} />
+          <div style={{ WebkitUserSelect: 'none', display: "flex", justifyContent: "center", alignItems: "center", height: "100%" }}>
+            <DirectionsArea dontShowTranslation={true} verseText={verseText} selectionsReducer={selectionsReducer} quote={contextIdReducer.contextId.quote} />
           </div>
         );
     }
 
     return (
       <div style={style.checkArea}>
-        <DefaultArea {...this.props} />
-        <div style={{ borderLeft: '1px solid var(--border-color)', flex: 1, overflowY: "auto" }}>
+        {mode === 'select' ?
+          <SelectionArea
+            {...this.props}
+            actions={actions}
+            quote={contextIdReducer.contextId.quote}
+          /> :
+          <DefaultArea {...this.props} />}
+        <div style={{ borderLeft: '1px solid var(--border-color)', flex: 1, overflowY: "auto", display:'flex', justifyContent:'center' }}>
           {modeArea}
         </div>
       </div>
