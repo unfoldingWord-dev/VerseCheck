@@ -10,33 +10,51 @@ describe('selectionHelpers.spliceStringOnRanges', () => {
     const string = "01 234 56789qwertyuiopasdfghjklzxcvbnmtyui01 234 567890";
     const ranges = [ { range: [ 45, 47 ], occurrence: 2, occurrences: 2 } ];
     const output = selectionHelpers.spliceStringOnRanges(string, ranges);
-    const expected = [];
+    const expected = [
+      { text: '01 234 56789qwertyuiopasdfghjklzxcvbnmtyui01 ', selected: false },
+      { text: '234', selected: true, occurrence: 2, occurrences: 2 },
+      { text: ' 567890', selected: false }
+    ];
     expect(isEqual(expected, output)).to.equal(true);
     done();
   });
 });
 
 describe('selectionHelpers.selectionsToRanges', () => {
-  it('should return ranges from selections', function (done) {
-    const string = "01 234 56789qwertyuiopasdfghjklzxcvbnmtyui01 234 567890";
+  const string = "01 234 56789qwertyuiopasdfghjklzxcvbnmtyui01 234 567890";
+  it('should return ranges from selections with one selection', function (done) {
     const selections = [
       { text: '234', occurrence: 2, occurrences: 2 }
     ];
     const output = selectionHelpers.selectionsToRanges(string, selections);
-    const expected = [];
+    const expected = [[45,47]];
+    expect(isEqual(expected, output)).to.equal(true);
+    done();
+  });
+  it('should return ranges from selections with two selections', function (done) {
+    const selections = [
+      { text: 'querty', occurrence: 1, occurrences: 1 },
+      { text: '234', occurrence: 2, occurrences: 2 }
+    ];
+    const output = selectionHelpers.selectionsToRanges(string, selections);
+    const expected = [[45,47],[12,17]];
     expect(isEqual(expected, output)).to.equal(true);
     done();
   });
 });
 
 describe('selectionHelpers.selectionsToSelectedStrings', () => {
-  const string = "01 234 56789qwertyuiopasd234fghjklzxcvbnmtyui01 234 567890";
+  const string = '01 234 56789qwertyuiopasd234fghjklzxcvbnmtyui01 234 567890';
   it('should return array of objects of selected strings from selections without spaces around it', function (done) {
     const selections = [
       { text: '234', occurrence: 2, occurrences: 3 }
     ];
     const output = selectionHelpers.selectionsToSelectedStrings(string, selections);
-    const expected = [[25,27]];
+    const expected = [
+      { text: '01 234 56789qwertyuiopasd234fghjklzxcvbnmtyui01 ', selected: false },
+      { text: '234', selected: true },
+      { text: ' 567890', selected: false }
+    ];
     expect(isEqual(expected, output)).to.equal(true);
     done();
   });
@@ -45,7 +63,11 @@ describe('selectionHelpers.selectionsToSelectedStrings', () => {
       { text: '234', occurrence: 1, occurrences: 3 }
     ];
     const output = selectionHelpers.selectionsToSelectedStrings(string, selections);
-    const expected = [[3,5]];
+    const expected = [
+      { text: '01 ', selected: false },
+      { text: '234', selected: true },
+      { text: ' 56789qwertyuiopasd234fghjklzxcvbnmtyui01 234 567890', selected: false }
+    ];
     expect(isEqual(expected, output)).to.equal(true);
     done();
   });
@@ -90,6 +112,14 @@ describe('selectionHelpers.rangesToSelections', () => {
        { text: 'tyui', occurrence: 1, occurrences: 2 },
        { text: 'asdfghjklzxcvbnmtyui0', occurrence: 1, occurrences: 1 }
      ];
+     const output = selectionHelpers.rangesToSelections(string, ranges);
+    expect(isEqual(expected, output)).to.equal(true);
+    done();
+  });
+  it('should return array of one selection object with one range', function (done) {
+    const string = "0123456789qwertyuiopasdfghjklzxcvbnmtyui01234567890";
+    const ranges = [ [3,9] ];
+    const expected = [ { text: '3456789', occurrence: 1, occurrences: 2 } ];
      const output = selectionHelpers.rangesToSelections(string, ranges);
     expect(isEqual(expected, output)).to.equal(true);
     done();
