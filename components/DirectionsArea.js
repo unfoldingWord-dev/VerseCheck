@@ -5,14 +5,25 @@ import style from '../css/Style';
 let DirectionsArea = ({
   quote,
   selectionsReducer,
-  dontShowTranslation
+  dontShowTranslation,
+  verseText
 }) => {
 
-  if (dontShowTranslation || selectionsReducer.selections.length === 0) {
+  if (!verseText) {
     return (
       <div style={style.directionsArea}>
-        <span>Please select the translation for:</span><br />
-        <span><strong style={{color: 'var(--accent-color)'}}>"{quote}"</strong></span>
+        <span>No selection can be made because the verse is blank.</span><br />
+        <span>You may fix this by editing the verse.</span><br />
+        <span>If desired, you may also leave a comment or bookmark this check.</span><br />
+      </div>
+    );
+  }
+
+  if (selectionsReducer.selections.length === 0 && dontShowTranslation) {
+    return (
+      <div style={style.directionsArea}>
+        <span>No selection has been made.</span><br />
+        <span>Click the Select button, then select the translation for this check.</span><br />
       </div>
     );
   }
