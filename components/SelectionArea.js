@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Glyphicon } from 'react-bootstrap'
 import { selectionArray, occurrencesInString, normalizeString } from '../utils/selectionHelpers';
 import style from '../css/Style';
-import MyLanguageModal from './MyLanguageModal'
 
 class SelectionArea extends Component {
   constructor() {
@@ -158,27 +157,6 @@ class SelectionArea extends Component {
             <span style={style.pane.subtitle}>
               {bookName} {reference.chapter + ':' + reference.verse}
             </span>
-          </div>
-          <div onClick={() => {
-            this.setState({ modalVisibility: true })
-          }}>
-            <Glyphicon glyph="fullscreen" title="Click to show expanded verses" style={{ cursor: "pointer" }} />
-            {this.state.modalVisibility ?
-              <MyLanguageModal
-                show={this.state.modalVisibility}
-                targetLangBible={bibles.targetLanguage}
-                chapter={reference.chapter}
-                currentVerse={reference.verse}
-                dir={dir ? dir : "ltr"}
-                onHide={
-                  () => {
-                    this.setState({ modalVisibility: false })
-                  }
-                }
-              />
-              :
-              <div />
-            }
           </div>
         </div>
         <div style={this.props.projectDetailsReducer.manifest.target_language.direction === 'ltr' ? style.pane.contentLTR : style.pane.contentRTL}>
