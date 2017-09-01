@@ -154,6 +154,14 @@ describe('selectionHelpers.optimizeRanges', () => {
     expect(isEqual(expected, output)).to.equal(true);
     done();
   });
+  it('should return work with single range', function (done) {
+    const ranges = [[6,9]];
+    const output = selectionHelpers.optimizeRanges(ranges);
+    console.log(output)
+    const expected = [[6,9]];
+    expect(isEqual(expected, output)).to.equal(true);
+    done();
+  });
   it('should return ranges empty array for empty array input', function (done) {
     const ranges = [];
     const output = selectionHelpers.optimizeRanges(ranges);
