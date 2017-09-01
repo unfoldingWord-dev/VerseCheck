@@ -8,15 +8,15 @@
  * modified to fit our use cases, return zero for '' substring, and no use case for overlapping.
  */
 export const occurrencesInString = (string, subString) => {
- if (subString.length <= 0) return 0
- var n = 0, pos = 0, step = subString.length
- while (true) {
-   pos = string.indexOf(subString, pos)
-   if (pos === -1) break
-   ++n
-   pos += step
+ if (subString.length <= 0) return 0;
+ var occurrences = 0, position = 0, step = subString.length;
+ while (position < string.length) {
+   position = string.indexOf(subString, position);
+   if (position === -1) break;
+   ++occurrences;
+   position += step;
  }
- return n
+ return occurrences;
 }
 /**
  * @description - Function that normalizes a string including whitespace
