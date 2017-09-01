@@ -100,7 +100,7 @@ export const optimizeRanges = (ranges) => {
         runningRange[1] = runningEnd = currentEnd; // extend running range
       }
     } else { // the start does not occur in the running range
-      if (runningRange.length !== 0) optimizedRanges.push(runningRange) // the running range is closed push it to optimizedRanges
+      if (runningRange.length !== 0) optimizedRanges.push(runningRange); // the running range is closed push it to optimizedRanges
       runningRange = currentRange; // reset the running range to this one
     }
     if (ranges.length === index + 1 && runningEnd - runningStart >= 0) { // this is the last one and it isn't blank
