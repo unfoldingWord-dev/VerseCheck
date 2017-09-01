@@ -8,8 +8,8 @@ import * as stringHelpers from './stringHelpers';
  * @returns {array} - array of objects [obj,...]
  */
 export const spliceStringOnRanges = (string, ranges) => {
-  var selectionArray = [] // response
-  var remainingString = string
+  var selectionArray = []; // response
+  var remainingString = string;
   // shift the range since the loop is destructive by working on the remainingString and not original string
   var rangeShift = 0
   ranges.forEach(function(range) {
@@ -54,11 +54,11 @@ export const selectionsToRanges = (string, selections) => {
   var ranges = [];
     selections.forEach( selection => {
       if (string !== undefined && string.includes(selection.text)) {
-        var splitArray = string.split(selection.text);
-        var beforeSelection = splitArray.slice(0,selection.occurrence).join(selection.text);
-        var start = beforeSelection.length;
-        var end = start + selection.text.length - 1;
-        var range = [start,end];
+        const splitArray = string.split(selection.text);
+        const beforeSelection = splitArray.slice(0,selection.occurrence).join(selection.text);
+        const start = beforeSelection.length;
+        const end = start + selection.text.length - 1;
+        const range = [start,end];
         ranges.push(range);
       }
     })
@@ -72,10 +72,10 @@ export const selectionsToRanges = (string, selections) => {
  * @returns {array} - array of objects
  */
 export const selectionsToSplicedString = (string, selections) => {
-  var selectedStrings = []
-  var ranges = selectionsToRanges(string, selections)
-  selectedStrings = spliceStringOnRanges(string, ranges)
-  return selectedStrings
+  var selectedStrings = [];
+  const ranges = selectionsToRanges(string, selections);
+  selectedStrings = spliceStringOnRanges(string, ranges);
+  return selectedStrings;
 }
 
 /**
@@ -116,17 +116,16 @@ export const optimizeRanges = (ranges) => {
  */
  export const rangesToSelections = (string, ranges) => {
    let selections = [];
-   ranges.forEach(function(range, index) {
-     let start = range[0], end = range[1];
-     let length = end - start + 1;
-     let text = string.substr(start, length); // get text
-     let regex = eval('/' + text + '/g');
-     let beforeText = string.substr(0,start);
-     let beforeMatches = beforeText.match(regex);
-     let occurrence = (beforeMatches !== null ? beforeMatches.length : 0) + 1; // get number of this occurrence
-     let occurrences = string.match(regex).length; // get occurrences in string
-     let selection = {
-       text: text,
+   ranges.forEach( range => {
+     const start = range[0], end = range[1]; // set the start and end point
+     const length = end - start + 1; // get the length of the sub string
+     const subString = string.substr(start, length); // get text of the sub string
+     const beforeText = string.substr(0, start); // get the string prior to the range
+     const beforeMatches = stringHelpers.occurrencesInString(beforeText, subString); // get occurrences prior to range
+     const occurrence = beforeMatches + 1; // get number of this occurrence
+     const occurrences = stringHelpers.occurrencesInString(string, subString); // get occurrences in string
+     const selection = {
+       text: subString,
        occurrence: occurrence,
        occurrences: occurrences
      };
