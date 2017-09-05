@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 // components
 import DefaultArea from './DefaultArea';
 import SelectionArea from './SelectionArea';
-import DirectionsArea from './DirectionsArea';
+import InstructionsArea from './InstructionsArea';
 import EditVerseArea from './EditVerseArea';
 import CommentArea from './CommentArea';
 import style from '../css/Style';
@@ -39,7 +39,7 @@ class CheckArea extends Component {
       case 'select':
         modeArea = (
           <div style={{ WebkitUserSelect: 'none', display: "flex", flex: "1", justifyContent: "center", alignItems: "center", overflow: "auto" }}>
-            <DirectionsArea
+            <InstructionsArea
               verseText={verseText}
               selectionsReducer={selectionsReducer}
               quote={contextIdReducer.contextId.quote}
@@ -51,7 +51,7 @@ class CheckArea extends Component {
       default:
         modeArea = (
           <div style={{ WebkitUserSelect: 'none', display: "flex", justifyContent: "center", alignItems: "center", height: "100%" }}>
-            <DirectionsArea dontShowTranslation={true} verseText={verseText} selectionsReducer={selectionsReducer} quote={contextIdReducer.contextId.quote} />
+            <InstructionsArea dontShowTranslation={true} verseText={verseText} selectionsReducer={selectionsReducer} quote={contextIdReducer.contextId.quote} />
           </div>
         );
     }

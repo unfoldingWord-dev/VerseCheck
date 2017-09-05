@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import style from '../css/Style';
 
-let DirectionsArea = ({
+let InstructionsArea = ({
   quote,
   selectionsReducer,
   dontShowTranslation,
@@ -12,7 +12,7 @@ let DirectionsArea = ({
 
   if (!verseText) {
     return (
-      <div style={style.directionsArea}>
+      <div style={style.InstructionsArea}>
         <span>No selection can be made because the verse is blank.</span><br />
         <span>You may fix this by editing the verse.</span><br />
         <span>If desired, you may also leave a comment or bookmark this check.</span><br />
@@ -22,7 +22,7 @@ let DirectionsArea = ({
 
   if (selectionsReducer.selections.length === 0 && dontShowTranslation) {
       return (
-        <div style={style.directionsArea}>
+        <div style={style.InstructionsArea}>
           <span>No selection has been made.</span><br />
           <span>Click the Select button, then select the translation for this check.</span><br />
         </div>
@@ -31,7 +31,7 @@ let DirectionsArea = ({
 
   if (mode === 'select') {
     return (
-      <div style={style.directionsArea}>
+      <div style={style.InstructionsArea}>
         <span>Please select the translation for:</span><br />
         <span>
           <strong style={{ color: 'var(--accent-color)' }}>
@@ -43,7 +43,7 @@ let DirectionsArea = ({
   }
 
   return (
-    <div style={style.directionsArea}>
+    <div style={style.InstructionsArea}>
       <span>
         <strong style={{ color: 'var(--accent-color)' }}>
           "{quote}"
@@ -66,10 +66,10 @@ let DirectionsArea = ({
   );
 }
 
-DirectionsArea.propTypes = {
+InstructionsArea.propTypes = {
   quote: PropTypes.string.isRequired,
   selectionsReducer: PropTypes.object.isRequired,
   dontShowTranslation: PropTypes.bool
 };
 
-export default DirectionsArea;
+export default InstructionsArea;

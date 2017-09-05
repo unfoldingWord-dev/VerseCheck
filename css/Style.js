@@ -65,7 +65,7 @@ var style = {
     alignItems: 'center',
     marginBottom: '-10px'
   },
-  directionsArea: {
+  InstructionsArea: {
     padding: '5px',
     textAlign: 'center',
     overflow: "auto"

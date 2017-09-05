@@ -7,7 +7,7 @@ import {
 } from '../utils/selectionHelpers';
 // components
 import { Glyphicon } from 'react-bootstrap'
-import DirectionsArea from './DirectionsArea';
+import InstructionsArea from './InstructionsArea';
 import MyLanguageModal from './MyLanguageModal'
 // styling
 import style from '../css/Style';
