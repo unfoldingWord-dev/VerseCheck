@@ -43,7 +43,7 @@ class DefaultArea extends React.Component {
       })
     }
     return (
-      <div style={{userSelect: 'none'}}>
+      <div style={{userSelect: 'none', color:'var(--text-color-light)'}}>
         {verseTextSpans}
       </div>
     )

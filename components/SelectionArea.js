@@ -112,6 +112,7 @@ class SelectionArea extends Component {
         let selectMode = this.props.mode === "select"; // use selectMode to conditionally use highlight and remove
         let style = selection.selected ? { backgroundColor: 'var(--highlight-color)' } : {};
         if (selection.selected && selectMode) style.cursor = 'pointer'; // only show hand if in select mode
+        style.color = 'black';
         let callback = (selection.selected && selectMode) ? () => this.removeSelection(selection) : () => { }; // only have callback when in select mode
         return (
           <span key={index} style={style} onClick={callback}>
