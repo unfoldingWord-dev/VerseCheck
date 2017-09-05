@@ -19,19 +19,32 @@ let DirectionsArea = ({
     );
   }
 
-  if (selectionsReducer.selections.length === 0 && dontShowTranslation) {
-    return (
-      <div style={style.directionsArea}>
-        <span>No selection has been made.</span><br />
-        <span>Click the Select button, then select the translation for this check.</span><br />
-      </div>
-    );
+  if (selectionsReducer.selections.length === 0) {
+    if (dontShowTranslation) {
+      return (
+        <div style={style.directionsArea}>
+          <span>No selection has been made.</span><br />
+          <span>Click the Select button, then select the translation for this check.</span><br />
+        </div>
+      );
+    } else {
+      return (
+        <div style={style.directionsArea}>
+          <span>Please select the translation for:</span><br />
+          <span>
+            <strong style={{ color: 'var(--accent-color)' }}>
+              "{quote}"
+          </strong>
+          </span><br />
+        </div>
+      );
+    }
   }
 
   return (
     <div style={style.directionsArea}>
       <span>
-        <strong style={{color: 'var(--accent-color)'}}>
+        <strong style={{ color: 'var(--accent-color)' }}>
           "{quote}"
         </strong>
       </span><br />
@@ -39,12 +52,12 @@ let DirectionsArea = ({
       <span>
         {selectionsReducer.selections.map((selection, index) => {
           return (
-          <span key={index}>
-            <strong style={{color: 'var(--accent-color)'}}>
-              "{selection.text}"
+            <span key={index}>
+              <strong style={{ color: 'var(--accent-color)' }}>
+                "{selection.text}"
             </strong>
-            <span>{" "}</span>
-          </span>
+              <span>{" "}</span>
+            </span>
           );
         })}
       </span>
