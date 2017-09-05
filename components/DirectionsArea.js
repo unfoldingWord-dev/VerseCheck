@@ -6,7 +6,8 @@ let DirectionsArea = ({
   quote,
   selectionsReducer,
   dontShowTranslation,
-  verseText
+  verseText,
+  mode
 }) => {
 
   if (!verseText) {
@@ -19,26 +20,26 @@ let DirectionsArea = ({
     );
   }
 
-  if (selectionsReducer.selections.length === 0) {
-    if (dontShowTranslation) {
+  if (selectionsReducer.selections.length === 0 && dontShowTranslation) {
       return (
         <div style={style.directionsArea}>
           <span>No selection has been made.</span><br />
           <span>Click the Select button, then select the translation for this check.</span><br />
         </div>
       );
-    } else {
-      return (
-        <div style={style.directionsArea}>
-          <span>Please select the translation for:</span><br />
-          <span>
-            <strong style={{ color: 'var(--accent-color)' }}>
-              "{quote}"
-          </strong>
-          </span><br />
-        </div>
-      );
-    }
+  }
+
+  if (mode === 'select') {
+    return (
+      <div style={style.directionsArea}>
+        <span>Please select the translation for:</span><br />
+        <span>
+          <strong style={{ color: 'var(--accent-color)' }}>
+            "{quote}"
+        </strong>
+        </span><br />
+      </div>
+    );
   }
 
   return (

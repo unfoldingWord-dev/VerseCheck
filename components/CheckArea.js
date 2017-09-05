@@ -43,6 +43,7 @@ class CheckArea extends Component {
               verseText={verseText}
               selectionsReducer={selectionsReducer}
               quote={contextIdReducer.contextId.quote}
+              mode={mode}
             />
           </div>);
         break
