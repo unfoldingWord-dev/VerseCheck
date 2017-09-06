@@ -46,3 +46,45 @@ describe('stringHelpers.occurrencesInString', () => {
     done();
   });
 });
+
+describe('windowSelectionHelpers.generateSelection', () => {
+  it('should return a selection for a single character found more than once', function (done) {
+    const selectedText = 's';
+    const prescedingText = 'Here is ';
+    const entireText = 'Here is some text.'
+    const output = stringHelpers.generateSelection(selectedText, prescedingText, entireText);
+    const expected = {
+      text: 's',
+      occurrence: 2,
+      occurrences: 2
+    };
+    expect(isEqual(expected, output)).to.equal(true);
+    done();
+  });
+  it('should return a selection for a single space found more than once', function (done) {
+    const selectedText = ' ';
+    const prescedingText = 'Here is';
+    const entireText = 'Here is some text.'
+    const output = stringHelpers.generateSelection(selectedText, prescedingText, entireText);
+    const expected = {
+      text: ' ',
+      occurrence: 2,
+      occurrences: 3
+    };
+    expect(isEqual(expected, output)).to.equal(true);
+    done();
+  });
+  it('should return a selection for a single word found once', function (done) {
+    const selectedText = 'Here';
+    const prescedingText = '';
+    const entireText = 'Here is some text.'
+    const output = stringHelpers.generateSelection(selectedText, prescedingText, entireText);
+    const expected = {
+      text: 'Here',
+      occurrence: 1,
+      occurrences: 1
+    };
+    expect(isEqual(expected, output)).to.equal(true);
+    done();
+  });
+});
