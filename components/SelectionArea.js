@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Glyphicon } from 'react-bootstrap'
 import { selectionArray, occurrencesInString, normalizeString } from '../utils/selectionHelpers';
 import style from '../css/Style';
 
@@ -6,7 +7,8 @@ class SelectionArea extends Component {
   constructor() {
     super();
     this.state = {
-      inBox: false
+      inBox: false,
+      modalVisibility: false
     }
   }
   /*
@@ -27,7 +29,7 @@ class SelectionArea extends Component {
     let selectedText = windowSelection.toString();
 
     // do nothing since an empty space was selected
-    if (selectedText === '') {} else {
+    if (selectedText === '') { } else {
       // get the text after the presceding selection and current span selection is in.
       let selectionRange = windowSelection.getRangeAt(0)
       // get the character index of what is selected in context of the span it is in.
@@ -39,7 +41,7 @@ class SelectionArea extends Component {
       // get all of the text in the selection's container similar to the span's innerText.
       let textSpanContent = textSpan.innerText;
       // get the text presceding the selection but after the selection just prior to it.
-      let postPrescedingText = textContainer ? textSpanContent.slice(0,indexOfTextSelection) : '';
+      let postPrescedingText = textContainer ? textSpanContent.slice(0, indexOfTextSelection) : '';
       // start with an empty string to prepend to for text presceding current span selection is in.
       let prescedingText = '';
       // if we have a span that holds text, see what presceding text we can extract.
@@ -101,7 +103,7 @@ class SelectionArea extends Component {
     if (selections && selections.length > 0) {
       let _selectionArray = selectionArray(verseText, selections);
       selections.forEach(selection => {
-        if (occurrencesInString(verseText,selection.text) !== selection.occurrences) {
+        if (occurrencesInString(verseText, selection.text) !== selection.occurrences) {
           // validate selections and remove ones that do not apply
           this.props.actions.validateSelections(verseText);
         }
@@ -110,9 +112,10 @@ class SelectionArea extends Component {
         let selectMode = this.props.mode === "select"; // use selectMode to conditionally use highlight and remove
         let style = selection.selected ? { backgroundColor: 'var(--highlight-color)' } : {};
         if (selection.selected && selectMode) style.cursor = 'pointer'; // only show hand if in select mode
-        let callback = (selection.selected && selectMode) ? () => this.removeSelection(selection) : () => {}; // only have callback when in select mode
+        style.color = 'black';
+        let callback = (selection.selected && selectMode) ? () => this.removeSelection(selection) : () => { }; // only have callback when in select mode
         return (
-          <span key={index} style={ style } onClick={callback}>
+          <span key={index} style={style} onClick={callback}>
             {selection.text}
           </span>
         );
@@ -120,7 +123,7 @@ class SelectionArea extends Component {
     }
 
     return (
-      <div onMouseUp={() => this.getSelectionText()} onMouseLeave={()=>this.inDisplayBox(false)} onMouseEnter={()=>this.inDisplayBox(true)}>
+      <div onMouseUp={() => this.getSelectionText()} onMouseLeave={() => this.inDisplayBox(false)} onMouseEnter={() => this.inDisplayBox(true)}>
         {verseTextSpans}
       </div>
     );
@@ -135,8 +138,28 @@ class SelectionArea extends Component {
   }
 
   render() {
+    const {
+      projectDetailsReducer: {
+        manifest
+      }
+    } = this.props;
+    const bookName = manifest.project.name;
+    const reference = this.props.contextIdReducer.contextId.reference;
+    const bibles = this.props.resourcesReducer.bibles;
+    const languageName = manifest.target_language ? manifest.target_language.name : null;
+    const dir = manifest.target_language ? manifest.target_language.direction : null;
     return (
-      <div style={{ flex: "1", justifyContent: "center", alignItems: "center", paddingTop: '10px' }}>
+      <div style={{flex: 1, display: 'flex', flexDirection: 'column'}}>
+        <div style={style.verseTitle}>
+          <div style={{ display: 'flex', flexDirection: 'column' }}>
+            <span style={style.pane.title}>
+              {languageName}
+            </span>
+            <span style={style.pane.subtitle}>
+              {bookName} {reference.chapter + ':' + reference.verse}
+            </span>
+          </div>
+        </div>
         <div style={this.props.projectDetailsReducer.manifest.target_language.direction === 'ltr' ? style.pane.contentLTR : style.pane.contentRTL}>
           {this.displayText(this.props.verseText, this.props.selections)}
         </div>
