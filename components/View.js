@@ -49,7 +49,6 @@ class View extends React.Component {
         titleText = 'Step 2. Select'
         saveArea = <SaveArea {...this.props} />
     }
-
     return (
       <div style={style.verseCheck}>
         <div style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
