@@ -52,7 +52,7 @@ export const spliceStringOnRanges = (string, ranges) => {
 export const selectionsToRanges = (string, selections) => {
   var ranges = []; // response
     selections.forEach( selection => {
-      if (string !== undefined && string.includes(selection.text)) { // conditions to prevent errors
+      if (string && string.includes(selection.text)) { // conditions to prevent errors
         const splitArray = string.split(selection.text); // split the string to get the text between occurrences
         const beforeSelection = splitArray.slice(0,selection.occurrence).join(selection.text); // get the text before the selection to handle multiple occurrences
         const start = beforeSelection.length; // the start position happens at the length of the string that comes before it
@@ -70,8 +70,9 @@ export const selectionsToRanges = (string, selections) => {
  * @param {array} selections - array of selections [obj,...]
  * @returns {array} - array of objects
  */
-export const selectionsToSplicedString = (string, selections) => {
+export const selectionsToStringSplices = (string, selections) => {
   var splicedStringArray = []; // response
+  selections = optimizeSelections(string, selections); // optimize them before converting
   const ranges = selectionsToRanges(string, selections); // convert the selections to ranges
   splicedStringArray = spliceStringOnRanges(string, ranges); // splice the string on the ranges
   return splicedStringArray; // return the spliced string
@@ -131,11 +132,12 @@ export const optimizeRanges = (ranges) => {
        occurrence: occurrence,
        occurrences: occurrences
      };
-     selections.push(selection);
+     if (occurrences > 0) { // there are some edge cases where empty strings get through but don't have occurrences
+       selections.push(selection);
+     }
    })
    return selections;
  }
-
 /**
  * @description - This abstracts complex handling of selections such as order, deduping, concatenating, overlapping ranges
  * @param {string} string - the text selections are found in
@@ -144,8 +146,41 @@ export const optimizeRanges = (ranges) => {
  */
 export const optimizeSelections = (string, selections) => {
   let optimizedSelections; // return
+  // filter out the random clicks from the UI
+  selections = selections.filter( selection => {
+    const blankSelection = { text: "", occurrence: 1, occurrences: 0 };
+    return !_.isEqual(selection, blankSelection);
+  });
   var ranges = selectionsToRanges(string, selections); // get char ranges of each selection
   ranges = optimizeRanges(ranges); // optimize the ranges
   optimizedSelections = rangesToSelections(string, ranges); // convert optimized ranges into selections
   return optimizedSelections;
+}
+/**
+ * @description - Removes a selection if found in the array of selections
+ * @param {Object} selection - the selection to remove
+ * @param {Array}  selections - array of selection objects [Obj,...]
+ * @param {string} string - the text selections are found in
+ * @returns {Array} - array of selection objects
+ */
+export const removeSelectionFromSelections = (selection, selections, string) => {
+  selections = Array.from(selections);
+  selections = selections.filter(_selection =>
+    !(_selection.occurrence === selection.occurrence && _selection.text === selection.text)
+  );
+  selections = optimizeSelections(string, selections);
+  return selections;
+}
+/**
+ * @description - Removes a selection if found in the array of selections
+ * @param {Object} selection - the selection to remove
+ * @param {Array}  selections - array of selection objects [Obj,...]
+ * @param {string} string - the text selections are found in
+ * @returns {Array} - array of selection objects
+ */
+export const addSelectionToSelections = (selection, selections, string) => {
+  selections = Array.from(selections);
+  selections.push(selection);
+  selections = optimizeSelections(string, selections);
+  return selections;
 }

@@ -75,13 +75,13 @@ describe('selectionHelpers.selectionsToRanges', () => {
   });
 });
 
-describe('selectionHelpers.selectionsToSplicedString', () => {
+describe('selectionHelpers.selectionsToStringSplices', () => {
   const string = '01 234 56789qwertyuiopasd234fghjklzxcvbnmtyui01 234 567890';
   it('should return array of objects of selected strings from selections without spaces around it', function (done) {
     const selections = [
       { text: '234', occurrence: 2, occurrences: 3 }
     ];
-    const output = selectionHelpers.selectionsToSplicedString(string, selections);
+    const output = selectionHelpers.selectionsToStringSplices(string, selections);
     const expected = [
       { text: '01 234 56789qwertyuiopasd', selected: false },
       { text: '234', selected: true, occurrence: 2, occurrences: 3 },
@@ -94,7 +94,7 @@ describe('selectionHelpers.selectionsToSplicedString', () => {
     const selections = [
       { text: '234', occurrence: 1, occurrences: 3 }
     ];
-    const output = selectionHelpers.selectionsToSplicedString(string, selections);
+    const output = selectionHelpers.selectionsToStringSplices(string, selections);
     const expected = [
       { text: '01 ', selected: false },
       { text: '234', selected: true, occurrence: 1, occurrences: 3 },
@@ -105,7 +105,7 @@ describe('selectionHelpers.selectionsToSplicedString', () => {
   });
   it('should return whole string as not selected when empty array input', function (done) {
     const selections = [];
-    const output = selectionHelpers.selectionsToSplicedString(string, selections);
+    const output = selectionHelpers.selectionsToStringSplices(string, selections);
     const expected = [
       { text: '01 234 56789qwertyuiopasd234fghjklzxcvbnmtyui01 234 567890', selected: false }
     ];
@@ -116,7 +116,7 @@ describe('selectionHelpers.selectionsToSplicedString', () => {
     const selections = [
       { text: '01 234 56789qwertyuiopasd234fghjklzxcvbnmtyui01 234 567890', occurrence: 1, occurrences: 1 }
     ];
-    const output = selectionHelpers.selectionsToSplicedString(string, selections);
+    const output = selectionHelpers.selectionsToStringSplices(string, selections);
     const expected = [
       { text: '01 234 56789qwertyuiopasd234fghjklzxcvbnmtyui01 234 567890', selected: true, occurrence: 1, occurrences: 1 }
     ];
@@ -299,6 +299,126 @@ describe('selectionHelpers.optimizeSelections', () => {
     const output = selectionHelpers.optimizeSelections(string, selections);
     const expected = [
       { text: '0123456789qwertyuiopasdfghjklzxcvbnmtyui01234567890', occurrence: 1, occurrences: 1 }
+    ];
+    expect(isEqual(expected, output)).to.equal(true);
+    done();
+  });
+  it('should return empty selections array with this edge case', function (done) {
+    const selections = [
+      { text: "", occurrence: 1, occurrences: 0 }
+    ];
+    const output = selectionHelpers.optimizeSelections(string, selections);
+    const expected = [];
+    expect(isEqual(expected, output)).to.equal(true);
+    done();
+  });
+  it('should return previous selections array when blank is added', function (done) {
+    const selections = [
+      { text: 'yui', occurrence: 2, occurrences: 2 },
+      { text: "", occurrence: 1, occurrences: 0 }
+    ];
+    const output = selectionHelpers.optimizeSelections(string, selections);
+    const expected = [
+      { text: 'yui', occurrence: 2, occurrences: 2 }
+    ];
+    expect(isEqual(expected, output)).to.equal(true);
+    done();
+  });
+});
+
+
+describe('selectionHelpers.removeSelectionFromSelections', () => {
+  const string = '0123456789qwertyuiopasdfghjklzxcvbnmtyui01234567890';
+  it('should return selections with the provided selection removed', function (done) {
+    const selection = { text: '234', occurrence: 1, occurrences: 2 };
+    const selections = [
+      { text: '234', occurrence: 1, occurrences: 2 },
+      { text: 'yui', occurrence: 2, occurrences: 2 },
+      { text: '0', occurrence: 3, occurrences: 3 }
+    ];
+    const output = selectionHelpers.removeSelectionFromSelections(selection, selections, string);
+    const expected = [
+      { text: 'yui', occurrence: 2, occurrences: 2 },
+      { text: '0', occurrence: 3, occurrences: 3 }
+    ];
+    expect(isEqual(expected, output)).to.equal(true);
+    done();
+  });
+  it('should return selections with the provided stringSplice removed', function (done) {
+    const selection = { text: '234', selected: true, occurrence: 1, occurrences: 2 };
+    const selections = [
+      { text: '234', occurrence: 1, occurrences: 2 },
+      { text: 'yui', occurrence: 2, occurrences: 2 },
+      { text: '0', occurrence: 3, occurrences: 3 }
+    ];
+    const output = selectionHelpers.removeSelectionFromSelections(selection, selections, string);
+    const expected = [
+      { text: 'yui', occurrence: 2, occurrences: 2 },
+      { text: '0', occurrence: 3, occurrences: 3 }
+    ];
+    expect(isEqual(expected, output)).to.equal(true);
+    done();
+  });
+  it('should return selections with the provided stringSplice removed, matching occurrence numbers', function (done) {
+    const selection = { text: '234', selected: true, occurrence: 1, occurrences: 2 };
+    const selections = [
+      { text: '234', occurrence: 1, occurrences: 2 },
+      { text: 'yui', occurrence: 1, occurrences: 2 },
+      { text: '0', occurrence: 1, occurrences: 3 }
+    ];
+    const output = selectionHelpers.removeSelectionFromSelections(selection, selections, string);
+    const expected = [
+      { text: '0', occurrence: 1, occurrences: 3 },
+      { text: 'yui', occurrence: 1, occurrences: 2 }
+    ];
+    expect(isEqual(expected, output)).to.equal(true);
+    done();
+  });
+});
+
+describe('selectionHelpers.addSelectionToSelections', () => {
+  const string = '0123456789qwertyuiopasdfghjklzxcvbnmtyui01234567890';
+  it('should return selections with the provided selection included', function (done) {
+    const selection = { text: '234', occurrence: 1, occurrences: 2 };
+    const selections = [
+      { text: 'yui', occurrence: 2, occurrences: 2 },
+      { text: '0', occurrence: 3, occurrences: 3 }
+    ];
+    const output = selectionHelpers.addSelectionToSelections(selection, selections, string);
+    const expected = [
+      { text: '234', occurrence: 1, occurrences: 2 },
+      { text: 'yui', occurrence: 2, occurrences: 2 },
+      { text: '0', occurrence: 3, occurrences: 3 }
+    ];
+    expect(isEqual(expected, output)).to.equal(true);
+    done();
+  });
+  it('should return selections with the provided stringSplice included', function (done) {
+    const selection = { text: '234', selected: true, occurrence: 1, occurrences: 2 };
+    const selections = [
+      { text: 'yui', occurrence: 2, occurrences: 2 },
+      { text: '0', occurrence: 3, occurrences: 3 }
+    ];
+    const output = selectionHelpers.addSelectionToSelections(selection, selections, string);
+    const expected = [
+      { text: '234', occurrence: 1, occurrences: 2 },
+      { text: 'yui', occurrence: 2, occurrences: 2 },
+      { text: '0', occurrence: 3, occurrences: 3 }
+    ];
+    expect(isEqual(expected, output)).to.equal(true);
+    done();
+  });
+  it('should return selections when first word/chars are added', function (done) {
+    const selection = { text: '01', selected: true, occurrence: 1, occurrences: 2 };
+    const selections = [
+      { text: 'yui', occurrence: 2, occurrences: 2 },
+      { text: '0', occurrence: 3, occurrences: 3 }
+    ];
+    const output = selectionHelpers.addSelectionToSelections(selection, selections, string);
+    const expected = [
+      { text: '01', occurrence: 1, occurrences: 2 },
+      { text: 'yui', occurrence: 2, occurrences: 2 },
+      { text: '0', occurrence: 3, occurrences: 3 }
     ];
     expect(isEqual(expected, output)).to.equal(true);
     done();

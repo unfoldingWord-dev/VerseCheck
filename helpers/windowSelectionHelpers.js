@@ -10,7 +10,9 @@ export const getSelectionFromCurrentWindowSelection = (entireText) => {
   let windowSelection = getCurrentWindowSelection();
   let selectedText = getSelectedTextFromWindowSelection(windowSelection);
   let prescedingText = getPrescedingTextFromWindowSelection(windowSelection);
+  // Some edge cases leave a weird selection remaining, let's clean up.
   selection = stringHelpers.generateSelection(selectedText, prescedingText, entireText);
+  window.getSelection().empty();
   return selection;
 }
 /**
