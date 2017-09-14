@@ -7,6 +7,11 @@ import * as stringHelpers from '../helpers/stringHelpers'
 
 class RenderSelectionTextComponent extends Component {
 
+  componentWillMount() {
+    // track when the selections change to prevent false clicks of removals
+    this.renderTimestamp = Date.now();
+  }
+
   componentWillReceiveProps(nextProps) {
     // track when the selections change to prevent false clicks of removals
     if (!_.isEqual(this.props.selections, nextProps.selections)) {
