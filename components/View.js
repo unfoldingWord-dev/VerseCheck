@@ -42,11 +42,11 @@ class View extends React.Component {
         saveArea = <div />
         break
       case 'select':
-        titleText = 'Step 2. Select'
+        titleText = 'Select'
         saveArea = <div />
         break
       default:
-        titleText = 'Step 2. Select'
+        titleText = 'Step 2. Check'
         saveArea = <SaveArea {...this.props} />
     }
     return (
