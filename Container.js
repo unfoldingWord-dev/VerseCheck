@@ -3,6 +3,7 @@
   * @description This component displays the Verse so selection, edit and comments can be made
   */
 import React from 'react';
+import usfmjs from 'usfm-js';
 import View from './components/View';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import {optimizeSelections, normalizeString} from './utils/selectionHelpers';
@@ -250,6 +251,7 @@ class VerseCheck extends React.Component {
   }
 
   render() {
+    let verseText = usfmjs.removeMarker(this.verseText())
     return (
       <MuiThemeProvider>
         <View {...this.props} actions={this.actions}
@@ -259,7 +261,7 @@ class VerseCheck extends React.Component {
           mode={this.state.mode}
           comment={this.props.commentsReducer.text}
           commentChanged={this.state.commentChanged}
-          verseText={this.verseText()}
+          verseText={verseText}
           verseChanged={this.state.verseChanged}
           selections={this.state.selections}
           tags={this.state.tags}
