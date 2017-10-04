@@ -244,6 +244,7 @@ class VerseCheck extends React.Component {
     let verseText = "";
     if (targetLanguage && targetLanguage[chapter] && bookId == bookAbbr) {
       verseText = targetLanguage[chapter][verse] || "";
+      if (Array.isArray(verseText)) verseText = verseText[0];
       // normalize whitespace in case selection has contiguous whitespace _this isn't captured
       verseText = normalizeString(verseText);
     }
