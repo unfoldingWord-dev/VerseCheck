@@ -4,18 +4,43 @@
   "description": "Sub component for Tools to select, edit, comment, bookmarking verses.",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "eslint ./src ./index.js && jest"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx}",
+      "!**/node_modules/**"
+    ],
+    "coverageDirectory": "coverage"
   },
   "repository": {
-    "type": "git"
+    "type": "git",
+    "url": "git+https://github.com/translationCoreApps/VerseCheck.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/translationCoreApps/VerseCheck/issues"
+  },
+  "homepage": "https://github.com/translationCoreApps/VerseCheck#readme",
+  "devDependencies": {
+    "babel-eslint": "^8.0.0",
+    "babel-jest": "^21.0.2",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "eslint": "^4.7.2",
+    "eslint-plugin-react": "^7.4.0",
+    "jest": "^21.1.0",
+    "react-test-renderer": "^15.6.1",
+    "jsdom": "^11.2.0"
   },
   "dependencies": {
-    "babel-preset-react": "^6.16.0",
-    "lodash": "^4.17.4"
-  },
-  "devDependencies": {
-    "chai": "^4.1.1",
-    "jsdom": "^11.2.0",
-    "mocha": "^3.5.0"
+    "lodash": "^4.17.4",
+    "prop-types": "^15.5.10",
+    "react": "^15.6.1",
+    "react-dnd": "^2.5.1",
+    "react-dnd-html5-backend": "^2.5.1",
+    "react-dom": "^15.6.1"
   }
 }

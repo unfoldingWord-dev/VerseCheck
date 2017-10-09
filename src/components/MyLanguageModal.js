@@ -1,38 +1,38 @@
-import React, { Component, PropTypes } from 'react'
-import { Modal, Glyphicon } from 'react-bootstrap'
-import MyTargetVerse from './MyTargetVerse'
-import ReactDOM from 'react-dom'
+import React, { Component, PropTypes } from 'react';
+import { Modal, Glyphicon } from 'react-bootstrap';
+import MyTargetVerse from './MyTargetVerse';
+import ReactDOM from 'react-dom';
 
 class MyLanguageModal extends Component {
 
   componentDidMount() {
-    let {chapter, currentVerse} = this.props
-    let verseReference = chapter.toString() + currentVerse.toString()
-    let currentVerseNode = this.refs[verseReference]
-    let element = ReactDOM.findDOMNode(currentVerseNode)
+    let {chapter, currentVerse} = this.props;
+    let verseReference = chapter.toString() + currentVerse.toString();
+    let currentVerseNode = this.refs[verseReference];
+    let element = ReactDOM.findDOMNode(currentVerseNode);
     if (element) {
-      element.scrollIntoView()
+      element.scrollIntoView();
     }
   }
 
   render() {
-    let { show, onHide, targetLangBible, chapter, currentVerse } = this.props
-    let MyTargetLanguage = []
+    let { show, onHide, targetLangBible, chapter, currentVerse } = this.props;
+    let MyTargetLanguage = [];
     if (show) {
       for (let key in targetLangBible[chapter]) {
         if (targetLangBible[chapter].hasOwnProperty(key)) {
-          let verseText = targetLangBible[chapter][key]
+          let verseText = targetLangBible[chapter][key];
           let versePaneStyle = {};
           if (key == currentVerse) {
             if (key % 2 == 0) {
-              versePaneStyle = {borderLeft: '6px solid var(--accent-color)', backgroundColor: 'var(--background-color-light)', marginTop: '10px', color: 'var(--text-color-dark)', padding: '10px'}
+              versePaneStyle = {borderLeft: '6px solid var(--accent-color)', backgroundColor: 'var(--background-color-light)', marginTop: '10px', color: 'var(--text-color-dark)', padding: '10px'};
             } else {
-              versePaneStyle = {borderLeft: '6px solid var(--accent-color)', marginTop: '10px', color: 'var(--text-color-dark)', padding: '10px'}
+              versePaneStyle = {borderLeft: '6px solid var(--accent-color)', marginTop: '10px', color: 'var(--text-color-dark)', padding: '10px'};
             }
           } else if (key % 2 == 0) {
-            versePaneStyle = {backgroundColor: 'var(--background-color-light)', marginTop: '10px', color: 'var(--text-color-dark)', padding: '10px'}
+            versePaneStyle = {backgroundColor: 'var(--background-color-light)', marginTop: '10px', color: 'var(--text-color-dark)', padding: '10px'};
           } else {
-            versePaneStyle = {marginTop: '10px', color: 'var(--text-color-dark)', padding: '10px'}
+            versePaneStyle = {marginTop: '10px', color: 'var(--text-color-dark)', padding: '10px'};
           }
           MyTargetLanguage.push(
             <MyTargetVerse
@@ -44,7 +44,7 @@ class MyLanguageModal extends Component {
               dir={this.props.dir}
               ref={chapter.toString() + key.toString()}
             />
-          )
+          );
         }
       }
     }
@@ -67,7 +67,7 @@ class MyLanguageModal extends Component {
           <button className="btn-prime" onClick={onHide}>Close</button>
         </Modal.Footer>
       </Modal>
-    )
+    );
   }
 }
 
@@ -77,6 +77,6 @@ MyLanguageModal.propTypes = {
   targetLangBible: PropTypes.object,
   chapter: PropTypes.number,
   currentVerse: PropTypes.number
-}
+};
 
-export default MyLanguageModal
+export default MyLanguageModal;

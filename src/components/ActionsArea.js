@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import { Glyphicon } from 'react-bootstrap';
 import { Toggle } from 'material-ui';
 import isEqual from 'lodash/isEqual';
@@ -55,7 +55,7 @@ let ActionsArea = ({
         </button>
       </div>
     </div>
-  )
+  );
 
   const confirmEditVerseArea = (
       <div style={style.actionsArea}>
@@ -72,7 +72,7 @@ let ActionsArea = ({
           Save
         </button>
       </div>
-  )
+  );
 
   const confirmCommentArea = (
       <div style={style.actionsArea}>
@@ -89,7 +89,7 @@ let ActionsArea = ({
           Save
         </button>
       </div>
-  )
+  );
 
   const confirmSelectionArea = (
       <div style={style.actionsArea}>
@@ -117,27 +117,27 @@ let ActionsArea = ({
           Save
         </button>
       </div>
-  )
+  );
 
-  let modeArea
+  let modeArea;
   switch(mode) {
     case 'edit':
-      modeArea = confirmEditVerseArea
-      break
+      modeArea = confirmEditVerseArea;
+      break;
     case 'comment':
-      modeArea = confirmCommentArea
-      break
+      modeArea = confirmCommentArea;
+      break;
     case 'select':
-      modeArea = confirmSelectionArea
-      break
+      modeArea = confirmSelectionArea;
+      break;
     case 'default':
-      modeArea = changeModeArea
-      break
+      modeArea = changeModeArea;
+      break;
     default:
-      modeArea = changeModeArea
+      modeArea = changeModeArea;
   }
 
-  return modeArea
-}
+  return modeArea;
+};
 
 export default ActionsArea;

@@ -1,28 +1,29 @@
-import React, { Component, PropTypes } from 'react'
-import {Dialog, FlatButton, CardHeader} from 'material-ui'
+import React, { Component, PropTypes } from 'react';
+import {Dialog, CardHeader} from 'material-ui';
 import {Glyphicon} from 'react-bootstrap';
 
 class DialogComponent extends Component {
   constructor(props) {
-    super(props)
-    this.handleSkip = this.handleSkip.bind(this)
+    super(props);
+    this.handleSkip = this.handleSkip.bind(this);
   }
 
   handleSkip() {
     if (this.props.goToNextOrPrevious == "next") {
-      this.props.skipToNext()
+      this.props.skipToNext();
     } else if (this.props.goToNextOrPrevious == "previous") {
-      this.props.skipToPrevious()
+      this.props.skipToPrevious();
     } else {
        // do nothing
     }
   }
 
   render() {
-    let {dialogModalVisibility} = this.props
+    let {dialogModalVisibility} = this.props;
 
     const actions = [
       <button
+        key={1}
         className="btn-second"
         onClick={
           (e) => {
@@ -34,11 +35,12 @@ class DialogComponent extends Component {
       Skip
       </button>,
       <button
+        key={2}
         className="btn-prime"
         onClick={
           (e) => {
             e.preventDefault();
-            this.props.handleClose()
+            this.props.handleClose();
           }
         }
       >
@@ -68,8 +70,7 @@ class DialogComponent extends Component {
         >
         <CardHeader
           style={{ color: "var(--reverse-color)", backgroundColor: 'var(--accent-color-dark)', padding: '15px', margin: "-44px -24px -24px -24px"}}
-          children={headerContent}
-        /><br /><br />
+        >{headerContent}</CardHeader><br /><br />
           <div>
             <p>
               Please <span style={{color: "var(--accent-color)", fontWeight: "bold"}}>select </span>
@@ -87,4 +88,4 @@ class DialogComponent extends Component {
   }
 }
 
-export default DialogComponent
+export default DialogComponent;

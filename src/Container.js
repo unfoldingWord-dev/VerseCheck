@@ -33,7 +33,7 @@ class VerseCheck extends React.Component {
       ["meaning", "Meaning"],
       ["wordChoice", "Word Choice"],
       ["other", "Other"]
-    ]
+    ];
 
     this.actions = {
       handleGoToNext() {
@@ -53,7 +53,7 @@ class VerseCheck extends React.Component {
         props.actions.goToPrevious();
       },
       handleOpenDialog(goToNextOrPrevious) {
-        _this.setState({goToNextOrPrevious})
+        _this.setState({goToNextOrPrevious});
         _this.setState({dialogModalVisibility: true});
       },
       handleCloseDialog() {
@@ -87,9 +87,9 @@ class VerseCheck extends React.Component {
         const oldcomment = _this.props.commentsReducer.text || "";
         _this.setState({
           commentChanged: newcomment !== oldcomment
-        })
+        });
       },
-      cancelComment(e) {
+      cancelComment() {
         _this.setState({
           mode: 'default',
           selections: _this.props.selectionsReducer.selections,
@@ -111,7 +111,7 @@ class VerseCheck extends React.Component {
           commentChanged: false
         });
       },
-      handleTagsCheckbox(tag, e) {
+      handleTagsCheckbox(tag) {
         let newState = _this.state;
         if (newState.tags === undefined) newState.tags = [];
         if (!newState.tags.includes(tag)) {
@@ -172,7 +172,7 @@ class VerseCheck extends React.Component {
             verseChanged: false,
             tags: []
           });
-        }
+        };
         if (_this.state.verseText) {  // if verseText === "" is false
           save();
         } else {
@@ -185,18 +185,18 @@ class VerseCheck extends React.Component {
         }
       },
       validateSelections(verseText) {
-        _this.props.actions.validateSelections(verseText)
+        _this.props.actions.validateSelections(verseText);
       },
       toggleReminder() {
-        _this.props.actions.toggleReminder(_this.props.loginReducer.userdata.username)
+        _this.props.actions.toggleReminder(_this.props.loginReducer.userdata.username);
       },
       openAlertDialog(message) {
-        _this.props.actions.openAlertDialog(message)
+        _this.props.actions.openAlertDialog(message);
       },
       selectModalTab(tab, section, vis) {
         _this.props.actions.selectModalTab(tab, section, vis);
       }
-    }
+    };
   }
 
   componentWillMount() {
@@ -252,7 +252,7 @@ class VerseCheck extends React.Component {
   }
 
   render() {
-    let verseText = usfmjs.removeMarker(this.verseText())
+    let verseText = usfmjs.removeMarker(this.verseText());
     return (
       <MuiThemeProvider>
         <View {...this.props} actions={this.actions}

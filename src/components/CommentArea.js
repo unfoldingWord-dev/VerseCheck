@@ -1,5 +1,5 @@
-import React from 'react'
-import {FormGroup, FormControl, Glyphicon} from 'react-bootstrap'
+import React from 'react';
+import {FormGroup, FormControl, Glyphicon} from 'react-bootstrap';
 import style from '../css/Style';
 
 let CommentArea = (props) => {
@@ -20,7 +20,7 @@ let CommentArea = (props) => {
         />
       </FormGroup>
     </div>
-  )
-}
+  );
+};
 
-module.exports = CommentArea
+module.exports = CommentArea;

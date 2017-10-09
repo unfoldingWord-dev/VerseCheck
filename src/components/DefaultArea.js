@@ -6,9 +6,9 @@ import {
   normalizeString
 } from '../utils/selectionHelpers';
 // components
-import { Glyphicon } from 'react-bootstrap'
+import { Glyphicon } from 'react-bootstrap';
 import InstructionsArea from './InstructionsArea';
-import MyLanguageModal from './MyLanguageModal'
+import MyLanguageModal from './MyLanguageModal';
 // styling
 import style from '../css/Style';
 
@@ -18,7 +18,7 @@ class DefaultArea extends React.Component {
     this.state = {
       inBox: false,
       modalVisibility: false
-    }
+    };
   }
 
   displayText(verseText, selections) {
@@ -32,7 +32,7 @@ class DefaultArea extends React.Component {
           // validate selections and remove ones that do not apply
           this.props.actions.validateSelections(verseText);
         }
-      })
+      });
       verseTextSpans = _selectionArray.map((selection, index) => {
         let style = selection.selected ? { backgroundColor: 'var(--highlight-color)' } : {};
         return (
@@ -40,13 +40,13 @@ class DefaultArea extends React.Component {
             {selection.text}
           </span>
         );
-      })
+      });
     }
     return (
       <div style={{userSelect: 'none', color:'var(--text-color-light)'}}>
         {verseTextSpans}
       </div>
-    )
+    );
   }
 
   render() {
@@ -73,7 +73,7 @@ class DefaultArea extends React.Component {
               </span>
           </div>
           <div onClick={() => {
-            this.setState({modalVisibility: true})
+            this.setState({modalVisibility: true});
           }}>
             <Glyphicon glyph="fullscreen" title="Click to show expanded verses" style={{cursor: "pointer"}}/>
             {this.state.modalVisibility ? 
@@ -85,7 +85,7 @@ class DefaultArea extends React.Component {
                 dir = {dir ? dir : "ltr"}
                 onHide={
                   () => {
-                    this.setState({modalVisibility: false})
+                    this.setState({modalVisibility: false});
                   }
                 }
               />
@@ -98,7 +98,7 @@ class DefaultArea extends React.Component {
           {this.displayText(this.props.verseText, this.props.selectionsReducer.selections)}
         </div>
       </div>
-    )
+    );
   }
 }
 

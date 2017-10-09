@@ -5,7 +5,7 @@ import ActionsArea from './ActionsArea';
 import SaveArea from './SaveArea';
 import DialogComponent from './DialogComponent';
 import IconIndicators from './IconIndicators';
-import isEqual from 'lodash/isEqual'
+import isEqual from 'lodash/isEqual';
 
 class View extends React.Component {
 
@@ -22,32 +22,32 @@ class View extends React.Component {
     
     if (groupsData[contextId.groupId]) {
       let groupData = groupsData[contextId.groupId].filter(groupData => {
-        return isEqual(groupData.contextId, contextId)
+        return isEqual(groupData.contextId, contextId);
       });
-      result = groupData[0].verseEdits
+      result = groupData[0].verseEdits;
     }
     return result;
   }
 
   render() {
-    let titleText
-    let saveArea
+    let titleText;
+    let saveArea;
     switch (this.props.mode) {
       case 'edit':
-        titleText = 'Edit Verse'
-        saveArea = <div />
-        break
+        titleText = 'Edit Verse';
+        saveArea = <div />;
+        break;
       case 'comment':
-        titleText = 'Comment'
-        saveArea = <div />
-        break
+        titleText = 'Comment';
+        saveArea = <div />;
+        break;
       case 'select':
-        titleText = 'Select'
-        saveArea = <div />
-        break
+        titleText = 'Select';
+        saveArea = <div />;
+        break;
       default:
-        titleText = 'Step 2. Check'
-        saveArea = <SaveArea {...this.props} />
+        titleText = 'Step 2. Check';
+        saveArea = <SaveArea {...this.props} />;
     }
     return (
       <div style={style.verseCheck}>
@@ -78,7 +78,7 @@ class View extends React.Component {
           skipToPrevious={this.props.actions.skipToPrevious}
         />
       </div>
-    )
+    );
   }
 }
 

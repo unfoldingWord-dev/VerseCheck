@@ -3,7 +3,7 @@ import * as _ from 'lodash';
 // helpers
 import * as windowSelectionHelpers from '../helpers/windowSelectionHelpers';
 import * as selectionHelpers from '../helpers/selectionHelpers';
-import * as stringHelpers from '../helpers/stringHelpers'
+import * as stringHelpers from '../helpers/stringHelpers';
 
 class RenderSelectionTextComponent extends Component {
 

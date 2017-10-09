@@ -1,16 +1,16 @@
-import React, { Component, PropTypes } from 'react'
-import { Col } from 'react-bootstrap'
+import React, { Component, PropTypes } from 'react';
+import { Col } from 'react-bootstrap';
 
 class MyTargetVerse extends Component {
 
   render() {
-    let { chapter, verse, verseText, styles} = this.props
-    let chapterVerse
+    let { chapter, verse, verseText, styles} = this.props;
+    let chapterVerse;
 
     if(this.props.dir == "rtl"){
-      chapterVerse = verse + ":" + chapter + " "
+      chapterVerse = verse + ":" + chapter + " ";
     }else{
-      chapterVerse = chapter + ":" + verse + " "
+      chapterVerse = chapter + ":" + verse + " ";
     }
 
     return (
@@ -20,7 +20,7 @@ class MyTargetVerse extends Component {
           {verseText}
         </div>
       </Col>
-    )
+    );
   }
 }
 
@@ -29,6 +29,6 @@ MyTargetVerse.propTypes = {
   verse: PropTypes.number,
   verseText: PropTypes.string,
   styles: PropTypes.object
-}
+};
 
-export default MyTargetVerse
+export default MyTargetVerse;
