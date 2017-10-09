@@ -17,7 +17,7 @@ export const occurrencesInString = (string, subString) => {
    position += step;
  }
  return occurrences;
-}
+};
 /**
  * @description - Function that normalizes a string including whitespace
  * @param {String} string - the string to normalize
@@ -26,7 +26,7 @@ export const occurrencesInString = (string, subString) => {
 export const normalizeString = (string) => {
   string = string.replace(/\s+/g, ' ');
   return string;
-}
+};
 /**
  * @description - generates a selection object from the selected text, prescedingText and whole text
  * @param {String} selectedText - the text that is selected
@@ -50,4 +50,4 @@ export const generateSelection = (selectedText, prescedingText, entireText)=> {
     occurrences: occurrences
   };
   return selection;
-}
+};

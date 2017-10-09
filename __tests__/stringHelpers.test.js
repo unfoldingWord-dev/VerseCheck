@@ -1,4 +1,4 @@
-import * as stringHelpers from '../helpers/stringHelpers';
+import * as stringHelpers from '../src/helpers/stringHelpers';
 
 describe('stringHelpers.normalizeString', () => {
   it('should normalize string by removing extra spaces into single contiguous space', () => {

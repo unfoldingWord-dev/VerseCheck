@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 import jsdom from 'jsdom';
 //helpers
-import * as windowSelectionHelpers from '../helpers/windowSelectionHelpers';
+import * as windowSelectionHelpers from '../src/helpers/windowSelectionHelpers';
 
 const {JSDOM} = jsdom;
 

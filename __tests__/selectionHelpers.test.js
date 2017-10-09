@@ -1,4 +1,4 @@
-import * as selectionHelpers from '../helpers/selectionHelpers';
+import * as selectionHelpers from '../src/helpers/selectionHelpers';
 
 describe('selectionHelpers.spliceStringOnRanges', () => {
     const string = "01 234 56789qwertyuiopasdfghjklzxcvbnmtyui01 234 567890";

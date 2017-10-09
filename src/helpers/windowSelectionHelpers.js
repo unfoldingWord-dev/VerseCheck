@@ -14,7 +14,7 @@ export const getSelectionFromCurrentWindowSelection = (entireText) => {
   selection = stringHelpers.generateSelection(selectedText, prescedingText, entireText);
   window.getSelection().empty();
   return selection;
-}
+};
 /**
 * @description - Gets the window's Selection from the UI
 * @return {Object} windowSelection - a windowSelection object from inside a compatible element
@@ -25,7 +25,7 @@ export const getCurrentWindowSelection = () => {
   // windowSelection is an object with lots of data
   windowSelection = window.getSelection();
   return windowSelection;
-}
+};
 /**
 * @description - Gets the window selected text from the windowSelection
 * @param {Object} windowSelection - a windowSelection object from inside a compatible element
@@ -36,7 +36,7 @@ export const getSelectedTextFromWindowSelection = (windowSelection) => {
   let selectedText;
   selectedText = windowSelection.toString();
   return selectedText;
-}
+};
 /**
 * @description - Gets the prescedingText from the windowSelection
 * @param {Object} windowSelection - a windowSelection object from inside a compatible element
@@ -65,7 +65,7 @@ export const getPrescedingTextFromWindowSelection = (windowSelection) => {
     }
   }
   return prescedingText;
-}
+};
 /**
  * @description - gets the prescedingText from the element ending at the selectionRangeStart
  * @param {Element} element - the html element that has text and siblings with text
@@ -78,7 +78,7 @@ export const getPrescedingTextFromElementAndSiblings = (element, selectionRangeS
   let prescedingTextFromElement = getPrescedingTextFromElement(element, selectionRangeStart);
   prescedingText = prescedingTextFromElementSiblings + prescedingTextFromElement;
   return prescedingText;
-}
+};
 /**
  * @description - gets the prescedingText from the element ending at the selectionRangeStart
  * @param {Element} element - the html element that has text
@@ -90,7 +90,7 @@ export const getPrescedingTextFromElement = (element, selectionRangeStart) => {
   let text = element.textContent;
   prescedingText = text.slice(0,selectionRangeStart);
   return prescedingText;
-}
+};
 /**
  * @description - gets the prescedingText from the element siblings
  * @param {Element} element - the html element that has text and siblings with text
@@ -108,4 +108,4 @@ export const getPrescedingTextFromElementSiblings = (element) => {
     previousSibling = previousSibling.previousElementSibling;
   }
   return prescedingText;
-}
+};

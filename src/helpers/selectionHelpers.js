@@ -11,7 +11,7 @@ export const spliceStringOnRanges = (string, ranges) => {
   var selectionArray = []; // response
   var remainingString = string;
   // shift the range since the loop is destructive by working on the remainingString and not original string
-  var rangeShift = 0 // start the range shift at the first character
+  var rangeShift = 0; // start the range shift at the first character
   ranges.forEach(function(range) {
     const firstCharacterPosition = range[0]-rangeShift; // original range start - the rangeShift
     const beforeSelection = remainingString.slice(0, firstCharacterPosition); // save all the text before the selection
@@ -37,12 +37,12 @@ export const spliceStringOnRanges = (string, ranges) => {
     // shift the range up to last char of substring (before+sub)
     rangeShift += beforeSelection.length; // adjust the rangeShift by the length prior to the selection
     rangeShift += selection.length; // adjust the rangeShift by the length of the selection itself
-  })
+  });
   if (remainingString) { // only add to the array if string isn't empty
     selectionArray.push({text: remainingString, selected: false});
   }
   return selectionArray;
-}
+};
 /**
  * @description - This converts ranges to array of selection objects
  * @param {string} string - text used to get the ranges of
@@ -62,7 +62,7 @@ export const selectionsToRanges = (string, selections) => {
       }
     });
   return ranges;
-}
+};
 
 /**
  * @description - Splice string into array of substrings, flagging what is selected
@@ -76,7 +76,7 @@ export const selectionsToStringSplices = (string, selections) => {
   const ranges = selectionsToRanges(string, selections); // convert the selections to ranges
   splicedStringArray = spliceStringOnRanges(string, ranges); // splice the string on the ranges
   return splicedStringArray; // return the spliced string
-}
+};
 
 /**
  * @description - This abstracts complex handling of ranges such as order, deduping, concatenating, overlaps
@@ -109,7 +109,7 @@ export const optimizeRanges = (ranges) => {
     }
   });
   return optimizedRanges;
-}
+};
 
 /**
  * @description - This converts ranges to array of selection objects
@@ -135,9 +135,9 @@ export const optimizeRanges = (ranges) => {
      if (occurrences > 0) { // there are some edge cases where empty strings get through but don't have occurrences
        selections.push(selection);
      }
-   })
+   });
    return selections;
- }
+ };
 /**
  * @description - This abstracts complex handling of selections such as order, deduping, concatenating, overlapping ranges
  * @param {string} string - the text selections are found in
@@ -155,7 +155,7 @@ export const optimizeSelections = (string, selections) => {
   ranges = optimizeRanges(ranges); // optimize the ranges
   optimizedSelections = rangesToSelections(string, ranges); // convert optimized ranges into selections
   return optimizedSelections;
-}
+};
 /**
  * @description - Removes a selection if found in the array of selections
  * @param {Object} selection - the selection to remove
@@ -170,7 +170,7 @@ export const removeSelectionFromSelections = (selection, selections, string) => 
   );
   selections = optimizeSelections(string, selections);
   return selections;
-}
+};
 /**
  * @description - Removes a selection if found in the array of selections
  * @param {Object} selection - the selection to remove
@@ -183,4 +183,4 @@ export const addSelectionToSelections = (selection, selections, string) => {
   selections.push(selection);
   selections = optimizeSelections(string, selections);
   return selections;
-}
+};
