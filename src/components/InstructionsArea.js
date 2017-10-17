@@ -64,7 +64,7 @@ let InstructionsArea = ({
       </span>
     </div>
   );
-}
+};
 
 InstructionsArea.propTypes = {
   quote: PropTypes.string.isRequired,

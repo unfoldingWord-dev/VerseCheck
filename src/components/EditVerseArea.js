@@ -1,5 +1,5 @@
-import React from 'react'
-import {Checkbox, Glyphicon, FormGroup, FormControl} from 'react-bootstrap'
+import React from 'react';
+import {Checkbox, Glyphicon, FormGroup, FormControl} from 'react-bootstrap';
 import style from '../css/Style';
 
 let EditVerseArea = (props) => {
@@ -7,13 +7,13 @@ let EditVerseArea = (props) => {
     ["spelling", "Spelling"],
     ["punctuation", "Punctuation"],
     ["wordChoice", "Word Choice"],
-  ]
+  ];
 
   const tagList2 = [
     ["meaning", "Meaning"],
     ["grammar", "Grammar"],
     ["other", "Other"]
-  ]
+  ];
 
   const checkboxesColumn1 = tagList1.map(tag =>
     <Checkbox
@@ -25,7 +25,7 @@ let EditVerseArea = (props) => {
     >
       {tag[1]}
     </Checkbox>
-  )
+  );
 
   const checkboxesColumn2 = tagList2.map(tag =>
     <Checkbox
@@ -37,7 +37,7 @@ let EditVerseArea = (props) => {
     >
       {tag[1]}
     </Checkbox>
-  )
+  );
 
   let checkBoxText = props.verseChanged ? "Next, select reason(s) for change" : "First, make changes to verse above";
 
@@ -70,7 +70,7 @@ let EditVerseArea = (props) => {
       </div>
       </FormGroup>
     </div>
-  )
-}
+  );
+};
 
 export default EditVerseArea;

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import style from '../css/Style';
 // components
-import RenderSelectionTextComponent from './RenderSelectionTextComponent'
+import RenderSelectionTextComponent from './RenderSelectionTextComponent';
 
 class SelectionArea extends Component {
   constructor() {
@@ -9,7 +9,7 @@ class SelectionArea extends Component {
     this.state = {
       inBox: false,
       modalVisibility: false
-    }
+    };
   }
 
   render() {
@@ -20,9 +20,9 @@ class SelectionArea extends Component {
     } = this.props;
     const bookName = manifest.project.name;
     const reference = this.props.contextIdReducer.contextId.reference;
-    const bibles = this.props.resourcesReducer.bibles;
+    // const bibles = this.props.resourcesReducer.bibles;
     const languageName = manifest.target_language ? manifest.target_language.name : null;
-    const dir = manifest.target_language ? manifest.target_language.direction : null;
+    // const dir = manifest.target_language ? manifest.target_language.direction : null;
     return (
       <div style={{flex: 1, display: 'flex', flexDirection: 'column'}}>
         <div style={style.verseTitle}>

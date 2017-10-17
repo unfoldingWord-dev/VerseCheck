@@ -32,10 +32,10 @@ class CheckArea extends Component {
             dir={projectDetailsReducer.manifest.target_language.direction}
           />
         );
-        break
+        break;
       case 'comment':
-        modeArea = <CommentArea comment={comment} actions={actions} />
-        break
+        modeArea = <CommentArea comment={comment} actions={actions} />;
+        break;
       case 'select':
         modeArea = (
           <div style={{ WebkitUserSelect: 'none', display: "flex", flex: "1", justifyContent: "center", alignItems: "center", overflow: "auto" }}>
@@ -46,7 +46,7 @@ class CheckArea extends Component {
               mode={mode}
             />
           </div>);
-        break
+        break;
       case 'default':
       default:
         modeArea = (
@@ -69,7 +69,7 @@ class CheckArea extends Component {
           {modeArea}
         </div>
       </div>
-    )
+    );
   }
 }
 
