@@ -11,7 +11,8 @@ import {optimizeSelections, normalizeString} from './utils/selectionHelpers';
 class VerseCheck extends React.Component {
   constructor(props) {
     super(props);
-    const mode = props.selectionsReducer.selections.length > 0 ? 'default' : 'select';
+    let verseText = usfmjs.removeMarker(this.verseText());
+    const mode = props.selectionsReducer.selections.length > 0 || verseText.length === 0 ? 'default' : 'select';
     this.state = {
       mode: mode,
       comment: undefined,
@@ -207,7 +208,13 @@ class VerseCheck extends React.Component {
   componentWillReceiveProps(nextProps) {
     if (nextProps.contextIdReducer.contextId != this.props.contextIdReducer.contextId) {
       let selections = Array.from(nextProps.selectionsReducer.selections);
-      const mode = nextProps.selectionsReducer.selections.length > 0 ? 'default' : 'select';
+      const { chapter, verse } = nextProps.contextIdReducer.contextId.reference;
+      const { targetLanguage } = nextProps.resourcesReducer.bibles;
+      let verseText = targetLanguage[chapter][verse] || "";
+      if (Array.isArray(verseText)) verseText = verseText[0];
+      // normalize whitespace in case selection has contiguous whitespace _this isn't captured
+      verseText = normalizeString(verseText);
+      const mode = nextProps.selectionsReducer.selections.length > 0 || verseText.length === 0 ? 'default' : 'select';
       this.setState({
         mode: mode,
         comments: undefined,
