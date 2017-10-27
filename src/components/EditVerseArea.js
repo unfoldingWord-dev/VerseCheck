@@ -20,7 +20,7 @@ let EditVerseArea = (props) => {
       key={tag[0]}
       checked={props.tags.includes(tag[0])}
       disabled={!props.verseChanged}
-      style={props.verseChanged ? {width: '33.3%', marginLeft: '10px', marginRight: '10px', color: 'var(--text-color-dark)'} : {width: '33.3%', marginLeft: '10px', marginRight: '10px', color: 'var(--text-color-light)'}}
+      style={props.verseChanged ? { marginLeft: '10px', marginRight: '10px', color: 'var(--text-color-dark)'} : { marginLeft: '10px', marginRight: '10px', color: 'var(--text-color-light)'}}
       onChange={props.actions.handleTagsCheckbox.bind(this, tag[0])}
     >
       {tag[1]}
@@ -32,7 +32,7 @@ let EditVerseArea = (props) => {
       key={tag[0]}
       checked={props.tags.includes(tag[0])}
       disabled={!props.verseChanged}
-      style={props.verseChanged ? {width: '33.3%', marginLeft: '10px', marginRight: '10px', color: 'var(--text-color-dark)'} : {width: '33.3%', marginLeft: '10px', marginRight: '10px', color: 'var(--text-color-light)'}}
+      style={props.verseChanged ? { marginLeft: '10px', marginRight: '10px', color: 'var(--text-color-dark)'} : { marginLeft: '10px', marginRight: '10px', color: 'var(--text-color-light)'}}
       onChange={props.actions.handleTagsCheckbox.bind(this, tag[0])}
     >
       {tag[1]}
