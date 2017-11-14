@@ -75,7 +75,7 @@ var style = {
     display: 'flex',
     flexDirection: 'column',
     padding: '5px 15px 0 15px',
-    height: "100%" 
+    height: "100%"
   },
   editArea: {
     flex: 'auto',
@@ -83,6 +83,10 @@ var style = {
     flexDirection: 'column',
     padding: '5px 15px 0 15px',
     height: "100%"
+  },
+  modalTitle: {
+    textAlign: "center",
+    color: "var(--reverse-color)"
   }
 };
 

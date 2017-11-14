@@ -76,8 +76,8 @@ class DefaultArea extends React.Component {
             this.setState({modalVisibility: true});
           }}>
             <Glyphicon glyph="fullscreen" title="Click to show expanded verses" style={{cursor: "pointer"}}/>
-            {this.state.modalVisibility ? 
-              <MyLanguageModal
+            {this.state.modalVisibility ?
+              <MyLanguageModal {...this.props}
                 show={this.state.modalVisibility}
                 targetLangBible={bibles.targetLanguage}
                 chapter={reference.chapter}
