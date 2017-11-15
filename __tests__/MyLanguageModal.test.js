@@ -29,7 +29,7 @@ describe('Test MyLanguageModal component',()=>{
         }
       }
     };
-    const expectedTitle = props['projectDetailsReducer']['manifest']['project']['name'];
+    const expectedTitle = props.projectDetailsReducer.manifest.project.name;
     const enzymeWrapper = shallow(<MyLanguageModal {...props} />);
     validateModalTitle(enzymeWrapper, expectedTitle);
   });
