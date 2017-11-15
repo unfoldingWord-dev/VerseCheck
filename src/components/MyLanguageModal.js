@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import { Modal, Glyphicon } from 'react-bootstrap';
 import MyTargetVerse from './MyTargetVerse';
 import ReactDOM from 'react-dom';
+import style from '../css/Style';
 
 class MyLanguageModal extends Component {
 
@@ -16,7 +17,8 @@ class MyLanguageModal extends Component {
   }
 
   render() {
-    let { show, onHide, targetLangBible, chapter, currentVerse } = this.props;
+    let { show, onHide, targetLangBible, chapter, currentVerse, projectDetailsReducer} = this.props;
+    const title = projectDetailsReducer.manifest.project.name;
     let MyTargetLanguage = [];
     if (show) {
       for (let key in targetLangBible[chapter]) {
@@ -52,7 +54,8 @@ class MyLanguageModal extends Component {
     return (
       <Modal show={show} onHide={onHide} bsSize="lg" aria-labelledby="contained-modal-title-sm">
         <Modal.Header style={{ backgroundColor: "var(--accent-color-dark)" }}>
-          <Modal.Title id="contained-modal-title-sm">
+          <Modal.Title id="contained-modal-title-sm" style={style.modalTitle}>
+            {title}
             <Glyphicon
                 onClick={onHide}
                 glyph={"remove"}
