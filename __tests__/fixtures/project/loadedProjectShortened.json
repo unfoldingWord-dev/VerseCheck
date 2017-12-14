@@ -1,0 +1,3792 @@
+{
+  "toolsReducer": {
+    "currentToolViews": {},
+    "currentToolName": "translationWords",
+    "currentToolTitle": "translationWords (Part 1)",
+    "toolsMetadata": []
+  },
+  "loginReducer": {
+    "loggedInUser": true,
+    "userdata": {
+      "id": 4232,
+      "login": "royalsix",
+      "full_name": "Jay Scott",
+      "email": "royalsix@noreply.door43.org",
+      "avatar_url": "https://git.door43.org/img/avatar_default.png",
+      "username": "royalsix",
+      "token": "817fd7e100e939b93fd362879c377cf01993c712"
+    },
+    "feedback": "",
+    "subject": "Bug Report"
+  },
+  "settingsReducer": {
+    "currentSettings": {
+      "showTutorial": false,
+      "developerMode": true,
+      "csvSaveLocation": null,
+      "online": true,
+      "onlineMode": false
+    },
+    "toolsSettings": {
+      "ScripturePane": {
+        "currentPaneSettings": [
+          "targetLanguage",
+          "bhp",
+          "ulb"
+        ]
+      }
+    },
+    "onlineMode": false,
+    "csvSaveLocation": "/Users/jay/Desktop/"
+  },
+  "loaderReducer": {
+    "show": false,
+    "toolsProgress": {
+      "translationWords": {
+        "progress": 98.0392156862745
+      }
+    },
+    "reloadContent": null
+  },
+  "resourcesReducer": {
+    "bibles": {
+      "udb": {
+        "2": {
+          "1": "But you, Titus, you must teach the things that help people believe the truth about God.",
+          "2": "The older men should control themselves all the time. They should live in a way that other people respect, and they should speak wisely. They should also believe the true things about God, love others truly, and continuously do these things.",
+          "3": "The older women, like the men, should live so that everyone knows that they respect God very much. They must not say bad things about other people, and they must not drink very much wine. But they should teach others what is good.",
+          "4": "In this way, they should teach the younger women to think wisely and to love their own husbands and children.",
+          "5": "The older women should also teach the younger women to think good thoughts, not to act in a bad way toward any man, to work well at home, and to do what their husbands tell them. They should do all these things so that no one will mock God's word.",
+          "6": "And concerning the younger men, teach them, too. Tell them to control themselves well.",
+          "7": "As for you, Titus my son, always show other people how to do good deeds. In what you teach show the believers what is true and also show them how serious you are about your work.",
+          "8": "Teach people in a way that no one can criticize, so that if anybody wants to stop you, other people will shame them because they really have nothing bad to say about any of us.",
+          "9": "About our brothers and their families who are slaves: They should always submit to their masters. As much as possible, they should live in a way that pleases their masters in every way, and are they should not argue with them.",
+          "10": "They must not steal even little things from their masters; instead, they should be faithful to them, and they should do everything in a way that leads people to admire all that we teach about God, who saves us.",
+          "11": "Titus, all that I have written adds up to this: Everyone is now able to know that God wishes to save them; this is his gift to them.",
+          "12": "This saving grace from God trains us, as if we were children, to say no to the desires that are found in this world. It helps us to think about things in the right way, to be honest, truthful, and fair to other people and to always keep God in our thoughts and actions while we live in this world.",
+          "13": "At the same time, God teaches us to wait for what he will certainly do in the future, which is something that will make us very happy: That is, Jesus the Messiah, our Savior and powerful God, will return to us in great splendor.",
+          "14": "He gave himself to die as the payment to free us from our lawless nature, to make us his cherished possession, a treasured people that he has made clean, a people whose greatest joy is to do what is good.",
+          "15": "Titus, speak about these things. Urge those who hear you to live as I have described. And use your full right of command to correct our brothers and sisters when it is necessary. Let no one disregard what you say."
+        },
+        "manifest": {
+          "language_id": "en",
+          "language_name": "English",
+          "direction": "ltr",
+          "subject": "Bible",
+          "resource_id": "udb",
+          "resource_title": "Unlocked Dynamic Bible",
+          "description": "Gateway Language"
+        }
+      },
+      "ulb": {
+        "2": {
+          "1": "But you, speak what fits with faithful instruction.",
+          "2": "Teach older men to be temperate, dignified, sensible, sound in faith, in love, and in perseverance.",
+          "3": "Teach older women likewise to be reverent in behavior, not slanderers or being slaves to much wine, but to be teachers of what is good.",
+          "4": "In this way they may train the younger women to love their own husbands and children,",
+          "5": "to be sensible, pure, good housekeepers, and obedient to their own husbands. They should do these things so that God's word may not be insulted.",
+          "6": "In the same way, encourage the younger men to use good sense.",
+          "7": "In all ways present yourself as an example of good works. In your teaching, show integrity, dignity,",
+          "8": "and a correct message, so that anyone who opposes you may be ashamed because they have nothing bad to say about us.",
+          "9": "Teach slaves to obey their masters in everything, to please them and not argue with them,",
+          "10": "to not steal from them, but instead to demonstrate all good faith, so that in every way they may bring credit to the teaching about God our Savior.",
+          "11": "For the grace of God has appeared for the salvation of all people.",
+          "12": "It trains us to reject godlessness and worldly passions, and to live self-controlled, upright, and godly lives in this age,",
+          "13": "while we look forward to receiving our blessed hope, the appearance of the glory of our great God and Savior Jesus Christ.",
+          "14": "Jesus gave himself for us in order to redeem us from all lawlessness and to make pure, for himself, a special people who are eager to do good works.",
+          "15": "Speak of these things, encourage people to do them, and give correction with all authority. Let no one disregard you."
+        },
+        "manifest": {
+          "language_id": "en",
+          "language_name": "English",
+          "direction": "ltr",
+          "subject": "Bible",
+          "resource_id": "ulb",
+          "resource_title": "Unlocked Literal Bible",
+          "description": "Gateway Language"
+        }
+      },
+      "targetLanguage": {
+        "2": {
+          "1": "Kono ewe, oambe ziyenderera ne ntaero zisepahara. ",
+          "2": "Bakwame bakuru baswanera kuba no buiswaro, kuki kutika, ne nkutwisiso, nentumero irukite, ne rato ne tundamo.",
+          "3": "Abakentu bakulwana nabo nji nto iswana baswanera kubona kuti nako yonshe ba kikutika, kali kushebeka. Kaba swaneli kunywa caha bujwara. Baswanera kuruta zirotu asf",
+          "4": "kuti  abakazana bazyibe kuha erato ke nkutwisiso ku bakwame babo ne bana bo. ",
+          "5": "Baswanera kuba ruta ku shuwisisa, kucena ko kuki babarera, no kubabarera marapa abo, no kukutika abakwame babo. Baswanezi kutenda ezi zintu ye ezywi lya Nyambe lya shauliwa.",
+          "6": "Kenjira iswana mu ereze banenu be cikwame babe ne nkutwisiso. ",
+          "7": "Muzonshe, muhare ko mutara omisebezi mirotu, hape entuto yenu isunde kucena ne kute. ",
+          "8": "Oambe eñusa ligorete lyazya mafosisa kuti enshe ozyo arwisa aswabe, kakuli kali kawane chimango cho kuamba.",
+          "9": "Abatanga ba swanezi kuki bika kwinshi yi banfumu babo muzintu zonshe. Baba tabise kali kuba kakana. ",
+          "10": "Bashahibi. Kono, basunde entumero yonshe ndotu, kuti yee muzintu zonshe bakutike entuto yetu ya Nyambe mupulusi wetu.",
+          "11": "Kakuli echishemo cha Nyambe cha bonahali ku bantu bonshe. ",
+          "12": "Chitu ruta okukana bumango ne ntakazo zefasi. Chitu ruta okuhara ke kutwisiso, ko kucena, mane ni ke chirumeli moinu nako, ",
+          "13": "netu lindire okutambura ensepo yetu ifuyaulitwe, kusunda okucena kwa Nyambe wetu omunene ne mupulusi Jesu Kireste.",
+          "14": "Jesu nakiha yemwini kwetu ko kutu rukurura kuzintu zonshe zaazya murao, noku cenesa, kebaka lyakwe, abantu bobutokwa aba kitakaleza kutenda misebezi mirotu.",
+          "15": "Ambe no kususueza kezi zintu. Usikulure ke manta onshe. Kwashabi ozyo akana kuku shuwa.",
+          "-1": "Kubatuka 2"
+        },
+        "manifest": {
+          "language_id": "fwe",
+          "language_name": "Fwe",
+          "direction": "ltr",
+          "subject": "Bible",
+          "resource_id": "targetLanguage",
+          "resource_title": "",
+          "description": "Target Language"
+        }
+      }
+    },
+    "translationHelps": {
+      "translationWords": {
+        "faithful": "# faithful, faithfulness #\n\n## Definition: ##\n\nTo be \"faithful\" to God means to consistently live according to God's teachings. It means to be loyal to him by obeying him.The state or condition of being faithful is \"faithfulness.\"\n\n* A person who is faithful can be trusted to always keep his promises and to always fulfill his responsibilities to other people.\n* A faithful person perseveres in doing a task, even when it is long and difficult.\n* Faithfulness to God is the consistent practice of doing what God wants us to do.\n\n## Translation Suggestions: ##\n\n* In many contexts, \"faithful\" can be translated as \"loyal\" or \"dedicated\" or \"dependable.\"\n* In other contexts, \"faithful\" can be translated by a word or phrase that means \"continuing to believe\" or \"persevering in believing and obeying God.\"\n* Ways that \"faithfulness\" could be translated could include \"persevering in believing\" or \"loyalty\" or \"trustworthiness\" or \"believing and obeying God.\"\n\n(See also: [faith](../kt/faith.md), [believe](../kt/believe.md))\n\n## Bible References: ##\n\n* [1 Samuel 02:9](rc://en/tn/help/1sa/02/09)\n* [1 Thessalonians 05:23-24](rc://en/tn/help/1th/05/23)\n* [3 John 01:5-8](rc://en/tn/help/3jn/01/05)\n* [Colossians 01:7-8](rc://en/tn/help/col/01/07)\n* [Genesis 24:49](rc://en/tn/help/gen/24/49)\n* [Isaiah 01:26](rc://en/tn/help/isa/01/26)\n* [Joshua 02:14](rc://en/tn/help/jos/02/14)\n* [Luke 16:10-12](rc://en/tn/help/luk/16/10)\n* [Numbers 12:6-8](rc://en/tn/help/num/12/06)\n* [Proverbs 11:12-13](rc://en/tn/help/pro/11/12)\n* [Psalm 012:1](rc://en/tn/help/psa/012/001)\n\n## Examples from the Bible stories: ##\n\n* __[08:05](rc://en/tn/help/obs/08/05)__ Even in prison, Joseph remained __faithful__  to God, and God blessed him.\n* __[14:12](rc://en/tn/help/obs/14/12)__ Even so, God was still __faithful__  to His promises to Abraham, Isaac, and Jacob.\n* __[15:13](rc://en/tn/help/obs/15/13)__ The people promised to remain __faithful__  to God and follow his laws.\n* __[17:09](rc://en/tn/help/obs/17/09)__ David ruled with justice and __faithfulness__  for many years, and God blessed him. However, toward the end of his life he sinned terribly against God.\n* __[18:04](rc://en/tn/help/obs/18/04)__ God was angry with Solomon and, as a punishment for Solomon's __unfaithfulness__, he promised to divide the nation of Israel into two kingdoms after Solomon's death.\n* __[35:12](rc://en/tn/help/obs/35/12)__ \"The older son said to his father, 'All these years I have worked __faithfully__  for you!\"\n* __[49:17](rc://en/tn/help/obs/49/17)__ But God is __faithful__  and says that if you confess your sins, he will forgive you.\n* __[50:04](rc://en/tn/help/obs/50/04)__ If you remain __faithful__  to me to the end, then God will save you.\"\n\n## Word Data:##\n\n* Strong's: H529, H530, H539, H540, H571, G4103\n\n"
+      }
+    },
+    "lexicons": {}
+  },
+  "commentsReducer": {
+    "text": "",
+    "userName": "",
+    "modifiedTimestamp": ""
+  },
+  "remindersReducer": {
+    "enabled": false,
+    "userName": "",
+    "modifiedTimestamp": ""
+  },
+  "contextIdReducer": {
+    "contextId": {
+      "reference": {
+        "bookId": "tit",
+        "chapter": 2,
+        "verse": 1
+      },
+      "tool": "translationWords",
+      "groupId": "faithful",
+      "quote": "faithful",
+      "occurrence": 1
+    }
+  },
+  "projectDetailsReducer": {
+    "projectSaveLocation": "/Users/jay/translationCore/projects/fwe_tit_text_reg",
+    "manifest": {
+      "generator": {
+        "name": "ts-desktop",
+        "build": "110"
+      },
+      "target_language": {
+        "id": "fwe",
+        "name": "Fwe",
+        "direction": "ltr"
+      },
+      "ts_project": {
+        "id": "tit",
+        "name": "Titus"
+      },
+      "type": {
+        "id": "text",
+        "name": "Text"
+      },
+      "source_translations": [
+        {
+          "language_id": "en",
+          "resource_id": "ulb",
+          "checking_level": "3",
+          "date_modified": 20170221,
+          "version": "9"
+        }
+      ],
+      "translators": [
+        "Jane Wachila",
+        "Ruth Lutuhezi",
+        "kapokola alfred simbotwe",
+        "Philip McMahon",
+        "gravy"
+      ],
+      "checkers": [],
+      "time_created": "3/25/2017 4:21 PM",
+      "check_modules": [],
+      "package_version": 7,
+      "format": "usfm",
+      "project": {
+        "id": "tit",
+        "name": "Titus"
+      },
+      "resource": {
+        "id": "reg",
+        "name": "Regular"
+      },
+      "parent_draft": {},
+      "finished_chunks": [
+        "01-01",
+        "01-04",
+        "01-06",
+        "01-08",
+        "01-10",
+        "01-12",
+        "01-14",
+        "01-15",
+        "01-title",
+        "02-01",
+        "02-03",
+        "02-06",
+        "02-09",
+        "02-11",
+        "02-14",
+        "02-15",
+        "02-title",
+        "03-01",
+        "03-03",
+        "03-04",
+        "03-06",
+        "03-08",
+        "03-09",
+        "03-12",
+        "03-14",
+        "03-15",
+        "03-title"
+      ],
+      "tcInitialized": true,
+      "license": "CC0 1.0 Public Domain"
+    },
+    "currentProjectToolsProgress": {
+      "wordAlignment": 0,
+      "translationWords": 0
+    },
+    "projectType": null
+  },
+  "selectionsReducer": {
+    "selections": [],
+    "userName": "",
+    "modifiedTimestamp": ""
+  },
+  "verseEditReducer": {
+    "tags": [],
+    "userName": [],
+    "modifiedTimestamp": ""
+  },
+  "groupsIndexReducer": {
+    "groupsIndex": [
+      {
+        "id": "abiathar",
+        "name": "Abiathar"
+      },
+      {
+        "id": "abomination",
+        "name": "abomination, abominable"
+      },
+      {
+        "id": "acacia",
+        "name": "acacia"
+      },
+      {
+        "id": "adam",
+        "name": "Adam"
+      },
+      {
+        "id": "adultery",
+        "name": "adultery, adulterous, adulterer, adulteress"
+      },
+      {
+        "id": "afflict",
+        "name": "afflict, affliction"
+      },
+      {
+        "id": "alarm",
+        "name": "alarm, alarmed"
+      },
+      {
+        "id": "almighty",
+        "name": "Almighty"
+      },
+      {
+        "id": "amalekite",
+        "name": "Amalek, Amalekite"
+      },
+      {
+        "id": "amen",
+        "name": "amen, truly"
+      },
+      {
+        "id": "angel",
+        "name": "angel, archangel"
+      },
+      {
+        "id": "anoint",
+        "name": "anoint, anointed"
+      },
+      {
+        "id": "appoint",
+        "name": "appoint, appointed"
+      },
+      {
+        "id": "aram",
+        "name": "Aram, Aramean, Aramaic"
+      },
+      {
+        "id": "arkofthecovenant",
+        "name": "ark of the covenant, ark of the covenant decrees, ark of Yahweh"
+      },
+      {
+        "id": "asa",
+        "name": "Asa"
+      },
+      {
+        "id": "asher",
+        "name": "Asher"
+      },
+      {
+        "id": "assembly",
+        "name": "assembly, assemble"
+      },
+      {
+        "id": "astray",
+        "name": "astray, go astray, led astray, stray"
+      },
+      {
+        "id": "atonement",
+        "name": "atonement, atone"
+      },
+      {
+        "id": "atonementlid",
+        "name": "atonement lid"
+      },
+      {
+        "id": "authority",
+        "name": "authority, authorities"
+      },
+      {
+        "id": "avenge",
+        "name": "avenge, revenge, vengeance"
+      },
+      {
+        "id": "baal",
+        "name": "Baal"
+      },
+      {
+        "id": "balaam",
+        "name": "Balaam"
+      },
+      {
+        "id": "barren",
+        "name": "barren"
+      },
+      {
+        "id": "basket",
+        "name": "basket"
+      },
+      {
+        "id": "bearanimal",
+        "name": "bear"
+      },
+      {
+        "id": "beg",
+        "name": "beg, beggar"
+      },
+      {
+        "id": "believe",
+        "name": "believe, believe in, belief"
+      },
+      {
+        "id": "beloved",
+        "name": "beloved"
+      },
+      {
+        "id": "bethuel",
+        "name": "Bethuel"
+      },
+      {
+        "id": "betray",
+        "name": "betray, betrayer"
+      },
+      {
+        "id": "birthright",
+        "name": "birthright"
+      },
+      {
+        "id": "blameless",
+        "name": "blameless"
+      },
+      {
+        "id": "blasphemy",
+        "name": "blasphemy, blaspheme, blasphemous"
+      },
+      {
+        "id": "bless",
+        "name": "bless, blessed, blessing"
+      },
+      {
+        "id": "blood",
+        "name": "blood"
+      },
+      {
+        "id": "blotout",
+        "name": "blot out, wipe out"
+      },
+      {
+        "id": "boast",
+        "name": "boast, boastful"
+      },
+      {
+        "id": "body",
+        "name": "body"
+      },
+      {
+        "id": "bond",
+        "name": "bind, bond, bound"
+      },
+      {
+        "id": "bow",
+        "name": "bow, bow down"
+      },
+      {
+        "id": "breath",
+        "name": "breathe, breath"
+      },
+      {
+        "id": "bronze",
+        "name": "bronze"
+      },
+      {
+        "id": "brother",
+        "name": "brother"
+      },
+      {
+        "id": "caleb",
+        "name": "Caleb"
+      },
+      {
+        "id": "call",
+        "name": "call, calling, called, call out"
+      },
+      {
+        "id": "caughtup",
+        "name": "caught up, caught up with"
+      },
+      {
+        "id": "cherubim",
+        "name": "cherubim, cherub"
+      },
+      {
+        "id": "children",
+        "name": "children, child"
+      },
+      {
+        "id": "circumcise",
+        "name": "circumcise, circumcision"
+      },
+      {
+        "id": "clean",
+        "name": "clean, cleanse"
+      },
+      {
+        "id": "clothed",
+        "name": "clothe, clothed"
+      },
+      {
+        "id": "commander",
+        "name": "commander, command"
+      },
+      {
+        "id": "compassion",
+        "name": "compassion, compassionate"
+      },
+      {
+        "id": "condemn",
+        "name": "condemn, condemnation"
+      },
+      {
+        "id": "confess",
+        "name": "confess, confession"
+      },
+      {
+        "id": "confidence",
+        "name": "confidence, confident"
+      },
+      {
+        "id": "consecrate",
+        "name": "consecrate"
+      },
+      {
+        "id": "corrupt",
+        "name": "corrupt, corruption"
+      },
+      {
+        "id": "courtyard",
+        "name": "courtyard, court"
+      },
+      {
+        "id": "covenant",
+        "name": "covenant"
+      },
+      {
+        "id": "covenantfaith",
+        "name": "covenant faithfulness, covenant loyalty, loving kindness, unfailing love"
+      },
+      {
+        "id": "cross",
+        "name": "cross"
+      },
+      {
+        "id": "curse",
+        "name": "curse, cursed"
+      },
+      {
+        "id": "cutoff",
+        "name": "cut off"
+      },
+      {
+        "id": "darkness",
+        "name": "darkness"
+      },
+      {
+        "id": "death",
+        "name": "death, die, dead"
+      },
+      {
+        "id": "deceive",
+        "name": "deceive, deceit, deception, deceptive"
+      },
+      {
+        "id": "deer",
+        "name": "deer, doe, buck, roebuck, fawn"
+      },
+      {
+        "id": "deliverer",
+        "name": "deliver, deliverer, deliverance"
+      },
+      {
+        "id": "demon",
+        "name": "demon, evil spirit, unclean spirit"
+      },
+      {
+        "id": "desolate",
+        "name": "desolate, desolation"
+      },
+      {
+        "id": "devastated",
+        "name": "devastate, devastation"
+      },
+      {
+        "id": "discipline",
+        "name": "discipline, self-discipline"
+      },
+      {
+        "id": "divine",
+        "name": "divine"
+      },
+      {
+        "id": "dominion",
+        "name": "dominion"
+      },
+      {
+        "id": "dove",
+        "name": "dove, pigeon"
+      },
+      {
+        "id": "dung",
+        "name": "dung, manure"
+      },
+      {
+        "id": "edom",
+        "name": "Edom, Edomite, Idumea"
+      },
+      {
+        "id": "elder",
+        "name": "elder"
+      },
+      {
+        "id": "elect",
+        "name": "chosen one, choose, chosen people, Chosen One, the elect"
+      },
+      {
+        "id": "endure",
+        "name": "endure, endurance"
+      },
+      {
+        "id": "enslave",
+        "name": "enslave, in bondage"
+      },
+      {
+        "id": "ephraim",
+        "name": "Ephraim"
+      },
+      {
+        "id": "eternity",
+        "name": "everlasting, eternal, eternity"
+      },
+      {
+        "id": "evil",
+        "name": "evil, wicked, wickedness"
+      },
+      {
+        "id": "exalt",
+        "name": "exalt, exaltation"
+      },
+      {
+        "id": "face",
+        "name": "face"
+      },
+      {
+        "id": "faithful",
+        "name": "faithful, faithfulness"
+      },
+      {
+        "id": "falsegod",
+        "name": "false god, foreign god, god, goddess"
+      },
+      {
+        "id": "famine",
+        "name": "famine"
+      },
+      {
+        "id": "favor",
+        "name": "favor, favorable, favoritism"
+      },
+      {
+        "id": "fear",
+        "name": "fear, afraid, fear of Yahweh"
+      },
+      {
+        "id": "fellowship",
+        "name": "fellowship"
+      },
+      {
+        "id": "filled",
+        "name": "filled with the Spirit"
+      },
+      {
+        "id": "firstborn",
+        "name": "first-born"
+      },
+      {
+        "id": "firstfruit",
+        "name": "firstfruits"
+      },
+      {
+        "id": "flesh",
+        "name": "flesh"
+      },
+      {
+        "id": "foolish",
+        "name": "fool, foolish, folly"
+      },
+      {
+        "id": "forever",
+        "name": "forever"
+      },
+      {
+        "id": "forgive",
+        "name": "forgive, forgiveness"
+      },
+      {
+        "id": "forsaken",
+        "name": "forsake, forsaken, forsook"
+      },
+      {
+        "id": "free",
+        "name": "free, freedom, liberty"
+      },
+      {
+        "id": "fruit",
+        "name": "fruit, fruitful"
+      },
+      {
+        "id": "fulfill",
+        "name": "fulfill"
+      },
+      {
+        "id": "gate",
+        "name": "gate, gate bar"
+      },
+      {
+        "id": "gift",
+        "name": "gift"
+      },
+      {
+        "id": "girgashites",
+        "name": "Girgashites"
+      },
+      {
+        "id": "glory",
+        "name": "glory, glorious"
+      },
+      {
+        "id": "god",
+        "name": "God"
+      },
+      {
+        "id": "godthefather",
+        "name": "God the Father, heavenly Father, Father"
+      },
+      {
+        "id": "gomorrah",
+        "name": "Gomorrah"
+      },
+      {
+        "id": "good",
+        "name": "good, goodness"
+      },
+      {
+        "id": "goodnews",
+        "name": "good news, gospel"
+      },
+      {
+        "id": "grace",
+        "name": "grace, gracious"
+      },
+      {
+        "id": "guilt",
+        "name": "guilt, guilty"
+      },
+      {
+        "id": "hagar",
+        "name": "Hagar"
+      },
+      {
+        "id": "hamath",
+        "name": "Hamath, Lebo Hamath, Hamathites"
+      },
+      {
+        "id": "hang",
+        "name": "hang"
+      },
+      {
+        "id": "harp",
+        "name": "harp"
+      },
+      {
+        "id": "harvest",
+        "name": "harvest"
+      },
+      {
+        "id": "heart",
+        "name": "heart"
+      },
+      {
+        "id": "heaven",
+        "name": "heaven, sky, heavens, heavenly"
+      },
+      {
+        "id": "heir",
+        "name": "heir"
+      },
+      {
+        "id": "highpriest",
+        "name": "high priest"
+      },
+      {
+        "id": "holy",
+        "name": "holy, holiness"
+      },
+      {
+        "id": "holyplace",
+        "name": "holy place, most holy place"
+      },
+      {
+        "id": "holyspirit",
+        "name": "Holy Spirit, Spirit of God, Spirit of the Lord, Spirit"
+      },
+      {
+        "id": "honey",
+        "name": "honey, honeycomb"
+      },
+      {
+        "id": "hope",
+        "name": "hope"
+      },
+      {
+        "id": "horse",
+        "name": "horse"
+      },
+      {
+        "id": "houseofgod",
+        "name": "house of God, Yahweh's house"
+      },
+      {
+        "id": "imageofgod",
+        "name": "image of God, image"
+      },
+      {
+        "id": "inchrist",
+        "name": "in Christ, in Jesus, in the Lord, in him"
+      },
+      {
+        "id": "inherit",
+        "name": "inherit, inheritance, heritage, heir"
+      },
+      {
+        "id": "iniquity",
+        "name": "iniquity"
+      },
+      {
+        "id": "innocent",
+        "name": "innocent"
+      },
+      {
+        "id": "ishmael",
+        "name": "Ishmael"
+      },
+      {
+        "id": "iyahweh",
+        "name": "I, Yahweh; me, Yahweh"
+      },
+      {
+        "id": "jealous",
+        "name": "jealous, jealousy"
+      },
+      {
+        "id": "jephthah",
+        "name": "Jephthah"
+      },
+      {
+        "id": "jerusalem",
+        "name": "Jerusalem"
+      },
+      {
+        "id": "jezebel",
+        "name": "Jezebel"
+      },
+      {
+        "id": "joshua",
+        "name": "Joshua"
+      },
+      {
+        "id": "joy",
+        "name": "joy, joyful"
+      },
+      {
+        "id": "judge",
+        "name": "judge, judgment"
+      },
+      {
+        "id": "justice",
+        "name": "just, justice, justly"
+      },
+      {
+        "id": "justify",
+        "name": "justify, justification"
+      },
+      {
+        "id": "kidronvalley",
+        "name": "Kidron Valley"
+      },
+      {
+        "id": "kingdom",
+        "name": "kingdom"
+      },
+      {
+        "id": "lamb",
+        "name": "lamb, Lamb of God"
+      },
+      {
+        "id": "lawofmoses",
+        "name": "law, law of Moses, God's law, law of Yahweh"
+      },
+      {
+        "id": "lebanon",
+        "name": "Lebanon"
+      },
+      {
+        "id": "life",
+        "name": "life, live, lived, lives, living, alive"
+      },
+      {
+        "id": "light",
+        "name": "light"
+      },
+      {
+        "id": "locust",
+        "name": "locust"
+      },
+      {
+        "id": "lord",
+        "name": "lord, lords, master, masters, sir, sirs"
+      },
+      {
+        "id": "lordgod",
+        "name": "Lord"
+      },
+      {
+        "id": "lordyahweh",
+        "name": "Lord Yahweh, Yahweh God"
+      },
+      {
+        "id": "love",
+        "name": "love, loves, loving"
+      },
+      {
+        "id": "majesty",
+        "name": "majesty"
+      },
+      {
+        "id": "manna",
+        "name": "manna"
+      },
+      {
+        "id": "memorialoffering",
+        "name": "memorial, memorial offering"
+      },
+      {
+        "id": "mercy",
+        "name": "mercy, merciful"
+      },
+      {
+        "id": "micah",
+        "name": "Micah"
+      },
+      {
+        "id": "mind",
+        "name": "mind"
+      },
+      {
+        "id": "minister",
+        "name": "minister, ministry"
+      },
+      {
+        "id": "miracle",
+        "name": "miracle, wonder, sign"
+      },
+      {
+        "id": "moab",
+        "name": "Moab, Moabite, Moabitess"
+      },
+      {
+        "id": "mosthigh",
+        "name": "Most High"
+      },
+      {
+        "id": "multiply",
+        "name": "multiply"
+      },
+      {
+        "id": "nahor",
+        "name": "Nahor"
+      },
+      {
+        "id": "name",
+        "name": "name, named"
+      },
+      {
+        "id": "noah",
+        "name": "Noah"
+      },
+      {
+        "id": "obadiah",
+        "name": "Obadiah"
+      },
+      {
+        "id": "olive",
+        "name": "olive"
+      },
+      {
+        "id": "oppress",
+        "name": "oppress, oppression, oppressor"
+      },
+      {
+        "id": "overtake",
+        "name": "overtake, overtook"
+      },
+      {
+        "id": "palace",
+        "name": "palace"
+      },
+      {
+        "id": "pardon",
+        "name": "pardon"
+      },
+      {
+        "id": "passover",
+        "name": "Passover"
+      },
+      {
+        "id": "peace",
+        "name": "peace, peaceful"
+      },
+      {
+        "id": "peopleofgod",
+        "name": "people of God, my people"
+      },
+      {
+        "id": "perfect",
+        "name": "perfect"
+      },
+      {
+        "id": "perish",
+        "name": "perish, perishing, perishable"
+      },
+      {
+        "id": "philistia",
+        "name": "Philistia"
+      },
+      {
+        "id": "pit",
+        "name": "pit"
+      },
+      {
+        "id": "plow",
+        "name": "plow"
+      },
+      {
+        "id": "potiphar",
+        "name": "Potiphar"
+      },
+      {
+        "id": "power",
+        "name": "power, powers"
+      },
+      {
+        "id": "precious",
+        "name": "precious"
+      },
+      {
+        "id": "priest",
+        "name": "priest, priesthood"
+      },
+      {
+        "id": "proclaim",
+        "name": "proclaim, proclamation"
+      },
+      {
+        "id": "promise",
+        "name": "promise, promises, promised"
+      },
+      {
+        "id": "prophet",
+        "name": "prophet, prophecy, prophesy, seer, prophetess"
+      },
+      {
+        "id": "proud",
+        "name": "proud, pride, prideful"
+      },
+      {
+        "id": "prudent",
+        "name": "prudent"
+      },
+      {
+        "id": "purify",
+        "name": "pure, purify, purification"
+      },
+      {
+        "id": "queen",
+        "name": "queen"
+      },
+      {
+        "id": "raise",
+        "name": "raise, raises, raised, rise, risen, arise, arose"
+      },
+      {
+        "id": "ransom",
+        "name": "ransom"
+      },
+      {
+        "id": "rebuke",
+        "name": "rebuke"
+      },
+      {
+        "id": "receive",
+        "name": "receive"
+      },
+      {
+        "id": "redeem",
+        "name": "redeem, redemption, redeemer"
+      },
+      {
+        "id": "refuge",
+        "name": "refuge, shelter"
+      },
+      {
+        "id": "rejoice",
+        "name": "rejoice"
+      },
+      {
+        "id": "remnant",
+        "name": "remnant"
+      },
+      {
+        "id": "repent",
+        "name": "repent, repentance"
+      },
+      {
+        "id": "rest",
+        "name": "rest"
+      },
+      {
+        "id": "restore",
+        "name": "restore, restoration"
+      },
+      {
+        "id": "return",
+        "name": "return"
+      },
+      {
+        "id": "reveal",
+        "name": "reveal, revealed, revelation"
+      },
+      {
+        "id": "reward",
+        "name": "reward"
+      },
+      {
+        "id": "righteous",
+        "name": "righteous, righteousness"
+      },
+      {
+        "id": "righthand",
+        "name": "right hand"
+      },
+      {
+        "id": "run",
+        "name": "run, running"
+      },
+      {
+        "id": "sabbath",
+        "name": "Sabbath"
+      },
+      {
+        "id": "salvation",
+        "name": "salvation"
+      },
+      {
+        "id": "sanctuary",
+        "name": "sanctuary"
+      },
+      {
+        "id": "save",
+        "name": "save, saved, safe"
+      },
+      {
+        "id": "seacow",
+        "name": "sea cow"
+      },
+      {
+        "id": "seed",
+        "name": "seed, semen"
+      },
+      {
+        "id": "servant",
+        "name": "servant, slave, slavery"
+      },
+      {
+        "id": "setapart",
+        "name": "set apart"
+      },
+      {
+        "id": "shame",
+        "name": "shame, shameful, ashamed"
+      },
+      {
+        "id": "sheep",
+        "name": "sheep, ram, ewe"
+      },
+      {
+        "id": "shiloh",
+        "name": "Shiloh"
+      },
+      {
+        "id": "sidon",
+        "name": "Sidon, Sidonians"
+      },
+      {
+        "id": "sign",
+        "name": "sign, proof, reminder"
+      },
+      {
+        "id": "sin",
+        "name": "sin, sins, sinful, sinner, sinning"
+      },
+      {
+        "id": "skull",
+        "name": "skull"
+      },
+      {
+        "id": "sleep",
+        "name": "sleep, asleep, fall asleep"
+      },
+      {
+        "id": "solomon",
+        "name": "Solomon"
+      },
+      {
+        "id": "son",
+        "name": "son, son of"
+      },
+      {
+        "id": "sonofgod",
+        "name": "Son of God, the Son, Son"
+      },
+      {
+        "id": "sonsofgod",
+        "name": "sons of God"
+      },
+      {
+        "id": "soul",
+        "name": "soul"
+      },
+      {
+        "id": "spirit",
+        "name": "spirit, spiritual"
+      },
+      {
+        "id": "strength",
+        "name": "strength, strengthen"
+      },
+      {
+        "id": "stumble",
+        "name": "stumble"
+      },
+      {
+        "id": "succoth",
+        "name": "Succoth"
+      },
+      {
+        "id": "suffer",
+        "name": "suffer, suffering"
+      },
+      {
+        "id": "tabernacle",
+        "name": "tabernacle"
+      },
+      {
+        "id": "tax",
+        "name": "tax, taxes"
+      },
+      {
+        "id": "temple",
+        "name": "temple"
+      },
+      {
+        "id": "tentofmeeting",
+        "name": "tent of meeting"
+      },
+      {
+        "id": "test",
+        "name": "test"
+      },
+      {
+        "id": "testimony",
+        "name": "testimony, testify"
+      },
+      {
+        "id": "thetwelve",
+        "name": "the twelve, the eleven"
+      },
+      {
+        "id": "thresh",
+        "name": "thresh, threshing"
+      },
+      {
+        "id": "tongue",
+        "name": "tongue"
+      },
+      {
+        "id": "transgression",
+        "name": "transgress, transgression"
+      },
+      {
+        "id": "trespass",
+        "name": "trespass"
+      },
+      {
+        "id": "tribute",
+        "name": "tribute"
+      },
+      {
+        "id": "true",
+        "name": "true, truth, come true"
+      },
+      {
+        "id": "trust",
+        "name": "trust, trustworthy, trustworthiness"
+      },
+      {
+        "id": "turn",
+        "name": "turn, turn away, turn back"
+      },
+      {
+        "id": "uncircumcised",
+        "name": "uncircumcised, uncircumcision"
+      },
+      {
+        "id": "unclean",
+        "name": "unclean"
+      },
+      {
+        "id": "unfaithful",
+        "name": "unfaithful, unfaithfulness"
+      },
+      {
+        "id": "unjust",
+        "name": "unjust, unjustly, injustice"
+      },
+      {
+        "id": "unleavenedbread",
+        "name": "unleavened bread"
+      },
+      {
+        "id": "unrighteous",
+        "name": "unrighteous, unrighteousness"
+      },
+      {
+        "id": "upright",
+        "name": "upright, uprightness"
+      },
+      {
+        "id": "vain",
+        "name": "vain, vanity"
+      },
+      {
+        "id": "veil",
+        "name": "veil"
+      },
+      {
+        "id": "vision",
+        "name": "vision"
+      },
+      {
+        "id": "vow",
+        "name": "vow"
+      },
+      {
+        "id": "walk",
+        "name": "walk, walks, walked, walking"
+      },
+      {
+        "id": "watchtower",
+        "name": "watchtower, tower"
+      },
+      {
+        "id": "wise",
+        "name": "wise, wisdom"
+      },
+      {
+        "id": "witness",
+        "name": "witness, eyewitness"
+      },
+      {
+        "id": "woe",
+        "name": "woe"
+      },
+      {
+        "id": "word",
+        "name": "word, words"
+      },
+      {
+        "id": "wordofgod",
+        "name": "word of God, words of God, word of Yahweh, word of the Lord, scripture"
+      },
+      {
+        "id": "works",
+        "name": "works, deeds, work, acts"
+      },
+      {
+        "id": "world",
+        "name": "world, worldly"
+      },
+      {
+        "id": "worship",
+        "name": "worship"
+      },
+      {
+        "id": "worthy",
+        "name": "worthy, worth, unworthy, worthless"
+      },
+      {
+        "id": "wrath",
+        "name": "wrath, fury"
+      },
+      {
+        "id": "yahweh",
+        "name": "Yahweh"
+      },
+      {
+        "id": "yahwehofhosts",
+        "name": "Yahweh of hosts, God of hosts, host"
+      },
+      {
+        "id": "zadok",
+        "name": "Zadok"
+      },
+      {
+        "id": "zealous",
+        "name": "zeal, zealous"
+      },
+      {
+        "id": "zion",
+        "name": "Zion, Mount Zion"
+      }
+    ],
+    "loadedFromFileSystem": true
+  },
+  "groupsDataReducer": {
+    "groupsData": {
+      "apostle": [
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 1,
+              "verse": 1
+            },
+            "tool": "translationWords",
+            "groupId": "apostle",
+            "quote": "apostle",
+            "occurrence": 1
+          }
+        }
+      ],
+      "astray": [
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 3,
+              "verse": 3
+            },
+            "tool": "translationWords",
+            "groupId": "astray",
+            "quote": "led astray",
+            "occurrence": 1
+          }
+        }
+      ],
+      "authority": [
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 2,
+              "verse": 15
+            },
+            "tool": "translationWords",
+            "groupId": "authority",
+            "quote": "authority",
+            "occurrence": 1
+          }
+        }
+      ],
+      "blameless": [
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 1,
+              "verse": 7
+            },
+            "tool": "translationWords",
+            "groupId": "blameless",
+            "quote": "blameless",
+            "occurrence": 1
+          }
+        },
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 2,
+              "verse": 8
+            },
+            "tool": "translationWords",
+            "groupId": "blameless",
+            "quote": "blameless",
+            "occurrence": 1
+          }
+        }
+      ],
+      "bless": [
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 2,
+              "verse": 13
+            },
+            "tool": "translationWords",
+            "groupId": "bless",
+            "quote": "blessed",
+            "occurrence": 1
+          }
+        }
+      ],
+      "bornagain": [
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 3,
+              "verse": 5
+            },
+            "tool": "translationWords",
+            "groupId": "bornagain",
+            "quote": "new birth",
+            "occurrence": 1
+          }
+        }
+      ],
+      "children": [
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 1,
+              "verse": 6
+            },
+            "tool": "translationWords",
+            "groupId": "children",
+            "quote": "children",
+            "occurrence": 1
+          }
+        },
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 2,
+              "verse": 4
+            },
+            "tool": "translationWords",
+            "groupId": "children",
+            "quote": "children",
+            "occurrence": 1
+          }
+        }
+      ],
+      "circumcise": [
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 1,
+              "verse": 10
+            },
+            "tool": "translationWords",
+            "groupId": "circumcise",
+            "quote": "circumcision",
+            "occurrence": 1
+          }
+        }
+      ],
+      "commander": [
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 1,
+              "verse": 3
+            },
+            "tool": "translationWords",
+            "groupId": "commander",
+            "quote": "command",
+            "occurrence": 1
+          }
+        }
+      ],
+      "confidence": [
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 1,
+              "verse": 2
+            },
+            "tool": "translationWords",
+            "groupId": "confidence",
+            "quote": "confidence",
+            "occurrence": 1
+          }
+        },
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 3,
+              "verse": 7
+            },
+            "tool": "translationWords",
+            "groupId": "confidence",
+            "quote": "confidence",
+            "occurrence": 1
+          }
+        }
+      ],
+      "crete": [
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 1,
+              "verse": 5
+            },
+            "tool": "translationWords",
+            "groupId": "crete",
+            "quote": "Crete",
+            "occurrence": 1
+          }
+        }
+      ],
+      "deceive": [
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 1,
+              "verse": 10
+            },
+            "tool": "translationWords",
+            "groupId": "deceive",
+            "quote": "deceive",
+            "occurrence": 1
+          }
+        }
+      ],
+      "deliverer": [
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 1,
+              "verse": 3
+            },
+            "tool": "translationWords",
+            "groupId": "deliverer",
+            "quote": "deliver",
+            "occurrence": 1
+          }
+        }
+      ],
+      "elder": [
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 1,
+              "verse": 6
+            },
+            "tool": "translationWords",
+            "groupId": "elder",
+            "quote": "elder",
+            "occurrence": 1
+          }
+        }
+      ],
+      "elect": [
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 1,
+              "verse": 1
+            },
+            "tool": "translationWords",
+            "groupId": "elect",
+            "quote": "chosen people",
+            "occurrence": 1
+          }
+        }
+      ],
+      "eternity": [
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 1,
+              "verse": 2
+            },
+            "tool": "translationWords",
+            "groupId": "eternity",
+            "quote": "everlasting",
+            "occurrence": 1
+          }
+        },
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 3,
+              "verse": 7
+            },
+            "tool": "translationWords",
+            "groupId": "eternity",
+            "quote": "eternal",
+            "occurrence": 1
+          }
+        }
+      ],
+      "evil": [
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 1,
+              "verse": 6
+            },
+            "tool": "translationWords",
+            "groupId": "evil",
+            "quote": "wicked",
+            "occurrence": 1
+          }
+        },
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 3,
+              "verse": 3
+            },
+            "tool": "translationWords",
+            "groupId": "evil",
+            "quote": "evil",
+            "occurrence": 1
+          }
+        }
+      ],
+      "faith": [
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 1,
+              "verse": 1
+            },
+            "tool": "translationWords",
+            "groupId": "faith",
+            "quote": "faith",
+            "occurrence": 1
+          }
+        },
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 1,
+              "verse": 4
+            },
+            "tool": "translationWords",
+            "groupId": "faith",
+            "quote": "faith",
+            "occurrence": 1
+          }
+        },
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 1,
+              "verse": 13
+            },
+            "tool": "translationWords",
+            "groupId": "faith",
+            "quote": "faith",
+            "occurrence": 1
+          }
+        },
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 2,
+              "verse": 2
+            },
+            "tool": "translationWords",
+            "groupId": "faith",
+            "quote": "faith",
+            "occurrence": 1
+          }
+        },
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 2,
+              "verse": 10
+            },
+            "tool": "translationWords",
+            "groupId": "faith",
+            "quote": "faith",
+            "occurrence": 1
+          }
+        },
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 3,
+              "verse": 15
+            },
+            "tool": "translationWords",
+            "groupId": "faith",
+            "quote": "faith",
+            "occurrence": 1
+          }
+        }
+      ],
+      "faithful": [
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 1,
+              "verse": 6
+            },
+            "tool": "translationWords",
+            "groupId": "faithful",
+            "quote": "faithful",
+            "occurrence": 1
+          }
+        },
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 2,
+              "verse": 1
+            },
+            "tool": "translationWords",
+            "groupId": "faithful",
+            "quote": "faithful",
+            "occurrence": 1
+          }
+        }
+      ],
+      "foolish": [
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 3,
+              "verse": 9
+            },
+            "tool": "translationWords",
+            "groupId": "foolish",
+            "quote": "foolish",
+            "occurrence": 1
+          }
+        }
+      ],
+      "glory": [
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 2,
+              "verse": 13
+            },
+            "tool": "translationWords",
+            "groupId": "glory",
+            "quote": "glory",
+            "occurrence": 1
+          }
+        }
+      ],
+      "god": [
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 1,
+              "verse": 1
+            },
+            "tool": "translationWords",
+            "groupId": "god",
+            "quote": "God",
+            "occurrence": 1
+          }
+        },
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 1,
+              "verse": 1
+            },
+            "tool": "translationWords",
+            "groupId": "god",
+            "quote": "God",
+            "occurrence": 2
+          }
+        },
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 1,
+              "verse": 2
+            },
+            "tool": "translationWords",
+            "groupId": "god",
+            "quote": "God",
+            "occurrence": 1
+          }
+        },
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 1,
+              "verse": 3
+            },
+            "tool": "translationWords",
+            "groupId": "god",
+            "quote": "God",
+            "occurrence": 1
+          }
+        },
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 1,
+              "verse": 7
+            },
+            "tool": "translationWords",
+            "groupId": "god",
+            "quote": "God",
+            "occurrence": 1
+          }
+        },
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 1,
+              "verse": 16
+            },
+            "tool": "translationWords",
+            "groupId": "god",
+            "quote": "God",
+            "occurrence": 1
+          }
+        },
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 2,
+              "verse": 5
+            },
+            "tool": "translationWords",
+            "groupId": "god",
+            "quote": "God",
+            "occurrence": 1
+          }
+        },
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 2,
+              "verse": 10
+            },
+            "tool": "translationWords",
+            "groupId": "god",
+            "quote": "God",
+            "occurrence": 1
+          }
+        },
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 2,
+              "verse": 11
+            },
+            "tool": "translationWords",
+            "groupId": "god",
+            "quote": "God",
+            "occurrence": 1
+          }
+        },
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 2,
+              "verse": 13
+            },
+            "tool": "translationWords",
+            "groupId": "god",
+            "quote": "God",
+            "occurrence": 1
+          }
+        },
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 3,
+              "verse": 4
+            },
+            "tool": "translationWords",
+            "groupId": "god",
+            "quote": "God",
+            "occurrence": 1
+          }
+        },
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 3,
+              "verse": 6
+            },
+            "tool": "translationWords",
+            "groupId": "god",
+            "quote": "God",
+            "occurrence": 1
+          }
+        },
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 3,
+              "verse": 8
+            },
+            "tool": "translationWords",
+            "groupId": "god",
+            "quote": "God",
+            "occurrence": 1
+          }
+        }
+      ],
+      "godly": [
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 1,
+              "verse": 1
+            },
+            "tool": "translationWords",
+            "groupId": "godly",
+            "quote": "godliness",
+            "occurrence": 1
+          }
+        },
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 1,
+              "verse": 8
+            },
+            "tool": "translationWords",
+            "groupId": "godly",
+            "quote": "godly",
+            "occurrence": 1
+          }
+        },
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 2,
+              "verse": 12
+            },
+            "tool": "translationWords",
+            "groupId": "godly",
+            "quote": "godly",
+            "occurrence": 1
+          }
+        }
+      ],
+      "godthefather": [
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 1,
+              "verse": 4
+            },
+            "tool": "translationWords",
+            "groupId": "godthefather",
+            "quote": "God the Father",
+            "occurrence": 1
+          }
+        }
+      ],
+      "good": [
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 1,
+              "verse": 8
+            },
+            "tool": "translationWords",
+            "groupId": "good",
+            "quote": "good",
+            "occurrence": 1
+          }
+        },
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 1,
+              "verse": 9
+            },
+            "tool": "translationWords",
+            "groupId": "good",
+            "quote": "good",
+            "occurrence": 1
+          }
+        },
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 1,
+              "verse": 16
+            },
+            "tool": "translationWords",
+            "groupId": "good",
+            "quote": "good",
+            "occurrence": 1
+          }
+        },
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 2,
+              "verse": 3
+            },
+            "tool": "translationWords",
+            "groupId": "good",
+            "quote": "good",
+            "occurrence": 1
+          }
+        },
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 2,
+              "verse": 5
+            },
+            "tool": "translationWords",
+            "groupId": "good",
+            "quote": "good",
+            "occurrence": 1
+          }
+        },
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 2,
+              "verse": 7
+            },
+            "tool": "translationWords",
+            "groupId": "good",
+            "quote": "good",
+            "occurrence": 1
+          }
+        },
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 2,
+              "verse": 10
+            },
+            "tool": "translationWords",
+            "groupId": "good",
+            "quote": "good",
+            "occurrence": 1
+          }
+        },
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 2,
+              "verse": 14
+            },
+            "tool": "translationWords",
+            "groupId": "good",
+            "quote": "good",
+            "occurrence": 1
+          }
+        },
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 3,
+              "verse": 1
+            },
+            "tool": "translationWords",
+            "groupId": "good",
+            "quote": "good",
+            "occurrence": 1
+          }
+        },
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 3,
+              "verse": 8
+            },
+            "tool": "translationWords",
+            "groupId": "good",
+            "quote": "good",
+            "occurrence": 1
+          }
+        },
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 3,
+              "verse": 8
+            },
+            "tool": "translationWords",
+            "groupId": "good",
+            "quote": "good",
+            "occurrence": 2
+          }
+        },
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 3,
+              "verse": 14
+            },
+            "tool": "translationWords",
+            "groupId": "good",
+            "quote": "good",
+            "occurrence": 1
+          }
+        }
+      ],
+      "grace": [
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 1,
+              "verse": 4
+            },
+            "tool": "translationWords",
+            "groupId": "grace",
+            "quote": "Grace",
+            "occurrence": 1
+          }
+        },
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 2,
+              "verse": 11
+            },
+            "tool": "translationWords",
+            "groupId": "grace",
+            "quote": "grace",
+            "occurrence": 1
+          }
+        },
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 3,
+              "verse": 7
+            },
+            "tool": "translationWords",
+            "groupId": "grace",
+            "quote": "grace",
+            "occurrence": 1
+          }
+        },
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 3,
+              "verse": 15
+            },
+            "tool": "translationWords",
+            "groupId": "grace",
+            "quote": "Grace",
+            "occurrence": 1
+          }
+        }
+      ],
+      "holyspirit": [
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 3,
+              "verse": 5
+            },
+            "tool": "translationWords",
+            "groupId": "holyspirit",
+            "quote": "Holy Spirit",
+            "occurrence": 1
+          }
+        },
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 3,
+              "verse": 6
+            },
+            "tool": "translationWords",
+            "groupId": "holyspirit",
+            "quote": "Holy Spirit",
+            "occurrence": 1
+          }
+        }
+      ],
+      "hope": [
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 2,
+              "verse": 13
+            },
+            "tool": "translationWords",
+            "groupId": "hope",
+            "quote": "hope",
+            "occurrence": 1
+          }
+        }
+      ],
+      "jesus": [
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 1,
+              "verse": 1
+            },
+            "tool": "translationWords",
+            "groupId": "jesus",
+            "quote": "Jesus Christ",
+            "occurrence": 1
+          }
+        },
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 1,
+              "verse": 4
+            },
+            "tool": "translationWords",
+            "groupId": "jesus",
+            "quote": "Christ Jesus",
+            "occurrence": 1
+          }
+        },
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 2,
+              "verse": 13
+            },
+            "tool": "translationWords",
+            "groupId": "jesus",
+            "quote": "Jesus Christ",
+            "occurrence": 1
+          }
+        },
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 2,
+              "verse": 14
+            },
+            "tool": "translationWords",
+            "groupId": "jesus",
+            "quote": "Jesus",
+            "occurrence": 1
+          }
+        },
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 3,
+              "verse": 6
+            },
+            "tool": "translationWords",
+            "groupId": "jesus",
+            "quote": "Jesus Christ",
+            "occurrence": 1
+          }
+        }
+      ],
+      "lawofmoses": [
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 3,
+              "verse": 9
+            },
+            "tool": "translationWords",
+            "groupId": "lawofmoses",
+            "quote": "law",
+            "occurrence": 1
+          }
+        },
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 3,
+              "verse": 13
+            },
+            "tool": "translationWords",
+            "groupId": "lawofmoses",
+            "quote": "law",
+            "occurrence": 1
+          }
+        }
+      ],
+      "life": [
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 1,
+              "verse": 2
+            },
+            "tool": "translationWords",
+            "groupId": "life",
+            "quote": "life",
+            "occurrence": 1
+          }
+        },
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 2,
+              "verse": 12
+            },
+            "tool": "translationWords",
+            "groupId": "life",
+            "quote": "live",
+            "occurrence": 1
+          }
+        },
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 3,
+              "verse": 7
+            },
+            "tool": "translationWords",
+            "groupId": "life",
+            "quote": "life",
+            "occurrence": 1
+          }
+        }
+      ],
+      "love": [
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 2,
+              "verse": 2
+            },
+            "tool": "translationWords",
+            "groupId": "love",
+            "quote": "love",
+            "occurrence": 1
+          }
+        },
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 2,
+              "verse": 4
+            },
+            "tool": "translationWords",
+            "groupId": "love",
+            "quote": "love",
+            "occurrence": 1
+          }
+        },
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 3,
+              "verse": 4
+            },
+            "tool": "translationWords",
+            "groupId": "love",
+            "quote": "love",
+            "occurrence": 1
+          }
+        },
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 3,
+              "verse": 15
+            },
+            "tool": "translationWords",
+            "groupId": "love",
+            "quote": "love",
+            "occurrence": 1
+          }
+        }
+      ],
+      "mercy": [
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 3,
+              "verse": 5
+            },
+            "tool": "translationWords",
+            "groupId": "mercy",
+            "quote": "mercy",
+            "occurrence": 1
+          }
+        }
+      ],
+      "peace": [
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 1,
+              "verse": 4
+            },
+            "tool": "translationWords",
+            "groupId": "peace",
+            "quote": "peace",
+            "occurrence": 1
+          }
+        }
+      ],
+      "purify": [
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 1,
+              "verse": 15
+            },
+            "tool": "translationWords",
+            "groupId": "purify",
+            "quote": "pure",
+            "occurrence": 1
+          }
+        },
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 1,
+              "verse": 15
+            },
+            "tool": "translationWords",
+            "groupId": "purify",
+            "quote": "pure",
+            "occurrence": 2
+          }
+        },
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 1,
+              "verse": 15
+            },
+            "tool": "translationWords",
+            "groupId": "purify",
+            "quote": "pure",
+            "occurrence": 3
+          }
+        },
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 2,
+              "verse": 5
+            },
+            "tool": "translationWords",
+            "groupId": "purify",
+            "quote": "pure",
+            "occurrence": 1
+          }
+        },
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 2,
+              "verse": 14
+            },
+            "tool": "translationWords",
+            "groupId": "purify",
+            "quote": "pure",
+            "occurrence": 1
+          }
+        }
+      ],
+      "redeem": [
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 2,
+              "verse": 14
+            },
+            "tool": "translationWords",
+            "groupId": "redeem",
+            "quote": "redeem",
+            "occurrence": 1
+          }
+        }
+      ],
+      "righteous": [
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 1,
+              "verse": 8
+            },
+            "tool": "translationWords",
+            "groupId": "righteous",
+            "quote": "righteous",
+            "occurrence": 1
+          }
+        },
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 3,
+              "verse": 5
+            },
+            "tool": "translationWords",
+            "groupId": "righteous",
+            "quote": "righteousness",
+            "occurrence": 1
+          }
+        }
+      ],
+      "savior": [
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 1,
+              "verse": 3
+            },
+            "tool": "translationWords",
+            "groupId": "savior",
+            "quote": "savior",
+            "occurrence": 1
+          }
+        },
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 1,
+              "verse": 4
+            },
+            "tool": "translationWords",
+            "groupId": "savior",
+            "quote": "savior",
+            "occurrence": 1
+          }
+        },
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 2,
+              "verse": 10
+            },
+            "tool": "translationWords",
+            "groupId": "savior",
+            "quote": "savior",
+            "occurrence": 1
+          }
+        },
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 2,
+              "verse": 13
+            },
+            "tool": "translationWords",
+            "groupId": "savior",
+            "quote": "Savior",
+            "occurrence": 1
+          }
+        },
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 3,
+              "verse": 4
+            },
+            "tool": "translationWords",
+            "groupId": "savior",
+            "quote": "savior",
+            "occurrence": 1
+          }
+        },
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 3,
+              "verse": 6
+            },
+            "tool": "translationWords",
+            "groupId": "savior",
+            "quote": "Savior",
+            "occurrence": 1
+          }
+        }
+      ],
+      "servant": [
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 1,
+              "verse": 1
+            },
+            "tool": "translationWords",
+            "groupId": "servant",
+            "quote": "servant",
+            "occurrence": 1
+          }
+        }
+      ],
+      "shame": [
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 1,
+              "verse": 11
+            },
+            "tool": "translationWords",
+            "groupId": "shame",
+            "quote": "shameful",
+            "occurrence": 1
+          }
+        },
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 2,
+              "verse": 8
+            },
+            "tool": "translationWords",
+            "groupId": "shame",
+            "quote": "shame",
+            "occurrence": 1
+          }
+        }
+      ],
+      "sin": [
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 3,
+              "verse": 11
+            },
+            "tool": "translationWords",
+            "groupId": "sin",
+            "quote": "sinning",
+            "occurrence": 1
+          }
+        }
+      ],
+      "son": [
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 1,
+              "verse": 4
+            },
+            "tool": "translationWords",
+            "groupId": "son",
+            "quote": "son",
+            "occurrence": 1
+          }
+        }
+      ],
+      "true": [
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 1,
+              "verse": 1
+            },
+            "tool": "translationWords",
+            "groupId": "true",
+            "quote": "truth",
+            "occurrence": 1
+          }
+        },
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 1,
+              "verse": 4
+            },
+            "tool": "translationWords",
+            "groupId": "true",
+            "quote": "true",
+            "occurrence": 1
+          }
+        },
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 1,
+              "verse": 13
+            },
+            "tool": "translationWords",
+            "groupId": "true",
+            "quote": "true",
+            "occurrence": 1
+          }
+        },
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 1,
+              "verse": 14
+            },
+            "tool": "translationWords",
+            "groupId": "true",
+            "quote": "truth",
+            "occurrence": 1
+          }
+        }
+      ],
+      "trust": [
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 1,
+              "verse": 9
+            },
+            "tool": "translationWords",
+            "groupId": "trust",
+            "quote": "trustworthy",
+            "occurrence": 1
+          }
+        },
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 3,
+              "verse": 8
+            },
+            "tool": "translationWords",
+            "groupId": "trust",
+            "quote": "trustworthy",
+            "occurrence": 1
+          }
+        },
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 3,
+              "verse": 8
+            },
+            "tool": "translationWords",
+            "groupId": "trust",
+            "quote": "trust",
+            "occurrence": 1
+          }
+        }
+      ],
+      "turn": [
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 1,
+              "verse": 14
+            },
+            "tool": "translationWords",
+            "groupId": "turn",
+            "quote": "turn back",
+            "occurrence": 1
+          }
+        }
+      ],
+      "ungodly": [
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 2,
+              "verse": 12
+            },
+            "tool": "translationWords",
+            "groupId": "ungodly",
+            "quote": "ungodliness",
+            "occurrence": 1
+          }
+        }
+      ],
+      "wise": [
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 1,
+              "verse": 12
+            },
+            "tool": "translationWords",
+            "groupId": "wise",
+            "quote": "wise",
+            "occurrence": 1
+          }
+        }
+      ],
+      "word": [
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 1,
+              "verse": 3
+            },
+            "tool": "translationWords",
+            "groupId": "word",
+            "quote": "word",
+            "occurrence": 1
+          }
+        },
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 2,
+              "verse": 5
+            },
+            "tool": "translationWords",
+            "groupId": "word",
+            "quote": "word",
+            "occurrence": 1
+          }
+        }
+      ],
+      "works": [
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 1,
+              "verse": 16
+            },
+            "tool": "translationWords",
+            "groupId": "works",
+            "quote": "deeds",
+            "occurrence": 1
+          }
+        },
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 2,
+              "verse": 7
+            },
+            "tool": "translationWords",
+            "groupId": "works",
+            "quote": "works",
+            "occurrence": 1
+          }
+        },
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 2,
+              "verse": 14
+            },
+            "tool": "translationWords",
+            "groupId": "works",
+            "quote": "works",
+            "occurrence": 1
+          }
+        },
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 3,
+              "verse": 1
+            },
+            "tool": "translationWords",
+            "groupId": "works",
+            "quote": "work",
+            "occurrence": 1
+          }
+        },
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 3,
+              "verse": 5
+            },
+            "tool": "translationWords",
+            "groupId": "works",
+            "quote": "works",
+            "occurrence": 1
+          }
+        },
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 3,
+              "verse": 8
+            },
+            "tool": "translationWords",
+            "groupId": "works",
+            "quote": "works",
+            "occurrence": 1
+          }
+        },
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 3,
+              "verse": 14
+            },
+            "tool": "translationWords",
+            "groupId": "works",
+            "quote": "works",
+            "occurrence": 1
+          }
+        }
+      ],
+      "world": [
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 2,
+              "verse": 12
+            },
+            "tool": "translationWords",
+            "groupId": "world",
+            "quote": "worldly",
+            "occurrence": 1
+          }
+        }
+      ],
+      "worthy": [
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 1,
+              "verse": 10
+            },
+            "tool": "translationWords",
+            "groupId": "worthy",
+            "quote": "worthless",
+            "occurrence": 1
+          }
+        },
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 3,
+              "verse": 9
+            },
+            "tool": "translationWords",
+            "groupId": "worthy",
+            "quote": "worthless",
+            "occurrence": 1
+          }
+        }
+      ]
+    },
+    "loadedFromFileSystem": true
+  },
+  "wordAlignmentReducer": {
+    "alignmentData": {}
+  },
+  "actions": {},
+  "currentToolViews": {},
+  "showHelps": true,
+  "mode": "select",
+  "comment": "",
+  "commentChanged": false,
+  "verseText": "Kono ewe, oambe ziyenderera ne ntaero zisepahara. ",
+  "verseChanged": false,
+  "selections": [],
+  "tags": [],
+  "dialogModalVisibility": false,
+  "goToNextOrPrevious": null
+}
