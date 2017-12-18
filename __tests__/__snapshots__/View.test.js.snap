@@ -1,0 +1,294 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`View component Tests before Project Loaded 1`] = `
+<div
+  style={
+    Object {
+      "flex": "2 0 280px",
+      "margin": "10px",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "display": "flex",
+        "flexDirection": "column",
+        "height": "100%",
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "borderRadius": "2px",
+          "boxShadow": "0 3px 10px var(--background-color)",
+          "display": "flex",
+          "flex": "auto",
+          "flexDirection": "column",
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "var(--accent-color-dark)",
+            "color": "var(--reverse-color)",
+            "display": "flex",
+            "flex": "0 0 40px",
+            "fontSize": "16px",
+            "fontWeight": "bold",
+            "justifyContent": "space-between",
+            "padding": "10px",
+          }
+        }
+      >
+        <span>
+          Select
+        </span>
+        <div
+          style={
+            Object {
+              "display": "flex",
+              "justifyContent": "flex-end",
+            }
+          }
+        >
+          <span
+            className="glyphicon glyphicon-ok"
+            style={
+              Object {
+                "color": "var(--reverse-color)",
+                "margin": "0px 20px",
+                "opacity": 0.2,
+              }
+            }
+            title="No selections were found for this check"
+          />
+          <span
+            className="glyphicon glyphicon-pencil"
+            style={
+              Object {
+                "color": "var(--reverse-color)",
+                "margin": "0px 20px",
+                "opacity": 0.2,
+              }
+            }
+            title="No Verse edits were found for this check"
+          />
+          <span
+            className="glyphicon glyphicon-comment"
+            style={
+              Object {
+                "color": "var(--reverse-color)",
+                "margin": "0px 20px",
+                "opacity": 0.2,
+              }
+            }
+            title="No comments were found for this check"
+          />
+          <span
+            className="glyphicon glyphicon-bookmark"
+            style={
+              Object {
+                "color": "var(--reverse-color)",
+                "margin": "0px 20px",
+                "opacity": 0.2,
+              }
+            }
+            title="This check has not been bookmarked for review"
+          />
+        </div>
+      </div>
+      <div
+        style={
+          Object {
+            "borderBottom": "1px solid var(--border-color)",
+            "display": "flex",
+            "flex": "1 0 130px",
+            "fontSize": "1.1em",
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "display": "flex",
+              "flex": 1,
+              "flexDirection": "column",
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "display": "flex",
+                "flex": "0 0 45px",
+                "justifyContent": "space-between",
+                "margin": "5px 10px 5px 15px",
+              }
+            }
+          >
+            <div
+              style={
+                Object {
+                  "display": "flex",
+                  "flexDirection": "column",
+                }
+              }
+            >
+              <span
+                style={
+                  Object {
+                    "fontWeight": "bold",
+                  }
+                }
+              >
+                Fwe
+              </span>
+              <span
+                style={
+                  Object {
+                    "color": "var(--text-color-light)",
+                  }
+                }
+              >
+                Titus
+                 
+                2:1
+              </span>
+            </div>
+          </div>
+          <div
+            style={
+              Object {
+                "direction": "ltr",
+                "flex": "auto",
+                "overflowY": "auto",
+                "padding": "0 15px 10px",
+              }
+            }
+          >
+            <div
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
+              onMouseUp={[Function]}
+            >
+              <span>
+                Kono ewe, oambe ziyenderera ne ntaero zisepahara. 
+              </span>
+            </div>
+          </div>
+        </div>
+        <div
+          style={
+            Object {
+              "borderLeft": "1px solid var(--border-color)",
+              "display": "flex",
+              "flex": 1,
+              "justifyContent": "center",
+              "overflowY": "auto",
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "WebkitUserSelect": "none",
+                "alignItems": "center",
+                "display": "flex",
+                "flex": "1",
+                "justifyContent": "center",
+                "overflow": "auto",
+              }
+            }
+          >
+            <div
+              style={
+                Object {
+                  "overflow": "auto",
+                  "padding": "5px",
+                  "textAlign": "center",
+                }
+              }
+            >
+              <span>
+                Please select the translation for:
+              </span>
+              <br />
+              <span>
+                <strong
+                  style={
+                    Object {
+                      "color": "var(--accent-color)",
+                    }
+                  }
+                >
+                  "
+                  faithful
+                  "
+                </strong>
+              </span>
+              <br />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        style={
+          Object {
+            "display": "flex",
+            "flex": "0 0 55px",
+            "justifyContent": "flex-end",
+          }
+        }
+      >
+        <button
+          className="btn-second"
+          onClick={[Function]}
+          style={
+            Object {
+              "alignSelf": "flex-start",
+            }
+          }
+        >
+          Cancel
+        </button>
+        <button
+          className="btn-second"
+          disabled={true}
+          onClick={[Function]}
+        >
+          <span
+            className="glyphicon glyphicon-erase"
+            style={
+              Object {
+                "marginRight": "10px",
+              }
+            }
+          />
+          Clear Selection
+        </button>
+        <button
+          className="btn-prime"
+          disabled={true}
+          onClick={[Function]}
+        >
+          <span
+            className="glyphicon glyphicon-ok"
+            style={
+              Object {
+                "marginRight": "10px",
+              }
+            }
+          />
+          Save
+        </button>
+      </div>
+    </div>
+    <div />
+  </div>
+  <div />
+</div>
+`;

@@ -208,9 +208,9 @@ class VerseCheck extends React.Component {
   componentWillReceiveProps(nextProps) {
     if (nextProps.contextIdReducer.contextId != this.props.contextIdReducer.contextId) {
       let selections = Array.from(nextProps.selectionsReducer.selections);
-      const { chapter, verse } = nextProps.contextIdReducer.contextId.reference;
-      const { targetLanguage } = nextProps.resourcesReducer.bibles;
-      let verseText = targetLanguage[chapter][verse] || "";
+      const { chapter, verse } = nextProps.contextIdReducer.contextId.reference || {};
+      const { targetLanguage } = nextProps.resourcesReducer.bibles || {};
+      let verseText = targetLanguage && targetLanguage[chapter] ? targetLanguage[chapter][verse] : "";
       if (Array.isArray(verseText)) verseText = verseText[0];
       // normalize whitespace in case selection has contiguous whitespace _this isn't captured
       verseText = normalizeString(verseText);
@@ -250,7 +250,7 @@ class VerseCheck extends React.Component {
     const { targetLanguage } = this.props.resourcesReducer.bibles;
     let verseText = "";
     if (targetLanguage && targetLanguage[chapter] && bookId == bookAbbr) {
-      verseText = targetLanguage[chapter][verse] || "";
+      verseText = targetLanguage && targetLanguage[chapter] ? targetLanguage[chapter][verse] : "";
       if (Array.isArray(verseText)) verseText = verseText[0];
       // normalize whitespace in case selection has contiguous whitespace _this isn't captured
       verseText = normalizeString(verseText);
