@@ -6,7 +6,6 @@ import SaveArea from './SaveArea';
 import DialogComponent from './DialogComponent';
 import IconIndicators from './IconIndicators';
 import isEqual from 'lodash/isEqual';
-import fs from 'fs-extra';
 
 class View extends React.Component {
 
