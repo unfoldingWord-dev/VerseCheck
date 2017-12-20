@@ -6,7 +6,8 @@ import React from 'react';
 import usfmjs from 'usfm-js';
 import View from './components/View';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import {optimizeSelections, normalizeString} from './utils/selectionHelpers';
+import {optimizeSelections} from './utils/selectionHelpers';
+import {normalizeString} from './helpers/stringHelpers';
 
 class VerseCheck extends React.Component {
   constructor(props) {

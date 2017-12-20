@@ -3,8 +3,8 @@ import React from 'react';
 import {
   selectionArray,
   occurrencesInString,
-  normalizeString
 } from '../utils/selectionHelpers';
+import {normalizeString} from '../helpers/stringHelpers';
 // components
 import { Glyphicon } from 'react-bootstrap';
 import InstructionsArea from './InstructionsArea';
