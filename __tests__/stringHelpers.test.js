@@ -13,6 +13,24 @@ describe('stringHelpers.normalizeString', () => {
     const expected = '01 234 56789qwertyuiopasdfghjklzxcvbnmtyui01 234 567890';
       expect(expected).toEqual(output);
   });
+  it('should not crash on null', () => {
+    const string = null;
+    const output = stringHelpers.normalizeString(string);
+    const expected = '';
+    expect(expected).toEqual(output);
+  });
+  it('should not crash on undefined', () => {
+    const string = undefined;
+    const output = stringHelpers.normalizeString(string);
+    const expected = '';
+    expect(expected).toEqual(output);
+  });
+  it('should not crash on empty string', () => {
+    const string = '';
+    const output = stringHelpers.normalizeString(string);
+    const expected = '';
+    expect(expected).toEqual(output);
+  });
 });
 
 describe('stringHelpers.occurrencesInString', () => {
