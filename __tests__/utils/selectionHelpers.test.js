@@ -1,4 +1,4 @@
-import * as selectionHelpers from '../src/utils/selectionHelpers';
+import * as selectionHelpers from '../../src/utils/selectionHelpers';
 
 describe('stringHelpers.normalizeString', () => {
   it('should normalize string by removing extra spaces into single contiguous space', () => {
