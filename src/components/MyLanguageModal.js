@@ -51,7 +51,6 @@ class MyLanguageModal extends Component {
         }
       }
     }
-
     return (
       <Modal show={show} onHide={onHide} bsSize="lg" aria-labelledby="contained-modal-title-sm">
         <Modal.Header style={{ backgroundColor: "var(--accent-color-dark)" }}>
