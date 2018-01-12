@@ -35,13 +35,15 @@ class SelectionArea extends Component {
             </span>
           </div>
         </div>
-        <div style={this.props.projectDetailsReducer.manifest.target_language.direction === 'ltr' ? style.pane.contentLTR : style.pane.contentRTL}>
-          <RenderSelectionTextComponent
-            actions={this.props.actions}
-            mode={this.props.mode}
-            verseText={this.props.verseText}
-            selections={this.props.selections}
-          />
+        <div>
+          <div style={this.props.projectDetailsReducer.manifest.target_language.direction === 'ltr' ? style.pane.contentLTR : style.pane.contentRTL}>
+            <RenderSelectionTextComponent
+              actions={this.props.actions}
+              mode={this.props.mode}
+              verseText={this.props.verseText}
+              selections={this.props.selections}
+            />
+          </div>
         </div>
       </div>
     );

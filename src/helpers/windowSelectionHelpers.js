@@ -1,4 +1,5 @@
 import * as stringHelpers from './stringHelpers';
+
 /**
  * @description - Gets the selection object from the currently selected text from the Web UI
  * @param {String} entireText - the text that the selection should be in, ie verseText
@@ -7,9 +8,9 @@ import * as stringHelpers from './stringHelpers';
  */
 export const getSelectionFromCurrentWindowSelection = (entireText) => {
   let selection; // response
-  let windowSelection = getCurrentWindowSelection();
-  let selectedText = getSelectedTextFromWindowSelection(windowSelection);
-  let prescedingText = getPrescedingTextFromWindowSelection(windowSelection);
+  const windowSelection = getCurrentWindowSelection();
+  const selectedText = getSelectedTextFromWindowSelection(windowSelection);
+  const prescedingText = getPrescedingTextFromWindowSelection(windowSelection);
   // Some edge cases leave a weird selection remaining, let's clean up.
   selection = stringHelpers.generateSelection(selectedText, prescedingText, entireText);
   window.getSelection().empty();
@@ -53,13 +54,13 @@ export const getPrescedingTextFromWindowSelection = (windowSelection) => {
   // do nothing since an empty space was selected
   if (selectedText !== '') {
     // get the text after the presceding selection and current span selection is in.
-    let selectionRange = windowSelection.getRangeAt(0);
+    const selectionRange = windowSelection.getRangeAt(0);
     // get the character index of what is selected in context of the span it is in.
-    let selectionRangeStart = selectionRange.startOffset;
+    const selectionRangeStart = selectionRange.startOffset;
     // get the container of the selection, this is a strange object, that logs as a string.
-    let textContainer = selectionRange.commonAncestorContainer;
+    const textContainer = selectionRange.commonAncestorContainer;
     // get the parent span that contains the textContainer.
-    let element = textContainer ? textContainer.parentElement : undefined;
+    const element = textContainer ? textContainer.parentElement : undefined;
     if (element) {
       prescedingText = getPrescedingTextFromElementAndSiblings(element, selectionRangeStart);
     }
@@ -74,8 +75,8 @@ export const getPrescedingTextFromWindowSelection = (windowSelection) => {
  */
 export const getPrescedingTextFromElementAndSiblings = (element, selectionRangeStart) => {
   let prescedingText; // response
-  let prescedingTextFromElementSiblings = getPrescedingTextFromElementSiblings(element);
-  let prescedingTextFromElement = getPrescedingTextFromElement(element, selectionRangeStart);
+  const prescedingTextFromElementSiblings = getPrescedingTextFromElementSiblings(element);
+  const prescedingTextFromElement = getPrescedingTextFromElement(element, selectionRangeStart);
   prescedingText = prescedingTextFromElementSiblings + prescedingTextFromElement;
   return prescedingText;
 };
@@ -88,7 +89,7 @@ export const getPrescedingTextFromElementAndSiblings = (element, selectionRangeS
 export const getPrescedingTextFromElement = (element, selectionRangeStart) => {
   let prescedingText; // response
   let text = element.textContent;
-  prescedingText = text.slice(0,selectionRangeStart);
+  prescedingText = text.slice(0, selectionRangeStart);
   return prescedingText;
 };
 /**
@@ -97,15 +98,22 @@ export const getPrescedingTextFromElement = (element, selectionRangeStart) => {
  * @return {String} - the string of prescedingText
  */
 export const getPrescedingTextFromElementSiblings = (element) => {
-  let prescedingText = ''; // response
-  // get the previous sibling to start the loop
-  let previousSibling = element.previousElementSibling;
-  // loop through previous spans to get their text
-  while (previousSibling) {
-    // prepend the spans innerText to the prescedingText
-    prescedingText = previousSibling.textContent + prescedingText;
-    // move to the previous span, if none, it ends the loop
-    previousSibling = previousSibling.previousElementSibling;
-  }
-  return prescedingText;
+    let prescedingText = ''; // response
+    let previousSibling;
+    // get the previous sibling to start the loop
+    if (element.previousElementSibling) {
+      previousSibling = element.previousElementSibling;
+    } else if (element.firstChild.lastChild) {
+      previousSibling = element.firstChild.lastChild.previousElementSibling;
+    } else {
+      previousSibling = null;
+    }
+    // loop through previous spans to get their text
+    while (previousSibling) {
+      // prepend the spans innerText to the prescedingText
+      prescedingText = previousSibling.textContent + prescedingText;
+      // move to the previous span, if none, it ends the loop
+      previousSibling = previousSibling.previousElementSibling;
+    }
+    return prescedingText;
 };

@@ -34,7 +34,7 @@ export const normalizeString = (string) => {
  * @param {String} entireText - the text that the selection should be in
  * @return {Object} - the selection object to be used
  */
-export const generateSelection = (selectedText, prescedingText, entireText)=> {
+export const generateSelection = (selectedText, prescedingText, entireText) => {
   let selection = {}; // response
   // replace more than one contiguous space with a single one since HTML/selection only renders 1
   entireText = normalizeString(entireText);
