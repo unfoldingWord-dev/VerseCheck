@@ -36,7 +36,7 @@ describe('Test MyLanguageModal component',()=>{
 });
 
 function validateModalTitle(enzymeWrapper, expectedTitle) {
-  const titleHeader = enzymeWrapper.find(Modal.Title).render().find('h4');
+  let titleHeader = enzymeWrapper.find(Modal.Title);
   expect(titleHeader.length).toEqual(1);
-  expect(titleHeader.html()).toContain(expectedTitle);
+  expect(enzymeWrapper.find(Modal.Title).props().children[0]).toEqual(expectedTitle);
 }

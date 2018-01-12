@@ -2,7 +2,6 @@
 import React from 'react';
 import fs from 'fs-extra';
 import View from '../src/components/View';
-import renderer from 'react-test-renderer';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 const project = '__tests__/fixtures/project/loadedProjectShortened.json';
 
@@ -38,12 +37,11 @@ describe('View component Tests', () => {
       clearSelection: () => jest.fn(),
       saveSelection: () => jest.fn()
     };
-    const component = renderer.create(
+    let component = (
       <MuiThemeProvider>
         <View {...projectState} />
-      </MuiThemeProvider>,
+      </MuiThemeProvider>
     );
-    let tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+    expect(component).toMatchSnapshot();
   });
 });
