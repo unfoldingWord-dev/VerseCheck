@@ -98,22 +98,22 @@ export const getPrescedingTextFromElement = (element, selectionRangeStart) => {
  * @return {String} - the string of prescedingText
  */
 export const getPrescedingTextFromElementSiblings = (element) => {
-    let prescedingText = ''; // response
-    let previousSibling;
-    // get the previous sibling to start the loop
-    if (element.previousElementSibling) {
-      previousSibling = element.previousElementSibling;
-    } else if (element.firstChild.lastChild) {
-      previousSibling = element.firstChild.lastChild.previousElementSibling;
-    } else {
-      previousSibling = null;
-    }
-    // loop through previous spans to get their text
-    while (previousSibling) {
-      // prepend the spans innerText to the prescedingText
-      prescedingText = previousSibling.textContent + prescedingText;
-      // move to the previous span, if none, it ends the loop
-      previousSibling = previousSibling.previousElementSibling;
-    }
-    return prescedingText;
+  let prescedingText = ''; // response
+  let previousSibling;
+  // get the previous sibling to start the loop
+  if (element.previousElementSibling) {
+    previousSibling = element.previousElementSibling;
+  } else if (element.firstChild.lastChild) {
+    previousSibling = element.firstChild.lastChild.previousElementSibling;
+  } else {
+    previousSibling = null;
+  }
+  // loop through previous spans to get their text
+  while (previousSibling) {
+    // prepend the spans innerText to the prescedingText
+    prescedingText = previousSibling.textContent + prescedingText;
+    // move to the previous span, if none, it ends the loop
+    previousSibling = previousSibling.previousElementSibling;
+  }
+  return prescedingText;
 };
