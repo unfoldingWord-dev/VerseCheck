@@ -72,7 +72,7 @@ class DefaultArea extends React.Component {
                 {bookName} {reference.chapter + ':' + reference.verse}
               </span>
           </div>
-          <div onClick={() => {this.setState({modalVisibility: true});}}>
+          <div onClick={() => {this.setState({modalVisibility: true})}}>
             <Glyphicon glyph="fullscreen" title="Click to show expanded verses" style={{cursor: "pointer"}}/>
           </div>
           <MyLanguageModal
