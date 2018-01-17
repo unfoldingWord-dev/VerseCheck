@@ -27,7 +27,7 @@
   },
   "homepage": "https://github.com/translationCoreApps/VerseCheck#readme",
   "devDependencies": {
-    "enzyme-adapter-react-16": "^1.1.1",
+    "enzyme-adapter-react-16": "1.1.1",
     "jsdom": "11.5.1",
     "enzyme": "3.3.0",
     "fs-extra": "5.0.0",
