@@ -11,7 +11,11 @@
       "src/**/*.{js,jsx}",
       "!**/node_modules/**"
     ],
-    "coverageDirectory": "coverage"
+    "coverageDirectory": "coverage",
+    "setupFiles": [
+      "./testSetUp/shim.js",
+      "./testSetUp/enzyme.js"
+    ]
   },
   "repository": {
     "type": "git",
