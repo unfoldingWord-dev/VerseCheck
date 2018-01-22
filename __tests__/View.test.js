@@ -37,7 +37,7 @@ describe('View component Tests', () => {
       clearSelection: () => jest.fn(),
       saveSelection: () => jest.fn()
     };
-    let component = (
+    const component = (
       <MuiThemeProvider>
         <View {...projectState} />
       </MuiThemeProvider>
