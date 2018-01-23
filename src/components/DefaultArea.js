@@ -72,28 +72,21 @@ class DefaultArea extends React.Component {
                 {bookName} {reference.chapter + ':' + reference.verse}
               </span>
           </div>
-          <div onClick={() => {
-            this.setState({modalVisibility: true});
-          }}>
+          <div onClick={() => {this.setState({modalVisibility: true})}}>
             <Glyphicon glyph="fullscreen" title="Click to show expanded verses" style={{cursor: "pointer"}}/>
-            {this.state.modalVisibility ?
-              <MyLanguageModal
-                projectDetailsReducer={this.props.projectDetailsReducer}
-                show={this.state.modalVisibility}
-                targetLangBible={bibles.targetLanguage}
-                chapter={reference.chapter}
-                currentVerse={reference.verse}
-                dir = {dir ? dir : "ltr"}
-                onHide={
-                  () => {
-                    this.setState({modalVisibility: false});
-                  }
-                }
-              />
-              :
-              <div />
-            }
           </div>
+          <MyLanguageModal
+          projectDetailsReducer={this.props.projectDetailsReducer}
+          show={this.state.modalVisibility}
+          targetLangBible={bibles.targetLanguage}
+          chapter={reference.chapter}
+          currentVerse={reference.verse}
+          dir = {dir ? dir : "ltr"}
+          onHide={
+            () => {
+              this.setState({modalVisibility: false});
+            }
+          }/>
         </div>
         <div style={this.props.projectDetailsReducer.manifest.target_language.direction === 'ltr' ? style.pane.contentLTR : style.pane.contentRTL}>
           {this.displayText(this.props.verseText, this.props.selectionsReducer.selections)}
