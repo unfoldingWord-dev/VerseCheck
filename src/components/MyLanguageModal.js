@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { Modal, Glyphicon } from 'react-bootstrap';
 import MyTargetVerse from './MyTargetVerse';
 import ReactDOM from 'react-dom';
@@ -50,7 +51,6 @@ class MyLanguageModal extends Component {
         }
       }
     }
-
     return (
       <Modal show={show} onHide={onHide} bsSize="lg" aria-labelledby="contained-modal-title-sm">
         <Modal.Header style={{ backgroundColor: "var(--accent-color-dark)" }}>
