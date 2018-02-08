@@ -21,23 +21,14 @@ export const getSelectionFromCurrentWindowSelection = (entireText) => {
 * @return {Object} windowSelection - a windowSelection object from inside a compatible element
 * TODO: Find a way to test
 */
-export const getCurrentWindowSelection = () => {
-  let windowSelection;
-  // windowSelection is an object with lots of data
-  windowSelection = window.getSelection();
-  return windowSelection;
-};
+export const getCurrentWindowSelection = () => window.getSelection();
 /**
 * @description - Gets the window selected text from the windowSelection
 * @param {Object} windowSelection - a windowSelection object from inside a compatible element
 * @return {String} - selectedText
 * TODO: Find a way to test
 */
-export const getSelectedTextFromWindowSelection = (windowSelection) => {
-  let selectedText;
-  selectedText = windowSelection.toString();
-  return selectedText;
-};
+export const getSelectedTextFromWindowSelection = (windowSelection) => windowSelection.toString();
 /**
 * @description - Gets the prescedingText from the windowSelection
 * @param {Object} windowSelection - a windowSelection object from inside a compatible element
@@ -60,9 +51,17 @@ export const getPrescedingTextFromWindowSelection = (windowSelection) => {
     // get the container of the selection, this is a strange object, that logs as a string.
     const textContainer = selectionRange.commonAncestorContainer;
     // get the parent span that contains the textContainer.
-    const element = textContainer ? textContainer.parentElement : undefined;
+
+    let element;
+    // if the textContainer is #text, then use the parentElement - usually non-overlapping selection
+    if ('#text' === textContainer.nodeName) element = textContainer.parentElement;
+    // if the textContainer is a span, then use it as the element
+    if ('SPAN' === textContainer.nodeName) element = textContainer;
+    // if the textContainer is a div, its an overlapping selection, don't use commonAncestorContainer
+    if ('DIV' === textContainer.nodeName) element = selectionRange.startContainer.parentElement;
+    // check for element, as textContainer can but rarely be something other than #text, span or div
     if (element) {
-      prescedingText = getPrescedingTextFromElementAndSiblings(element, selectionRangeStart);
+      prescedingText = getPrescedingTextFromElementAndSiblings(element, selectionRangeStart, windowSelection);
     }
   }
   return prescedingText;
@@ -73,10 +72,10 @@ export const getPrescedingTextFromWindowSelection = (windowSelection) => {
  * @param {Int} selectionRangeStart - the character index of the start of the selection
  * @return {String} - the string of prescedingText
  */
-export const getPrescedingTextFromElementAndSiblings = (element, selectionRangeStart) => {
+export const getPrescedingTextFromElementAndSiblings = (element, selectionRangeStart, windowSelection) => {
   let prescedingText; // response
-  const prescedingTextFromElementSiblings = getPrescedingTextFromElementSiblings(element);
-  const prescedingTextFromElement = getPrescedingTextFromElement(element, selectionRangeStart);
+  const prescedingTextFromElementSiblings = getPrescedingTextFromElementSiblings(element, windowSelection);
+  const prescedingTextFromElement = getPrescedingTextFromElement(element, selectionRangeStart, windowSelection);
   prescedingText = prescedingTextFromElementSiblings + prescedingTextFromElement;
   return prescedingText;
 };
@@ -88,7 +87,7 @@ export const getPrescedingTextFromElementAndSiblings = (element, selectionRangeS
  */
 export const getPrescedingTextFromElement = (element, selectionRangeStart) => {
   let prescedingText; // response
-  let text = element.textContent;
+  const text = element.textContent;
   prescedingText = text.slice(0, selectionRangeStart);
   return prescedingText;
 };
@@ -97,23 +96,19 @@ export const getPrescedingTextFromElement = (element, selectionRangeStart) => {
  * @param {Element} element - the html element that has text and siblings with text
  * @return {String} - the string of prescedingText
  */
-export const getPrescedingTextFromElementSiblings = (element) => {
-    let prescedingText = ''; // response
-    let previousSibling;
-    // get the previous sibling to start the loop
-    if (element.previousElementSibling) {
-      previousSibling = element.previousElementSibling;
-    } else if (element.firstChild.lastChild) {
-      previousSibling = element.firstChild.lastChild.previousElementSibling;
-    } else {
-      previousSibling = null;
-    }
-    // loop through previous spans to get their text
-    while (previousSibling) {
+export const getPrescedingTextFromElementSiblings = (element, windowSelection) => {
+  let prescedingText = ''; // response
+  // get the previous sibling to start the loop
+  let previousSibling = element.previousElementSibling;
+  // loop through previous spans to get their text
+  while (previousSibling) {
+    // just in case the previousSibling just happens to be a part of the selection
+    if (!windowSelection.containsNode(previousSibling)) {
       // prepend the spans innerText to the prescedingText
       prescedingText = previousSibling.textContent + prescedingText;
-      // move to the previous span, if none, it ends the loop
-      previousSibling = previousSibling.previousElementSibling;
     }
-    return prescedingText;
+    // move to the previous span, if none, it ends the loop
+    previousSibling = previousSibling.previousElementSibling;
+  }
+  return prescedingText;
 };
