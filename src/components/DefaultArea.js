@@ -55,7 +55,9 @@ class DefaultArea extends React.Component {
         manifest
       }
     } = this.props;
-    const bookName = manifest.project.name;
+    //const bookName = manifest.project.name;
+    const bookName = manifest.target_language.book.name;
+    console.log("VerseCheck-DefaultArea.js bookName: " + bookName);
     const reference = this.props.contextIdReducer.contextId.reference;
     const bibles = this.props.resourcesReducer.bibles;
     const languageName = manifest.target_language ? manifest.target_language.name : null;

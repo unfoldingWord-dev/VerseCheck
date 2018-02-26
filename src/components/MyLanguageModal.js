@@ -19,7 +19,11 @@ class MyLanguageModal extends Component {
 
   render() {
     let { show, onHide, targetLangBible, chapter, currentVerse, projectDetailsReducer} = this.props;
-    const title = projectDetailsReducer.manifest.project.name;
+    const { target_language, project } = projectDetailsReducer.manifest;
+    const title = target_language.book && target_language.book.name ?
+        target_language.book.name :
+        project.name;
+    console.log("VerseCheck-MyLanguageModal bookName: " + title);
     let MyTargetLanguage = [];
     if (show) {
       for (let key in targetLangBible[chapter]) {
@@ -79,7 +83,8 @@ MyLanguageModal.propTypes = {
   onHide: PropTypes.func.isRequired,
   targetLangBible: PropTypes.object,
   chapter: PropTypes.number,
-  currentVerse: PropTypes.number
+  currentVerse: PropTypes.number,
+  projectDetailsReducer: PropTypes.object
 };
 
 export default MyLanguageModal;
