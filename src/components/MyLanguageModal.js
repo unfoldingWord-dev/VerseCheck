@@ -20,7 +20,7 @@ class MyLanguageModal extends Component {
   render() {
     let { show, onHide, targetLangBible, chapter, currentVerse, projectDetailsReducer} = this.props;
     const { target_language, project } = projectDetailsReducer.manifest;
-    const title = target_language.book && target_language.book.name ?
+    const title = target_language && target_language.book && target_language.book.name ?
         target_language.book.name :
         project.name;
     let MyTargetLanguage = [];
