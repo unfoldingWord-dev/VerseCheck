@@ -23,7 +23,6 @@ class MyLanguageModal extends Component {
     const title = target_language.book && target_language.book.name ?
         target_language.book.name :
         project.name;
-    console.log("VerseCheck-MyLanguageModal bookName: " + title);
     let MyTargetLanguage = [];
     if (show) {
       for (let key in targetLangBible[chapter]) {
