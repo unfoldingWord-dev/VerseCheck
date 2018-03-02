@@ -20,9 +20,7 @@ class SelectionArea extends Component {
     } = this.props;
     const bookName = manifest.project.name;
     const reference = this.props.contextIdReducer.contextId.reference;
-    // const bibles = this.props.resourcesReducer.bibles;
     const languageName = manifest.target_language ? manifest.target_language.name : null;
-    // const dir = manifest.target_language ? manifest.target_language.direction : null;
     return (
       <div style={{flex: 1, display: 'flex', flexDirection: 'column'}}>
         <div style={style.verseTitle}>
