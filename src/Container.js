@@ -285,9 +285,11 @@ class VerseCheck extends React.Component {
 
 VerseCheck.propTypes = {
   actions: PropTypes.object.isRequired,
-  mode: PropTypes.string.isRequired,
-  contextIdReducer: PropTypes.bool.isRequired,
-  dialogModalVisibility: PropTypes.bool.isRequired,
+  mode: PropTypes.string,
+  contextIdReducer: PropTypes.shape({
+    contextId: PropTypes.object
+  }).isRequired,
+  dialogModalVisibility: PropTypes.bool,
   selectionsReducer: PropTypes.object.isRequired,
   commentsReducer: PropTypes.object.isRequired,
   resourcesReducer: PropTypes.object.isRequired,

@@ -71,7 +71,7 @@ InstructionsArea.propTypes = {
   selectionsReducer: PropTypes.object.isRequired,
   dontShowTranslation: PropTypes.bool,
   verseText: PropTypes.string.isRequired,
-  mode: PropTypes.string.isRequired
+  mode: PropTypes.string
 };
 
 export default InstructionsArea;

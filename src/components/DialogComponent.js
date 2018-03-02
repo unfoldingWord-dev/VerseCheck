@@ -90,7 +90,7 @@ class DialogComponent extends Component {
 }
 
 DialogComponent.propTypes = {
-  goToNextOrPrevious: PropTypes.func.isRequired,
+  goToNextOrPrevious: PropTypes.func,
   skipToPrevious: PropTypes.func.isRequired,
   skipToNext: PropTypes.func.isRequired,
   handleClose: PropTypes.func.isRequired,

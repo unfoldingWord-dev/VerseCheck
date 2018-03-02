@@ -44,10 +44,10 @@ SaveArea.propTypes = {
   selectionsReducer: PropTypes.shape({
     selections: PropTypes.array
   }).isRequired,
-  goToNextOrPrevious: PropTypes.func.isRequired,
-  skipToPrevious: PropTypes.func.isRequired,
-  skipToNext: PropTypes.func.isRequired,
-  handleClose: PropTypes.func.isRequired,
+  goToNextOrPrevious: PropTypes.func,
+  skipToPrevious: PropTypes.func,
+  skipToNext: PropTypes.func,
+  handleClose: PropTypes.func,
   dialogModalVisibility: PropTypes.bool.isRequired
 };
 
