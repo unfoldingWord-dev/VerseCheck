@@ -38,6 +38,10 @@ const getSpanFromDiv = (divId, spanIndex) => {
     return span;
 };
 
+const windowSelection = {
+  containsNode: () => {}
+};
+
 describe('windowSelectionHelpers.getPrescedingTextFromElement', () => {
     it('should return prescedingText for single element in div', () => {
         const element = getSpanFromDiv('one', 0);
@@ -65,37 +69,37 @@ describe('windowSelectionHelpers.getPrescedingTextFromElement', () => {
 describe('windowSelectionHelpers.getPrescedingTextFromElementSiblings', () => {
     it('should return empty prescedingText for single element in div', () => {
         const element = getSpanFromDiv('one', 0);
-        const output = windowSelectionHelpers.getPrescedingTextFromElementSiblings(element);
+        const output = windowSelectionHelpers.getPrescedingTextFromElementSiblings(element, windowSelection);
         const expected = '';
         expect(expected).toEqual(output);
     });
     it('should return prescedingText for two elements in div', () => {
         const element = getSpanFromDiv('two', 1);
-        const output = windowSelectionHelpers.getPrescedingTextFromElementSiblings(element);
+        const output = windowSelectionHelpers.getPrescedingTextFromElementSiblings(element, windowSelection);
         const expected = 'Here is ';
         expect(expected).toEqual(output);
     });
     it('should return prescedingText for two of three elements in div', () => {
         const element = getSpanFromDiv('three', 1);
-        const output = windowSelectionHelpers.getPrescedingTextFromElementSiblings(element);
+        const output = windowSelectionHelpers.getPrescedingTextFromElementSiblings(element, windowSelection);
         const expected = 'Here';
         expect(expected).toEqual(output);
     });
     it('should return prescedingText for three of three elements in div', () => {
         const element = getSpanFromDiv('three', 2);
-        const output = windowSelectionHelpers.getPrescedingTextFromElementSiblings(element);
+        const output = windowSelectionHelpers.getPrescedingTextFromElementSiblings(element, windowSelection);
         const expected = 'Here is ';
         expect(expected).toEqual(output);
     });
     it('should return prescedingText for three of four elements in div', () => {
         const element = getSpanFromDiv('four', 2);
-        const output = windowSelectionHelpers.getPrescedingTextFromElementSiblings(element);
+        const output = windowSelectionHelpers.getPrescedingTextFromElementSiblings(element, windowSelection);
         const expected = 'Here is';
         expect(expected).toEqual(output);
     });
     it('should return prescedingText for four of four elements in div', () => {
         const element = getSpanFromDiv('four', 3);
-        const output = windowSelectionHelpers.getPrescedingTextFromElementSiblings(element);
+        const output = windowSelectionHelpers.getPrescedingTextFromElementSiblings(element, windowSelection);
         const expected = 'Here is some text';
         expect(expected).toEqual(output);
     });
@@ -105,49 +109,49 @@ describe('windowSelectionHelpers.getPrescedingTextFromElementAndSiblings', () =>
     it('should return empty prescedingText for single element in div', () => {
         const element = getSpanFromDiv('one', 0);
         const selectionRangeStart = 5;
-        const output = windowSelectionHelpers.getPrescedingTextFromElementAndSiblings(element, selectionRangeStart);
+        const output = windowSelectionHelpers.getPrescedingTextFromElementAndSiblings(element, selectionRangeStart, windowSelection);
         const expected = 'Here ';
         expect(expected).toEqual(output);
     });
     it('should return prescedingText for two elements in div', () => {
         const element = getSpanFromDiv('two', 1);
         const selectionRangeStart = 1;
-        const output = windowSelectionHelpers.getPrescedingTextFromElementAndSiblings(element, selectionRangeStart);
+        const output = windowSelectionHelpers.getPrescedingTextFromElementAndSiblings(element, selectionRangeStart, windowSelection);
         const expected = 'Here is s';
         expect(expected).toEqual(output);
     });
     it('should return prescedingText for two of three elements in div', () => {
         const element = getSpanFromDiv('three', 1);
         const selectionRangeStart = 2;
-        const output = windowSelectionHelpers.getPrescedingTextFromElementAndSiblings(element, selectionRangeStart);
+        const output = windowSelectionHelpers.getPrescedingTextFromElementAndSiblings(element, selectionRangeStart, windowSelection);
         const expected = 'Here i';
         expect(expected).toEqual(output);
     });
     it('should return prescedingText for three of three elements in div', () => {
         const element = getSpanFromDiv('three', 2);
         const selectionRangeStart = 3;
-        const output = windowSelectionHelpers.getPrescedingTextFromElementAndSiblings(element, selectionRangeStart);
+        const output = windowSelectionHelpers.getPrescedingTextFromElementAndSiblings(element, selectionRangeStart, windowSelection);
         const expected = 'Here is som';
         expect(expected).toEqual(output);
     });
     it('should return prescedingText for three of four elements in div', () => {
         const element = getSpanFromDiv('four', 2);
         const selectionRangeStart = 1;
-        const output = windowSelectionHelpers.getPrescedingTextFromElementAndSiblings(element, selectionRangeStart);
+        const output = windowSelectionHelpers.getPrescedingTextFromElementAndSiblings(element, selectionRangeStart, windowSelection);
         const expected = 'Here is ';
         expect(expected).toEqual(output);
     });
     it('should return prescedingText for four of four elements in div', () => {
         const element = getSpanFromDiv('four', 3);
         const selectionRangeStart = 0;
-        const output = windowSelectionHelpers.getPrescedingTextFromElementAndSiblings(element, selectionRangeStart);
+        const output = windowSelectionHelpers.getPrescedingTextFromElementAndSiblings(element, selectionRangeStart, windowSelection);
         const expected = 'Here is some text';
         expect(expected).toEqual(output);
     });
     it('should return prescedingText for four of four elements in div', () => {
         const element = getSpanFromDiv('four', 3);
         const selectionRangeStart = 1;
-        const output = windowSelectionHelpers.getPrescedingTextFromElementAndSiblings(element, selectionRangeStart);
+        const output = windowSelectionHelpers.getPrescedingTextFromElementAndSiblings(element, selectionRangeStart, windowSelection);
         const expected = 'Here is some text.';
         expect(expected).toEqual(output);
     });

@@ -56,7 +56,7 @@ exports[`View component Tests before Project Loaded 1`] = `
     }
     currentToolViews={Object {}}
     dialogModalVisibility={false}
-    goToNextOrPrevious={null}
+    goToNextOrPrevious={[Function]}
     groupsDataReducer={
       Object {
         "groupsData": Object {

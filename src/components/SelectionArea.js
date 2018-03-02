@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import style from '../css/Style';
 // components
 import RenderSelectionTextComponent from './RenderSelectionTextComponent';
@@ -47,5 +48,21 @@ class SelectionArea extends Component {
     );
   }
 }
+
+SelectionArea.propTypes = {
+  actions: PropTypes.shape({
+    changeSelectionsInLocalState: PropTypes.func,
+    openAlertDialog: PropTypes.func,
+  }).isRequired,
+  projectDetailsReducer: PropTypes.shape({
+    manifest: PropTypes.object
+  }).isRequired,
+  contextIdReducer: PropTypes.shape({
+    contextId: PropTypes.object
+  }).isRequired,
+  mode: PropTypes.string.isRequired,
+  verseText: PropTypes.string.isRequired,
+  selections: PropTypes.array.isRequired
+};
 
 export default SelectionArea;

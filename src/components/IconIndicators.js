@@ -1,11 +1,10 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Glyphicon } from 'react-bootstrap';
 
 const IconIndicators = ({
-  actions,
   verseEdited,
   selectionsReducer,
-  verseEditReducer,
   commentsReducer,
   remindersReducer
 }) => {
@@ -49,6 +48,19 @@ const IconIndicators = ({
       />
     </div>
   );
+};
+
+IconIndicators.propTypes = {
+  verseEdited: PropTypes.bool.isRequired,
+  selectionsReducer: PropTypes.shape({
+    selections: PropTypes.array
+  }).isRequired,
+  commentsReducer: PropTypes.shape({
+    text: PropTypes.string
+  }).isRequired,
+  remindersReducer: PropTypes.shape({
+    enabled: PropTypes.bool
+  }).isRequired,
 };
 
 export default IconIndicators;

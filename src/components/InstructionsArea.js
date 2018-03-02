@@ -35,7 +35,7 @@ let InstructionsArea = ({
         <span>Please select the translation for:</span><br />
         <span>
           <strong style={{ color: 'var(--accent-color)' }}>
-            "{quote}"
+            {`"${quote}"`}
         </strong>
         </span><br />
       </div>
@@ -46,7 +46,7 @@ let InstructionsArea = ({
     <div style={style.InstructionsArea}>
       <span>
         <strong style={{ color: 'var(--accent-color)' }}>
-          "{quote}"
+          {`"${quote}"`}
         </strong>
       </span><br />
       <span>has been translated as:</span><br />
@@ -55,7 +55,7 @@ let InstructionsArea = ({
           return (
             <span key={index}>
               <strong style={{ color: 'var(--accent-color)' }}>
-                "{selection.text}"
+                {`"${selection.text}"`}
             </strong>
               <span>{" "}</span>
             </span>
@@ -69,7 +69,9 @@ let InstructionsArea = ({
 InstructionsArea.propTypes = {
   quote: PropTypes.string.isRequired,
   selectionsReducer: PropTypes.object.isRequired,
-  dontShowTranslation: PropTypes.bool
+  dontShowTranslation: PropTypes.bool,
+  verseText: PropTypes.string.isRequired,
+  mode: PropTypes.string.isRequired
 };
 
 export default InstructionsArea;

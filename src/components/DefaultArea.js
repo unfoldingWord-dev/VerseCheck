@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 // helpers
 import {
   selectionArray,
@@ -7,7 +8,6 @@ import {
 } from '../utils/selectionHelpers';
 // components
 import { Glyphicon } from 'react-bootstrap';
-import InstructionsArea from './InstructionsArea';
 import MyLanguageModal from './MyLanguageModal';
 // styling
 import style from '../css/Style';
@@ -92,5 +92,22 @@ class DefaultArea extends React.Component {
     );
   }
 }
+
+DefaultArea.propTypes = {
+  actions: PropTypes.shape({
+    validateSelections: PropTypes.func,
+  }).isRequired,
+  contextIdReducer: PropTypes.shape({
+    contextId: PropTypes.object
+  }).isRequired,
+  resourcesReducer: PropTypes.object.isRequired,
+  projectDetailsReducer: PropTypes.shape({
+    manifest: PropTypes.object
+  }).isRequired,
+  selectionsReducer: PropTypes.shape({
+    selections: PropTypes.array
+  }).isRequired,
+  verseText: PropTypes.string.isRequired,
+};
 
 export default DefaultArea;

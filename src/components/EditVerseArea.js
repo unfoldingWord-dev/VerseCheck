@@ -1,8 +1,15 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {Checkbox, Glyphicon, FormGroup, FormControl} from 'react-bootstrap';
 import style from '../css/Style';
 
-let EditVerseArea = (props) => {
+let EditVerseArea = ({
+  actions,
+  tags,
+  verseChanged,
+  verseText,
+  dir,
+}) => {
   const tagList1 = [
     ["spelling", "Spelling"],
     ["punctuation", "Punctuation"],
@@ -18,10 +25,10 @@ let EditVerseArea = (props) => {
   const checkboxesColumn1 = tagList1.map(tag =>
     <Checkbox
       key={tag[0]}
-      checked={props.tags.includes(tag[0])}
-      disabled={!props.verseChanged}
-      style={props.verseChanged ? { marginLeft: '10px', marginRight: '10px', color: 'var(--text-color-dark)'} : { marginLeft: '10px', marginRight: '10px', color: 'var(--text-color-light)'}}
-      onChange={props.actions.handleTagsCheckbox.bind(this, tag[0])}
+      checked={tags.includes(tag[0])}
+      disabled={!verseChanged}
+      style={verseChanged ? { marginLeft: '10px', marginRight: '10px', color: 'var(--text-color-dark)'} : { marginLeft: '10px', marginRight: '10px', color: 'var(--text-color-light)'}}
+      onChange={actions.handleTagsCheckbox.bind(this, tag[0])}
     >
       {tag[1]}
     </Checkbox>
@@ -30,16 +37,16 @@ let EditVerseArea = (props) => {
   const checkboxesColumn2 = tagList2.map(tag =>
     <Checkbox
       key={tag[0]}
-      checked={props.tags.includes(tag[0])}
-      disabled={!props.verseChanged}
-      style={props.verseChanged ? { marginLeft: '10px', marginRight: '10px', color: 'var(--text-color-dark)'} : { marginLeft: '10px', marginRight: '10px', color: 'var(--text-color-light)'}}
-      onChange={props.actions.handleTagsCheckbox.bind(this, tag[0])}
+      checked={tags.includes(tag[0])}
+      disabled={!verseChanged}
+      style={verseChanged ? { marginLeft: '10px', marginRight: '10px', color: 'var(--text-color-dark)'} : { marginLeft: '10px', marginRight: '10px', color: 'var(--text-color-light)'}}
+      onChange={actions.handleTagsCheckbox.bind(this, tag[0])}
     >
       {tag[1]}
     </Checkbox>
   );
 
-  let checkBoxText = props.verseChanged ? "Next, select reason(s) for change" : "First, make changes to verse above";
+  let checkBoxText = verseChanged ? "Next, select reason(s) for change" : "First, make changes to verse above";
 
   return (
     <div style={style.editArea}>
@@ -51,10 +58,10 @@ let EditVerseArea = (props) => {
         <FormControl autoFocus
           componentClass='textarea'
           type='text'
-          defaultValue={props.verseText}
-          style={{flex: 'auto', direction: props.dir}}
-          onBlur={props.actions.handleEditVerse.bind(this)}
-          onInput={props.actions.checkVerse.bind(this)}
+          defaultValue={verseText}
+          style={{flex: 'auto', direction: dir}}
+          onBlur={actions.handleEditVerse.bind(this)}
+          onInput={actions.checkVerse.bind(this)}
         />
       <div style={{flex: '0 0 65px', marginTop: '5px', fontSize: '0.9em'}}>
         {checkBoxText}
@@ -71,6 +78,18 @@ let EditVerseArea = (props) => {
       </FormGroup>
     </div>
   );
+};
+
+EditVerseArea.propTypes = {
+  actions: PropTypes.shape({
+    handleTagsCheckbox: PropTypes.func,
+    handleEditVerse: PropTypes.func,
+    checkVerse: PropTypes.func
+  }).isRequired,
+  tags: PropTypes.array.isRequired,
+  verseChanged: PropTypes.bool.isRequired,
+  verseText: PropTypes.string.isRequired,
+  dir: PropTypes.string.isRequired
 };
 
 export default EditVerseArea;

@@ -1,3 +1,5 @@
+/* eslint-disable react/no-find-dom-node */
+/* eslint-disable react/no-string-refs */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Modal, Glyphicon } from 'react-bootstrap';
@@ -18,7 +20,7 @@ class MyLanguageModal extends Component {
   }
 
   render() {
-    let { show, onHide, targetLangBible, chapter, currentVerse, projectDetailsReducer} = this.props;
+    let { show, onHide, targetLangBible, chapter, currentVerse, projectDetailsReducer } = this.props;
     const title = projectDetailsReducer.manifest.project.name;
     let MyTargetLanguage = [];
     if (show) {
@@ -79,7 +81,11 @@ MyLanguageModal.propTypes = {
   onHide: PropTypes.func.isRequired,
   targetLangBible: PropTypes.object,
   chapter: PropTypes.number,
-  currentVerse: PropTypes.number
+  currentVerse: PropTypes.number,
+  projectDetailsReducer: PropTypes.shape({
+    manifest: PropTypes.object
+  }).isRequired,
+  dir: PropTypes.string.isRequired
 };
 
 export default MyLanguageModal;

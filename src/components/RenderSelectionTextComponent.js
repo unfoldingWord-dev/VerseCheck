@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import * as _ from 'lodash';
 // helpers
 import * as windowSelectionHelpers from '../helpers/windowSelectionHelpers';
@@ -94,5 +95,15 @@ class RenderSelectionTextComponent extends Component {
     );
   }
 }
+
+RenderSelectionTextComponent.propTypes = {
+  actions: PropTypes.shape({
+    changeSelectionsInLocalState: PropTypes.func,
+    openAlertDialog: PropTypes.func,
+  }).isRequired,
+  mode: PropTypes.string.isRequired,
+  verseText: PropTypes.string.isRequired,
+  selections: PropTypes.array.isRequired
+};
 
 export default RenderSelectionTextComponent;

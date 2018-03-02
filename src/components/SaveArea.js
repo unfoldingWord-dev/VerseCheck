@@ -1,15 +1,20 @@
+/* eslint-disable non-constant-condition */
 import React from 'react';
+import PropTypes from 'prop-types';
 import {Glyphicon} from 'react-bootstrap';
 import style from '../css/Style';
 
-let SaveArea = (props) => {
+let SaveArea = ({
+  actions,
+  selectionsReducer
+}) => {
 
   const handleNext = () => {
-    props.selectionsReducer.selections.length > 0 ? props.actions.handleGoToNext() : props.actions.handleOpenDialog("next");
+    selectionsReducer.selections.length > 0 ? actions.handleGoToNext() : actions.handleOpenDialog("next");
   };
 
   const handlePrevious = () => {
-    props.selectionsReducer.selections.length > 0 ? props.actions.handleGoToPrevious() : props.actions.handleOpenDialog("previous");
+    selectionsReducer.selections.length > 0 ? actions.handleGoToPrevious() : actions.handleOpenDialog("previous");
   };
 
   return (
@@ -28,6 +33,22 @@ let SaveArea = (props) => {
       </button>
     </div>
   );
+};
+
+SaveArea.propTypes = {
+  actions: PropTypes.shape({
+    handleGoToNext: PropTypes.func,
+    handleGoToPrevious: PropTypes.func,
+    handleOpenDialog: PropTypes.func
+  }).isRequired,
+  selectionsReducer: PropTypes.shape({
+    selections: PropTypes.array
+  }).isRequired,
+  goToNextOrPrevious: PropTypes.func.isRequired,
+  skipToPrevious: PropTypes.func.isRequired,
+  skipToNext: PropTypes.func.isRequired,
+  handleClose: PropTypes.func.isRequired,
+  dialogModalVisibility: PropTypes.bool.isRequired
 };
 
 export default SaveArea;

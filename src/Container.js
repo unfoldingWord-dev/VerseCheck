@@ -1,8 +1,8 @@
-  /**
-  * @author Christopher Klpap
-  * @description This component displays the Verse so selection, edit and comments can be made
-  */
+/**
+ * This component displays the Verse so selection, edit and comments can be made.
+ */
 import React from 'react';
+import PropTypes from 'prop-types';
 import usfmjs from 'usfm-js';
 import View from './components/View';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
@@ -282,5 +282,17 @@ class VerseCheck extends React.Component {
     );
   }
 }
+
+VerseCheck.propTypes = {
+  actions: PropTypes.object.isRequired,
+  mode: PropTypes.string.isRequired,
+  contextIdReducer: PropTypes.bool.isRequired,
+  dialogModalVisibility: PropTypes.bool.isRequired,
+  selectionsReducer: PropTypes.object.isRequired,
+  commentsReducer: PropTypes.object.isRequired,
+  resourcesReducer: PropTypes.object.isRequired,
+  loginReducer: PropTypes.object.isRequired,
+  projectDetailsReducer: PropTypes.object.isRequired,
+};
 
 export default VerseCheck;
