@@ -7,7 +7,7 @@ import ActionsArea from './ActionsArea';
 import SaveArea from './SaveArea';
 import DialogComponent from './DialogComponent';
 import IconIndicators from './IconIndicators';
-import isEqual from 'lodash/isEqual';
+import isEqual from 'deep-equal';
 
 class View extends React.Component {
 
