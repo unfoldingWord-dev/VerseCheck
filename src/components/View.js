@@ -1,5 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import style from '../css/Style';
+// components
 import CheckArea from './CheckArea';
 import ActionsArea from './ActionsArea';
 import SaveArea from './SaveArea';
@@ -19,7 +21,7 @@ class View extends React.Component {
       }
     } = this.props;
     let result = false;
-    
+
     if (groupsData[contextId.groupId]) {
       let groupData = groupsData[contextId.groupId].filter(groupData => {
         return isEqual(groupData.contextId, contextId);
@@ -81,5 +83,22 @@ class View extends React.Component {
     );
   }
 }
+
+View.propTypes = {
+  actions: PropTypes.object.isRequired,
+  mode: PropTypes.string.isRequired,
+  contextIdReducer: PropTypes.shape({
+    contextId: PropTypes.object
+  }).isRequired,
+  groupsDataReducer: PropTypes.shape({
+    groupsData: PropTypes.object
+  }).isRequired,
+  dialogModalVisibility: PropTypes.bool.isRequired,
+  goToNextOrPrevious: PropTypes.func,
+  selectionsReducer: PropTypes.object.isRequired,
+  verseEditReducer: PropTypes.object.isRequired,
+  commentsReducer: PropTypes.object.isRequired,
+  remindersReducer: PropTypes.object.isRequired
+};
 
 export default View;

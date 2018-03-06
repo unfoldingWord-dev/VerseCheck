@@ -35,7 +35,8 @@ describe('View component Tests', () => {
       ...projectState,
       cancelSelection: () => jest.fn(),
       clearSelection: () => jest.fn(),
-      saveSelection: () => jest.fn()
+      saveSelection: () => jest.fn(),
+      goToNextOrPrevious: () => jest.fn()
     };
     const component = (
       <MuiThemeProvider>

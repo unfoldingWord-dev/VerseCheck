@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 // helpers
 import {
   selectionArray,
@@ -7,7 +8,6 @@ import {
 } from '../utils/selectionHelpers';
 // components
 import { Glyphicon } from 'react-bootstrap';
-import InstructionsArea from './InstructionsArea';
 import MyLanguageModal from './MyLanguageModal';
 // styling
 import style from '../css/Style';
@@ -76,17 +76,14 @@ class DefaultArea extends React.Component {
             <Glyphicon glyph="fullscreen" title="Click to show expanded verses" style={{cursor: "pointer"}}/>
           </div>
           <MyLanguageModal
-          projectDetailsReducer={this.props.projectDetailsReducer}
-          show={this.state.modalVisibility}
-          targetLangBible={bibles.targetLanguage}
-          chapter={reference.chapter}
-          currentVerse={reference.verse}
-          dir = {dir ? dir : "ltr"}
-          onHide={
-            () => {
-              this.setState({modalVisibility: false});
-            }
-          }/>
+            projectDetailsReducer={this.props.projectDetailsReducer}
+            show={this.state.modalVisibility}
+            targetLangBible={bibles.targetLanguage.targetBible}
+            chapter={reference.chapter}
+            currentVerse={reference.verse}
+            dir = {dir ? dir : "ltr"}
+            onHide={() => this.setState({modalVisibility: false})}
+          />
         </div>
         <div style={this.props.projectDetailsReducer.manifest.target_language.direction === 'ltr' ? style.pane.contentLTR : style.pane.contentRTL}>
           {this.displayText(this.props.verseText, this.props.selectionsReducer.selections)}
@@ -95,5 +92,22 @@ class DefaultArea extends React.Component {
     );
   }
 }
+
+DefaultArea.propTypes = {
+  actions: PropTypes.shape({
+    validateSelections: PropTypes.func,
+  }).isRequired,
+  contextIdReducer: PropTypes.shape({
+    contextId: PropTypes.object
+  }).isRequired,
+  resourcesReducer: PropTypes.object.isRequired,
+  projectDetailsReducer: PropTypes.shape({
+    manifest: PropTypes.object
+  }).isRequired,
+  selectionsReducer: PropTypes.shape({
+    selections: PropTypes.array
+  }).isRequired,
+  verseText: PropTypes.string.isRequired,
+};
 
 export default DefaultArea;

@@ -1,35 +1,38 @@
-import React, { Component, } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { Col } from 'react-bootstrap';
 
-class MyTargetVerse extends Component {
+const MyTargetVerse = ({
+  chapter,
+  verse,
+  verseText,
+  styles,
+  dir
+}) => {
+  let chapterVerse;
 
-  render() {
-    let { chapter, verse, verseText, styles} = this.props;
-    let chapterVerse;
-
-    if(this.props.dir == "rtl"){
-      chapterVerse = verse + ":" + chapter + " ";
-    }else{
-      chapterVerse = chapter + ":" + verse + " ";
-    }
-
-    return (
-      <Col md={12} sm={12} xs={12} lg={12} style={styles}>
-        <div style={{direction: this.props.dir}}>
-          <b>{chapterVerse}</b>
-          {verseText}
-        </div>
-      </Col>
-    );
+  if(this.props.dir == "rtl"){
+    chapterVerse = verse + ":" + chapter + " ";
+  }else{
+    chapterVerse = chapter + ":" + verse + " ";
   }
-}
+
+  return (
+    <Col md={12} sm={12} xs={12} lg={12} style={styles}>
+      <div style={{ direction: dir }}>
+        <b>{chapterVerse}</b>
+        {verseText}
+      </div>
+    </Col>
+  );
+};
 
 MyTargetVerse.propTypes = {
-  chapter: PropTypes.number,
-  verse: PropTypes.number,
-  verseText: PropTypes.string,
-  styles: PropTypes.object
+  chapter: PropTypes.number.isRequired,
+  verse: PropTypes.number.isRequired,
+  verseText: PropTypes.string.isRequired,
+  styles: PropTypes.object.isRequired,
+  dir: PropTypes.string.isRequired
 };
 
 export default MyTargetVerse;

@@ -1,8 +1,12 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {FormGroup, FormControl, Glyphicon} from 'react-bootstrap';
 import style from '../css/Style';
 
-let CommentArea = (props) => {
+const CommentArea = ({
+  actions,
+  comment
+}) => {
   return (
     <div style={style.commentArea}>
       <div style={{fontWeight: 'bold'}}>
@@ -13,14 +17,22 @@ let CommentArea = (props) => {
         <FormControl autoFocus
           componentClass='textarea'
           type='text'
-          defaultValue={props.comment}
+          defaultValue={comment}
           style={{flex: 'auto'}}
-          onBlur={props.actions.handleComment.bind(this)}
-          onInput={props.actions.checkComment.bind(this)}
+          onBlur={actions.handleComment.bind(this)}
+          onInput={actions.checkComment.bind(this)}
         />
       </FormGroup>
     </div>
   );
 };
 
-module.exports = CommentArea;
+CommentArea.propTypes = {
+  actions: PropTypes.shape({
+    handleComment: PropTypes.func,
+    checkComment: PropTypes.func,
+  }).isRequired,
+  comment: PropTypes.string.isRequired
+};
+
+export default CommentArea;

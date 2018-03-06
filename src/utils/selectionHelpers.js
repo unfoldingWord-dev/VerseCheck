@@ -1,8 +1,9 @@
-const _ = require('lodash');
+/* eslint-disable no-constant-condition */
+import _ from 'lodash';
 
 /**
  * Splice string into array of ranges, flagging what is selected
- * @param {array}  ranges - array of ranges [[int,int],...]
+ * @param {array} ranges - array of ranges [[int,int],...]
  * @returns {array} - array of objects [obj,...]
  */
 export const spliceStringOnRanges = (string, ranges) => {

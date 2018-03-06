@@ -1,8 +1,8 @@
-  /**
-  * @author Christopher Klpap
-  * @description This component displays the Verse so selection, edit and comments can be made
-  */
+/**
+ * This component displays the Verse so selection, edit and comments can be made.
+ */
 import React from 'react';
+import PropTypes from 'prop-types';
 import usfmjs from 'usfm-js';
 import View from './components/View';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
@@ -131,7 +131,7 @@ class VerseCheck extends React.Component {
       checkVerse(e) {
         let {chapter, verse} = _this.props.contextIdReducer.contextId.reference;
         const newverse = e.target.value || "";
-        const oldverse = _this.props.resourcesReducer.bibles.targetLanguage[chapter][verse] || "";
+        const oldverse = _this.props.resourcesReducer.bibles.targetLanguage.targetBible[chapter][verse] || "";
         if (newverse === oldverse) {
           _this.setState({
             verseChanged: false,
@@ -155,7 +155,7 @@ class VerseCheck extends React.Component {
       saveEditVerse() {
         let {loginReducer, actions, contextIdReducer, resourcesReducer} = _this.props;
         let {chapter, verse} = contextIdReducer.contextId.reference;
-        let before = resourcesReducer.bibles.targetLanguage[chapter][verse];
+        let before = resourcesReducer.bibles.targetLanguage.targetBible[chapter][verse];
         let username = loginReducer.userdata.username;
         // verseText state is undefined if no changes are made in the text box.
         if (!loginReducer.loggedInUser) {
@@ -209,8 +209,8 @@ class VerseCheck extends React.Component {
     if (nextProps.contextIdReducer.contextId != this.props.contextIdReducer.contextId) {
       let selections = Array.from(nextProps.selectionsReducer.selections);
       const { chapter, verse } = nextProps.contextIdReducer.contextId.reference || {};
-      const { targetLanguage } = nextProps.resourcesReducer.bibles || {};
-      let verseText = targetLanguage && targetLanguage[chapter] ? targetLanguage[chapter][verse] : "";
+      const { targetBible } = nextProps.resourcesReducer.bibles.targetLanguage || {};
+      let verseText = targetBible && targetBible[chapter] ? targetBible[chapter][verse] : "";
       if (Array.isArray(verseText)) verseText = verseText[0];
       // normalize whitespace in case selection has contiguous whitespace _this isn't captured
       verseText = normalizeString(verseText);
@@ -247,10 +247,10 @@ class VerseCheck extends React.Component {
   verseText() {
     const { chapter, verse, bookId } = this.props.contextIdReducer.contextId.reference;
     const bookAbbr = this.props.projectDetailsReducer.manifest.project.id;
-    const { targetLanguage } = this.props.resourcesReducer.bibles;
+    const { targetBible } = this.props.resourcesReducer.bibles.targetLanguage;
     let verseText = "";
-    if (targetLanguage && targetLanguage[chapter] && bookId == bookAbbr) {
-      verseText = targetLanguage && targetLanguage[chapter] ? targetLanguage[chapter][verse] : "";
+    if (targetBible && targetBible[chapter] && bookId == bookAbbr) {
+      verseText = targetBible && targetBible[chapter] ? targetBible[chapter][verse] : "";
       if (Array.isArray(verseText)) verseText = verseText[0];
       // normalize whitespace in case selection has contiguous whitespace _this isn't captured
       verseText = normalizeString(verseText);
@@ -262,7 +262,9 @@ class VerseCheck extends React.Component {
     let verseText = usfmjs.removeMarker(this.verseText());
     return (
       <MuiThemeProvider>
-        <View {...this.props} actions={this.actions}
+        <View
+          {...this.props}
+          actions={this.actions}
           cancelSelection={this.cancelSelection.bind(this)}
           clearSelection={this.clearSelection.bind(this)}
           saveSelection={this.saveSelection.bind(this)}
@@ -280,5 +282,19 @@ class VerseCheck extends React.Component {
     );
   }
 }
+
+VerseCheck.propTypes = {
+  actions: PropTypes.object.isRequired,
+  mode: PropTypes.string,
+  contextIdReducer: PropTypes.shape({
+    contextId: PropTypes.object
+  }).isRequired,
+  dialogModalVisibility: PropTypes.bool,
+  selectionsReducer: PropTypes.object.isRequired,
+  commentsReducer: PropTypes.object.isRequired,
+  resourcesReducer: PropTypes.object.isRequired,
+  loginReducer: PropTypes.object.isRequired,
+  projectDetailsReducer: PropTypes.object.isRequired,
+};
 
 export default VerseCheck;

@@ -9,6 +9,7 @@ import {Modal} from 'react-bootstrap';
 describe('Test MyLanguageModal component',()=>{
   test('Tests that the modal\'s title is displayed', () => {
     const props = {
+      dir: 'ltr',
       show: true,
       onHide: jest.fn(),
       targetLangBible: {
