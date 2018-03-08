@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import * as _ from 'lodash';
+import isEqual from 'deep-equal';
 // helpers
 import * as windowSelectionHelpers from '../helpers/windowSelectionHelpers';
 import * as selectionHelpers from '../helpers/selectionHelpers';
@@ -15,7 +15,7 @@ class RenderSelectionTextComponent extends Component {
 
   componentWillReceiveProps(nextProps) {
     // track when the selections change to prevent false clicks of removals
-    if (!_.isEqual(this.props.selections, nextProps.selections)) {
+    if (!isEqual(this.props.selections, nextProps.selections)) {
       this.renderTimestamp = Date.now();
     }
   }

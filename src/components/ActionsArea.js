@@ -1,7 +1,7 @@
 import React from 'react';
 import { Glyphicon } from 'react-bootstrap';
 import { Toggle } from 'material-ui';
-import isEqual from 'lodash/isEqual';
+import isEqual from 'deep-equal';
 import style from '../css/Style';
 
 let ActionsArea = ({

@@ -1,4 +1,5 @@
-import * as _ from 'lodash';
+import isEqual from 'deep-equal';
+import _ from 'lodash';
 // helpers
 import * as stringHelpers from './stringHelpers';
 
@@ -149,7 +150,7 @@ export const optimizeSelections = (string, selections) => {
   // filter out the random clicks from the UI
   selections = selections.filter( selection => {
     const blankSelection = { text: "", occurrence: 1, occurrences: 0 };
-    return !_.isEqual(selection, blankSelection);
+    return !isEqual(selection, blankSelection);
   });
   var ranges = selectionsToRanges(string, selections); // get char ranges of each selection
   ranges = optimizeRanges(ranges); // optimize the ranges
