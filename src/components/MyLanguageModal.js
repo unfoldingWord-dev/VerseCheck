@@ -1,3 +1,5 @@
+/* eslint-disable react/no-find-dom-node */
+/* eslint-disable react/no-string-refs */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Modal, Glyphicon } from 'react-bootstrap';
@@ -83,7 +85,10 @@ MyLanguageModal.propTypes = {
   targetLangBible: PropTypes.object,
   chapter: PropTypes.number,
   currentVerse: PropTypes.number,
-  projectDetailsReducer: PropTypes.object
+  projectDetailsReducer: PropTypes.shape({
+    manifest: PropTypes.object
+  }).isRequired,
+  dir: PropTypes.string.isRequired
 };
 
 export default MyLanguageModal;

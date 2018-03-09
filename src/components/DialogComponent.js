@@ -89,4 +89,12 @@ class DialogComponent extends Component {
   }
 }
 
+DialogComponent.propTypes = {
+  goToNextOrPrevious: PropTypes.func,
+  skipToPrevious: PropTypes.func.isRequired,
+  skipToNext: PropTypes.func.isRequired,
+  handleClose: PropTypes.func.isRequired,
+  dialogModalVisibility: PropTypes.bool.isRequired
+};
+
 export default DialogComponent;

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 // components
 import DefaultArea from './DefaultArea';
 import SelectionArea from './SelectionArea';
@@ -6,13 +7,12 @@ import InstructionsArea from './InstructionsArea';
 import EditVerseArea from './EditVerseArea';
 import CommentArea from './CommentArea';
 import style from '../css/Style';
-
 class CheckArea extends Component {
   render() {
     const {
+      actions,
       mode,
       tags,
-      actions,
       verseText,
       verseChanged,
       comment,
@@ -72,5 +72,23 @@ class CheckArea extends Component {
     );
   }
 }
+
+CheckArea.propTypes = {
+  actions: PropTypes.object.isRequired,
+  mode: PropTypes.string.isRequired,
+  tags: PropTypes.array.isRequired,
+  verseText: PropTypes.string.isRequired,
+  verseChanged: PropTypes.bool.isRequired,
+  comment: PropTypes.string.isRequired,
+  contextIdReducer: PropTypes.shape({
+    contextId: PropTypes.object
+  }).isRequired,
+  selectionsReducer: PropTypes.shape({
+    selections: PropTypes.array
+  }).isRequired,
+  projectDetailsReducer: PropTypes.shape({
+    manifest: PropTypes.object
+  }).isRequired
+};
 
 export default CheckArea;

@@ -1,4 +1,5 @@
 import * as stringHelpers from './stringHelpers';
+
 /**
  * @description - Gets the selection object from the currently selected text from the Web UI
  * @param {String} entireText - the text that the selection should be in, ie verseText
@@ -44,12 +45,13 @@ export const getPrescedingTextFromWindowSelection = (windowSelection) => {
   // do nothing since an empty space was selected
   if (selectedText !== '') {
     // get the text after the presceding selection and current span selection is in.
-    let selectionRange = windowSelection.getRangeAt(0);
+    const selectionRange = windowSelection.getRangeAt(0);
     // get the character index of what is selected in context of the span it is in.
-    let selectionRangeStart = selectionRange.startOffset;
+    const selectionRangeStart = selectionRange.startOffset;
     // get the container of the selection, this is a strange object, that logs as a string.
-    let textContainer = selectionRange.commonAncestorContainer;
+    const textContainer = selectionRange.commonAncestorContainer;
     // get the parent span that contains the textContainer.
+
     let element;
     // if the textContainer is #text, then use the parentElement - usually non-overlapping selection
     if ('#text' === textContainer.nodeName) element = textContainer.parentElement;
@@ -83,10 +85,10 @@ export const getPrescedingTextFromElementAndSiblings = (element, selectionRangeS
  * @param {Int} selectionRangeStart - the character index of the start of the selection
  * @return {String} - the string of prescedingText
  */
-export const getPrescedingTextFromElement = (element, selectionRangeStart, windowSelection) => {
+export const getPrescedingTextFromElement = (element, selectionRangeStart) => {
   let prescedingText; // response
   const text = element.textContent;
-  prescedingText = text.slice(0,selectionRangeStart);
+  prescedingText = text.slice(0, selectionRangeStart);
   return prescedingText;
 };
 /**
