@@ -11,7 +11,7 @@ const MyTargetVerse = ({
 }) => {
   let chapterVerse;
 
-  if(this.props.dir == "rtl"){
+  if(dir == "rtl"){
     chapterVerse = verse + ":" + chapter + " ";
   }else{
     chapterVerse = chapter + ":" + verse + " ";

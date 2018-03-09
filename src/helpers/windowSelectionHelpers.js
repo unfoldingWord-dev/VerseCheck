@@ -103,7 +103,7 @@ export const getPrescedingTextFromElementSiblings = (element, windowSelection) =
   // loop through previous spans to get their text
   while (previousSibling) {
     // just in case the previousSibling just happens to be a part of the selection
-    if (!windowSelection.containsNode(previousSibling)) {
+    if (windowSelection && !windowSelection.containsNode(previousSibling)) {
       // prepend the spans innerText to the prescedingText
       prescedingText = previousSibling.textContent + prescedingText;
     }

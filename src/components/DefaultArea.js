@@ -55,7 +55,9 @@ class DefaultArea extends React.Component {
         manifest
       }
     } = this.props;
-    const bookName = manifest.project.name;
+    const { target_language, project } = manifest;
+    const bookName = target_language && target_language.book && target_language.book.name ?
+      target_language.book.name : project.name;
     const reference = this.props.contextIdReducer.contextId.reference;
     const bibles = this.props.resourcesReducer.bibles;
     const languageName = manifest.target_language ? manifest.target_language.name : null;
