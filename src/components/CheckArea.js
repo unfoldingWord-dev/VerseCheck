@@ -16,7 +16,7 @@ class CheckArea extends Component {
       verseText,
       verseChanged,
       comment,
-      contextIdReducer,
+      glQuote,
       selectionsReducer,
       projectDetailsReducer
     } = this.props;
@@ -42,7 +42,7 @@ class CheckArea extends Component {
             <InstructionsArea
               verseText={verseText}
               selectionsReducer={selectionsReducer}
-              quote={contextIdReducer.contextId.quote}
+              quote={glQuote}
               mode={mode}
             />
           </div>);
@@ -51,7 +51,7 @@ class CheckArea extends Component {
       default:
         modeArea = (
           <div style={{ WebkitUserSelect: 'none', display: "flex", justifyContent: "center", alignItems: "center", height: "100%" }}>
-            <InstructionsArea dontShowTranslation={true} verseText={verseText} selectionsReducer={selectionsReducer} quote={contextIdReducer.contextId.quote} />
+            <InstructionsArea dontShowTranslation={true} verseText={verseText} selectionsReducer={selectionsReducer} quote={glQuote} />
           </div>
         );
     }
@@ -62,7 +62,7 @@ class CheckArea extends Component {
           <SelectionArea
             {...this.props}
             actions={actions}
-            quote={contextIdReducer.contextId.quote}
+            quote={glQuote}
           /> :
           <DefaultArea {...this.props} />}
         <div style={{ borderLeft: '1px solid var(--border-color)', flex: 1, overflowY: "auto", display:'flex', justifyContent:'center' }}>
@@ -80,6 +80,7 @@ CheckArea.propTypes = {
   verseText: PropTypes.string.isRequired,
   verseChanged: PropTypes.bool.isRequired,
   comment: PropTypes.string.isRequired,
+  glQuote: PropTypes.string.isRequired,
   contextIdReducer: PropTypes.shape({
     contextId: PropTypes.object
   }).isRequired,
