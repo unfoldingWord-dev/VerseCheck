@@ -32,7 +32,7 @@
         "currentPaneSettings": [
           "targetLanguage",
           "bhp",
-          "ulb"
+          "ult"
         ]
       }
     },
@@ -78,7 +78,7 @@
           "description": "Gateway Language"
         }
       },
-      "ulb": {
+      "ult": {
         "2": {
           "1": "But you, speak what fits with faithful instruction.",
           "2": "Teach older men to be temperate, dignified, sensible, sound in faith, in love, and in perseverance.",
@@ -101,8 +101,8 @@
           "language_name": "English",
           "direction": "ltr",
           "subject": "Bible",
-          "resource_id": "ulb",
-          "resource_title": "Unlocked Literal Bible",
+          "resource_id": "ult",
+          "resource_title": "unfoldingWord Literal Text",
           "description": "Gateway Language"
         }
       },
@@ -189,7 +189,7 @@
       "source_translations": [
         {
           "language_id": "en",
-          "resource_id": "ulb",
+          "resource_id": "ult",
           "checking_level": "3",
           "date_modified": 20170221,
           "version": "9"

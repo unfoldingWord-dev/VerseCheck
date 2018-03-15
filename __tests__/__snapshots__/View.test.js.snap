@@ -3658,7 +3658,7 @@ exports[`View component Tests before Project Loaded 1`] = `
               "checking_level": "3",
               "date_modified": 20170221,
               "language_id": "en",
-              "resource_id": "ulb",
+              "resource_id": "ult",
               "version": "9",
             },
           ],
@@ -3756,7 +3756,7 @@ exports[`View component Tests before Project Loaded 1`] = `
               "subject": "Bible",
             },
           },
-          "ulb": Object {
+          "ult": Object {
             "2": Object {
               "1": "But you, speak what fits with faithful instruction.",
               "10": "to not steal from them, but instead to demonstrate all good faith, so that in every way they may bring credit to the teaching about God our Savior.",
@@ -3779,8 +3779,8 @@ exports[`View component Tests before Project Loaded 1`] = `
               "direction": "ltr",
               "language_id": "en",
               "language_name": "English",
-              "resource_id": "ulb",
-              "resource_title": "Unlocked Literal Bible",
+              "resource_id": "ult",
+              "resource_title": "unfoldingWord Literal Text",
               "subject": "Bible",
             },
           },
@@ -3865,7 +3865,7 @@ To be \\"faithful\\" to God means to consistently live according to God's teachi
             "currentPaneSettings": Array [
               "targetLanguage",
               "bhp",
-              "ulb",
+              "ult",
             ],
           },
         },
