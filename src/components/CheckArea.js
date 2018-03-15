@@ -11,16 +11,40 @@ class CheckArea extends Component {
   render() {
     const {
       actions,
+      contextIdReducer: { contextId },
       mode,
       tags,
       verseText,
       verseChanged,
       comment,
-      glQuote,
       selectionsReducer,
-      projectDetailsReducer
+      projectDetailsReducer,
+      resourcesReducer: { bibles },
+      toolsReducer
     } = this.props;
     let modeArea;
+    let sourceWord = contextId.quote;
+    const selectedGL = projectDetailsReducer.currentProjectToolsSelectedGL[toolsReducer.currentToolName];
+    if (bibles[selectedGL] && bibles[selectedGL]['ult']) {
+      const verseObjects = bibles[selectedGL]['ult'][contextId.reference.chapter][contextId.reference.verse].verseObjects;
+      debugger;
+      verseObjects.forEach(verseObject => {
+        if ((verseObject.type == 'milestone' || verseObject.type == 'word') && verseObject.content == contextId.quote) {
+          let children = [];
+          if (verseObject.type == 'word') {
+            children = [verseObject];
+          } else {
+            children = verseObject.children;
+          }
+          const words = [];
+          children.forEach(child => {
+            words.push(child.text);
+          });
+          sourceWord = words.join(' ');
+        }
+      });
+    }
+
     switch (mode) {
       case 'edit':
         modeArea = (
@@ -42,7 +66,7 @@ class CheckArea extends Component {
             <InstructionsArea
               verseText={verseText}
               selectionsReducer={selectionsReducer}
-              quote={glQuote}
+              sourceWord={sourceWord}
               mode={mode}
             />
           </div>);
@@ -51,7 +75,7 @@ class CheckArea extends Component {
       default:
         modeArea = (
           <div style={{ WebkitUserSelect: 'none', display: "flex", justifyContent: "center", alignItems: "center", height: "100%" }}>
-            <InstructionsArea dontShowTranslation={true} verseText={verseText} selectionsReducer={selectionsReducer} quote={glQuote} />
+            <InstructionsArea dontShowTranslation={true} verseText={verseText} selectionsReducer={selectionsReducer} sourceWord={sourceWord} />
           </div>
         );
     }
@@ -62,7 +86,7 @@ class CheckArea extends Component {
           <SelectionArea
             {...this.props}
             actions={actions}
-            quote={glQuote}
+            sourceWord={sourceWord}
           /> :
           <DefaultArea {...this.props} />}
         <div style={{ borderLeft: '1px solid var(--border-color)', flex: 1, overflowY: "auto", display:'flex', justifyContent:'center' }}>
@@ -80,7 +104,6 @@ CheckArea.propTypes = {
   verseText: PropTypes.string.isRequired,
   verseChanged: PropTypes.bool.isRequired,
   comment: PropTypes.string.isRequired,
-  glQuote: PropTypes.string.isRequired,
   contextIdReducer: PropTypes.shape({
     contextId: PropTypes.object
   }).isRequired,
@@ -88,7 +111,14 @@ CheckArea.propTypes = {
     selections: PropTypes.array
   }).isRequired,
   projectDetailsReducer: PropTypes.shape({
-    manifest: PropTypes.object
+    manifest: PropTypes.object,
+    currentProjectToolsSelectedGL: PropTypes.object
+  }).isRequired,
+  resourcesReducer: PropTypes.shape({
+    bibles: PropTypes.object
+  }).isRequired,
+  toolsReducer: PropTypes.shape({
+    currentToolName: PropTypes.string
   }).isRequired
 };
 
