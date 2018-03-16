@@ -8,7 +8,7 @@ import EditVerseArea from './EditVerseArea';
 import CommentArea from './CommentArea';
 import style from '../css/Style';
 // helpers
-import { getAlignedText } from '../helpers/verseHelpers';
+import * as checkAreaHelpers from '../helpers/checkAreaHelpers';
 
 class CheckArea extends Component {
   render() {
@@ -31,7 +31,7 @@ class CheckArea extends Component {
     if (bibles[selectedGL] && bibles[selectedGL]['ult']) {
       const verseObjects = bibles[selectedGL]['ult'][contextId.reference.chapter][contextId.reference.verse].verseObjects;
       const wordsToMatch = contextId.quote.split(' ');
-      const text = getAlignedText(verseObjects, wordsToMatch, contextId.occurrence);
+      const text = checkAreaHelpers.getAlignedText(verseObjects, wordsToMatch, contextId.occurrence);
       if (text) {
         alignedGLText = text;
       }

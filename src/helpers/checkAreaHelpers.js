@@ -1,5 +1,5 @@
 const ELLIPSIS = '…';
-const DEFAULT_SEPARATOR = DEFAULT_SEPARATOR;
+const DEFAULT_SEPARATOR = ' ';
 
 /**
  * getAlignedText - returns a string of the text found in an array of verseObjects that matches the words to find
