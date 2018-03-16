@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import style from '../css/Style';
 
 let InstructionsArea = ({
-  sourceWord,
+  alignedGLText,
   selectionsReducer,
   dontShowTranslation,
   verseText,
@@ -35,7 +35,7 @@ let InstructionsArea = ({
         <span>Please select the translation for:</span><br />
         <span>
           <strong style={{ color: 'var(--accent-color)' }}>
-            {`"${sourceWord}"`}
+            {`"${alignedGLText}"`}
         </strong>
         </span><br />
       </div>
@@ -46,7 +46,7 @@ let InstructionsArea = ({
     <div style={style.InstructionsArea}>
       <span>
         <strong style={{ color: 'var(--accent-color)' }}>
-          {`"${sourceWord}"`}
+          {`"${alignedGLText}"`}
         </strong>
       </span><br />
       <span>has been translated as:</span><br />
@@ -67,7 +67,7 @@ let InstructionsArea = ({
 };
 
 InstructionsArea.propTypes = {
-  sourceWord: PropTypes.string.isRequired,
+  alignedGLText: PropTypes.string.isRequired,
   selectionsReducer: PropTypes.object.isRequired,
   dontShowTranslation: PropTypes.bool,
   verseText: PropTypes.string.isRequired,

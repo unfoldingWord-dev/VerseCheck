@@ -1,51 +1,49 @@
+const ELLIPSIS = '…';
+
 /**
- * @param {*} verseObjects 
- * @param {*} contextId 
- * @param {*} isWord 
+ * @param {Array} verseObjects 
+ * @param {Object} contextId 
+ * @param {boolean} isMatch // if true, all children will be considered a match and will be included in the returned text
  */
-export const getWord = (verseObjects, contextId, isWord=false) => {
-  let word = '';
+export const getAlignedText = (verseObjects, wordsToMatch, occurrenceToMatch, isMatch=false) => {
+  // TODO: FIX FOR HINDI, परमेश्वर (God), Titus 1:1, 2nd occurance
+  let text = '';
   let separator = ' ';
   let inBetween = false;
-  let greekWords = contextId.quote.split(' ');
-  if (greekWords.indexOf(contextId.quote) < 0) {
-    greekWords.push(contextId.quote);
-  }
-  debugger;
   verseObjects.forEach(verseObject => {
     if ((verseObject.type == 'milestone' || verseObject.type == 'word')) {
-      if ((greekWords.indexOf(verseObject.content) >= 0 && verseObject.occurrence == contextId.occurrence) || isWord) {
+      if ((wordsToMatch.indexOf(verseObject.content) >= 0 && verseObject.occurrence == occurrenceToMatch) || isMatch) {
         if (inBetween) {
-          separator += '... ';
+          separator += ELLIPSIS+' ';
           inBetween = false;
         }
         if (verseObject.text) {
-          word += (word?separator:'') + verseObject.text;
+          text += (text?separator:'') + verseObject.text;
           separator = ' ';
         }
         if (verseObject.children) {
-          word += (word?separator:'') + getWord(verseObject.children, contextId, true);
+          text += (text?separator:'') + getAlignedText(verseObject.children, wordsToMatch, occurrenceToMatch, true);
           separator = ' ';
         }
       } else if (verseObject.children) {
-        let childWord = getWord(verseObject.children, contextId, isWord);
+        let childWord = getAlignedText(verseObject.children, wordsToMatch, occurrenceToMatch, isMatch);
         if (childWord) {
           if (inBetween) {
-            separator += '... ';
+            separator += ELLIPSIS+' ';
             inBetween = false;
           }
-          word += (word?separator:'') + childWord;
+          text += (text?separator:'') + childWord;
           separator = ' ';
-        } else if (word) {
+        } else if (text) {
           inBetween = true;
         }
       }
-    } else if (verseObject.type == "text" && word) {
+    } else if (verseObject.type == "text" && text) {
       if (separator == ' ') {
         separator = '';
       }
       separator += verseObject.text;
     }
   });
-  return word;
+  return text;
 };

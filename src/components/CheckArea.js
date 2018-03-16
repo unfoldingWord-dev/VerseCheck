@@ -6,8 +6,10 @@ import SelectionArea from './SelectionArea';
 import InstructionsArea from './InstructionsArea';
 import EditVerseArea from './EditVerseArea';
 import CommentArea from './CommentArea';
-import { getWord } from '../helpers/verseHelpers';
 import style from '../css/Style';
+// helpers
+import { getAlignedText } from '../helpers/verseHelpers';
+
 class CheckArea extends Component {
   render() {
     const {
@@ -23,17 +25,19 @@ class CheckArea extends Component {
       resourcesReducer: { bibles },
       toolsReducer
     } = this.props;
-    let modeArea;
-    let sourceWord = contextId.quote;
+
+    let alignedGLText = contextId.quote;
     const selectedGL = projectDetailsReducer.currentProjectToolsSelectedGL[toolsReducer.currentToolName];
     if (bibles[selectedGL] && bibles[selectedGL]['ult']) {
       const verseObjects = bibles[selectedGL]['ult'][contextId.reference.chapter][contextId.reference.verse].verseObjects;
-      const word = getWord(verseObjects, contextId);
-      if (word) {
-        sourceWord = word;
+      const wordsToMatch = contextId.quote.split(' ');
+      const text = getAlignedText(verseObjects, wordsToMatch, contextId.occurrence);
+      if (text) {
+        alignedGLText = text;
       }
     }
 
+    let modeArea;
     switch (mode) {
       case 'edit':
         modeArea = (
@@ -55,7 +59,7 @@ class CheckArea extends Component {
             <InstructionsArea
               verseText={verseText}
               selectionsReducer={selectionsReducer}
-              sourceWord={sourceWord}
+              alignedGLText={alignedGLText}
               mode={mode}
             />
           </div>);
@@ -64,7 +68,12 @@ class CheckArea extends Component {
       default:
         modeArea = (
           <div style={{ WebkitUserSelect: 'none', display: "flex", justifyContent: "center", alignItems: "center", height: "100%" }}>
-            <InstructionsArea dontShowTranslation={true} verseText={verseText} selectionsReducer={selectionsReducer} sourceWord={sourceWord} />
+            <InstructionsArea
+              dontShowTranslation={true}
+              verseText={verseText}
+              selectionsReducer={selectionsReducer}
+              alignedGLText={alignedGLText}
+            />
           </div>
         );
     }
@@ -75,7 +84,6 @@ class CheckArea extends Component {
           <SelectionArea
             {...this.props}
             actions={actions}
-            sourceWord={sourceWord}
           /> :
           <DefaultArea {...this.props} />}
         <div style={{ borderLeft: '1px solid var(--border-color)', flex: 1, overflowY: "auto", display:'flex', justifyContent:'center' }}>
