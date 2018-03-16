@@ -50,7 +50,7 @@
   },
   "resourcesReducer": {
     "bibles": {
-      "udb": {
+      "udt": {
         "2": {
           "1": "But you, Titus, you must teach the things that help people believe the truth about God.",
           "2": "The older men should control themselves all the time. They should live in a way that other people respect, and they should speak wisely. They should also believe the true things about God, love others truly, and continuously do these things.",
@@ -73,7 +73,7 @@
           "language_name": "English",
           "direction": "ltr",
           "subject": "Bible",
-          "resource_id": "udb",
+          "resource_id": "udt",
           "resource_title": "Unlocked Dynamic Bible",
           "description": "Gateway Language"
         }

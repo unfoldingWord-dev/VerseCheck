@@ -3728,7 +3728,7 @@ exports[`View component Tests before Project Loaded 1`] = `
               "subject": "Bible",
             },
           },
-          "udb": Object {
+          "udt": Object {
             "2": Object {
               "1": "But you, Titus, you must teach the things that help people believe the truth about God.",
               "10": "They must not steal even little things from their masters; instead, they should be faithful to them, and they should do everything in a way that leads people to admire all that we teach about God, who saves us.",
@@ -3751,7 +3751,7 @@ exports[`View component Tests before Project Loaded 1`] = `
               "direction": "ltr",
               "language_id": "en",
               "language_name": "English",
-              "resource_id": "udb",
+              "resource_id": "udt",
               "resource_title": "Unlocked Dynamic Bible",
               "subject": "Bible",
             },
