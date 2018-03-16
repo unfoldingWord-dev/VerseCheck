@@ -6,6 +6,7 @@ import SelectionArea from './SelectionArea';
 import InstructionsArea from './InstructionsArea';
 import EditVerseArea from './EditVerseArea';
 import CommentArea from './CommentArea';
+import { getWord } from '../helpers/verseHelpers';
 import style from '../css/Style';
 class CheckArea extends Component {
   render() {
@@ -27,22 +28,10 @@ class CheckArea extends Component {
     const selectedGL = projectDetailsReducer.currentProjectToolsSelectedGL[toolsReducer.currentToolName];
     if (bibles[selectedGL] && bibles[selectedGL]['ult']) {
       const verseObjects = bibles[selectedGL]['ult'][contextId.reference.chapter][contextId.reference.verse].verseObjects;
-      debugger;
-      verseObjects.forEach(verseObject => {
-        if ((verseObject.type == 'milestone' || verseObject.type == 'word') && verseObject.content == contextId.quote) {
-          let children = [];
-          if (verseObject.type == 'word') {
-            children = [verseObject];
-          } else {
-            children = verseObject.children;
-          }
-          const words = [];
-          children.forEach(child => {
-            words.push(child.text);
-          });
-          sourceWord = words.join(' ');
-        }
-      });
+      const word = getWord(verseObjects, contextId);
+      if (word) {
+        sourceWord = word;
+      }
     }
 
     switch (mode) {
