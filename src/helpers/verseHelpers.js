@@ -6,35 +6,38 @@
 export const getWord = (verseObjects, contextId, isWord=false) => {
   let word = '';
   let separator = ' ';
-  let inBetween = '';
+  let inBetween = false;
   let greekWords = contextId.quote.split(' ');
   if (greekWords.indexOf(contextId.quote) < 0) {
     greekWords.push(contextId.quote);
   }
+  debugger;
   verseObjects.forEach(verseObject => {
     if ((verseObject.type == 'milestone' || verseObject.type == 'word')) {
       if ((greekWords.indexOf(verseObject.content) >= 0 && verseObject.occurrence == contextId.occurrence) || isWord) {
-        word += (word?separator:'');
         if (inBetween) {
-          word += inBetween + " ";
+          separator += '... ';
+          inBetween = false;
         }
         if (verseObject.text) {
-          word += verseObject.text;
+          word += (word?separator:'') + verseObject.text;
           separator = ' ';
         }
         if (verseObject.children) {
-          word += getWord(verseObject.children, contextId, true);
+          word += (word?separator:'') + getWord(verseObject.children, contextId, true);
+          separator = ' ';
         }
       } else if (verseObject.children) {
-        if (word) {
-          inBetween += getWord(verseObject.children, contextId, true);
-        } else {
-          let childWord = getWord(verseObject.children, contextId);
-          if (childWord) {
-            word += (word?separator:'');
-            word += childWord;
-            separator = ' ';
+        let childWord = getWord(verseObject.children, contextId, isWord);
+        if (childWord) {
+          if (inBetween) {
+            separator += '... ';
+            inBetween = false;
           }
+          word += (word?separator:'') + childWord;
+          separator = ' ';
+        } else if (word) {
+          inBetween = true;
         }
       }
     } else if (verseObject.type == "text" && word) {
