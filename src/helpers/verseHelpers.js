@@ -6,7 +6,7 @@ const ELLIPSIS = '…';
  * @param {Array} verseObjects 
  * @param {Array} wordsToMatch
  * @param {int} occurrenceToMatch
- * @param {boolean} isMatch - if true, all children will be considered a match and will be included in the returned text
+ * @param {boolean} isMatch - if true, all verseObjects will be considered a match and will be included in the returned text
  */
 export const getAlignedText = (verseObjects, wordsToMatch, occurrenceToMatch, isMatch=false) => {
   // TODO: FIX FOR HINDI, परमेश्वर (God), Titus 1:1, 2nd occurrence
