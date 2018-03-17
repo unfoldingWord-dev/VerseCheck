@@ -1,9 +1,11 @@
 /* eslint-env jest */
 import React from 'react';
 import fs from 'fs-extra';
-import CheckArea from '../src/components/CheckArea';
 import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import renderer from 'react-test-renderer';
+import CheckArea from '../src/components/CheckArea';
 
 const ult_titus_1 = '__tests__/fixtures/ult/tit/1.json';
 
@@ -13,7 +15,29 @@ describe('CheckArea component Tests', () => {
   
   beforeEach(()=>{
     props = {
-      actions: {},
+      actions: {
+        handleGoToNext: () => jest.fn(),
+        handleGoToPrevious: () => jest.fn(),
+        handleOpenDialog: () => jest.fn(),
+        handleCloseDialog: () => jest.fn(),
+        skipToNext: () => jest.fn(),
+        skipToPrevious: () => jest.fn(),
+        changeSelectionsInLocalState: () => jest.fn(),
+        changeMode: () => jest.fn(),
+        handleComment: () => jest.fn(),
+        checkComment: () => jest.fn(),
+        cancelComment: () => jest.fn(),
+        saveComment: () => jest.fn(),
+        handleTagsCheckbox: () => jest.fn(),
+        handleEditVerse: () => jest.fn(),
+        checkVerse: () => jest.fn(),
+        cancelEditVerse: () => jest.fn(),
+        saveEditVerse: () => jest.fn(),
+        validateSelections: () => jest.fn(),
+        toggleReminder: () => jest.fn(),
+        openAlertDialog: () => jest.fn(),
+        selectModalTab: () => jest.fn()
+      },
       mode: 'default',
       tags: [],
       verseText: 'This is the verse text',
@@ -38,6 +62,9 @@ describe('CheckArea component Tests', () => {
         manifest: {
           target_language: {
             direction: 'ltr'
+          },
+          project: {
+            name: 'Titus'
           }
         },
         currentProjectToolsSelectedGL: {
@@ -52,6 +79,9 @@ describe('CheckArea component Tests', () => {
                 1: titus1[1]
               }
             }
+          },
+          targetLanguage: {
+            targetBible: {}
           }
         }
       },
@@ -62,33 +92,51 @@ describe('CheckArea component Tests', () => {
   });
 
   test('Check CheckArea component mode default', () => {
-    const wrapper = shallow(<CheckArea {...props} />);
-    expect(toJson(wrapper)).toMatchSnapshot();
-    expect(wrapper.instance().alignedGLText).toEqual('God\'s');
+    const component = renderer.create(
+      <MuiThemeProvider>
+        <CheckArea {...props} />
+      </MuiThemeProvider>
+    );
+    expect(component.toJSON()).toMatchSnapshot();
   });
 
   test('Test CheckArea component mode select)', () => {
     props.mode = 'select';
-    const wrapper = shallow(<CheckArea {...props} />);
-    expect(toJson(wrapper)).toMatchSnapshot();
+    const component = renderer.create(
+      <MuiThemeProvider>
+        <CheckArea {...props} />
+      </MuiThemeProvider>
+    );
+    expect(component.toJSON()).toMatchSnapshot();
   });
 
   test('Test CheckArea component mode edit)', () => {
     props.mode = 'edit';
-    const wrapper = shallow(<CheckArea {...props} />);
-    expect(toJson(wrapper)).toMatchSnapshot();
+    const component = renderer.create(
+      <MuiThemeProvider>
+        <CheckArea {...props} />
+      </MuiThemeProvider>
+    );
+    expect(component.toJSON()).toMatchSnapshot();
   });
 
   test('Test CheckArea component mode comment)', () => {
     props.mode = 'comment';
-    const wrapper = shallow(<CheckArea {...props} />);
-    expect(toJson(wrapper)).toMatchSnapshot();
+    const component = renderer.create(
+      <MuiThemeProvider>
+        <CheckArea {...props} />
+      </MuiThemeProvider>
+    );
+    expect(component.toJSON()).toMatchSnapshot();
   });
 
   test('Test CheckArea component where GL Aligned Text not found (uses Greek quote instead)', () => {
     props.resourcesReducer.bibles.en.ult[1][1] = {};
-    const wrapper = shallow(<CheckArea {...props} />);
-    expect(toJson(wrapper)).toMatchSnapshot();
-    expect(wrapper.instance().alignedGLText).toEqual(props.contextIdReducer.contextId.quote);
+    const component = renderer.create(
+      <MuiThemeProvider>
+        <CheckArea {...props} />
+      </MuiThemeProvider>
+    );
+    expect(component.toJSON()).toMatchSnapshot();
   });
 });

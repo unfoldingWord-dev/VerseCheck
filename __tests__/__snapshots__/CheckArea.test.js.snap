@@ -11,514 +11,91 @@ exports[`CheckArea component Tests Check CheckArea component mode default 1`] = 
     }
   }
 >
-  <DefaultArea
-    actions={Object {}}
-    comment="Comment!"
-    contextIdReducer={
+  <div
+    style={
       Object {
-        "contextId": Object {
-          "occurrence": 2,
-          "occurrences": 2,
-          "quote": "Θεοῦ",
-          "reference": Object {
-            "chapter": 1,
-            "verse": 1,
-          },
-        },
+        "WebkitUserSelect": "none",
+        "display": "flex",
+        "flex": 1,
+        "flexDirection": "column",
       }
     }
-    mode="default"
-    projectDetailsReducer={
-      Object {
-        "currentProjectToolsSelectedGL": Object {
-          "translationWords": "en",
-        },
-        "manifest": Object {
-          "target_language": Object {
-            "direction": "ltr",
-          },
-        },
+  >
+    <div
+      style={
+        Object {
+          "display": "flex",
+          "flex": "0 0 45px",
+          "justifyContent": "space-between",
+          "margin": "5px 10px 5px 15px",
+        }
       }
-    }
-    resourcesReducer={
-      Object {
-        "bibles": Object {
-          "en": Object {
-            "ult": Object {
-              "1": Object {
-                "1": Object {
-                  "verseObjects": Array [
-                    Object {
-                      "children": Array [
-                        Object {
-                          "occurrence": 1,
-                          "occurrences": 1,
-                          "tag": "w",
-                          "text": "Paul",
-                          "type": "word",
-                        },
-                      ],
-                      "content": "Παῦλος",
-                      "lemma": "Παῦλος",
-                      "morph": "Gr,N,,,,,NMS,",
-                      "occurrence": 1,
-                      "occurrences": 1,
-                      "strong": "G39720",
-                      "tag": "zaln",
-                      "type": "milestone",
-                    },
-                    Object {
-                      "text": ",",
-                      "type": "text",
-                    },
-                    Object {
-                      "children": Array [
-                        Object {
-                          "occurrence": 1,
-                          "occurrences": 1,
-                          "tag": "w",
-                          "text": "a",
-                          "type": "word",
-                        },
-                        Object {
-                          "occurrence": 1,
-                          "occurrences": 1,
-                          "tag": "w",
-                          "text": "servant",
-                          "type": "word",
-                        },
-                      ],
-                      "content": "δοῦλος",
-                      "lemma": "δοῦλος",
-                      "morph": "Gr,N,,,,,NMS,",
-                      "occurrence": 1,
-                      "occurrences": 1,
-                      "strong": "G14010",
-                      "tag": "zaln",
-                      "type": "milestone",
-                    },
-                    Object {
-                      "children": Array [
-                        Object {
-                          "occurrence": 1,
-                          "occurrences": 4,
-                          "tag": "w",
-                          "text": "of",
-                          "type": "word",
-                        },
-                        Object {
-                          "occurrence": 1,
-                          "occurrences": 2,
-                          "tag": "w",
-                          "text": "God",
-                          "type": "word",
-                        },
-                      ],
-                      "content": "Θεοῦ",
-                      "lemma": "θεός",
-                      "morph": "Gr,N,,,,,GMS,",
-                      "occurrence": 1,
-                      "occurrences": 2,
-                      "strong": "G23160",
-                      "tag": "zaln",
-                      "type": "milestone",
-                    },
-                    Object {
-                      "children": Array [
-                        Object {
-                          "occurrence": 1,
-                          "occurrences": 2,
-                          "tag": "w",
-                          "text": "and",
-                          "type": "word",
-                        },
-                      ],
-                      "content": "δὲ",
-                      "lemma": "δέ",
-                      "morph": "Gr,CC,,,,,,,,",
-                      "occurrence": 1,
-                      "occurrences": 1,
-                      "strong": "G11610",
-                      "tag": "zaln",
-                      "type": "milestone",
-                    },
-                    Object {
-                      "children": Array [
-                        Object {
-                          "occurrence": 1,
-                          "occurrences": 1,
-                          "tag": "w",
-                          "text": "an",
-                          "type": "word",
-                        },
-                        Object {
-                          "occurrence": 1,
-                          "occurrences": 1,
-                          "tag": "w",
-                          "text": "apostle",
-                          "type": "word",
-                        },
-                      ],
-                      "content": "ἀπόστολος",
-                      "lemma": "ἀπόστολος",
-                      "morph": "Gr,N,,,,,NMS,",
-                      "occurrence": 1,
-                      "occurrences": 1,
-                      "strong": "G06520",
-                      "tag": "zaln",
-                      "type": "milestone",
-                    },
-                    Object {
-                      "children": Array [
-                        Object {
-                          "occurrence": 2,
-                          "occurrences": 4,
-                          "tag": "w",
-                          "text": "of",
-                          "type": "word",
-                        },
-                        Object {
-                          "occurrence": 1,
-                          "occurrences": 1,
-                          "tag": "w",
-                          "text": "Jesus",
-                          "type": "word",
-                        },
-                      ],
-                      "content": "Ἰησοῦ",
-                      "lemma": "Ἰησοῦς",
-                      "morph": "Gr,N,,,,,GMS,",
-                      "occurrence": 1,
-                      "occurrences": 1,
-                      "strong": "G24240",
-                      "tag": "zaln",
-                      "type": "milestone",
-                    },
-                    Object {
-                      "children": Array [
-                        Object {
-                          "occurrence": 1,
-                          "occurrences": 1,
-                          "tag": "w",
-                          "text": "Christ",
-                          "type": "word",
-                        },
-                      ],
-                      "content": "Χριστοῦ",
-                      "lemma": "χριστός",
-                      "morph": "Gr,N,,,,,GMS,",
-                      "occurrence": 1,
-                      "occurrences": 1,
-                      "strong": "G55470",
-                      "tag": "zaln",
-                      "type": "milestone",
-                    },
-                    Object {
-                      "text": ",",
-                      "type": "text",
-                    },
-                    Object {
-                      "children": Array [
-                        Object {
-                          "occurrence": 1,
-                          "occurrences": 1,
-                          "tag": "w",
-                          "text": "for",
-                          "type": "word",
-                        },
-                      ],
-                      "content": "κατὰ",
-                      "lemma": "κατά",
-                      "morph": "Gr,P,,,,,A,,,",
-                      "occurrence": 1,
-                      "occurrences": 1,
-                      "strong": "G25960",
-                      "tag": "zaln",
-                      "type": "milestone",
-                    },
-                    Object {
-                      "children": Array [
-                        Object {
-                          "occurrence": 1,
-                          "occurrences": 3,
-                          "tag": "w",
-                          "text": "the",
-                          "type": "word",
-                        },
-                        Object {
-                          "occurrence": 1,
-                          "occurrences": 1,
-                          "tag": "w",
-                          "text": "faith",
-                          "type": "word",
-                        },
-                      ],
-                      "content": "πίστιν",
-                      "lemma": "πίστις",
-                      "morph": "Gr,N,,,,,AFS,",
-                      "occurrence": 1,
-                      "occurrences": 1,
-                      "strong": "G41020",
-                      "tag": "zaln",
-                      "type": "milestone",
-                    },
-                    Object {
-                      "children": Array [
-                        Object {
-                          "occurrence": 3,
-                          "occurrences": 4,
-                          "tag": "w",
-                          "text": "of",
-                          "type": "word",
-                        },
-                      ],
-                      "content": "ἐκλεκτῶν",
-                      "lemma": "ἐκλεκτός",
-                      "morph": "Gr,NS,,,,GMP,",
-                      "occurrence": 1,
-                      "occurrences": 1,
-                      "strong": "G15880",
-                      "tag": "zaln",
-                      "type": "milestone",
-                    },
-                    Object {
-                      "children": Array [
-                        Object {
-                          "occurrence": 2,
-                          "occurrences": 2,
-                          "tag": "w",
-                          "text": "God",
-                          "type": "word",
-                        },
-                      ],
-                      "content": "Θεοῦ",
-                      "lemma": "θεός",
-                      "morph": "Gr,N,,,,,GMS,",
-                      "occurrence": 2,
-                      "occurrences": 2,
-                      "strong": "G23160",
-                      "tag": "zaln",
-                      "type": "milestone",
-                    },
-                    Object {
-                      "text": "'",
-                      "type": "text",
-                    },
-                    Object {
-                      "children": Array [
-                        Object {
-                          "occurrence": 1,
-                          "occurrences": 1,
-                          "tag": "w",
-                          "text": "s",
-                          "type": "word",
-                        },
-                      ],
-                      "content": "Θεοῦ",
-                      "lemma": "θεός",
-                      "morph": "Gr,N,,,,,GMS,",
-                      "occurrence": 2,
-                      "occurrences": 2,
-                      "strong": "G23160",
-                      "tag": "zaln",
-                      "type": "milestone",
-                    },
-                    Object {
-                      "children": Array [
-                        Object {
-                          "occurrence": 1,
-                          "occurrences": 1,
-                          "tag": "w",
-                          "text": "chosen",
-                          "type": "word",
-                        },
-                        Object {
-                          "occurrence": 1,
-                          "occurrences": 1,
-                          "tag": "w",
-                          "text": "people",
-                          "type": "word",
-                        },
-                      ],
-                      "content": "ἐκλεκτῶν",
-                      "lemma": "ἐκλεκτός",
-                      "morph": "Gr,NS,,,,GMP,",
-                      "occurrence": 1,
-                      "occurrences": 1,
-                      "strong": "G15880",
-                      "tag": "zaln",
-                      "type": "milestone",
-                    },
-                    Object {
-                      "children": Array [
-                        Object {
-                          "occurrence": 2,
-                          "occurrences": 2,
-                          "tag": "w",
-                          "text": "and",
-                          "type": "word",
-                        },
-                      ],
-                      "content": "καὶ",
-                      "lemma": "καί",
-                      "morph": "Gr,CC,,,,,,,,",
-                      "occurrence": 1,
-                      "occurrences": 1,
-                      "strong": "G25320",
-                      "tag": "zaln",
-                      "type": "milestone",
-                    },
-                    Object {
-                      "children": Array [
-                        Object {
-                          "occurrence": 2,
-                          "occurrences": 3,
-                          "tag": "w",
-                          "text": "the",
-                          "type": "word",
-                        },
-                        Object {
-                          "occurrence": 1,
-                          "occurrences": 1,
-                          "tag": "w",
-                          "text": "knowledge",
-                          "type": "word",
-                        },
-                      ],
-                      "content": "ἐπίγνωσιν",
-                      "lemma": "ἐπίγνωσις",
-                      "morph": "Gr,N,,,,,AFS,",
-                      "occurrence": 1,
-                      "occurrences": 1,
-                      "strong": "G19220",
-                      "tag": "zaln",
-                      "type": "milestone",
-                    },
-                    Object {
-                      "children": Array [
-                        Object {
-                          "occurrence": 4,
-                          "occurrences": 4,
-                          "tag": "w",
-                          "text": "of",
-                          "type": "word",
-                        },
-                        Object {
-                          "occurrence": 3,
-                          "occurrences": 3,
-                          "tag": "w",
-                          "text": "the",
-                          "type": "word",
-                        },
-                        Object {
-                          "occurrence": 1,
-                          "occurrences": 1,
-                          "tag": "w",
-                          "text": "truth",
-                          "type": "word",
-                        },
-                      ],
-                      "content": "ἀληθείας",
-                      "lemma": "ἀλήθεια",
-                      "morph": "Gr,N,,,,,GFS,",
-                      "occurrence": 1,
-                      "occurrences": 1,
-                      "strong": "G02250",
-                      "tag": "zaln",
-                      "type": "milestone",
-                    },
-                    Object {
-                      "children": Array [
-                        Object {
-                          "occurrence": 1,
-                          "occurrences": 1,
-                          "tag": "w",
-                          "text": "that",
-                          "type": "word",
-                        },
-                      ],
-                      "content": "τῆς",
-                      "lemma": "ὁ",
-                      "morph": "Gr,RR,,,,GFS,",
-                      "occurrence": 1,
-                      "occurrences": 1,
-                      "strong": "G35880",
-                      "tag": "zaln",
-                      "type": "milestone",
-                    },
-                    Object {
-                      "children": Array [
-                        Object {
-                          "occurrence": 1,
-                          "occurrences": 1,
-                          "tag": "w",
-                          "text": "agrees",
-                          "type": "word",
-                        },
-                        Object {
-                          "occurrence": 1,
-                          "occurrences": 1,
-                          "tag": "w",
-                          "text": "with",
-                          "type": "word",
-                        },
-                      ],
-                      "content": "κατ’",
-                      "lemma": "κατά",
-                      "morph": "Gr,P,,,,,A,,,",
-                      "occurrence": 1,
-                      "occurrences": 1,
-                      "strong": "G25960",
-                      "tag": "zaln",
-                      "type": "milestone",
-                    },
-                    Object {
-                      "children": Array [
-                        Object {
-                          "occurrence": 1,
-                          "occurrences": 1,
-                          "tag": "w",
-                          "text": "godliness",
-                          "type": "word",
-                        },
-                      ],
-                      "content": "εὐσέβειαν",
-                      "lemma": "εὐσέβεια",
-                      "morph": "Gr,N,,,,,AFS,",
-                      "occurrence": 1,
-                      "occurrences": 1,
-                      "strong": "G21500",
-                      "tag": "zaln",
-                      "type": "milestone",
-                    },
-                    Object {
-                      "text": ", 
-",
-                      "type": "text",
-                    },
-                  ],
-                },
-              },
-            },
-          },
-        },
+    >
+      <div
+        style={
+          Object {
+            "display": "flex",
+            "flexDirection": "column",
+          }
+        }
+      >
+        <span
+          style={
+            Object {
+              "fontWeight": "bold",
+            }
+          }
+        />
+        <span
+          style={
+            Object {
+              "color": "var(--text-color-light)",
+            }
+          }
+        >
+          Titus
+           
+          1:1
+        </span>
+      </div>
+      <div
+        onClick={[Function]}
+      >
+        <span
+          className="glyphicon glyphicon-fullscreen"
+          style={
+            Object {
+              "cursor": "pointer",
+            }
+          }
+          title="Click to show expanded verses"
+        />
+      </div>
+    </div>
+    <div
+      style={
+        Object {
+          "direction": "ltr",
+          "flex": "auto",
+          "overflowY": "auto",
+          "padding": "0 15px 10px",
+        }
       }
-    }
-    selections={Array []}
-    selectionsReducer={
-      Object {
-        "selections": Array [],
-      }
-    }
-    tags={Array []}
-    toolsReducer={
-      Object {
-        "currentToolName": "translationWords",
-      }
-    }
-    verseChanged={false}
-    verseText="This is the verse text"
-  />
+    >
+      <div
+        style={
+          Object {
+            "color": "var(--text-color-light)",
+            "userSelect": "none",
+          }
+        }
+      >
+        <span>
+          This is the verse text
+        </span>
+      </div>
+    </div>
+  </div>
   <div
     style={
       Object {
@@ -541,16 +118,24 @@ exports[`CheckArea component Tests Check CheckArea component mode default 1`] = 
         }
       }
     >
-      <InstructionsArea
-        alignedGLText="God's"
-        dontShowTranslation={true}
-        selectionsReducer={
+      <div
+        style={
           Object {
-            "selections": Array [],
+            "overflow": "auto",
+            "padding": "5px",
+            "textAlign": "center",
           }
         }
-        verseText="This is the verse text"
-      />
+      >
+        <span>
+          No selection has been made.
+        </span>
+        <br />
+        <span>
+          Click the Select button, then select the translation for this check.
+        </span>
+        <br />
+      </div>
     </div>
   </div>
 </div>
@@ -567,514 +152,91 @@ exports[`CheckArea component Tests Test CheckArea component mode comment) 1`] = 
     }
   }
 >
-  <DefaultArea
-    actions={Object {}}
-    comment="Comment!"
-    contextIdReducer={
+  <div
+    style={
       Object {
-        "contextId": Object {
-          "occurrence": 2,
-          "occurrences": 2,
-          "quote": "Θεοῦ",
-          "reference": Object {
-            "chapter": 1,
-            "verse": 1,
-          },
-        },
+        "WebkitUserSelect": "none",
+        "display": "flex",
+        "flex": 1,
+        "flexDirection": "column",
       }
     }
-    mode="comment"
-    projectDetailsReducer={
-      Object {
-        "currentProjectToolsSelectedGL": Object {
-          "translationWords": "en",
-        },
-        "manifest": Object {
-          "target_language": Object {
-            "direction": "ltr",
-          },
-        },
+  >
+    <div
+      style={
+        Object {
+          "display": "flex",
+          "flex": "0 0 45px",
+          "justifyContent": "space-between",
+          "margin": "5px 10px 5px 15px",
+        }
       }
-    }
-    resourcesReducer={
-      Object {
-        "bibles": Object {
-          "en": Object {
-            "ult": Object {
-              "1": Object {
-                "1": Object {
-                  "verseObjects": Array [
-                    Object {
-                      "children": Array [
-                        Object {
-                          "occurrence": 1,
-                          "occurrences": 1,
-                          "tag": "w",
-                          "text": "Paul",
-                          "type": "word",
-                        },
-                      ],
-                      "content": "Παῦλος",
-                      "lemma": "Παῦλος",
-                      "morph": "Gr,N,,,,,NMS,",
-                      "occurrence": 1,
-                      "occurrences": 1,
-                      "strong": "G39720",
-                      "tag": "zaln",
-                      "type": "milestone",
-                    },
-                    Object {
-                      "text": ",",
-                      "type": "text",
-                    },
-                    Object {
-                      "children": Array [
-                        Object {
-                          "occurrence": 1,
-                          "occurrences": 1,
-                          "tag": "w",
-                          "text": "a",
-                          "type": "word",
-                        },
-                        Object {
-                          "occurrence": 1,
-                          "occurrences": 1,
-                          "tag": "w",
-                          "text": "servant",
-                          "type": "word",
-                        },
-                      ],
-                      "content": "δοῦλος",
-                      "lemma": "δοῦλος",
-                      "morph": "Gr,N,,,,,NMS,",
-                      "occurrence": 1,
-                      "occurrences": 1,
-                      "strong": "G14010",
-                      "tag": "zaln",
-                      "type": "milestone",
-                    },
-                    Object {
-                      "children": Array [
-                        Object {
-                          "occurrence": 1,
-                          "occurrences": 4,
-                          "tag": "w",
-                          "text": "of",
-                          "type": "word",
-                        },
-                        Object {
-                          "occurrence": 1,
-                          "occurrences": 2,
-                          "tag": "w",
-                          "text": "God",
-                          "type": "word",
-                        },
-                      ],
-                      "content": "Θεοῦ",
-                      "lemma": "θεός",
-                      "morph": "Gr,N,,,,,GMS,",
-                      "occurrence": 1,
-                      "occurrences": 2,
-                      "strong": "G23160",
-                      "tag": "zaln",
-                      "type": "milestone",
-                    },
-                    Object {
-                      "children": Array [
-                        Object {
-                          "occurrence": 1,
-                          "occurrences": 2,
-                          "tag": "w",
-                          "text": "and",
-                          "type": "word",
-                        },
-                      ],
-                      "content": "δὲ",
-                      "lemma": "δέ",
-                      "morph": "Gr,CC,,,,,,,,",
-                      "occurrence": 1,
-                      "occurrences": 1,
-                      "strong": "G11610",
-                      "tag": "zaln",
-                      "type": "milestone",
-                    },
-                    Object {
-                      "children": Array [
-                        Object {
-                          "occurrence": 1,
-                          "occurrences": 1,
-                          "tag": "w",
-                          "text": "an",
-                          "type": "word",
-                        },
-                        Object {
-                          "occurrence": 1,
-                          "occurrences": 1,
-                          "tag": "w",
-                          "text": "apostle",
-                          "type": "word",
-                        },
-                      ],
-                      "content": "ἀπόστολος",
-                      "lemma": "ἀπόστολος",
-                      "morph": "Gr,N,,,,,NMS,",
-                      "occurrence": 1,
-                      "occurrences": 1,
-                      "strong": "G06520",
-                      "tag": "zaln",
-                      "type": "milestone",
-                    },
-                    Object {
-                      "children": Array [
-                        Object {
-                          "occurrence": 2,
-                          "occurrences": 4,
-                          "tag": "w",
-                          "text": "of",
-                          "type": "word",
-                        },
-                        Object {
-                          "occurrence": 1,
-                          "occurrences": 1,
-                          "tag": "w",
-                          "text": "Jesus",
-                          "type": "word",
-                        },
-                      ],
-                      "content": "Ἰησοῦ",
-                      "lemma": "Ἰησοῦς",
-                      "morph": "Gr,N,,,,,GMS,",
-                      "occurrence": 1,
-                      "occurrences": 1,
-                      "strong": "G24240",
-                      "tag": "zaln",
-                      "type": "milestone",
-                    },
-                    Object {
-                      "children": Array [
-                        Object {
-                          "occurrence": 1,
-                          "occurrences": 1,
-                          "tag": "w",
-                          "text": "Christ",
-                          "type": "word",
-                        },
-                      ],
-                      "content": "Χριστοῦ",
-                      "lemma": "χριστός",
-                      "morph": "Gr,N,,,,,GMS,",
-                      "occurrence": 1,
-                      "occurrences": 1,
-                      "strong": "G55470",
-                      "tag": "zaln",
-                      "type": "milestone",
-                    },
-                    Object {
-                      "text": ",",
-                      "type": "text",
-                    },
-                    Object {
-                      "children": Array [
-                        Object {
-                          "occurrence": 1,
-                          "occurrences": 1,
-                          "tag": "w",
-                          "text": "for",
-                          "type": "word",
-                        },
-                      ],
-                      "content": "κατὰ",
-                      "lemma": "κατά",
-                      "morph": "Gr,P,,,,,A,,,",
-                      "occurrence": 1,
-                      "occurrences": 1,
-                      "strong": "G25960",
-                      "tag": "zaln",
-                      "type": "milestone",
-                    },
-                    Object {
-                      "children": Array [
-                        Object {
-                          "occurrence": 1,
-                          "occurrences": 3,
-                          "tag": "w",
-                          "text": "the",
-                          "type": "word",
-                        },
-                        Object {
-                          "occurrence": 1,
-                          "occurrences": 1,
-                          "tag": "w",
-                          "text": "faith",
-                          "type": "word",
-                        },
-                      ],
-                      "content": "πίστιν",
-                      "lemma": "πίστις",
-                      "morph": "Gr,N,,,,,AFS,",
-                      "occurrence": 1,
-                      "occurrences": 1,
-                      "strong": "G41020",
-                      "tag": "zaln",
-                      "type": "milestone",
-                    },
-                    Object {
-                      "children": Array [
-                        Object {
-                          "occurrence": 3,
-                          "occurrences": 4,
-                          "tag": "w",
-                          "text": "of",
-                          "type": "word",
-                        },
-                      ],
-                      "content": "ἐκλεκτῶν",
-                      "lemma": "ἐκλεκτός",
-                      "morph": "Gr,NS,,,,GMP,",
-                      "occurrence": 1,
-                      "occurrences": 1,
-                      "strong": "G15880",
-                      "tag": "zaln",
-                      "type": "milestone",
-                    },
-                    Object {
-                      "children": Array [
-                        Object {
-                          "occurrence": 2,
-                          "occurrences": 2,
-                          "tag": "w",
-                          "text": "God",
-                          "type": "word",
-                        },
-                      ],
-                      "content": "Θεοῦ",
-                      "lemma": "θεός",
-                      "morph": "Gr,N,,,,,GMS,",
-                      "occurrence": 2,
-                      "occurrences": 2,
-                      "strong": "G23160",
-                      "tag": "zaln",
-                      "type": "milestone",
-                    },
-                    Object {
-                      "text": "'",
-                      "type": "text",
-                    },
-                    Object {
-                      "children": Array [
-                        Object {
-                          "occurrence": 1,
-                          "occurrences": 1,
-                          "tag": "w",
-                          "text": "s",
-                          "type": "word",
-                        },
-                      ],
-                      "content": "Θεοῦ",
-                      "lemma": "θεός",
-                      "morph": "Gr,N,,,,,GMS,",
-                      "occurrence": 2,
-                      "occurrences": 2,
-                      "strong": "G23160",
-                      "tag": "zaln",
-                      "type": "milestone",
-                    },
-                    Object {
-                      "children": Array [
-                        Object {
-                          "occurrence": 1,
-                          "occurrences": 1,
-                          "tag": "w",
-                          "text": "chosen",
-                          "type": "word",
-                        },
-                        Object {
-                          "occurrence": 1,
-                          "occurrences": 1,
-                          "tag": "w",
-                          "text": "people",
-                          "type": "word",
-                        },
-                      ],
-                      "content": "ἐκλεκτῶν",
-                      "lemma": "ἐκλεκτός",
-                      "morph": "Gr,NS,,,,GMP,",
-                      "occurrence": 1,
-                      "occurrences": 1,
-                      "strong": "G15880",
-                      "tag": "zaln",
-                      "type": "milestone",
-                    },
-                    Object {
-                      "children": Array [
-                        Object {
-                          "occurrence": 2,
-                          "occurrences": 2,
-                          "tag": "w",
-                          "text": "and",
-                          "type": "word",
-                        },
-                      ],
-                      "content": "καὶ",
-                      "lemma": "καί",
-                      "morph": "Gr,CC,,,,,,,,",
-                      "occurrence": 1,
-                      "occurrences": 1,
-                      "strong": "G25320",
-                      "tag": "zaln",
-                      "type": "milestone",
-                    },
-                    Object {
-                      "children": Array [
-                        Object {
-                          "occurrence": 2,
-                          "occurrences": 3,
-                          "tag": "w",
-                          "text": "the",
-                          "type": "word",
-                        },
-                        Object {
-                          "occurrence": 1,
-                          "occurrences": 1,
-                          "tag": "w",
-                          "text": "knowledge",
-                          "type": "word",
-                        },
-                      ],
-                      "content": "ἐπίγνωσιν",
-                      "lemma": "ἐπίγνωσις",
-                      "morph": "Gr,N,,,,,AFS,",
-                      "occurrence": 1,
-                      "occurrences": 1,
-                      "strong": "G19220",
-                      "tag": "zaln",
-                      "type": "milestone",
-                    },
-                    Object {
-                      "children": Array [
-                        Object {
-                          "occurrence": 4,
-                          "occurrences": 4,
-                          "tag": "w",
-                          "text": "of",
-                          "type": "word",
-                        },
-                        Object {
-                          "occurrence": 3,
-                          "occurrences": 3,
-                          "tag": "w",
-                          "text": "the",
-                          "type": "word",
-                        },
-                        Object {
-                          "occurrence": 1,
-                          "occurrences": 1,
-                          "tag": "w",
-                          "text": "truth",
-                          "type": "word",
-                        },
-                      ],
-                      "content": "ἀληθείας",
-                      "lemma": "ἀλήθεια",
-                      "morph": "Gr,N,,,,,GFS,",
-                      "occurrence": 1,
-                      "occurrences": 1,
-                      "strong": "G02250",
-                      "tag": "zaln",
-                      "type": "milestone",
-                    },
-                    Object {
-                      "children": Array [
-                        Object {
-                          "occurrence": 1,
-                          "occurrences": 1,
-                          "tag": "w",
-                          "text": "that",
-                          "type": "word",
-                        },
-                      ],
-                      "content": "τῆς",
-                      "lemma": "ὁ",
-                      "morph": "Gr,RR,,,,GFS,",
-                      "occurrence": 1,
-                      "occurrences": 1,
-                      "strong": "G35880",
-                      "tag": "zaln",
-                      "type": "milestone",
-                    },
-                    Object {
-                      "children": Array [
-                        Object {
-                          "occurrence": 1,
-                          "occurrences": 1,
-                          "tag": "w",
-                          "text": "agrees",
-                          "type": "word",
-                        },
-                        Object {
-                          "occurrence": 1,
-                          "occurrences": 1,
-                          "tag": "w",
-                          "text": "with",
-                          "type": "word",
-                        },
-                      ],
-                      "content": "κατ’",
-                      "lemma": "κατά",
-                      "morph": "Gr,P,,,,,A,,,",
-                      "occurrence": 1,
-                      "occurrences": 1,
-                      "strong": "G25960",
-                      "tag": "zaln",
-                      "type": "milestone",
-                    },
-                    Object {
-                      "children": Array [
-                        Object {
-                          "occurrence": 1,
-                          "occurrences": 1,
-                          "tag": "w",
-                          "text": "godliness",
-                          "type": "word",
-                        },
-                      ],
-                      "content": "εὐσέβειαν",
-                      "lemma": "εὐσέβεια",
-                      "morph": "Gr,N,,,,,AFS,",
-                      "occurrence": 1,
-                      "occurrences": 1,
-                      "strong": "G21500",
-                      "tag": "zaln",
-                      "type": "milestone",
-                    },
-                    Object {
-                      "text": ", 
-",
-                      "type": "text",
-                    },
-                  ],
-                },
-              },
-            },
-          },
-        },
+    >
+      <div
+        style={
+          Object {
+            "display": "flex",
+            "flexDirection": "column",
+          }
+        }
+      >
+        <span
+          style={
+            Object {
+              "fontWeight": "bold",
+            }
+          }
+        />
+        <span
+          style={
+            Object {
+              "color": "var(--text-color-light)",
+            }
+          }
+        >
+          Titus
+           
+          1:1
+        </span>
+      </div>
+      <div
+        onClick={[Function]}
+      >
+        <span
+          className="glyphicon glyphicon-fullscreen"
+          style={
+            Object {
+              "cursor": "pointer",
+            }
+          }
+          title="Click to show expanded verses"
+        />
+      </div>
+    </div>
+    <div
+      style={
+        Object {
+          "direction": "ltr",
+          "flex": "auto",
+          "overflowY": "auto",
+          "padding": "0 15px 10px",
+        }
       }
-    }
-    selections={Array []}
-    selectionsReducer={
-      Object {
-        "selections": Array [],
-      }
-    }
-    tags={Array []}
-    toolsReducer={
-      Object {
-        "currentToolName": "translationWords",
-      }
-    }
-    verseChanged={false}
-    verseText="This is the verse text"
-  />
+    >
+      <div
+        style={
+          Object {
+            "color": "var(--text-color-light)",
+            "userSelect": "none",
+          }
+        }
+      >
+        <span>
+          This is the verse text
+        </span>
+      </div>
+    </div>
+  </div>
   <div
     style={
       Object {
@@ -1086,10 +248,59 @@ exports[`CheckArea component Tests Test CheckArea component mode comment) 1`] = 
       }
     }
   >
-    <CommentArea
-      actions={Object {}}
-      comment="Comment!"
-    />
+    <div
+      style={
+        Object {
+          "display": "flex",
+          "flex": "auto",
+          "flexDirection": "column",
+          "height": "100%",
+          "padding": "5px 15px 0 15px",
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "fontWeight": "bold",
+          }
+        }
+      >
+        <span
+          className="glyphicon glyphicon-comment"
+          style={
+            Object {
+              "marginRight": "5px",
+            }
+          }
+        />
+        Comment
+      </div>
+      <div
+        className="form-group"
+        style={
+          Object {
+            "display": "flex",
+            "flex": "auto",
+          }
+        }
+      >
+        <textarea
+          autoFocus={true}
+          className="form-control"
+          defaultValue="Comment!"
+          id="formControlsTextarea"
+          onBlur={[Function]}
+          onInput={[Function]}
+          style={
+            Object {
+              "flex": "auto",
+            }
+          }
+          type="text"
+        />
+      </div>
+    </div>
   </div>
 </div>
 `;
@@ -1105,514 +316,91 @@ exports[`CheckArea component Tests Test CheckArea component mode edit) 1`] = `
     }
   }
 >
-  <DefaultArea
-    actions={Object {}}
-    comment="Comment!"
-    contextIdReducer={
+  <div
+    style={
       Object {
-        "contextId": Object {
-          "occurrence": 2,
-          "occurrences": 2,
-          "quote": "Θεοῦ",
-          "reference": Object {
-            "chapter": 1,
-            "verse": 1,
-          },
-        },
+        "WebkitUserSelect": "none",
+        "display": "flex",
+        "flex": 1,
+        "flexDirection": "column",
       }
     }
-    mode="edit"
-    projectDetailsReducer={
-      Object {
-        "currentProjectToolsSelectedGL": Object {
-          "translationWords": "en",
-        },
-        "manifest": Object {
-          "target_language": Object {
-            "direction": "ltr",
-          },
-        },
+  >
+    <div
+      style={
+        Object {
+          "display": "flex",
+          "flex": "0 0 45px",
+          "justifyContent": "space-between",
+          "margin": "5px 10px 5px 15px",
+        }
       }
-    }
-    resourcesReducer={
-      Object {
-        "bibles": Object {
-          "en": Object {
-            "ult": Object {
-              "1": Object {
-                "1": Object {
-                  "verseObjects": Array [
-                    Object {
-                      "children": Array [
-                        Object {
-                          "occurrence": 1,
-                          "occurrences": 1,
-                          "tag": "w",
-                          "text": "Paul",
-                          "type": "word",
-                        },
-                      ],
-                      "content": "Παῦλος",
-                      "lemma": "Παῦλος",
-                      "morph": "Gr,N,,,,,NMS,",
-                      "occurrence": 1,
-                      "occurrences": 1,
-                      "strong": "G39720",
-                      "tag": "zaln",
-                      "type": "milestone",
-                    },
-                    Object {
-                      "text": ",",
-                      "type": "text",
-                    },
-                    Object {
-                      "children": Array [
-                        Object {
-                          "occurrence": 1,
-                          "occurrences": 1,
-                          "tag": "w",
-                          "text": "a",
-                          "type": "word",
-                        },
-                        Object {
-                          "occurrence": 1,
-                          "occurrences": 1,
-                          "tag": "w",
-                          "text": "servant",
-                          "type": "word",
-                        },
-                      ],
-                      "content": "δοῦλος",
-                      "lemma": "δοῦλος",
-                      "morph": "Gr,N,,,,,NMS,",
-                      "occurrence": 1,
-                      "occurrences": 1,
-                      "strong": "G14010",
-                      "tag": "zaln",
-                      "type": "milestone",
-                    },
-                    Object {
-                      "children": Array [
-                        Object {
-                          "occurrence": 1,
-                          "occurrences": 4,
-                          "tag": "w",
-                          "text": "of",
-                          "type": "word",
-                        },
-                        Object {
-                          "occurrence": 1,
-                          "occurrences": 2,
-                          "tag": "w",
-                          "text": "God",
-                          "type": "word",
-                        },
-                      ],
-                      "content": "Θεοῦ",
-                      "lemma": "θεός",
-                      "morph": "Gr,N,,,,,GMS,",
-                      "occurrence": 1,
-                      "occurrences": 2,
-                      "strong": "G23160",
-                      "tag": "zaln",
-                      "type": "milestone",
-                    },
-                    Object {
-                      "children": Array [
-                        Object {
-                          "occurrence": 1,
-                          "occurrences": 2,
-                          "tag": "w",
-                          "text": "and",
-                          "type": "word",
-                        },
-                      ],
-                      "content": "δὲ",
-                      "lemma": "δέ",
-                      "morph": "Gr,CC,,,,,,,,",
-                      "occurrence": 1,
-                      "occurrences": 1,
-                      "strong": "G11610",
-                      "tag": "zaln",
-                      "type": "milestone",
-                    },
-                    Object {
-                      "children": Array [
-                        Object {
-                          "occurrence": 1,
-                          "occurrences": 1,
-                          "tag": "w",
-                          "text": "an",
-                          "type": "word",
-                        },
-                        Object {
-                          "occurrence": 1,
-                          "occurrences": 1,
-                          "tag": "w",
-                          "text": "apostle",
-                          "type": "word",
-                        },
-                      ],
-                      "content": "ἀπόστολος",
-                      "lemma": "ἀπόστολος",
-                      "morph": "Gr,N,,,,,NMS,",
-                      "occurrence": 1,
-                      "occurrences": 1,
-                      "strong": "G06520",
-                      "tag": "zaln",
-                      "type": "milestone",
-                    },
-                    Object {
-                      "children": Array [
-                        Object {
-                          "occurrence": 2,
-                          "occurrences": 4,
-                          "tag": "w",
-                          "text": "of",
-                          "type": "word",
-                        },
-                        Object {
-                          "occurrence": 1,
-                          "occurrences": 1,
-                          "tag": "w",
-                          "text": "Jesus",
-                          "type": "word",
-                        },
-                      ],
-                      "content": "Ἰησοῦ",
-                      "lemma": "Ἰησοῦς",
-                      "morph": "Gr,N,,,,,GMS,",
-                      "occurrence": 1,
-                      "occurrences": 1,
-                      "strong": "G24240",
-                      "tag": "zaln",
-                      "type": "milestone",
-                    },
-                    Object {
-                      "children": Array [
-                        Object {
-                          "occurrence": 1,
-                          "occurrences": 1,
-                          "tag": "w",
-                          "text": "Christ",
-                          "type": "word",
-                        },
-                      ],
-                      "content": "Χριστοῦ",
-                      "lemma": "χριστός",
-                      "morph": "Gr,N,,,,,GMS,",
-                      "occurrence": 1,
-                      "occurrences": 1,
-                      "strong": "G55470",
-                      "tag": "zaln",
-                      "type": "milestone",
-                    },
-                    Object {
-                      "text": ",",
-                      "type": "text",
-                    },
-                    Object {
-                      "children": Array [
-                        Object {
-                          "occurrence": 1,
-                          "occurrences": 1,
-                          "tag": "w",
-                          "text": "for",
-                          "type": "word",
-                        },
-                      ],
-                      "content": "κατὰ",
-                      "lemma": "κατά",
-                      "morph": "Gr,P,,,,,A,,,",
-                      "occurrence": 1,
-                      "occurrences": 1,
-                      "strong": "G25960",
-                      "tag": "zaln",
-                      "type": "milestone",
-                    },
-                    Object {
-                      "children": Array [
-                        Object {
-                          "occurrence": 1,
-                          "occurrences": 3,
-                          "tag": "w",
-                          "text": "the",
-                          "type": "word",
-                        },
-                        Object {
-                          "occurrence": 1,
-                          "occurrences": 1,
-                          "tag": "w",
-                          "text": "faith",
-                          "type": "word",
-                        },
-                      ],
-                      "content": "πίστιν",
-                      "lemma": "πίστις",
-                      "morph": "Gr,N,,,,,AFS,",
-                      "occurrence": 1,
-                      "occurrences": 1,
-                      "strong": "G41020",
-                      "tag": "zaln",
-                      "type": "milestone",
-                    },
-                    Object {
-                      "children": Array [
-                        Object {
-                          "occurrence": 3,
-                          "occurrences": 4,
-                          "tag": "w",
-                          "text": "of",
-                          "type": "word",
-                        },
-                      ],
-                      "content": "ἐκλεκτῶν",
-                      "lemma": "ἐκλεκτός",
-                      "morph": "Gr,NS,,,,GMP,",
-                      "occurrence": 1,
-                      "occurrences": 1,
-                      "strong": "G15880",
-                      "tag": "zaln",
-                      "type": "milestone",
-                    },
-                    Object {
-                      "children": Array [
-                        Object {
-                          "occurrence": 2,
-                          "occurrences": 2,
-                          "tag": "w",
-                          "text": "God",
-                          "type": "word",
-                        },
-                      ],
-                      "content": "Θεοῦ",
-                      "lemma": "θεός",
-                      "morph": "Gr,N,,,,,GMS,",
-                      "occurrence": 2,
-                      "occurrences": 2,
-                      "strong": "G23160",
-                      "tag": "zaln",
-                      "type": "milestone",
-                    },
-                    Object {
-                      "text": "'",
-                      "type": "text",
-                    },
-                    Object {
-                      "children": Array [
-                        Object {
-                          "occurrence": 1,
-                          "occurrences": 1,
-                          "tag": "w",
-                          "text": "s",
-                          "type": "word",
-                        },
-                      ],
-                      "content": "Θεοῦ",
-                      "lemma": "θεός",
-                      "morph": "Gr,N,,,,,GMS,",
-                      "occurrence": 2,
-                      "occurrences": 2,
-                      "strong": "G23160",
-                      "tag": "zaln",
-                      "type": "milestone",
-                    },
-                    Object {
-                      "children": Array [
-                        Object {
-                          "occurrence": 1,
-                          "occurrences": 1,
-                          "tag": "w",
-                          "text": "chosen",
-                          "type": "word",
-                        },
-                        Object {
-                          "occurrence": 1,
-                          "occurrences": 1,
-                          "tag": "w",
-                          "text": "people",
-                          "type": "word",
-                        },
-                      ],
-                      "content": "ἐκλεκτῶν",
-                      "lemma": "ἐκλεκτός",
-                      "morph": "Gr,NS,,,,GMP,",
-                      "occurrence": 1,
-                      "occurrences": 1,
-                      "strong": "G15880",
-                      "tag": "zaln",
-                      "type": "milestone",
-                    },
-                    Object {
-                      "children": Array [
-                        Object {
-                          "occurrence": 2,
-                          "occurrences": 2,
-                          "tag": "w",
-                          "text": "and",
-                          "type": "word",
-                        },
-                      ],
-                      "content": "καὶ",
-                      "lemma": "καί",
-                      "morph": "Gr,CC,,,,,,,,",
-                      "occurrence": 1,
-                      "occurrences": 1,
-                      "strong": "G25320",
-                      "tag": "zaln",
-                      "type": "milestone",
-                    },
-                    Object {
-                      "children": Array [
-                        Object {
-                          "occurrence": 2,
-                          "occurrences": 3,
-                          "tag": "w",
-                          "text": "the",
-                          "type": "word",
-                        },
-                        Object {
-                          "occurrence": 1,
-                          "occurrences": 1,
-                          "tag": "w",
-                          "text": "knowledge",
-                          "type": "word",
-                        },
-                      ],
-                      "content": "ἐπίγνωσιν",
-                      "lemma": "ἐπίγνωσις",
-                      "morph": "Gr,N,,,,,AFS,",
-                      "occurrence": 1,
-                      "occurrences": 1,
-                      "strong": "G19220",
-                      "tag": "zaln",
-                      "type": "milestone",
-                    },
-                    Object {
-                      "children": Array [
-                        Object {
-                          "occurrence": 4,
-                          "occurrences": 4,
-                          "tag": "w",
-                          "text": "of",
-                          "type": "word",
-                        },
-                        Object {
-                          "occurrence": 3,
-                          "occurrences": 3,
-                          "tag": "w",
-                          "text": "the",
-                          "type": "word",
-                        },
-                        Object {
-                          "occurrence": 1,
-                          "occurrences": 1,
-                          "tag": "w",
-                          "text": "truth",
-                          "type": "word",
-                        },
-                      ],
-                      "content": "ἀληθείας",
-                      "lemma": "ἀλήθεια",
-                      "morph": "Gr,N,,,,,GFS,",
-                      "occurrence": 1,
-                      "occurrences": 1,
-                      "strong": "G02250",
-                      "tag": "zaln",
-                      "type": "milestone",
-                    },
-                    Object {
-                      "children": Array [
-                        Object {
-                          "occurrence": 1,
-                          "occurrences": 1,
-                          "tag": "w",
-                          "text": "that",
-                          "type": "word",
-                        },
-                      ],
-                      "content": "τῆς",
-                      "lemma": "ὁ",
-                      "morph": "Gr,RR,,,,GFS,",
-                      "occurrence": 1,
-                      "occurrences": 1,
-                      "strong": "G35880",
-                      "tag": "zaln",
-                      "type": "milestone",
-                    },
-                    Object {
-                      "children": Array [
-                        Object {
-                          "occurrence": 1,
-                          "occurrences": 1,
-                          "tag": "w",
-                          "text": "agrees",
-                          "type": "word",
-                        },
-                        Object {
-                          "occurrence": 1,
-                          "occurrences": 1,
-                          "tag": "w",
-                          "text": "with",
-                          "type": "word",
-                        },
-                      ],
-                      "content": "κατ’",
-                      "lemma": "κατά",
-                      "morph": "Gr,P,,,,,A,,,",
-                      "occurrence": 1,
-                      "occurrences": 1,
-                      "strong": "G25960",
-                      "tag": "zaln",
-                      "type": "milestone",
-                    },
-                    Object {
-                      "children": Array [
-                        Object {
-                          "occurrence": 1,
-                          "occurrences": 1,
-                          "tag": "w",
-                          "text": "godliness",
-                          "type": "word",
-                        },
-                      ],
-                      "content": "εὐσέβειαν",
-                      "lemma": "εὐσέβεια",
-                      "morph": "Gr,N,,,,,AFS,",
-                      "occurrence": 1,
-                      "occurrences": 1,
-                      "strong": "G21500",
-                      "tag": "zaln",
-                      "type": "milestone",
-                    },
-                    Object {
-                      "text": ", 
-",
-                      "type": "text",
-                    },
-                  ],
-                },
-              },
-            },
-          },
-        },
+    >
+      <div
+        style={
+          Object {
+            "display": "flex",
+            "flexDirection": "column",
+          }
+        }
+      >
+        <span
+          style={
+            Object {
+              "fontWeight": "bold",
+            }
+          }
+        />
+        <span
+          style={
+            Object {
+              "color": "var(--text-color-light)",
+            }
+          }
+        >
+          Titus
+           
+          1:1
+        </span>
+      </div>
+      <div
+        onClick={[Function]}
+      >
+        <span
+          className="glyphicon glyphicon-fullscreen"
+          style={
+            Object {
+              "cursor": "pointer",
+            }
+          }
+          title="Click to show expanded verses"
+        />
+      </div>
+    </div>
+    <div
+      style={
+        Object {
+          "direction": "ltr",
+          "flex": "auto",
+          "overflowY": "auto",
+          "padding": "0 15px 10px",
+        }
       }
-    }
-    selections={Array []}
-    selectionsReducer={
-      Object {
-        "selections": Array [],
-      }
-    }
-    tags={Array []}
-    toolsReducer={
-      Object {
-        "currentToolName": "translationWords",
-      }
-    }
-    verseChanged={false}
-    verseText="This is the verse text"
-  />
+    >
+      <div
+        style={
+          Object {
+            "color": "var(--text-color-light)",
+            "userSelect": "none",
+          }
+        }
+      >
+        <span>
+          This is the verse text
+        </span>
+      </div>
+    </div>
+  </div>
   <div
     style={
       Object {
@@ -1624,13 +412,230 @@ exports[`CheckArea component Tests Test CheckArea component mode edit) 1`] = `
       }
     }
   >
-    <EditVerseArea
-      actions={Object {}}
-      dir="ltr"
-      tags={Array []}
-      verseChanged={false}
-      verseText="This is the verse text"
-    />
+    <div
+      style={
+        Object {
+          "display": "flex",
+          "flex": "auto",
+          "flexDirection": "column",
+          "height": "100%",
+          "padding": "5px 15px 0 15px",
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "fontWeight": "bold",
+          }
+        }
+      >
+        <span
+          className="glyphicon glyphicon-pencil"
+          style={
+            Object {
+              "marginRight": "5px",
+            }
+          }
+        />
+        Edit Verse
+      </div>
+      <div
+        className="form-group"
+        style={
+          Object {
+            "display": "flex",
+            "flex": "auto",
+            "flexDirection": "column",
+            "marginBottom": "5px",
+          }
+        }
+      >
+        <textarea
+          autoFocus={true}
+          className="form-control"
+          defaultValue="This is the verse text"
+          id="formControlsTextarea"
+          onBlur={[Function]}
+          onInput={[Function]}
+          style={
+            Object {
+              "direction": "ltr",
+              "flex": "auto",
+            }
+          }
+          type="text"
+        />
+        <div
+          style={
+            Object {
+              "flex": "0 0 65px",
+              "fontSize": "0.9em",
+              "marginTop": "5px",
+            }
+          }
+        >
+          First, make changes to verse above
+          <br />
+          <div
+            style={
+              Object {
+                "display": "flex",
+              }
+            }
+          >
+            <div
+              style={
+                Object {
+                  "flex": "1",
+                }
+              }
+            >
+              <div
+                className="checkbox disabled"
+                style={
+                  Object {
+                    "color": "var(--text-color-light)",
+                    "marginLeft": "10px",
+                    "marginRight": "10px",
+                  }
+                }
+              >
+                <label
+                  title=""
+                >
+                  <input
+                    checked={false}
+                    disabled={true}
+                    onChange={[Function]}
+                    type="checkbox"
+                  />
+                  Spelling
+                </label>
+              </div>
+              <div
+                className="checkbox disabled"
+                style={
+                  Object {
+                    "color": "var(--text-color-light)",
+                    "marginLeft": "10px",
+                    "marginRight": "10px",
+                  }
+                }
+              >
+                <label
+                  title=""
+                >
+                  <input
+                    checked={false}
+                    disabled={true}
+                    onChange={[Function]}
+                    type="checkbox"
+                  />
+                  Punctuation
+                </label>
+              </div>
+              <div
+                className="checkbox disabled"
+                style={
+                  Object {
+                    "color": "var(--text-color-light)",
+                    "marginLeft": "10px",
+                    "marginRight": "10px",
+                  }
+                }
+              >
+                <label
+                  title=""
+                >
+                  <input
+                    checked={false}
+                    disabled={true}
+                    onChange={[Function]}
+                    type="checkbox"
+                  />
+                  Word Choice
+                </label>
+              </div>
+            </div>
+            <div
+              style={
+                Object {
+                  "flex": "1",
+                }
+              }
+            >
+              <div
+                className="checkbox disabled"
+                style={
+                  Object {
+                    "color": "var(--text-color-light)",
+                    "marginLeft": "10px",
+                    "marginRight": "10px",
+                  }
+                }
+              >
+                <label
+                  title=""
+                >
+                  <input
+                    checked={false}
+                    disabled={true}
+                    onChange={[Function]}
+                    type="checkbox"
+                  />
+                  Meaning
+                </label>
+              </div>
+              <div
+                className="checkbox disabled"
+                style={
+                  Object {
+                    "color": "var(--text-color-light)",
+                    "marginLeft": "10px",
+                    "marginRight": "10px",
+                  }
+                }
+              >
+                <label
+                  title=""
+                >
+                  <input
+                    checked={false}
+                    disabled={true}
+                    onChange={[Function]}
+                    type="checkbox"
+                  />
+                  Grammar
+                </label>
+              </div>
+              <div
+                className="checkbox disabled"
+                style={
+                  Object {
+                    "color": "var(--text-color-light)",
+                    "marginLeft": "10px",
+                    "marginRight": "10px",
+                  }
+                }
+              >
+                <label
+                  title=""
+                >
+                  <input
+                    checked={false}
+                    disabled={true}
+                    onChange={[Function]}
+                    type="checkbox"
+                  />
+                  Other
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 `;
@@ -1646,514 +651,76 @@ exports[`CheckArea component Tests Test CheckArea component mode select) 1`] = `
     }
   }
 >
-  <SelectionArea
-    actions={Object {}}
-    comment="Comment!"
-    contextIdReducer={
+  <div
+    style={
       Object {
-        "contextId": Object {
-          "occurrence": 2,
-          "occurrences": 2,
-          "quote": "Θεοῦ",
-          "reference": Object {
-            "chapter": 1,
-            "verse": 1,
-          },
-        },
+        "display": "flex",
+        "flex": 1,
+        "flexDirection": "column",
       }
     }
-    mode="select"
-    projectDetailsReducer={
-      Object {
-        "currentProjectToolsSelectedGL": Object {
-          "translationWords": "en",
-        },
-        "manifest": Object {
-          "target_language": Object {
+  >
+    <div
+      style={
+        Object {
+          "display": "flex",
+          "flex": "0 0 45px",
+          "justifyContent": "space-between",
+          "margin": "5px 10px 5px 15px",
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "display": "flex",
+            "flexDirection": "column",
+          }
+        }
+      >
+        <span
+          style={
+            Object {
+              "fontWeight": "bold",
+            }
+          }
+        />
+        <span
+          style={
+            Object {
+              "color": "var(--text-color-light)",
+            }
+          }
+        >
+          Titus
+           
+          1:1
+        </span>
+      </div>
+    </div>
+    <div>
+      <div
+        style={
+          Object {
             "direction": "ltr",
-          },
-        },
-      }
-    }
-    resourcesReducer={
-      Object {
-        "bibles": Object {
-          "en": Object {
-            "ult": Object {
-              "1": Object {
-                "1": Object {
-                  "verseObjects": Array [
-                    Object {
-                      "children": Array [
-                        Object {
-                          "occurrence": 1,
-                          "occurrences": 1,
-                          "tag": "w",
-                          "text": "Paul",
-                          "type": "word",
-                        },
-                      ],
-                      "content": "Παῦλος",
-                      "lemma": "Παῦλος",
-                      "morph": "Gr,N,,,,,NMS,",
-                      "occurrence": 1,
-                      "occurrences": 1,
-                      "strong": "G39720",
-                      "tag": "zaln",
-                      "type": "milestone",
-                    },
-                    Object {
-                      "text": ",",
-                      "type": "text",
-                    },
-                    Object {
-                      "children": Array [
-                        Object {
-                          "occurrence": 1,
-                          "occurrences": 1,
-                          "tag": "w",
-                          "text": "a",
-                          "type": "word",
-                        },
-                        Object {
-                          "occurrence": 1,
-                          "occurrences": 1,
-                          "tag": "w",
-                          "text": "servant",
-                          "type": "word",
-                        },
-                      ],
-                      "content": "δοῦλος",
-                      "lemma": "δοῦλος",
-                      "morph": "Gr,N,,,,,NMS,",
-                      "occurrence": 1,
-                      "occurrences": 1,
-                      "strong": "G14010",
-                      "tag": "zaln",
-                      "type": "milestone",
-                    },
-                    Object {
-                      "children": Array [
-                        Object {
-                          "occurrence": 1,
-                          "occurrences": 4,
-                          "tag": "w",
-                          "text": "of",
-                          "type": "word",
-                        },
-                        Object {
-                          "occurrence": 1,
-                          "occurrences": 2,
-                          "tag": "w",
-                          "text": "God",
-                          "type": "word",
-                        },
-                      ],
-                      "content": "Θεοῦ",
-                      "lemma": "θεός",
-                      "morph": "Gr,N,,,,,GMS,",
-                      "occurrence": 1,
-                      "occurrences": 2,
-                      "strong": "G23160",
-                      "tag": "zaln",
-                      "type": "milestone",
-                    },
-                    Object {
-                      "children": Array [
-                        Object {
-                          "occurrence": 1,
-                          "occurrences": 2,
-                          "tag": "w",
-                          "text": "and",
-                          "type": "word",
-                        },
-                      ],
-                      "content": "δὲ",
-                      "lemma": "δέ",
-                      "morph": "Gr,CC,,,,,,,,",
-                      "occurrence": 1,
-                      "occurrences": 1,
-                      "strong": "G11610",
-                      "tag": "zaln",
-                      "type": "milestone",
-                    },
-                    Object {
-                      "children": Array [
-                        Object {
-                          "occurrence": 1,
-                          "occurrences": 1,
-                          "tag": "w",
-                          "text": "an",
-                          "type": "word",
-                        },
-                        Object {
-                          "occurrence": 1,
-                          "occurrences": 1,
-                          "tag": "w",
-                          "text": "apostle",
-                          "type": "word",
-                        },
-                      ],
-                      "content": "ἀπόστολος",
-                      "lemma": "ἀπόστολος",
-                      "morph": "Gr,N,,,,,NMS,",
-                      "occurrence": 1,
-                      "occurrences": 1,
-                      "strong": "G06520",
-                      "tag": "zaln",
-                      "type": "milestone",
-                    },
-                    Object {
-                      "children": Array [
-                        Object {
-                          "occurrence": 2,
-                          "occurrences": 4,
-                          "tag": "w",
-                          "text": "of",
-                          "type": "word",
-                        },
-                        Object {
-                          "occurrence": 1,
-                          "occurrences": 1,
-                          "tag": "w",
-                          "text": "Jesus",
-                          "type": "word",
-                        },
-                      ],
-                      "content": "Ἰησοῦ",
-                      "lemma": "Ἰησοῦς",
-                      "morph": "Gr,N,,,,,GMS,",
-                      "occurrence": 1,
-                      "occurrences": 1,
-                      "strong": "G24240",
-                      "tag": "zaln",
-                      "type": "milestone",
-                    },
-                    Object {
-                      "children": Array [
-                        Object {
-                          "occurrence": 1,
-                          "occurrences": 1,
-                          "tag": "w",
-                          "text": "Christ",
-                          "type": "word",
-                        },
-                      ],
-                      "content": "Χριστοῦ",
-                      "lemma": "χριστός",
-                      "morph": "Gr,N,,,,,GMS,",
-                      "occurrence": 1,
-                      "occurrences": 1,
-                      "strong": "G55470",
-                      "tag": "zaln",
-                      "type": "milestone",
-                    },
-                    Object {
-                      "text": ",",
-                      "type": "text",
-                    },
-                    Object {
-                      "children": Array [
-                        Object {
-                          "occurrence": 1,
-                          "occurrences": 1,
-                          "tag": "w",
-                          "text": "for",
-                          "type": "word",
-                        },
-                      ],
-                      "content": "κατὰ",
-                      "lemma": "κατά",
-                      "morph": "Gr,P,,,,,A,,,",
-                      "occurrence": 1,
-                      "occurrences": 1,
-                      "strong": "G25960",
-                      "tag": "zaln",
-                      "type": "milestone",
-                    },
-                    Object {
-                      "children": Array [
-                        Object {
-                          "occurrence": 1,
-                          "occurrences": 3,
-                          "tag": "w",
-                          "text": "the",
-                          "type": "word",
-                        },
-                        Object {
-                          "occurrence": 1,
-                          "occurrences": 1,
-                          "tag": "w",
-                          "text": "faith",
-                          "type": "word",
-                        },
-                      ],
-                      "content": "πίστιν",
-                      "lemma": "πίστις",
-                      "morph": "Gr,N,,,,,AFS,",
-                      "occurrence": 1,
-                      "occurrences": 1,
-                      "strong": "G41020",
-                      "tag": "zaln",
-                      "type": "milestone",
-                    },
-                    Object {
-                      "children": Array [
-                        Object {
-                          "occurrence": 3,
-                          "occurrences": 4,
-                          "tag": "w",
-                          "text": "of",
-                          "type": "word",
-                        },
-                      ],
-                      "content": "ἐκλεκτῶν",
-                      "lemma": "ἐκλεκτός",
-                      "morph": "Gr,NS,,,,GMP,",
-                      "occurrence": 1,
-                      "occurrences": 1,
-                      "strong": "G15880",
-                      "tag": "zaln",
-                      "type": "milestone",
-                    },
-                    Object {
-                      "children": Array [
-                        Object {
-                          "occurrence": 2,
-                          "occurrences": 2,
-                          "tag": "w",
-                          "text": "God",
-                          "type": "word",
-                        },
-                      ],
-                      "content": "Θεοῦ",
-                      "lemma": "θεός",
-                      "morph": "Gr,N,,,,,GMS,",
-                      "occurrence": 2,
-                      "occurrences": 2,
-                      "strong": "G23160",
-                      "tag": "zaln",
-                      "type": "milestone",
-                    },
-                    Object {
-                      "text": "'",
-                      "type": "text",
-                    },
-                    Object {
-                      "children": Array [
-                        Object {
-                          "occurrence": 1,
-                          "occurrences": 1,
-                          "tag": "w",
-                          "text": "s",
-                          "type": "word",
-                        },
-                      ],
-                      "content": "Θεοῦ",
-                      "lemma": "θεός",
-                      "morph": "Gr,N,,,,,GMS,",
-                      "occurrence": 2,
-                      "occurrences": 2,
-                      "strong": "G23160",
-                      "tag": "zaln",
-                      "type": "milestone",
-                    },
-                    Object {
-                      "children": Array [
-                        Object {
-                          "occurrence": 1,
-                          "occurrences": 1,
-                          "tag": "w",
-                          "text": "chosen",
-                          "type": "word",
-                        },
-                        Object {
-                          "occurrence": 1,
-                          "occurrences": 1,
-                          "tag": "w",
-                          "text": "people",
-                          "type": "word",
-                        },
-                      ],
-                      "content": "ἐκλεκτῶν",
-                      "lemma": "ἐκλεκτός",
-                      "morph": "Gr,NS,,,,GMP,",
-                      "occurrence": 1,
-                      "occurrences": 1,
-                      "strong": "G15880",
-                      "tag": "zaln",
-                      "type": "milestone",
-                    },
-                    Object {
-                      "children": Array [
-                        Object {
-                          "occurrence": 2,
-                          "occurrences": 2,
-                          "tag": "w",
-                          "text": "and",
-                          "type": "word",
-                        },
-                      ],
-                      "content": "καὶ",
-                      "lemma": "καί",
-                      "morph": "Gr,CC,,,,,,,,",
-                      "occurrence": 1,
-                      "occurrences": 1,
-                      "strong": "G25320",
-                      "tag": "zaln",
-                      "type": "milestone",
-                    },
-                    Object {
-                      "children": Array [
-                        Object {
-                          "occurrence": 2,
-                          "occurrences": 3,
-                          "tag": "w",
-                          "text": "the",
-                          "type": "word",
-                        },
-                        Object {
-                          "occurrence": 1,
-                          "occurrences": 1,
-                          "tag": "w",
-                          "text": "knowledge",
-                          "type": "word",
-                        },
-                      ],
-                      "content": "ἐπίγνωσιν",
-                      "lemma": "ἐπίγνωσις",
-                      "morph": "Gr,N,,,,,AFS,",
-                      "occurrence": 1,
-                      "occurrences": 1,
-                      "strong": "G19220",
-                      "tag": "zaln",
-                      "type": "milestone",
-                    },
-                    Object {
-                      "children": Array [
-                        Object {
-                          "occurrence": 4,
-                          "occurrences": 4,
-                          "tag": "w",
-                          "text": "of",
-                          "type": "word",
-                        },
-                        Object {
-                          "occurrence": 3,
-                          "occurrences": 3,
-                          "tag": "w",
-                          "text": "the",
-                          "type": "word",
-                        },
-                        Object {
-                          "occurrence": 1,
-                          "occurrences": 1,
-                          "tag": "w",
-                          "text": "truth",
-                          "type": "word",
-                        },
-                      ],
-                      "content": "ἀληθείας",
-                      "lemma": "ἀλήθεια",
-                      "morph": "Gr,N,,,,,GFS,",
-                      "occurrence": 1,
-                      "occurrences": 1,
-                      "strong": "G02250",
-                      "tag": "zaln",
-                      "type": "milestone",
-                    },
-                    Object {
-                      "children": Array [
-                        Object {
-                          "occurrence": 1,
-                          "occurrences": 1,
-                          "tag": "w",
-                          "text": "that",
-                          "type": "word",
-                        },
-                      ],
-                      "content": "τῆς",
-                      "lemma": "ὁ",
-                      "morph": "Gr,RR,,,,GFS,",
-                      "occurrence": 1,
-                      "occurrences": 1,
-                      "strong": "G35880",
-                      "tag": "zaln",
-                      "type": "milestone",
-                    },
-                    Object {
-                      "children": Array [
-                        Object {
-                          "occurrence": 1,
-                          "occurrences": 1,
-                          "tag": "w",
-                          "text": "agrees",
-                          "type": "word",
-                        },
-                        Object {
-                          "occurrence": 1,
-                          "occurrences": 1,
-                          "tag": "w",
-                          "text": "with",
-                          "type": "word",
-                        },
-                      ],
-                      "content": "κατ’",
-                      "lemma": "κατά",
-                      "morph": "Gr,P,,,,,A,,,",
-                      "occurrence": 1,
-                      "occurrences": 1,
-                      "strong": "G25960",
-                      "tag": "zaln",
-                      "type": "milestone",
-                    },
-                    Object {
-                      "children": Array [
-                        Object {
-                          "occurrence": 1,
-                          "occurrences": 1,
-                          "tag": "w",
-                          "text": "godliness",
-                          "type": "word",
-                        },
-                      ],
-                      "content": "εὐσέβειαν",
-                      "lemma": "εὐσέβεια",
-                      "morph": "Gr,N,,,,,AFS,",
-                      "occurrence": 1,
-                      "occurrences": 1,
-                      "strong": "G21500",
-                      "tag": "zaln",
-                      "type": "milestone",
-                    },
-                    Object {
-                      "text": ", 
-",
-                      "type": "text",
-                    },
-                  ],
-                },
-              },
-            },
-          },
-        },
-      }
-    }
-    selections={Array []}
-    selectionsReducer={
-      Object {
-        "selections": Array [],
-      }
-    }
-    tags={Array []}
-    toolsReducer={
-      Object {
-        "currentToolName": "translationWords",
-      }
-    }
-    verseChanged={false}
-    verseText="This is the verse text"
-  />
+            "flex": "auto",
+            "overflowY": "auto",
+            "padding": "0 15px 10px",
+          }
+        }
+      >
+        <div
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          onMouseUp={[Function]}
+        >
+          <span>
+            This is the verse text
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
   <div
     style={
       Object {
@@ -2177,16 +744,32 @@ exports[`CheckArea component Tests Test CheckArea component mode select) 1`] = `
         }
       }
     >
-      <InstructionsArea
-        alignedGLText="God's"
-        mode="select"
-        selectionsReducer={
+      <div
+        style={
           Object {
-            "selections": Array [],
+            "overflow": "auto",
+            "padding": "5px",
+            "textAlign": "center",
           }
         }
-        verseText="This is the verse text"
-      />
+      >
+        <span>
+          Please select the translation for:
+        </span>
+        <br />
+        <span>
+          <strong
+            style={
+              Object {
+                "color": "var(--accent-color)",
+              }
+            }
+          >
+            "God's"
+          </strong>
+        </span>
+        <br />
+      </div>
     </div>
   </div>
 </div>
@@ -2203,63 +786,91 @@ exports[`CheckArea component Tests Test CheckArea component where GL Aligned Tex
     }
   }
 >
-  <DefaultArea
-    actions={Object {}}
-    comment="Comment!"
-    contextIdReducer={
+  <div
+    style={
       Object {
-        "contextId": Object {
-          "occurrence": 2,
-          "occurrences": 2,
-          "quote": "Θεοῦ",
-          "reference": Object {
-            "chapter": 1,
-            "verse": 1,
-          },
-        },
+        "WebkitUserSelect": "none",
+        "display": "flex",
+        "flex": 1,
+        "flexDirection": "column",
       }
     }
-    mode="default"
-    projectDetailsReducer={
-      Object {
-        "currentProjectToolsSelectedGL": Object {
-          "translationWords": "en",
-        },
-        "manifest": Object {
-          "target_language": Object {
-            "direction": "ltr",
-          },
-        },
+  >
+    <div
+      style={
+        Object {
+          "display": "flex",
+          "flex": "0 0 45px",
+          "justifyContent": "space-between",
+          "margin": "5px 10px 5px 15px",
+        }
       }
-    }
-    resourcesReducer={
-      Object {
-        "bibles": Object {
-          "en": Object {
-            "ult": Object {
-              "1": Object {
-                "1": Object {},
-              },
-            },
-          },
-        },
+    >
+      <div
+        style={
+          Object {
+            "display": "flex",
+            "flexDirection": "column",
+          }
+        }
+      >
+        <span
+          style={
+            Object {
+              "fontWeight": "bold",
+            }
+          }
+        />
+        <span
+          style={
+            Object {
+              "color": "var(--text-color-light)",
+            }
+          }
+        >
+          Titus
+           
+          1:1
+        </span>
+      </div>
+      <div
+        onClick={[Function]}
+      >
+        <span
+          className="glyphicon glyphicon-fullscreen"
+          style={
+            Object {
+              "cursor": "pointer",
+            }
+          }
+          title="Click to show expanded verses"
+        />
+      </div>
+    </div>
+    <div
+      style={
+        Object {
+          "direction": "ltr",
+          "flex": "auto",
+          "overflowY": "auto",
+          "padding": "0 15px 10px",
+        }
       }
-    }
-    selections={Array []}
-    selectionsReducer={
-      Object {
-        "selections": Array [],
-      }
-    }
-    tags={Array []}
-    toolsReducer={
-      Object {
-        "currentToolName": "translationWords",
-      }
-    }
-    verseChanged={false}
-    verseText="This is the verse text"
-  />
+    >
+      <div
+        style={
+          Object {
+            "color": "var(--text-color-light)",
+            "userSelect": "none",
+          }
+        }
+      >
+        <span>
+          This is the verse text
+        </span>
+      </div>
+    </div>
+  </div>
   <div
     style={
       Object {
@@ -2282,16 +893,24 @@ exports[`CheckArea component Tests Test CheckArea component where GL Aligned Tex
         }
       }
     >
-      <InstructionsArea
-        alignedGLText="Θεοῦ"
-        dontShowTranslation={true}
-        selectionsReducer={
+      <div
+        style={
           Object {
-            "selections": Array [],
+            "overflow": "auto",
+            "padding": "5px",
+            "textAlign": "center",
           }
         }
-        verseText="This is the verse text"
-      />
+      >
+        <span>
+          No selection has been made.
+        </span>
+        <br />
+        <span>
+          Click the Select button, then select the translation for this check.
+        </span>
+        <br />
+      </div>
     </div>
   </div>
 </div>

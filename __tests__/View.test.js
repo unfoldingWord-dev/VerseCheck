@@ -4,6 +4,7 @@ import fs from 'fs-extra';
 import View from '../src/components/View';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import renderer from 'react-test-renderer';
+
 const project = '__tests__/fixtures/project/loadedProjectShortened.json';
 
 describe('View component Tests', () => {
