@@ -11,31 +11,39 @@ import style from '../css/Style';
 import * as checkAreaHelpers from '../helpers/checkAreaHelpers';
 
 class CheckArea extends Component {
+  getAlignedGLText() {
+    const {
+      projectDetailsReducer: {currentProjectToolsSelectedGL},
+      contextIdReducer: { contextId },
+      resourcesReducer: { bibles },
+      toolsReducer: {currentToolName}
+    } = this.props;
+    let alignedGLText = contextId.quote;
+    const selectedGL = currentProjectToolsSelectedGL[currentToolName];
+    if (bibles[selectedGL] && bibles[selectedGL]['ult']) {
+      const verseObjects = bibles[selectedGL]['ult'][contextId.reference.chapter][contextId.reference.verse].verseObjects;
+      const wordsToMatch = contextId.quote.split(' ');
+      const alignedText = checkAreaHelpers.getAlignedText(verseObjects, wordsToMatch, contextId.occurrence);
+      if (alignedText) {
+        alignedGLText = alignedText;
+      }
+    }
+    return alignedGLText;
+  }
+
   render() {
     const {
       actions,
-      contextIdReducer: { contextId },
       mode,
       tags,
       verseText,
       verseChanged,
       comment,
       selectionsReducer,
-      projectDetailsReducer,
-      resourcesReducer: { bibles },
-      toolsReducer
+      projectDetailsReducer
     } = this.props;
 
-    this.alignedGLText = contextId.quote;
-    const selectedGL = projectDetailsReducer.currentProjectToolsSelectedGL[toolsReducer.currentToolName];
-    if (bibles[selectedGL] && bibles[selectedGL]['ult']) {
-      const verseObjects = bibles[selectedGL]['ult'][contextId.reference.chapter][contextId.reference.verse].verseObjects;
-      const wordsToMatch = contextId.quote.split(' ');
-      const alignedText = checkAreaHelpers.getAlignedText(verseObjects, wordsToMatch, contextId.occurrence);
-      if (alignedText) {
-        this.alignedGLText = alignedText;
-      }
-    }
+    const alignedGLText = this.getAlignedGLText();
 
     let modeArea;
     switch (mode) {
@@ -59,7 +67,7 @@ class CheckArea extends Component {
             <InstructionsArea
               verseText={verseText}
               selectionsReducer={selectionsReducer}
-              alignedGLText={this.alignedGLText}
+              alignedGLText={alignedGLText}
               mode={mode}
             />
           </div>);
@@ -72,7 +80,7 @@ class CheckArea extends Component {
               dontShowTranslation={true}
               verseText={verseText}
               selectionsReducer={selectionsReducer}
-              alignedGLText={this.alignedGLText}
+              alignedGLText={alignedGLText}
             />
           </div>
         );

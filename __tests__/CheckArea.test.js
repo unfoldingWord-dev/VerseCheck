@@ -2,7 +2,6 @@
 import React from 'react';
 import fs from 'fs-extra';
 import { shallow } from 'enzyme';
-import toJson from 'enzyme-to-json';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import renderer from 'react-test-renderer';
 import CheckArea from '../src/components/CheckArea';
@@ -138,5 +137,11 @@ describe('CheckArea component Tests', () => {
       </MuiThemeProvider>
     );
     expect(component.toJSON()).toMatchSnapshot();
+  });
+
+  test('Test getAlignedGLText() function in CheckArea Component', () => {
+    const wrapper = shallow(<CheckArea {...props} />);
+    const expectedAlignedGLText = 'God\'s';
+    expect(wrapper.instance().getAlignedGLText()).toEqual(expectedAlignedGLText);
   });
 });
