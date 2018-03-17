@@ -4993,40 +4993,24 @@
   "groupsIndexReducer": {
     "groupsIndex": [
       {
-        "id": "abiathar",
-        "name": "Abiathar"
-      },
-      {
         "id": "abomination",
-        "name": "abomination, abominable"
+        "name": "abomination, abominations, abominable"
       },
       {
-        "id": "acacia",
-        "name": "acacia"
-      },
-      {
-        "id": "adam",
-        "name": "Adam"
+        "id": "adoption",
+        "name": "adoption, adopt, adopted"
       },
       {
         "id": "adultery",
-        "name": "adultery, adulterous, adulterer, adulteress"
-      },
-      {
-        "id": "afflict",
-        "name": "afflict, affliction"
-      },
-      {
-        "id": "alarm",
-        "name": "alarm, alarmed"
+        "name": "adultery, adulterous, adulterer, adulteress, adulterers, adulteresses"
       },
       {
         "id": "almighty",
         "name": "Almighty"
       },
       {
-        "id": "amalekite",
-        "name": "Amalek, Amalekite"
+        "id": "altar",
+        "name": "altar, altars"
       },
       {
         "id": "amen",
@@ -5034,43 +5018,35 @@
       },
       {
         "id": "angel",
-        "name": "angel, archangel"
+        "name": "angel, angels, archangel"
       },
       {
         "id": "anoint",
-        "name": "anoint, anointed"
+        "name": "anoint, anointed, anointing"
+      },
+      {
+        "id": "antichrist",
+        "name": "antichrist, antichrists"
+      },
+      {
+        "id": "apostle",
+        "name": "apostle, apostles, apostleship"
       },
       {
         "id": "appoint",
-        "name": "appoint, appointed"
+        "name": "appoint, appoints, appointed"
       },
       {
-        "id": "aram",
-        "name": "Aram, Aramean, Aramaic"
+        "id": "ark",
+        "name": "ark"
       },
       {
         "id": "arkofthecovenant",
-        "name": "ark of the covenant, ark of the covenant decrees, ark of Yahweh"
-      },
-      {
-        "id": "asa",
-        "name": "Asa"
-      },
-      {
-        "id": "asher",
-        "name": "Asher"
-      },
-      {
-        "id": "assembly",
-        "name": "assembly, assemble"
-      },
-      {
-        "id": "astray",
-        "name": "astray, go astray, led astray, stray"
+        "name": "ark of the covenant, ark of Yahweh"
       },
       {
         "id": "atonement",
-        "name": "atonement, atone"
+        "name": "atonement, atone, atones, atoned"
       },
       {
         "id": "atonementlid",
@@ -5081,48 +5057,20 @@
         "name": "authority, authorities"
       },
       {
-        "id": "avenge",
-        "name": "avenge, revenge, vengeance"
-      },
-      {
-        "id": "baal",
-        "name": "Baal"
-      },
-      {
-        "id": "balaam",
-        "name": "Balaam"
-      },
-      {
-        "id": "barren",
-        "name": "barren"
-      },
-      {
-        "id": "basket",
-        "name": "basket"
-      },
-      {
-        "id": "bearanimal",
-        "name": "bear"
-      },
-      {
-        "id": "beg",
-        "name": "beg, beggar"
+        "id": "baptize",
+        "name": "baptize, baptized, baptism"
       },
       {
         "id": "believe",
-        "name": "believe, believe in, belief"
+        "name": "believe, believes, believed, believer, belief, unbeliever, unbelievers, unbelief"
       },
       {
         "id": "beloved",
         "name": "beloved"
       },
       {
-        "id": "bethuel",
-        "name": "Bethuel"
-      },
-      {
-        "id": "betray",
-        "name": "betray, betrayer"
+        "id": "bond",
+        "name": "bind, bond, bound"
       },
       {
         "id": "birthright",
@@ -5134,7 +5082,7 @@
       },
       {
         "id": "blasphemy",
-        "name": "blasphemy, blaspheme, blasphemous"
+        "name": "blasphemy, blaspheme, blasphemed, blasphemous, blasphemies"
       },
       {
         "id": "bless",
@@ -5145,72 +5093,60 @@
         "name": "blood"
       },
       {
-        "id": "blotout",
-        "name": "blot out, wipe out"
-      },
-      {
         "id": "boast",
-        "name": "boast, boastful"
+        "name": "boast, boasts, boastful"
       },
       {
         "id": "body",
-        "name": "body"
+        "name": "body, bodies"
       },
       {
-        "id": "bond",
-        "name": "bind, bond, bound"
-      },
-      {
-        "id": "bow",
-        "name": "bow, bow down"
-      },
-      {
-        "id": "breath",
-        "name": "breathe, breath"
-      },
-      {
-        "id": "bronze",
-        "name": "bronze"
+        "id": "bornagain",
+        "name": "born again, born of God, new birth"
       },
       {
         "id": "brother",
-        "name": "brother"
-      },
-      {
-        "id": "caleb",
-        "name": "Caleb"
+        "name": "brother, brothers"
       },
       {
         "id": "call",
-        "name": "call, calling, called, call out"
+        "name": "call, calls, calling, called"
       },
       {
-        "id": "caughtup",
-        "name": "caught up, caught up with"
-      },
-      {
-        "id": "cherubim",
-        "name": "cherubim, cherub"
+        "id": "centurion",
+        "name": "centurion, centurions"
       },
       {
         "id": "children",
         "name": "children, child"
       },
       {
+        "id": "elect",
+        "name": "chosen one, chosen ones, choose, chosen people, Chosen One, elect"
+      },
+      {
+        "id": "christ",
+        "name": "Christ, Messiah"
+      },
+      {
+        "id": "christian",
+        "name": "Christian"
+      },
+      {
+        "id": "church",
+        "name": "church, churches, Church"
+      },
+      {
         "id": "circumcise",
-        "name": "circumcise, circumcision"
+        "name": "circumcise, circumcised, circumcision, uncircumcised, uncircumcision"
       },
       {
         "id": "clean",
-        "name": "clean, cleanse"
+        "name": "clean, cleans, cleaned, cleanse, cleansed, cleansing, wash, washing, washed, washes, unclean"
       },
       {
-        "id": "clothed",
-        "name": "clothe, clothed"
-      },
-      {
-        "id": "commander",
-        "name": "commander, command"
+        "id": "command",
+        "name": "command, commands, commanded, commandment, commandments"
       },
       {
         "id": "compassion",
@@ -5218,31 +5154,27 @@
       },
       {
         "id": "condemn",
-        "name": "condemn, condemnation"
+        "name": "condemn, condemns, condemned, condemnation"
       },
       {
         "id": "confess",
-        "name": "confess, confession"
+        "name": "confess, confessed, confesses, confession"
       },
       {
-        "id": "confidence",
-        "name": "confidence, confident"
+        "id": "conscience",
+        "name": "conscience, consciences"
       },
       {
         "id": "consecrate",
-        "name": "consecrate"
+        "name": "consecrate, consecrated, consecration"
       },
       {
-        "id": "corrupt",
-        "name": "corrupt, corruption"
-      },
-      {
-        "id": "courtyard",
-        "name": "courtyard, court"
+        "id": "cornerstone",
+        "name": "cornerstone, cornerstones"
       },
       {
         "id": "covenant",
-        "name": "covenant"
+        "name": "covenant, covenants, new covenant"
       },
       {
         "id": "covenantfaith",
@@ -5253,48 +5185,40 @@
         "name": "cross"
       },
       {
+        "id": "crucify",
+        "name": "crucify, crucified"
+      },
+      {
         "id": "curse",
-        "name": "curse, cursed"
+        "name": "curse, cursed, curses, cursing"
       },
       {
-        "id": "cutoff",
-        "name": "cut off"
+        "id": "daughterofzion",
+        "name": "daughter of Zion"
       },
       {
-        "id": "darkness",
-        "name": "darkness"
+        "id": "dayofthelord",
+        "name": "day of the Lord, day of Yahweh"
       },
       {
-        "id": "death",
-        "name": "death, die, dead"
-      },
-      {
-        "id": "deceive",
-        "name": "deceive, deceit, deception, deceptive"
-      },
-      {
-        "id": "deer",
-        "name": "deer, doe, buck, roebuck, fawn"
-      },
-      {
-        "id": "deliverer",
-        "name": "deliver, deliverer, deliverance"
+        "id": "deacon",
+        "name": "deacon, deacons"
       },
       {
         "id": "demon",
         "name": "demon, evil spirit, unclean spirit"
       },
       {
-        "id": "desolate",
-        "name": "desolate, desolation"
+        "id": "demonpossessed",
+        "name": "demon-possessed"
       },
       {
-        "id": "devastated",
-        "name": "devastate, devastation"
+        "id": "disciple",
+        "name": "disciple, disciples"
       },
       {
         "id": "discipline",
-        "name": "discipline, self-discipline"
+        "name": "discipline, disciplines, disciplined, self-discipline"
       },
       {
         "id": "divine",
@@ -5305,40 +5229,20 @@
         "name": "dominion"
       },
       {
-        "id": "dove",
-        "name": "dove, pigeon"
-      },
-      {
-        "id": "dung",
-        "name": "dung, manure"
-      },
-      {
-        "id": "edom",
-        "name": "Edom, Edomite, Idumea"
-      },
-      {
-        "id": "elder",
-        "name": "elder"
-      },
-      {
-        "id": "elect",
-        "name": "chosen one, choose, chosen people, Chosen One, the elect"
-      },
-      {
-        "id": "endure",
-        "name": "endure, endurance"
-      },
-      {
-        "id": "enslave",
-        "name": "enslave, in bondage"
-      },
-      {
-        "id": "ephraim",
-        "name": "Ephraim"
+        "id": "ephod",
+        "name": "ephod"
       },
       {
         "id": "eternity",
-        "name": "everlasting, eternal, eternity"
+        "name": "eternity, everlasting, eternal, forever"
+      },
+      {
+        "id": "eunuch",
+        "name": "eunuch, eunuchs"
+      },
+      {
+        "id": "evangelism",
+        "name": "evangelist, evangelists"
       },
       {
         "id": "evil",
@@ -5346,31 +5250,31 @@
       },
       {
         "id": "exalt",
-        "name": "exalt, exaltation"
+        "name": "exalt, exalted, exalts, exaltation"
       },
       {
-        "id": "face",
-        "name": "face"
+        "id": "exhort",
+        "name": "exhort, exhortation"
+      },
+      {
+        "id": "faith",
+        "name": "faith"
       },
       {
         "id": "faithful",
-        "name": "faithful, faithfulness"
+        "name": "faithful, faithfulness, unfaithful, unfaithfulness"
       },
       {
-        "id": "falsegod",
-        "name": "false god, foreign god, god, goddess"
-      },
-      {
-        "id": "famine",
-        "name": "famine"
+        "id": "faithless",
+        "name": "faithless, faithlessness"
       },
       {
         "id": "favor",
-        "name": "favor, favorable, favoritism"
+        "name": "favor, favors, favorable, favoritism"
       },
       {
         "id": "fear",
-        "name": "fear, afraid, fear of Yahweh"
+        "name": "fear, fears, afraid"
       },
       {
         "id": "fellowship",
@@ -5378,15 +5282,7 @@
       },
       {
         "id": "filled",
-        "name": "filled with the Spirit"
-      },
-      {
-        "id": "firstborn",
-        "name": "first-born"
-      },
-      {
-        "id": "firstfruit",
-        "name": "firstfruits"
+        "name": "filled with the Holy Spirit"
       },
       {
         "id": "flesh",
@@ -5394,59 +5290,47 @@
       },
       {
         "id": "foolish",
-        "name": "fool, foolish, folly"
-      },
-      {
-        "id": "forever",
-        "name": "forever"
+        "name": "fool, fools, foolish, folly"
       },
       {
         "id": "forgive",
-        "name": "forgive, forgiveness"
+        "name": "forgive, forgives, forgiven, forgiveness, pardon, pardoned"
       },
       {
         "id": "forsaken",
-        "name": "forsake, forsaken, forsook"
-      },
-      {
-        "id": "free",
-        "name": "free, freedom, liberty"
-      },
-      {
-        "id": "fruit",
-        "name": "fruit, fruitful"
+        "name": "forsake, forsakes, forsaken, forsook"
       },
       {
         "id": "fulfill",
-        "name": "fulfill"
+        "name": "fulfill, fulfilled"
       },
       {
-        "id": "gate",
-        "name": "gate, gate bar"
+        "id": "gentile",
+        "name": "Gentile, Gentiles"
       },
       {
         "id": "gift",
-        "name": "gift"
-      },
-      {
-        "id": "girgashites",
-        "name": "Girgashites"
+        "name": "gift, gifts"
       },
       {
         "id": "glory",
-        "name": "glory, glorious"
+        "name": "glory, glorious, glorify, glorifies"
       },
       {
         "id": "god",
         "name": "God"
       },
       {
+        "id": "falsegod",
+        "name": "god, false god, gods, goddess, idol, idols, idolater, idolaters, idolatrous, idolatry"
+      },
+      {
         "id": "godthefather",
         "name": "God the Father, heavenly Father, Father"
       },
       {
-        "id": "gomorrah",
-        "name": "Gomorrah"
+        "id": "godly",
+        "name": "godly, godliness, ungodly, godless, ungodliness, godlessness"
       },
       {
         "id": "good",
@@ -5465,36 +5349,24 @@
         "name": "guilt, guilty"
       },
       {
-        "id": "hagar",
-        "name": "Hagar"
-      },
-      {
-        "id": "hamath",
-        "name": "Hamath, Lebo Hamath, Hamathites"
-      },
-      {
-        "id": "hang",
-        "name": "hang"
-      },
-      {
-        "id": "harp",
-        "name": "harp"
-      },
-      {
-        "id": "harvest",
-        "name": "harvest"
+        "id": "hades",
+        "name": "Hades, Sheol"
       },
       {
         "id": "heart",
-        "name": "heart"
+        "name": "heart, hearts"
       },
       {
         "id": "heaven",
-        "name": "heaven, sky, heavens, heavenly"
+        "name": "heaven, sky, skies, heavens, heavenly"
       },
       {
-        "id": "heir",
-        "name": "heir"
+        "id": "hebrew",
+        "name": "Hebrew, Hebrews"
+      },
+      {
+        "id": "hell",
+        "name": "hell, lake of fire"
       },
       {
         "id": "highpriest",
@@ -5502,31 +5374,39 @@
       },
       {
         "id": "holy",
-        "name": "holy, holiness"
+        "name": "holy, holiness, unholy, sacred"
+      },
+      {
+        "id": "holyone",
+        "name": "Holy One"
       },
       {
         "id": "holyplace",
-        "name": "holy place, most holy place"
+        "name": "holy place"
       },
       {
         "id": "holyspirit",
         "name": "Holy Spirit, Spirit of God, Spirit of the Lord, Spirit"
       },
       {
-        "id": "honey",
-        "name": "honey, honeycomb"
+        "id": "honor",
+        "name": "honor, honors"
       },
       {
         "id": "hope",
-        "name": "hope"
-      },
-      {
-        "id": "horse",
-        "name": "horse"
+        "name": "hope, hoped, hopes"
       },
       {
         "id": "houseofgod",
         "name": "house of God, Yahweh's house"
+      },
+      {
+        "id": "humble",
+        "name": "humble, humbles, humbled, humility"
+      },
+      {
+        "id": "hypocrite",
+        "name": "hypocrite, hypocrites, hypocrisy"
       },
       {
         "id": "imageofgod",
@@ -5542,103 +5422,87 @@
       },
       {
         "id": "iniquity",
-        "name": "iniquity"
+        "name": "iniquity, iniquities"
       },
       {
         "id": "innocent",
         "name": "innocent"
       },
       {
-        "id": "ishmael",
-        "name": "Ishmael"
+        "id": "intercede",
+        "name": "intercede, intercededs, intercession"
       },
       {
-        "id": "iyahweh",
-        "name": "I, Yahweh; me, Yahweh"
+        "id": "israel",
+        "name": "Israel, Israelites"
       },
       {
         "id": "jealous",
         "name": "jealous, jealousy"
       },
       {
-        "id": "jephthah",
-        "name": "Jephthah"
+        "id": "jesus",
+        "name": "Jesus, Jesus Christ, Christ Jesus"
       },
       {
-        "id": "jerusalem",
-        "name": "Jerusalem"
-      },
-      {
-        "id": "jezebel",
-        "name": "Jezebel"
-      },
-      {
-        "id": "joshua",
-        "name": "Joshua"
-      },
-      {
-        "id": "joy",
-        "name": "joy, joyful"
+        "id": "jew",
+        "name": "Jew, Jewish, Jews"
       },
       {
         "id": "judge",
-        "name": "judge, judgment"
+        "name": "judge, judges, judgment, judgments"
+      },
+      {
+        "id": "judgmentday",
+        "name": "judgment day"
       },
       {
         "id": "justice",
-        "name": "just, justice, justly"
+        "name": "just, justice, unjust, unjustly, injustice, justly, justify, justification"
       },
       {
-        "id": "justify",
-        "name": "justify, justification"
+        "id": "kingofthejews",
+        "name": "King of the Jews, king of the Jews"
       },
       {
-        "id": "kidronvalley",
-        "name": "Kidron Valley"
-      },
-      {
-        "id": "kingdom",
-        "name": "kingdom"
+        "id": "kingdomofgod",
+        "name": "kingdom of God, kingdom of heaven"
       },
       {
         "id": "lamb",
         "name": "lamb, Lamb of God"
       },
       {
-        "id": "lawofmoses",
-        "name": "law, law of Moses, God's law, law of Yahweh"
+        "id": "lament",
+        "name": "lament, laments, lamentation"
       },
       {
-        "id": "lebanon",
-        "name": "Lebanon"
+        "id": "lastday",
+        "name": "last day, last days, latter days"
+      },
+      {
+        "id": "lawofmoses",
+        "name": "law, law of Moses, God's law, law of Yahweh"
       },
       {
         "id": "life",
         "name": "life, live, lived, lives, living, alive"
       },
       {
-        "id": "light",
-        "name": "light"
-      },
-      {
-        "id": "locust",
-        "name": "locust"
-      },
-      {
         "id": "lord",
-        "name": "lord, lords, master, masters, sir, sirs"
-      },
-      {
-        "id": "lordgod",
-        "name": "Lord"
+        "name": "lord, lords, Lord, master, masters, sir, sirs"
       },
       {
         "id": "lordyahweh",
         "name": "Lord Yahweh, Yahweh God"
       },
       {
+        "id": "lordssupper",
+        "name": "Lord's Supper"
+      },
+      {
         "id": "love",
-        "name": "love, loves, loving"
+        "name": "love, loves, loving, loved"
       },
       {
         "id": "majesty",
@@ -5649,180 +5513,112 @@
         "name": "manna"
       },
       {
-        "id": "memorialoffering",
-        "name": "memorial, memorial offering"
-      },
-      {
         "id": "mercy",
         "name": "mercy, merciful"
       },
       {
-        "id": "micah",
-        "name": "Micah"
-      },
-      {
-        "id": "mind",
-        "name": "mind"
-      },
-      {
-        "id": "minister",
-        "name": "minister, ministry"
-      },
-      {
         "id": "miracle",
-        "name": "miracle, wonder, sign"
-      },
-      {
-        "id": "moab",
-        "name": "Moab, Moabite, Moabitess"
+        "name": "miracle, miracles, wonder, wonders, sign, signs"
       },
       {
         "id": "mosthigh",
         "name": "Most High"
       },
       {
-        "id": "multiply",
-        "name": "multiply"
-      },
-      {
-        "id": "nahor",
-        "name": "Nahor"
+        "id": "myrrh",
+        "name": "myrrh"
       },
       {
         "id": "name",
-        "name": "name, named"
+        "name": "name, names, named"
       },
       {
-        "id": "noah",
-        "name": "Noah"
+        "id": "nazirite",
+        "name": "Nazirite, Nazirites, Nazirite vow"
       },
       {
-        "id": "obadiah",
-        "name": "Obadiah"
-      },
-      {
-        "id": "olive",
-        "name": "olive"
-      },
-      {
-        "id": "oppress",
-        "name": "oppress, oppression, oppressor"
-      },
-      {
-        "id": "overtake",
-        "name": "overtake, overtook"
-      },
-      {
-        "id": "palace",
-        "name": "palace"
-      },
-      {
-        "id": "pardon",
-        "name": "pardon"
+        "id": "parable",
+        "name": "parable, parables"
       },
       {
         "id": "passover",
         "name": "Passover"
       },
       {
-        "id": "peace",
-        "name": "peace, peaceful"
+        "id": "pastor",
+        "name": "pastor, pastors"
+      },
+      {
+        "id": "pentecost",
+        "name": "Pentecost, Festival of Weeks"
       },
       {
         "id": "peopleofgod",
         "name": "people of God, my people"
       },
       {
-        "id": "perfect",
-        "name": "perfect"
-      },
-      {
         "id": "perish",
-        "name": "perish, perishing, perishable"
+        "name": "perish, perished, perishing, perishable"
       },
       {
-        "id": "philistia",
-        "name": "Philistia"
-      },
-      {
-        "id": "pit",
-        "name": "pit"
-      },
-      {
-        "id": "plow",
-        "name": "plow"
-      },
-      {
-        "id": "potiphar",
-        "name": "Potiphar"
+        "id": "pharisee",
+        "name": "Pharisee, Pharisees"
       },
       {
         "id": "power",
         "name": "power, powers"
       },
       {
-        "id": "precious",
-        "name": "precious"
+        "id": "pray",
+        "name": "pray, prayer, prayers, prayed"
+      },
+      {
+        "id": "predestine",
+        "name": "predestine, predestined"
       },
       {
         "id": "priest",
-        "name": "priest, priesthood"
-      },
-      {
-        "id": "proclaim",
-        "name": "proclaim, proclamation"
+        "name": "priest, priests, priesthood"
       },
       {
         "id": "promise",
         "name": "promise, promises, promised"
       },
       {
+        "id": "promisedland",
+        "name": "Promised Land"
+      },
+      {
         "id": "prophet",
-        "name": "prophet, prophecy, prophesy, seer, prophetess"
+        "name": "prophet, prophets, prophecy, prophesy, seer, prophetess"
       },
       {
-        "id": "proud",
-        "name": "proud, pride, prideful"
+        "id": "propitiation",
+        "name": "propitiation"
       },
       {
-        "id": "prudent",
-        "name": "prudent"
+        "id": "psalm",
+        "name": "psalm, psalms"
       },
       {
         "id": "purify",
         "name": "pure, purify, purification"
       },
       {
-        "id": "queen",
-        "name": "queen"
-      },
-      {
-        "id": "raise",
-        "name": "raise, raises, raised, rise, risen, arise, arose"
+        "id": "rabbi",
+        "name": "Rabbi"
       },
       {
         "id": "ransom",
-        "name": "ransom"
+        "name": "ransom, ransomed"
       },
       {
-        "id": "rebuke",
-        "name": "rebuke"
-      },
-      {
-        "id": "receive",
-        "name": "receive"
+        "id": "reconcile",
+        "name": "reconcile, reconciles, reconciled, reconciliation"
       },
       {
         "id": "redeem",
-        "name": "redeem, redemption, redeemer"
-      },
-      {
-        "id": "refuge",
-        "name": "refuge, shelter"
-      },
-      {
-        "id": "rejoice",
-        "name": "rejoice"
+        "name": "redeem, redeems, redemption, redeemer"
       },
       {
         "id": "remnant",
@@ -5830,115 +5626,87 @@
       },
       {
         "id": "repent",
-        "name": "repent, repentance"
-      },
-      {
-        "id": "rest",
-        "name": "rest"
+        "name": "repent, repents, repented, repentance"
       },
       {
         "id": "restore",
-        "name": "restore, restoration"
+        "name": "restore, restores, restored, restoration"
       },
       {
-        "id": "return",
-        "name": "return"
+        "id": "resurrection",
+        "name": "resurrection"
       },
       {
         "id": "reveal",
-        "name": "reveal, revealed, revelation"
-      },
-      {
-        "id": "reward",
-        "name": "reward"
-      },
-      {
-        "id": "righteous",
-        "name": "righteous, righteousness"
+        "name": "reveal, reveals, revealed, revelation"
       },
       {
         "id": "righthand",
         "name": "right hand"
       },
       {
-        "id": "run",
-        "name": "run, running"
+        "id": "righteous",
+        "name": "righteous, righteousness, unrighteous, unrighteousness, upright, uprightness"
       },
       {
         "id": "sabbath",
         "name": "Sabbath"
       },
       {
-        "id": "salvation",
-        "name": "salvation"
+        "id": "sadducee",
+        "name": "Sadducee, Sadducees"
+      },
+      {
+        "id": "saint",
+        "name": "saint, saints"
+      },
+      {
+        "id": "sanctify",
+        "name": "sanctify, sanctifies, sanctification"
       },
       {
         "id": "sanctuary",
         "name": "sanctuary"
       },
       {
+        "id": "satan",
+        "name": "Satan, devil, evil one"
+      },
+      {
         "id": "save",
-        "name": "save, saved, safe"
+        "name": "save, saves, saved, safe, salvation"
       },
       {
-        "id": "seacow",
-        "name": "sea cow"
+        "id": "savior",
+        "name": "Savior, savior"
       },
       {
-        "id": "seed",
-        "name": "seed, semen"
-      },
-      {
-        "id": "servant",
-        "name": "servant, slave, slavery"
+        "id": "scribe",
+        "name": "scribe, scribes"
       },
       {
         "id": "setapart",
         "name": "set apart"
       },
       {
-        "id": "shame",
-        "name": "shame, shameful, ashamed"
-      },
-      {
-        "id": "sheep",
-        "name": "sheep, ram, ewe"
-      },
-      {
-        "id": "shiloh",
-        "name": "Shiloh"
-      },
-      {
-        "id": "sidon",
-        "name": "Sidon, Sidonians"
-      },
-      {
         "id": "sign",
-        "name": "sign, proof, reminder"
+        "name": "sign, signs, proof, reminder"
       },
       {
         "id": "sin",
-        "name": "sin, sins, sinful, sinner, sinning"
-      },
-      {
-        "id": "skull",
-        "name": "skull"
-      },
-      {
-        "id": "sleep",
-        "name": "sleep, asleep, fall asleep"
-      },
-      {
-        "id": "solomon",
-        "name": "Solomon"
+        "name": "sin, sins, sinned, sinful, sinner, sinning"
       },
       {
         "id": "son",
-        "name": "son, son of"
+        "name": "son, sons"
       },
       {
         "id": "sonofgod",
-        "name": "Son of God, the Son, Son"
+        "name": "Son of God, Son"
+      },
+      {
+        "id": "sonofman",
+        "name": "Son of Man, son of man"
       },
       {
         "id": "sonsofgod",
@@ -5946,159 +5714,91 @@
       },
       {
         "id": "soul",
-        "name": "soul"
+        "name": "soul, souls"
       },
       {
         "id": "spirit",
-        "name": "spirit, spiritual"
+        "name": "spirit, spirits, spiritual"
       },
       {
-        "id": "strength",
-        "name": "strength, strengthen"
+        "id": "stone",
+        "name": "stone, stones, stoning"
       },
       {
-        "id": "stumble",
-        "name": "stumble"
-      },
-      {
-        "id": "succoth",
-        "name": "Succoth"
-      },
-      {
-        "id": "suffer",
-        "name": "suffer, suffering"
+        "id": "synagogue",
+        "name": "synagogue"
       },
       {
         "id": "tabernacle",
         "name": "tabernacle"
       },
       {
-        "id": "tax",
-        "name": "tax, taxes"
-      },
-      {
         "id": "temple",
         "name": "temple"
       },
       {
-        "id": "tentofmeeting",
-        "name": "tent of meeting"
+        "id": "tempt",
+        "name": "tempt, temptation"
       },
       {
         "id": "test",
-        "name": "test"
+        "name": "test, tests, tested"
       },
       {
         "id": "testimony",
-        "name": "testimony, testify"
+        "name": "testimony, testify, witness, witnesses, eyewitness, eyewitnesses"
+      },
+      {
+        "id": "tetrarch",
+        "name": "tetrarch"
       },
       {
         "id": "thetwelve",
         "name": "the twelve, the eleven"
       },
       {
-        "id": "thresh",
-        "name": "thresh, threshing"
-      },
-      {
-        "id": "tongue",
-        "name": "tongue"
+        "id": "minister",
+        "name": "to minister, ministry"
       },
       {
         "id": "transgression",
-        "name": "transgress, transgression"
+        "name": "transgress, transgresses, transgression"
       },
       {
         "id": "trespass",
-        "name": "trespass"
-      },
-      {
-        "id": "tribute",
-        "name": "tribute"
+        "name": "trespass, trespasses, trespassed"
       },
       {
         "id": "true",
-        "name": "true, truth, come true"
+        "name": "true, truth, truths"
       },
       {
         "id": "trust",
-        "name": "trust, trustworthy, trustworthiness"
-      },
-      {
-        "id": "turn",
-        "name": "turn, turn away, turn back"
-      },
-      {
-        "id": "uncircumcised",
-        "name": "uncircumcised, uncircumcision"
-      },
-      {
-        "id": "unclean",
-        "name": "unclean"
-      },
-      {
-        "id": "unfaithful",
-        "name": "unfaithful, unfaithfulness"
-      },
-      {
-        "id": "unjust",
-        "name": "unjust, unjustly, injustice"
+        "name": "trust, trusts, trusted, trustworthy, trustworthiness"
       },
       {
         "id": "unleavenedbread",
         "name": "unleavened bread"
       },
       {
-        "id": "unrighteous",
-        "name": "unrighteous, unrighteousness"
-      },
-      {
-        "id": "upright",
-        "name": "upright, uprightness"
-      },
-      {
-        "id": "vain",
-        "name": "vain, vanity"
-      },
-      {
-        "id": "veil",
-        "name": "veil"
-      },
-      {
-        "id": "vision",
-        "name": "vision"
-      },
-      {
         "id": "vow",
-        "name": "vow"
+        "name": "vow, vows, vowed"
       },
       {
-        "id": "walk",
-        "name": "walk, walks, walked, walking"
-      },
-      {
-        "id": "watchtower",
-        "name": "watchtower, tower"
+        "id": "willofgod",
+        "name": "will of God"
       },
       {
         "id": "wise",
         "name": "wise, wisdom"
       },
       {
-        "id": "witness",
-        "name": "witness, eyewitness"
-      },
-      {
         "id": "woe",
         "name": "woe"
       },
       {
-        "id": "word",
-        "name": "word, words"
-      },
-      {
         "id": "wordofgod",
-        "name": "word of God, words of God, word of Yahweh, word of the Lord, scripture"
+        "name": "word of God, words of God, word of Yahweh, word of the Lord, word of truth, scripture, scriptures"
       },
       {
         "id": "works",
@@ -6126,11 +5826,7 @@
       },
       {
         "id": "yahwehofhosts",
-        "name": "Yahweh of hosts, God of hosts, host"
-      },
-      {
-        "id": "zadok",
-        "name": "Zadok"
+        "name": "Yahweh of hosts, God of hosts, host of heaven, host of the heavens, Lord of hosts"
       },
       {
         "id": "zealous",
