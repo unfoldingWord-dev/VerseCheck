@@ -33,7 +33,11 @@ exports[`CheckArea component Tests Check CheckArea component mode default 1`] = 
         "currentProjectToolsSelectedGL": Object {
           "translationWords": "en",
         },
-        "manifest": Object {},
+        "manifest": Object {
+          "target_language": Object {
+            "direction": "ltr",
+          },
+        },
       }
     }
     resourcesReducer={
@@ -500,6 +504,7 @@ exports[`CheckArea component Tests Check CheckArea component mode default 1`] = 
         },
       }
     }
+    selections={Array []}
     selectionsReducer={
       Object {
         "selections": Array [],
@@ -578,13 +583,17 @@ exports[`CheckArea component Tests Test CheckArea component mode comment) 1`] = 
         },
       }
     }
-    mode="default"
+    mode="comment"
     projectDetailsReducer={
       Object {
         "currentProjectToolsSelectedGL": Object {
           "translationWords": "en",
         },
-        "manifest": Object {},
+        "manifest": Object {
+          "target_language": Object {
+            "direction": "ltr",
+          },
+        },
       }
     }
     resourcesReducer={
@@ -1051,6 +1060,7 @@ exports[`CheckArea component Tests Test CheckArea component mode comment) 1`] = 
         },
       }
     }
+    selections={Array []}
     selectionsReducer={
       Object {
         "selections": Array [],
@@ -1076,28 +1086,10 @@ exports[`CheckArea component Tests Test CheckArea component mode comment) 1`] = 
       }
     }
   >
-    <div
-      style={
-        Object {
-          "WebkitUserSelect": "none",
-          "alignItems": "center",
-          "display": "flex",
-          "height": "100%",
-          "justifyContent": "center",
-        }
-      }
-    >
-      <InstructionsArea
-        alignedGLText="God's"
-        dontShowTranslation={true}
-        selectionsReducer={
-          Object {
-            "selections": Array [],
-          }
-        }
-        verseText="This is the verse text"
-      />
-    </div>
+    <CommentArea
+      actions={Object {}}
+      comment="Comment!"
+    />
   </div>
 </div>
 `;
@@ -1129,13 +1121,17 @@ exports[`CheckArea component Tests Test CheckArea component mode edit) 1`] = `
         },
       }
     }
-    mode="default"
+    mode="edit"
     projectDetailsReducer={
       Object {
         "currentProjectToolsSelectedGL": Object {
           "translationWords": "en",
         },
-        "manifest": Object {},
+        "manifest": Object {
+          "target_language": Object {
+            "direction": "ltr",
+          },
+        },
       }
     }
     resourcesReducer={
@@ -1602,6 +1598,7 @@ exports[`CheckArea component Tests Test CheckArea component mode edit) 1`] = `
         },
       }
     }
+    selections={Array []}
     selectionsReducer={
       Object {
         "selections": Array [],
@@ -1627,28 +1624,13 @@ exports[`CheckArea component Tests Test CheckArea component mode edit) 1`] = `
       }
     }
   >
-    <div
-      style={
-        Object {
-          "WebkitUserSelect": "none",
-          "alignItems": "center",
-          "display": "flex",
-          "height": "100%",
-          "justifyContent": "center",
-        }
-      }
-    >
-      <InstructionsArea
-        alignedGLText="God's"
-        dontShowTranslation={true}
-        selectionsReducer={
-          Object {
-            "selections": Array [],
-          }
-        }
-        verseText="This is the verse text"
-      />
-    </div>
+    <EditVerseArea
+      actions={Object {}}
+      dir="ltr"
+      tags={Array []}
+      verseChanged={false}
+      verseText="This is the verse text"
+    />
   </div>
 </div>
 `;
@@ -1664,7 +1646,7 @@ exports[`CheckArea component Tests Test CheckArea component mode select) 1`] = `
     }
   }
 >
-  <DefaultArea
+  <SelectionArea
     actions={Object {}}
     comment="Comment!"
     contextIdReducer={
@@ -1680,13 +1662,17 @@ exports[`CheckArea component Tests Test CheckArea component mode select) 1`] = `
         },
       }
     }
-    mode="default"
+    mode="select"
     projectDetailsReducer={
       Object {
         "currentProjectToolsSelectedGL": Object {
           "translationWords": "en",
         },
-        "manifest": Object {},
+        "manifest": Object {
+          "target_language": Object {
+            "direction": "ltr",
+          },
+        },
       }
     }
     resourcesReducer={
@@ -2153,6 +2139,7 @@ exports[`CheckArea component Tests Test CheckArea component mode select) 1`] = `
         },
       }
     }
+    selections={Array []}
     selectionsReducer={
       Object {
         "selections": Array [],
@@ -2184,14 +2171,15 @@ exports[`CheckArea component Tests Test CheckArea component mode select) 1`] = `
           "WebkitUserSelect": "none",
           "alignItems": "center",
           "display": "flex",
-          "height": "100%",
+          "flex": "1",
           "justifyContent": "center",
+          "overflow": "auto",
         }
       }
     >
       <InstructionsArea
         alignedGLText="God's"
-        dontShowTranslation={true}
+        mode="select"
         selectionsReducer={
           Object {
             "selections": Array [],
@@ -2237,7 +2225,11 @@ exports[`CheckArea component Tests Test CheckArea component where GL Aligned Tex
         "currentProjectToolsSelectedGL": Object {
           "translationWords": "en",
         },
-        "manifest": Object {},
+        "manifest": Object {
+          "target_language": Object {
+            "direction": "ltr",
+          },
+        },
       }
     }
     resourcesReducer={
@@ -2253,6 +2245,7 @@ exports[`CheckArea component Tests Test CheckArea component where GL Aligned Tex
         },
       }
     }
+    selections={Array []}
     selectionsReducer={
       Object {
         "selections": Array [],
