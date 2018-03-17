@@ -6160,27 +6160,10 @@
             },
             "tool": "translationWords",
             "groupId": "apostle",
-            "quote": "apostle",
-            "occurrence": 1
-          }
-        }
-      ],
-      "astray": [
-        {
-          "priority": 1,
-          "comments": false,
-          "reminders": false,
-          "selections": false,
-          "verseEdits": false,
-          "contextId": {
-            "reference": {
-              "bookId": "tit",
-              "chapter": 3,
-              "verse": 3
-            },
-            "tool": "translationWords",
-            "groupId": "astray",
-            "quote": "led astray",
+            "quote": "ἀπόστολος",
+            "strong": [
+              "G06520"
+            ],
             "occurrence": 1
           }
         }
@@ -6200,7 +6183,75 @@
             },
             "tool": "translationWords",
             "groupId": "authority",
-            "quote": "authority",
+            "quote": "ἐπιταγῆς",
+            "strong": [
+              "G20030"
+            ],
+            "occurrence": 1
+          }
+        },
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 3,
+              "verse": 1
+            },
+            "tool": "translationWords",
+            "groupId": "authority",
+            "quote": "ἐξουσίαις",
+            "strong": [
+              "G18490"
+            ],
+            "occurrence": 1
+          }
+        }
+      ],
+      "believe": [
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 1,
+              "verse": 15
+            },
+            "tool": "translationWords",
+            "groupId": "believe",
+            "quote": "ἀπίστοις",
+            "strong": [
+              "G05710"
+            ],
+            "occurrence": 1
+          }
+        },
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 3,
+              "verse": 8
+            },
+            "tool": "translationWords",
+            "groupId": "believe",
+            "quote": "πεπιστευκότες",
+            "strong": [
+              "G41000"
+            ],
             "occurrence": 1
           }
         }
@@ -6216,11 +6267,14 @@
             "reference": {
               "bookId": "tit",
               "chapter": 1,
-              "verse": 7
+              "verse": 6
             },
             "tool": "translationWords",
             "groupId": "blameless",
-            "quote": "blameless",
+            "quote": "ἀνέγκλητος",
+            "strong": [
+              "G04100"
+            ],
             "occurrence": 1
           }
         },
@@ -6233,12 +6287,59 @@
           "contextId": {
             "reference": {
               "bookId": "tit",
-              "chapter": 2,
-              "verse": 8
+              "chapter": 1,
+              "verse": 7
             },
             "tool": "translationWords",
             "groupId": "blameless",
-            "quote": "blameless",
+            "quote": "ἀνέγκλητον",
+            "strong": [
+              "G04100"
+            ],
+            "occurrence": 1
+          }
+        }
+      ],
+      "blasphemy": [
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 2,
+              "verse": 5
+            },
+            "tool": "translationWords",
+            "groupId": "blasphemy",
+            "quote": "βλασφημῆται",
+            "strong": [
+              "G09870"
+            ],
+            "occurrence": 1
+          }
+        },
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 3,
+              "verse": 2
+            },
+            "tool": "translationWords",
+            "groupId": "blasphemy",
+            "quote": "βλασφημεῖν",
+            "strong": [
+              "G09870"
+            ],
             "occurrence": 1
           }
         }
@@ -6258,7 +6359,10 @@
             },
             "tool": "translationWords",
             "groupId": "bless",
-            "quote": "blessed",
+            "quote": "μακαρίαν",
+            "strong": [
+              "G31070"
+            ],
             "occurrence": 1
           }
         }
@@ -6278,7 +6382,10 @@
             },
             "tool": "translationWords",
             "groupId": "bornagain",
-            "quote": "new birth",
+            "quote": "παλινγενεσίας",
+            "strong": [
+              "G38240"
+            ],
             "occurrence": 1
           }
         }
@@ -6298,7 +6405,54 @@
             },
             "tool": "translationWords",
             "groupId": "children",
-            "quote": "children",
+            "quote": "τέκνα",
+            "strong": [
+              "G50430"
+            ],
+            "occurrence": 1
+          }
+        }
+      ],
+      "christ": [
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 1,
+              "verse": 1
+            },
+            "tool": "translationWords",
+            "groupId": "christ",
+            "quote": "Χριστοῦ",
+            "strong": [
+              "G55470"
+            ],
+            "occurrence": 1
+          }
+        },
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 1,
+              "verse": 4
+            },
+            "tool": "translationWords",
+            "groupId": "christ",
+            "quote": "Χριστοῦ",
+            "strong": [
+              "G55470"
+            ],
             "occurrence": 1
           }
         },
@@ -6312,11 +6466,35 @@
             "reference": {
               "bookId": "tit",
               "chapter": 2,
-              "verse": 4
+              "verse": 13
             },
             "tool": "translationWords",
-            "groupId": "children",
-            "quote": "children",
+            "groupId": "christ",
+            "quote": "Χριστοῦ",
+            "strong": [
+              "G55470"
+            ],
+            "occurrence": 1
+          }
+        },
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 3,
+              "verse": 6
+            },
+            "tool": "translationWords",
+            "groupId": "christ",
+            "quote": "Χριστοῦ",
+            "strong": [
+              "G55470"
+            ],
             "occurrence": 1
           }
         }
@@ -6336,12 +6514,15 @@
             },
             "tool": "translationWords",
             "groupId": "circumcise",
-            "quote": "circumcision",
+            "quote": "περιτομῆς",
+            "strong": [
+              "G40610"
+            ],
             "occurrence": 1
           }
         }
       ],
-      "commander": [
+      "command": [
         {
           "priority": 1,
           "comments": false,
@@ -6355,28 +6536,11 @@
               "verse": 3
             },
             "tool": "translationWords",
-            "groupId": "commander",
-            "quote": "command",
-            "occurrence": 1
-          }
-        }
-      ],
-      "confidence": [
-        {
-          "priority": 1,
-          "comments": false,
-          "reminders": false,
-          "selections": false,
-          "verseEdits": false,
-          "contextId": {
-            "reference": {
-              "bookId": "tit",
-              "chapter": 1,
-              "verse": 2
-            },
-            "tool": "translationWords",
-            "groupId": "confidence",
-            "quote": "confidence",
+            "groupId": "command",
+            "quote": "ἐπιταγὴν",
+            "strong": [
+              "G20030"
+            ],
             "occurrence": 1
           }
         },
@@ -6389,17 +6553,43 @@
           "contextId": {
             "reference": {
               "bookId": "tit",
+              "chapter": 1,
+              "verse": 14
+            },
+            "tool": "translationWords",
+            "groupId": "command",
+            "quote": "ἐντολαῖς",
+            "strong": [
+              "G17850"
+            ],
+            "occurrence": 1
+          }
+        }
+      ],
+      "condemn": [
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
               "chapter": 3,
-              "verse": 7
+              "verse": 11
             },
             "tool": "translationWords",
-            "groupId": "confidence",
-            "quote": "confidence",
+            "groupId": "condemn",
+            "quote": "αὐτοκατάκριτος",
+            "strong": [
+              "G08430"
+            ],
             "occurrence": 1
           }
         }
       ],
-      "crete": [
+      "conscience": [
         {
           "priority": 1,
           "comments": false,
@@ -6410,16 +6600,19 @@
             "reference": {
               "bookId": "tit",
               "chapter": 1,
-              "verse": 5
+              "verse": 15
             },
             "tool": "translationWords",
-            "groupId": "crete",
-            "quote": "Crete",
+            "groupId": "conscience",
+            "quote": "συνείδησις",
+            "strong": [
+              "G48930"
+            ],
             "occurrence": 1
           }
         }
       ],
-      "deceive": [
+      "discipline": [
         {
           "priority": 1,
           "comments": false,
@@ -6430,16 +6623,17 @@
             "reference": {
               "bookId": "tit",
               "chapter": 1,
-              "verse": 10
+              "verse": 8
             },
             "tool": "translationWords",
-            "groupId": "deceive",
-            "quote": "deceive",
+            "groupId": "discipline",
+            "quote": "ἐγκρατῆ",
+            "strong": [
+              "G14680"
+            ],
             "occurrence": 1
           }
-        }
-      ],
-      "deliverer": [
+        },
         {
           "priority": 1,
           "comments": false,
@@ -6449,32 +6643,15 @@
           "contextId": {
             "reference": {
               "bookId": "tit",
-              "chapter": 1,
-              "verse": 3
+              "chapter": 2,
+              "verse": 12
             },
             "tool": "translationWords",
-            "groupId": "deliverer",
-            "quote": "deliver",
-            "occurrence": 1
-          }
-        }
-      ],
-      "elder": [
-        {
-          "priority": 1,
-          "comments": false,
-          "reminders": false,
-          "selections": false,
-          "verseEdits": false,
-          "contextId": {
-            "reference": {
-              "bookId": "tit",
-              "chapter": 1,
-              "verse": 6
-            },
-            "tool": "translationWords",
-            "groupId": "elder",
-            "quote": "elder",
+            "groupId": "discipline",
+            "quote": "παιδεύουσα",
+            "strong": [
+              "G38110"
+            ],
             "occurrence": 1
           }
         }
@@ -6494,7 +6671,10 @@
             },
             "tool": "translationWords",
             "groupId": "elect",
-            "quote": "chosen people",
+            "quote": "ἐκλεκτῶν",
+            "strong": [
+              "G15880"
+            ],
             "occurrence": 1
           }
         }
@@ -6514,7 +6694,31 @@
             },
             "tool": "translationWords",
             "groupId": "eternity",
-            "quote": "everlasting",
+            "quote": "αἰωνίου",
+            "strong": [
+              "G01660"
+            ],
+            "occurrence": 1
+          }
+        },
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 1,
+              "verse": 2
+            },
+            "tool": "translationWords",
+            "groupId": "eternity",
+            "quote": "αἰωνίων",
+            "strong": [
+              "G01660"
+            ],
             "occurrence": 1
           }
         },
@@ -6532,7 +6736,10 @@
             },
             "tool": "translationWords",
             "groupId": "eternity",
-            "quote": "eternal",
+            "quote": "αἰωνίου",
+            "strong": [
+              "G01660"
+            ],
             "occurrence": 1
           }
         }
@@ -6548,11 +6755,35 @@
             "reference": {
               "bookId": "tit",
               "chapter": 1,
-              "verse": 6
+              "verse": 12
             },
             "tool": "translationWords",
             "groupId": "evil",
-            "quote": "wicked",
+            "quote": "κακὰ",
+            "strong": [
+              "G25560"
+            ],
+            "occurrence": 1
+          }
+        },
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 2,
+              "verse": 8
+            },
+            "tool": "translationWords",
+            "groupId": "evil",
+            "quote": "φαῦλον",
+            "strong": [
+              "G53370"
+            ],
             "occurrence": 1
           }
         },
@@ -6570,7 +6801,54 @@
             },
             "tool": "translationWords",
             "groupId": "evil",
-            "quote": "evil",
+            "quote": "κακίᾳ",
+            "strong": [
+              "G25490"
+            ],
+            "occurrence": 1
+          }
+        }
+      ],
+      "exhort": [
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 2,
+              "verse": 6
+            },
+            "tool": "translationWords",
+            "groupId": "exhort",
+            "quote": "παρακάλει",
+            "strong": [
+              "G38700"
+            ],
+            "occurrence": 1
+          }
+        },
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 2,
+              "verse": 15
+            },
+            "tool": "translationWords",
+            "groupId": "exhort",
+            "quote": "παρακάλει",
+            "strong": [
+              "G38700"
+            ],
             "occurrence": 1
           }
         }
@@ -6590,7 +6868,10 @@
             },
             "tool": "translationWords",
             "groupId": "faith",
-            "quote": "faith",
+            "quote": "πίστιν",
+            "strong": [
+              "G41020"
+            ],
             "occurrence": 1
           }
         },
@@ -6608,7 +6889,10 @@
             },
             "tool": "translationWords",
             "groupId": "faith",
-            "quote": "faith",
+            "quote": "πίστιν",
+            "strong": [
+              "G41020"
+            ],
             "occurrence": 1
           }
         },
@@ -6626,7 +6910,10 @@
             },
             "tool": "translationWords",
             "groupId": "faith",
-            "quote": "faith",
+            "quote": "πίστει",
+            "strong": [
+              "G41020"
+            ],
             "occurrence": 1
           }
         },
@@ -6644,7 +6931,10 @@
             },
             "tool": "translationWords",
             "groupId": "faith",
-            "quote": "faith",
+            "quote": "πίστει",
+            "strong": [
+              "G41020"
+            ],
             "occurrence": 1
           }
         },
@@ -6662,7 +6952,10 @@
             },
             "tool": "translationWords",
             "groupId": "faith",
-            "quote": "faith",
+            "quote": "πίστιν",
+            "strong": [
+              "G41020"
+            ],
             "occurrence": 1
           }
         },
@@ -6680,7 +6973,10 @@
             },
             "tool": "translationWords",
             "groupId": "faith",
-            "quote": "faith",
+            "quote": "πίστει",
+            "strong": [
+              "G41020"
+            ],
             "occurrence": 1
           }
         }
@@ -6745,6 +7041,73 @@
             "quote": "πιστὸς",
             "strong": [
               "G41030"
+            ],
+            "occurrence": 1
+          }
+        }
+      ],
+      "foolish": [
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 3,
+              "verse": 3
+            },
+            "tool": "translationWords",
+            "groupId": "foolish",
+            "quote": "ἀνόητοι",
+            "strong": [
+              "G04530"
+            ],
+            "occurrence": 1
+          }
+        },
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 3,
+              "verse": 9
+            },
+            "tool": "translationWords",
+            "groupId": "foolish",
+            "quote": "μωρὰς",
+            "strong": [
+              "G34740"
+            ],
+            "occurrence": 1
+          }
+        }
+      ],
+      "glory": [
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 2,
+              "verse": 13
+            },
+            "tool": "translationWords",
+            "groupId": "glory",
+            "quote": "δόξης",
+            "strong": [
+              "G13910"
             ],
             "occurrence": 1
           }
@@ -7040,25 +7403,10 @@
             },
             "tool": "translationWords",
             "groupId": "godly",
-            "quote": "godliness",
-            "occurrence": 1
-          }
-        },
-        {
-          "priority": 1,
-          "comments": false,
-          "reminders": false,
-          "selections": false,
-          "verseEdits": false,
-          "contextId": {
-            "reference": {
-              "bookId": "tit",
-              "chapter": 1,
-              "verse": 8
-            },
-            "tool": "translationWords",
-            "groupId": "godly",
-            "quote": "godly",
+            "quote": "εὐσέβειαν",
+            "strong": [
+              "G21500"
+            ],
             "occurrence": 1
           }
         },
@@ -7076,7 +7424,31 @@
             },
             "tool": "translationWords",
             "groupId": "godly",
-            "quote": "godly",
+            "quote": "ἀσέβειαν",
+            "strong": [
+              "G07630"
+            ],
+            "occurrence": 1
+          }
+        },
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 2,
+              "verse": 12
+            },
+            "tool": "translationWords",
+            "groupId": "godly",
+            "quote": "εὐσεβῶς",
+            "strong": [
+              "G21530"
+            ],
             "occurrence": 1
           }
         }
@@ -7096,7 +7468,11 @@
             },
             "tool": "translationWords",
             "groupId": "godthefather",
-            "quote": "God the Father",
+            "quote": "Θεοῦ Πατρὸς",
+            "strong": [
+              "G23160",
+              "G39620"
+            ],
             "occurrence": 1
           }
         }
@@ -7116,25 +7492,10 @@
             },
             "tool": "translationWords",
             "groupId": "good",
-            "quote": "good",
-            "occurrence": 1
-          }
-        },
-        {
-          "priority": 1,
-          "comments": false,
-          "reminders": false,
-          "selections": false,
-          "verseEdits": false,
-          "contextId": {
-            "reference": {
-              "bookId": "tit",
-              "chapter": 1,
-              "verse": 9
-            },
-            "tool": "translationWords",
-            "groupId": "good",
-            "quote": "good",
+            "quote": "φιλάγαθον",
+            "strong": [
+              "G53580"
+            ],
             "occurrence": 1
           }
         },
@@ -7152,25 +7513,10 @@
             },
             "tool": "translationWords",
             "groupId": "good",
-            "quote": "good",
-            "occurrence": 1
-          }
-        },
-        {
-          "priority": 1,
-          "comments": false,
-          "reminders": false,
-          "selections": false,
-          "verseEdits": false,
-          "contextId": {
-            "reference": {
-              "bookId": "tit",
-              "chapter": 2,
-              "verse": 3
-            },
-            "tool": "translationWords",
-            "groupId": "good",
-            "quote": "good",
+            "quote": "ἀγαθὸν",
+            "strong": [
+              "G00180"
+            ],
             "occurrence": 1
           }
         },
@@ -7188,7 +7534,10 @@
             },
             "tool": "translationWords",
             "groupId": "good",
-            "quote": "good",
+            "quote": "ἀγαθάς",
+            "strong": [
+              "G00180"
+            ],
             "occurrence": 1
           }
         },
@@ -7206,7 +7555,10 @@
             },
             "tool": "translationWords",
             "groupId": "good",
-            "quote": "good",
+            "quote": "καλῶν",
+            "strong": [
+              "G25700"
+            ],
             "occurrence": 1
           }
         },
@@ -7224,7 +7576,10 @@
             },
             "tool": "translationWords",
             "groupId": "good",
-            "quote": "good",
+            "quote": "ἀγαθήν",
+            "strong": [
+              "G00180"
+            ],
             "occurrence": 1
           }
         },
@@ -7242,7 +7597,10 @@
             },
             "tool": "translationWords",
             "groupId": "good",
-            "quote": "good",
+            "quote": "καλῶν",
+            "strong": [
+              "G25700"
+            ],
             "occurrence": 1
           }
         },
@@ -7260,7 +7618,10 @@
             },
             "tool": "translationWords",
             "groupId": "good",
-            "quote": "good",
+            "quote": "ἀγαθὸν",
+            "strong": [
+              "G00180"
+            ],
             "occurrence": 1
           }
         },
@@ -7278,7 +7639,10 @@
             },
             "tool": "translationWords",
             "groupId": "good",
-            "quote": "good",
+            "quote": "καλῶν",
+            "strong": [
+              "G25700"
+            ],
             "occurrence": 1
           }
         },
@@ -7296,8 +7660,11 @@
             },
             "tool": "translationWords",
             "groupId": "good",
-            "quote": "good",
-            "occurrence": 2
+            "quote": "καλὰ",
+            "strong": [
+              "G25700"
+            ],
+            "occurrence": 1
           }
         },
         {
@@ -7314,7 +7681,10 @@
             },
             "tool": "translationWords",
             "groupId": "good",
-            "quote": "good",
+            "quote": "καλῶν",
+            "strong": [
+              "G25700"
+            ],
             "occurrence": 1
           }
         }
@@ -7334,7 +7704,10 @@
             },
             "tool": "translationWords",
             "groupId": "grace",
-            "quote": "Grace",
+            "quote": "χάρις",
+            "strong": [
+              "G54850"
+            ],
             "occurrence": 1
           }
         },
@@ -7352,7 +7725,10 @@
             },
             "tool": "translationWords",
             "groupId": "grace",
-            "quote": "grace",
+            "quote": "χάρις",
+            "strong": [
+              "G54850"
+            ],
             "occurrence": 1
           }
         },
@@ -7370,7 +7746,10 @@
             },
             "tool": "translationWords",
             "groupId": "grace",
-            "quote": "grace",
+            "quote": "χάριτι",
+            "strong": [
+              "G54850"
+            ],
             "occurrence": 1
           }
         },
@@ -7388,7 +7767,54 @@
             },
             "tool": "translationWords",
             "groupId": "grace",
-            "quote": "Grace",
+            "quote": "χάρις",
+            "strong": [
+              "G54850"
+            ],
+            "occurrence": 1
+          }
+        }
+      ],
+      "holy": [
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 1,
+              "verse": 8
+            },
+            "tool": "translationWords",
+            "groupId": "holy",
+            "quote": "ὅσιον",
+            "strong": [
+              "G37410"
+            ],
+            "occurrence": 1
+          }
+        },
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 3,
+              "verse": 5
+            },
+            "tool": "translationWords",
+            "groupId": "holy",
+            "quote": "Ἁγίου",
+            "strong": [
+              "G00400"
+            ],
             "occurrence": 1
           }
         }
@@ -7408,25 +7834,11 @@
             },
             "tool": "translationWords",
             "groupId": "holyspirit",
-            "quote": "Holy Spirit",
-            "occurrence": 1
-          }
-        },
-        {
-          "priority": 1,
-          "comments": false,
-          "reminders": false,
-          "selections": false,
-          "verseEdits": false,
-          "contextId": {
-            "reference": {
-              "bookId": "tit",
-              "chapter": 3,
-              "verse": 6
-            },
-            "tool": "translationWords",
-            "groupId": "holyspirit",
-            "quote": "Holy Spirit",
+            "quote": "Πνεύματος Ἁγίου",
+            "strong": [
+              "G41510",
+              "G00400"
+            ],
             "occurrence": 1
           }
         }
@@ -7441,12 +7853,80 @@
           "contextId": {
             "reference": {
               "bookId": "tit",
+              "chapter": 1,
+              "verse": 2
+            },
+            "tool": "translationWords",
+            "groupId": "hope",
+            "quote": "ἐλπίδι",
+            "strong": [
+              "G16800"
+            ],
+            "occurrence": 1
+          }
+        },
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
               "chapter": 2,
               "verse": 13
             },
             "tool": "translationWords",
             "groupId": "hope",
-            "quote": "hope",
+            "quote": "ἐλπίδα",
+            "strong": [
+              "G16800"
+            ],
+            "occurrence": 1
+          }
+        },
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 3,
+              "verse": 7
+            },
+            "tool": "translationWords",
+            "groupId": "hope",
+            "quote": "ἐλπίδα",
+            "strong": [
+              "G16800"
+            ],
+            "occurrence": 1
+          }
+        }
+      ],
+      "humble": [
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 3,
+              "verse": 2
+            },
+            "tool": "translationWords",
+            "groupId": "humble",
+            "quote": "πραΰτητα",
+            "strong": [
+              "G42400"
+            ],
             "occurrence": 1
           }
         }
@@ -7466,7 +7946,11 @@
             },
             "tool": "translationWords",
             "groupId": "jesus",
-            "quote": "Jesus Christ",
+            "quote": "Ἰησοῦ Χριστοῦ",
+            "strong": [
+              "G24240",
+              "G55470"
+            ],
             "occurrence": 1
           }
         },
@@ -7484,7 +7968,11 @@
             },
             "tool": "translationWords",
             "groupId": "jesus",
-            "quote": "Christ Jesus",
+            "quote": "Χριστοῦ Ἰησοῦ",
+            "strong": [
+              "G55470",
+              "G24240"
+            ],
             "occurrence": 1
           }
         },
@@ -7502,25 +7990,11 @@
             },
             "tool": "translationWords",
             "groupId": "jesus",
-            "quote": "Jesus Christ",
-            "occurrence": 1
-          }
-        },
-        {
-          "priority": 1,
-          "comments": false,
-          "reminders": false,
-          "selections": false,
-          "verseEdits": false,
-          "contextId": {
-            "reference": {
-              "bookId": "tit",
-              "chapter": 2,
-              "verse": 14
-            },
-            "tool": "translationWords",
-            "groupId": "jesus",
-            "quote": "Jesus",
+            "quote": "Ἰησοῦ Χριστοῦ",
+            "strong": [
+              "G24240",
+              "G55470"
+            ],
             "occurrence": 1
           }
         },
@@ -7538,7 +8012,57 @@
             },
             "tool": "translationWords",
             "groupId": "jesus",
-            "quote": "Jesus Christ",
+            "quote": "Ἰησοῦ Χριστοῦ",
+            "strong": [
+              "G24240",
+              "G55470"
+            ],
+            "occurrence": 1
+          }
+        }
+      ],
+      "jew": [
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 1,
+              "verse": 14
+            },
+            "tool": "translationWords",
+            "groupId": "jew",
+            "quote": "Ἰουδαϊκοῖς",
+            "strong": [
+              "G24510"
+            ],
+            "occurrence": 1
+          }
+        }
+      ],
+      "justice": [
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 3,
+              "verse": 7
+            },
+            "tool": "translationWords",
+            "groupId": "justice",
+            "quote": "δικαιωθέντες",
+            "strong": [
+              "G13440"
+            ],
             "occurrence": 1
           }
         }
@@ -7558,25 +8082,10 @@
             },
             "tool": "translationWords",
             "groupId": "lawofmoses",
-            "quote": "law",
-            "occurrence": 1
-          }
-        },
-        {
-          "priority": 1,
-          "comments": false,
-          "reminders": false,
-          "selections": false,
-          "verseEdits": false,
-          "contextId": {
-            "reference": {
-              "bookId": "tit",
-              "chapter": 3,
-              "verse": 13
-            },
-            "tool": "translationWords",
-            "groupId": "lawofmoses",
-            "quote": "law",
+            "quote": "νομικὰς",
+            "strong": [
+              "G35440"
+            ],
             "occurrence": 1
           }
         }
@@ -7596,7 +8105,10 @@
             },
             "tool": "translationWords",
             "groupId": "life",
-            "quote": "life",
+            "quote": "ζωῆς",
+            "strong": [
+              "G22220"
+            ],
             "occurrence": 1
           }
         },
@@ -7614,7 +8126,10 @@
             },
             "tool": "translationWords",
             "groupId": "life",
-            "quote": "live",
+            "quote": "ζήσωμεν",
+            "strong": [
+              "G21980"
+            ],
             "occurrence": 1
           }
         },
@@ -7632,7 +8147,56 @@
             },
             "tool": "translationWords",
             "groupId": "life",
-            "quote": "life",
+            "quote": "ζωῆς",
+            "strong": [
+              "G22220"
+            ],
+            "occurrence": 1
+          }
+        }
+      ],
+      "live": [
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 3,
+              "verse": 3
+            },
+            "tool": "translationWords",
+            "groupId": "live",
+            "quote": "διάγοντες",
+            "strong": [
+              "G12360"
+            ],
+            "occurrence": 1
+          }
+        }
+      ],
+      "lord": [
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 2,
+              "verse": 9
+            },
+            "tool": "translationWords",
+            "groupId": "lord",
+            "quote": "δεσπόταις",
+            "strong": [
+              "G12030"
+            ],
             "occurrence": 1
           }
         }
@@ -7652,7 +8216,10 @@
             },
             "tool": "translationWords",
             "groupId": "love",
-            "quote": "love",
+            "quote": "ἀγάπῃ",
+            "strong": [
+              "G00260"
+            ],
             "occurrence": 1
           }
         },
@@ -7670,7 +8237,31 @@
             },
             "tool": "translationWords",
             "groupId": "love",
-            "quote": "love",
+            "quote": "φιλάνδρους",
+            "strong": [
+              "G53620"
+            ],
+            "occurrence": 1
+          }
+        },
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 2,
+              "verse": 4
+            },
+            "tool": "translationWords",
+            "groupId": "love",
+            "quote": "φιλοτέκνους",
+            "strong": [
+              "G53880"
+            ],
             "occurrence": 1
           }
         },
@@ -7688,7 +8279,10 @@
             },
             "tool": "translationWords",
             "groupId": "love",
-            "quote": "love",
+            "quote": "φιλανθρωπία",
+            "strong": [
+              "G53630"
+            ],
             "occurrence": 1
           }
         },
@@ -7706,7 +8300,10 @@
             },
             "tool": "translationWords",
             "groupId": "love",
-            "quote": "love",
+            "quote": "φιλοῦντας",
+            "strong": [
+              "G53680"
+            ],
             "occurrence": 1
           }
         }
@@ -7726,12 +8323,15 @@
             },
             "tool": "translationWords",
             "groupId": "mercy",
-            "quote": "mercy",
+            "quote": "ἔλεος",
+            "strong": [
+              "G16560"
+            ],
             "occurrence": 1
           }
         }
       ],
-      "peace": [
+      "power": [
         {
           "priority": 1,
           "comments": false,
@@ -7742,11 +8342,60 @@
             "reference": {
               "bookId": "tit",
               "chapter": 1,
-              "verse": 4
+              "verse": 9
             },
             "tool": "translationWords",
-            "groupId": "peace",
-            "quote": "peace",
+            "groupId": "power",
+            "quote": "δυνατὸς",
+            "strong": [
+              "G14150"
+            ],
+            "occurrence": 1
+          }
+        }
+      ],
+      "promise": [
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 1,
+              "verse": 2
+            },
+            "tool": "translationWords",
+            "groupId": "promise",
+            "quote": "ἐπηγγείλατο",
+            "strong": [
+              "G18610"
+            ],
+            "occurrence": 1
+          }
+        }
+      ],
+      "prophet": [
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 1,
+              "verse": 12
+            },
+            "tool": "translationWords",
+            "groupId": "prophet",
+            "quote": "προφήτης",
+            "strong": [
+              "G43960"
+            ],
             "occurrence": 1
           }
         }
@@ -7766,7 +8415,10 @@
             },
             "tool": "translationWords",
             "groupId": "purify",
-            "quote": "pure",
+            "quote": "καθαρὰ",
+            "strong": [
+              "G25130"
+            ],
             "occurrence": 1
           }
         },
@@ -7784,8 +8436,11 @@
             },
             "tool": "translationWords",
             "groupId": "purify",
-            "quote": "pure",
-            "occurrence": 2
+            "quote": "καθαροῖς",
+            "strong": [
+              "G25130"
+            ],
+            "occurrence": 1
           }
         },
         {
@@ -7802,8 +8457,11 @@
             },
             "tool": "translationWords",
             "groupId": "purify",
-            "quote": "pure",
-            "occurrence": 3
+            "quote": "καθαρόν",
+            "strong": [
+              "G25130"
+            ],
+            "occurrence": 1
           }
         },
         {
@@ -7820,25 +8478,10 @@
             },
             "tool": "translationWords",
             "groupId": "purify",
-            "quote": "pure",
-            "occurrence": 1
-          }
-        },
-        {
-          "priority": 1,
-          "comments": false,
-          "reminders": false,
-          "selections": false,
-          "verseEdits": false,
-          "contextId": {
-            "reference": {
-              "bookId": "tit",
-              "chapter": 2,
-              "verse": 14
-            },
-            "tool": "translationWords",
-            "groupId": "purify",
-            "quote": "pure",
+            "quote": "ἁγνάς",
+            "strong": [
+              "G00530"
+            ],
             "occurrence": 1
           }
         }
@@ -7858,7 +8501,33 @@
             },
             "tool": "translationWords",
             "groupId": "redeem",
-            "quote": "redeem",
+            "quote": "λυτρώσηται",
+            "strong": [
+              "G30840"
+            ],
+            "occurrence": 1
+          }
+        }
+      ],
+      "reveal": [
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 1,
+              "verse": 3
+            },
+            "tool": "translationWords",
+            "groupId": "reveal",
+            "quote": "ἐφανέρωσεν",
+            "strong": [
+              "G53190"
+            ],
             "occurrence": 1
           }
         }
@@ -7878,7 +8547,31 @@
             },
             "tool": "translationWords",
             "groupId": "righteous",
-            "quote": "righteous",
+            "quote": "δίκαιον",
+            "strong": [
+              "G13420"
+            ],
+            "occurrence": 1
+          }
+        },
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 2,
+              "verse": 12
+            },
+            "tool": "translationWords",
+            "groupId": "righteous",
+            "quote": "δικαίως",
+            "strong": [
+              "G13460"
+            ],
             "occurrence": 1
           }
         },
@@ -7896,7 +8589,54 @@
             },
             "tool": "translationWords",
             "groupId": "righteous",
-            "quote": "righteousness",
+            "quote": "δικαιοσύνῃ",
+            "strong": [
+              "G13430"
+            ],
+            "occurrence": 1
+          }
+        }
+      ],
+      "save": [
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 2,
+              "verse": 11
+            },
+            "tool": "translationWords",
+            "groupId": "save",
+            "quote": "σωτήριος",
+            "strong": [
+              "G49920"
+            ],
+            "occurrence": 1
+          }
+        },
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 3,
+              "verse": 5
+            },
+            "tool": "translationWords",
+            "groupId": "save",
+            "quote": "ἔσωσεν",
+            "strong": [
+              "G49820"
+            ],
             "occurrence": 1
           }
         }
@@ -7916,7 +8656,10 @@
             },
             "tool": "translationWords",
             "groupId": "savior",
-            "quote": "savior",
+            "quote": "Σωτῆρος",
+            "strong": [
+              "G49900"
+            ],
             "occurrence": 1
           }
         },
@@ -7934,7 +8677,10 @@
             },
             "tool": "translationWords",
             "groupId": "savior",
-            "quote": "savior",
+            "quote": "Σωτῆρος",
+            "strong": [
+              "G49900"
+            ],
             "occurrence": 1
           }
         },
@@ -7952,7 +8698,10 @@
             },
             "tool": "translationWords",
             "groupId": "savior",
-            "quote": "savior",
+            "quote": "Σωτῆρος",
+            "strong": [
+              "G49900"
+            ],
             "occurrence": 1
           }
         },
@@ -7970,7 +8719,10 @@
             },
             "tool": "translationWords",
             "groupId": "savior",
-            "quote": "Savior",
+            "quote": "Σωτῆρος",
+            "strong": [
+              "G49900"
+            ],
             "occurrence": 1
           }
         },
@@ -7988,7 +8740,10 @@
             },
             "tool": "translationWords",
             "groupId": "savior",
-            "quote": "savior",
+            "quote": "Σωτῆρος",
+            "strong": [
+              "G49900"
+            ],
             "occurrence": 1
           }
         },
@@ -8006,65 +8761,10 @@
             },
             "tool": "translationWords",
             "groupId": "savior",
-            "quote": "Savior",
-            "occurrence": 1
-          }
-        }
-      ],
-      "servant": [
-        {
-          "priority": 1,
-          "comments": false,
-          "reminders": false,
-          "selections": false,
-          "verseEdits": false,
-          "contextId": {
-            "reference": {
-              "bookId": "tit",
-              "chapter": 1,
-              "verse": 1
-            },
-            "tool": "translationWords",
-            "groupId": "servant",
-            "quote": "servant",
-            "occurrence": 1
-          }
-        }
-      ],
-      "shame": [
-        {
-          "priority": 1,
-          "comments": false,
-          "reminders": false,
-          "selections": false,
-          "verseEdits": false,
-          "contextId": {
-            "reference": {
-              "bookId": "tit",
-              "chapter": 1,
-              "verse": 11
-            },
-            "tool": "translationWords",
-            "groupId": "shame",
-            "quote": "shameful",
-            "occurrence": 1
-          }
-        },
-        {
-          "priority": 1,
-          "comments": false,
-          "reminders": false,
-          "selections": false,
-          "verseEdits": false,
-          "contextId": {
-            "reference": {
-              "bookId": "tit",
-              "chapter": 2,
-              "verse": 8
-            },
-            "tool": "translationWords",
-            "groupId": "shame",
-            "quote": "shame",
+            "quote": "Σωτῆρος",
+            "strong": [
+              "G49900"
+            ],
             "occurrence": 1
           }
         }
@@ -8084,7 +8784,10 @@
             },
             "tool": "translationWords",
             "groupId": "sin",
-            "quote": "sinning",
+            "quote": "ἁμαρτάνει",
+            "strong": [
+              "G02640"
+            ],
             "occurrence": 1
           }
         }
@@ -8104,7 +8807,33 @@
             },
             "tool": "translationWords",
             "groupId": "son",
-            "quote": "son",
+            "quote": "τέκνῳ",
+            "strong": [
+              "G50430"
+            ],
+            "occurrence": 1
+          }
+        }
+      ],
+      "testimony": [
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 1,
+              "verse": 13
+            },
+            "tool": "translationWords",
+            "groupId": "testimony",
+            "quote": "μαρτυρία",
+            "strong": [
+              "G31410"
+            ],
             "occurrence": 1
           }
         }
@@ -8124,7 +8853,10 @@
             },
             "tool": "translationWords",
             "groupId": "true",
-            "quote": "truth",
+            "quote": "ἀληθείας",
+            "strong": [
+              "G02250"
+            ],
             "occurrence": 1
           }
         },
@@ -8142,7 +8874,10 @@
             },
             "tool": "translationWords",
             "groupId": "true",
-            "quote": "true",
+            "quote": "γνησίῳ",
+            "strong": [
+              "G11030"
+            ],
             "occurrence": 1
           }
         },
@@ -8160,7 +8895,10 @@
             },
             "tool": "translationWords",
             "groupId": "true",
-            "quote": "true",
+            "quote": "ἀληθής",
+            "strong": [
+              "G02270"
+            ],
             "occurrence": 1
           }
         },
@@ -8178,7 +8916,10 @@
             },
             "tool": "translationWords",
             "groupId": "true",
-            "quote": "truth",
+            "quote": "ἀλήθειαν",
+            "strong": [
+              "G02250"
+            ],
             "occurrence": 1
           }
         }
@@ -8194,112 +8935,19 @@
             "reference": {
               "bookId": "tit",
               "chapter": 1,
-              "verse": 9
+              "verse": 3
             },
             "tool": "translationWords",
             "groupId": "trust",
-            "quote": "trustworthy",
-            "occurrence": 1
-          }
-        },
-        {
-          "priority": 1,
-          "comments": false,
-          "reminders": false,
-          "selections": false,
-          "verseEdits": false,
-          "contextId": {
-            "reference": {
-              "bookId": "tit",
-              "chapter": 3,
-              "verse": 8
-            },
-            "tool": "translationWords",
-            "groupId": "trust",
-            "quote": "trustworthy",
-            "occurrence": 1
-          }
-        },
-        {
-          "priority": 1,
-          "comments": false,
-          "reminders": false,
-          "selections": false,
-          "verseEdits": false,
-          "contextId": {
-            "reference": {
-              "bookId": "tit",
-              "chapter": 3,
-              "verse": 8
-            },
-            "tool": "translationWords",
-            "groupId": "trust",
-            "quote": "trust",
+            "quote": "ἐπιστεύθην",
+            "strong": [
+              "G41000"
+            ],
             "occurrence": 1
           }
         }
       ],
-      "turn": [
-        {
-          "priority": 1,
-          "comments": false,
-          "reminders": false,
-          "selections": false,
-          "verseEdits": false,
-          "contextId": {
-            "reference": {
-              "bookId": "tit",
-              "chapter": 1,
-              "verse": 14
-            },
-            "tool": "translationWords",
-            "groupId": "turn",
-            "quote": "turn back",
-            "occurrence": 1
-          }
-        }
-      ],
-      "ungodly": [
-        {
-          "priority": 1,
-          "comments": false,
-          "reminders": false,
-          "selections": false,
-          "verseEdits": false,
-          "contextId": {
-            "reference": {
-              "bookId": "tit",
-              "chapter": 2,
-              "verse": 12
-            },
-            "tool": "translationWords",
-            "groupId": "ungodly",
-            "quote": "ungodliness",
-            "occurrence": 1
-          }
-        }
-      ],
-      "wise": [
-        {
-          "priority": 1,
-          "comments": false,
-          "reminders": false,
-          "selections": false,
-          "verseEdits": false,
-          "contextId": {
-            "reference": {
-              "bookId": "tit",
-              "chapter": 1,
-              "verse": 12
-            },
-            "tool": "translationWords",
-            "groupId": "wise",
-            "quote": "wise",
-            "occurrence": 1
-          }
-        }
-      ],
-      "word": [
+      "wordofgod": [
         {
           "priority": 1,
           "comments": false,
@@ -8313,8 +8961,11 @@
               "verse": 3
             },
             "tool": "translationWords",
-            "groupId": "word",
-            "quote": "word",
+            "groupId": "wordofgod",
+            "quote": "λόγον",
+            "strong": [
+              "G30560"
+            ],
             "occurrence": 1
           }
         },
@@ -8331,8 +8982,13 @@
               "verse": 5
             },
             "tool": "translationWords",
-            "groupId": "word",
-            "quote": "word",
+            "groupId": "wordofgod",
+            "quote": "λόγος τοῦ Θεοῦ",
+            "strong": [
+              "G30560",
+              "G35880",
+              "G23160"
+            ],
             "occurrence": 1
           }
         }
@@ -8352,7 +9008,31 @@
             },
             "tool": "translationWords",
             "groupId": "works",
-            "quote": "deeds",
+            "quote": "ἔργοις",
+            "strong": [
+              "G20410"
+            ],
+            "occurrence": 1
+          }
+        },
+        {
+          "priority": 1,
+          "comments": false,
+          "reminders": false,
+          "selections": false,
+          "verseEdits": false,
+          "contextId": {
+            "reference": {
+              "bookId": "tit",
+              "chapter": 1,
+              "verse": 16
+            },
+            "tool": "translationWords",
+            "groupId": "works",
+            "quote": "ἔργον",
+            "strong": [
+              "G20410"
+            ],
             "occurrence": 1
           }
         },
@@ -8370,7 +9050,10 @@
             },
             "tool": "translationWords",
             "groupId": "works",
-            "quote": "works",
+            "quote": "ἔργων",
+            "strong": [
+              "G20410"
+            ],
             "occurrence": 1
           }
         },
@@ -8388,7 +9071,10 @@
             },
             "tool": "translationWords",
             "groupId": "works",
-            "quote": "works",
+            "quote": "ἔργων",
+            "strong": [
+              "G20410"
+            ],
             "occurrence": 1
           }
         },
@@ -8406,7 +9092,10 @@
             },
             "tool": "translationWords",
             "groupId": "works",
-            "quote": "work",
+            "quote": "ἔργον",
+            "strong": [
+              "G20410"
+            ],
             "occurrence": 1
           }
         },
@@ -8424,7 +9113,10 @@
             },
             "tool": "translationWords",
             "groupId": "works",
-            "quote": "works",
+            "quote": "ἔργων",
+            "strong": [
+              "G20410"
+            ],
             "occurrence": 1
           }
         },
@@ -8442,7 +9134,10 @@
             },
             "tool": "translationWords",
             "groupId": "works",
-            "quote": "works",
+            "quote": "ἔργων",
+            "strong": [
+              "G20410"
+            ],
             "occurrence": 1
           }
         },
@@ -8460,7 +9155,10 @@
             },
             "tool": "translationWords",
             "groupId": "works",
-            "quote": "works",
+            "quote": "ἔργων",
+            "strong": [
+              "G20410"
+            ],
             "occurrence": 1
           }
         }
@@ -8480,12 +9178,15 @@
             },
             "tool": "translationWords",
             "groupId": "world",
-            "quote": "worldly",
+            "quote": "κοσμικὰς",
+            "strong": [
+              "G28860"
+            ],
             "occurrence": 1
           }
         }
       ],
-      "worthy": [
+      "zealous": [
         {
           "priority": 1,
           "comments": false,
@@ -8495,30 +9196,15 @@
           "contextId": {
             "reference": {
               "bookId": "tit",
-              "chapter": 1,
-              "verse": 10
+              "chapter": 2,
+              "verse": 14
             },
             "tool": "translationWords",
-            "groupId": "worthy",
-            "quote": "worthless",
-            "occurrence": 1
-          }
-        },
-        {
-          "priority": 1,
-          "comments": false,
-          "reminders": false,
-          "selections": false,
-          "verseEdits": false,
-          "contextId": {
-            "reference": {
-              "bookId": "tit",
-              "chapter": 3,
-              "verse": 9
-            },
-            "tool": "translationWords",
-            "groupId": "worthy",
-            "quote": "worthless",
+            "groupId": "zealous",
+            "quote": "ζηλωτὴν",
+            "strong": [
+              "G22070"
+            ],
             "occurrence": 1
           }
         }
