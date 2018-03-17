@@ -3,12 +3,13 @@ import React from 'react';
 import fs from 'fs-extra';
 import View from '../src/components/View';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import renderer from 'react-test-renderer';
 const project = '__tests__/fixtures/project/loadedProjectShortened.json';
 
 describe('View component Tests', () => {
-  it('before Project Loaded', () => {
-    let projectState = fs.readJSONSync(project);
-    projectState.actions = {
+  test('Integrated View test', () => {
+    let props = fs.readJSONSync(project);
+    props.actions = {
       handleGoToNext: () => jest.fn(),
       handleGoToPrevious: () => jest.fn(),
       handleOpenDialog: () => jest.fn(),
@@ -31,18 +32,19 @@ describe('View component Tests', () => {
       openAlertDialog: () => jest.fn(),
       selectModalTab: () => jest.fn()
     };
-    projectState = {
-      ...projectState,
+    props = {
+      ...props,
       cancelSelection: () => jest.fn(),
       clearSelection: () => jest.fn(),
       saveSelection: () => jest.fn(),
       goToNextOrPrevious: () => jest.fn()
     };
-    const component = (
+
+    const component = renderer.create(
       <MuiThemeProvider>
-        <View {...projectState} />
+        <View {...props} />
       </MuiThemeProvider>
     );
-    expect(component).toMatchSnapshot();
+    expect(component.toJSON()).toMatchSnapshot();
   });
 });

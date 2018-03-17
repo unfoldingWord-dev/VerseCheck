@@ -31,9 +31,9 @@ class CheckArea extends Component {
     if (bibles[selectedGL] && bibles[selectedGL]['ult']) {
       const verseObjects = bibles[selectedGL]['ult'][contextId.reference.chapter][contextId.reference.verse].verseObjects;
       const wordsToMatch = contextId.quote.split(' ');
-      const text = checkAreaHelpers.getAlignedText(verseObjects, wordsToMatch, contextId.occurrence);
-      if (text) {
-        this.alignedGLText = text;
+      const alignedText = checkAreaHelpers.getAlignedText(verseObjects, wordsToMatch, contextId.occurrence);
+      if (alignedText) {
+        this.alignedGLText = alignedText;
       }
     }
 
