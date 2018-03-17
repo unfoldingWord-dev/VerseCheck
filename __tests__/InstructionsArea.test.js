@@ -4,7 +4,6 @@ import InstructionsArea from '../src/components/InstructionsArea';
 import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
 
-
 describe('InstructionsArea component Tests', () => {
   let props;
 
