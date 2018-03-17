@@ -17,9 +17,9 @@ export const getAlignedText = (verseObjects, wordsToMatch, occurrenceToMatch, is
   let separator = DEFAULT_SEPARATOR;
   let needsEllipsis = false;
   verseObjects.forEach(verseObject => {
-    if ((verseObject.type == 'milestone' || verseObject.type == 'word')) {
+    if ((verseObject.type === 'milestone' || verseObject.type === 'word')) {
       // It is a milestone or a word...we want to handle all of them.
-      if ((wordsToMatch.indexOf(verseObject.content) >= 0 && verseObject.occurrence == occurrenceToMatch) || isMatch) {
+      if ((wordsToMatch.indexOf(verseObject.content) >= 0 && verseObject.occurrence === occurrenceToMatch) || isMatch) {
         // We have a match (or previoiusly had a match in the parent) so we want to include all text that we find,
         if (needsEllipsis) {
           // Need to add an ellipsis to the separator since a previous match but not one right next to this one
@@ -55,10 +55,10 @@ export const getAlignedText = (verseObjects, wordsToMatch, occurrenceToMatch, is
           needsEllipsis = true;
         }
       }
-    } else if (verseObject.type == "text" && text) {
+    } else if (verseObject.type === "text" && text) {
       // Found some text that is a word separator/punctuation, e.g. the apostrophe between "God" and "s" for "God's"
       // We want to preserve this so we can show "God's" instead of "God ... s"
-      if (separator == DEFAULT_SEPARATOR) {
+      if (separator === DEFAULT_SEPARATOR) {
         separator = '';
       }
       separator += verseObject.text;
