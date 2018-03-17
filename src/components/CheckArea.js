@@ -42,7 +42,6 @@ class CheckArea extends Component {
       selectionsReducer,
       projectDetailsReducer
     } = this.props;
-
     const alignedGLText = this.getAlignedGLText();
 
     let modeArea;
