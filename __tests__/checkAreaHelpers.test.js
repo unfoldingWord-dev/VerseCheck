@@ -77,4 +77,21 @@ describe('test checkAreaHelpers.getAlignedGLText()', ()=>{
     // then
     expect(alignedText).toEqual(expectedAlignedText);
   });
+
+  test('en ULT should match first τέκνα κατηγορίᾳ to "children … accused" in Titus 1:6 (test of separated children with ellipsis)', () => {
+    //given
+    const verseObjects = titus1[6].verseObjects;
+    const contextId = {
+      quote: "τέκνα κατηγορίᾳ",
+      occurrence: 1
+    };
+    const expectedAlignedText = 'children … accused';
+
+    // when
+    const wordsToMatch = contextId.quote.split(' ');
+    const alignedText = checkAreaHelpers.getAlignedText(verseObjects, wordsToMatch, contextId.occurrence);
+
+    // then
+    expect(alignedText).toEqual(expectedAlignedText);
+  });
 });
