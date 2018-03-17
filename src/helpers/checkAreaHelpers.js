@@ -11,6 +11,9 @@ const DEFAULT_SEPARATOR = ' ';
  */
 export const getAlignedText = (verseObjects, wordsToMatch, occurrenceToMatch, isMatch=false) => {
   let text = '';
+  if(! verseObjects || ! wordsToMatch || ! occurrenceToMatch) {
+    return text;
+  }
   let separator = DEFAULT_SEPARATOR;
   let needsEllipsis = false;
   verseObjects.forEach(verseObject => {

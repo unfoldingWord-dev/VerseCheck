@@ -26,14 +26,14 @@ class CheckArea extends Component {
       toolsReducer
     } = this.props;
 
-    let alignedGLText = contextId.quote;
+    this.alignedGLText = contextId.quote;
     const selectedGL = projectDetailsReducer.currentProjectToolsSelectedGL[toolsReducer.currentToolName];
     if (bibles[selectedGL] && bibles[selectedGL]['ult']) {
       const verseObjects = bibles[selectedGL]['ult'][contextId.reference.chapter][contextId.reference.verse].verseObjects;
       const wordsToMatch = contextId.quote.split(' ');
       const text = checkAreaHelpers.getAlignedText(verseObjects, wordsToMatch, contextId.occurrence);
       if (text) {
-        alignedGLText = text;
+        this.alignedGLText = text;
       }
     }
 
@@ -59,7 +59,7 @@ class CheckArea extends Component {
             <InstructionsArea
               verseText={verseText}
               selectionsReducer={selectionsReducer}
-              alignedGLText={alignedGLText}
+              alignedGLText={this.alignedGLText}
               mode={mode}
             />
           </div>);
@@ -72,7 +72,7 @@ class CheckArea extends Component {
               dontShowTranslation={true}
               verseText={verseText}
               selectionsReducer={selectionsReducer}
-              alignedGLText={alignedGLText}
+              alignedGLText={this.alignedGLText}
             />
           </div>
         );
