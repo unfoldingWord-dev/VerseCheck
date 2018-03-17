@@ -87,19 +87,11 @@ exports[`InstructionsArea component Tests Test InstructionsArea component no sel
   }
 >
   <span>
-    Please select the translation for:
+    No selection has been made.
   </span>
   <br />
   <span>
-    <strong
-      style={
-        Object {
-          "color": "var(--accent-color)",
-        }
-      }
-    >
-      "God's"
-    </strong>
+    Click the Select button, then select the translation for this check.
   </span>
   <br />
 </div>

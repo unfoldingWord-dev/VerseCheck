@@ -1,6 +1,5 @@
 /* eslint-env jest */
 import React from 'react';
-import fs from 'fs-extra';
 import InstructionsArea from '../src/components/InstructionsArea';
 import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
@@ -33,14 +32,15 @@ describe('InstructionsArea component Tests', () => {
   test('Test InstructionsArea component no selections)', () => {
     const newProps = JSON.parse(JSON.stringify(props));
     newProps.selectionsReducer.selections = [];
+    newProps.dontShowTranslation = true;
     const wrapper = shallow(<InstructionsArea {...newProps} />);
     expect(toJson(wrapper)).toMatchSnapshot();
-    expect(wrapper.text()).toEqual('Please select the translation for:"God\'s"');
+    expect(wrapper.text()).toEqual('No selection has been made.Click the Select button, then select the translation for this check.');
   });
 
   test('Test InstructionsArea component no verse text)', () => {
     const newProps = JSON.parse(JSON.stringify(props));
-    newProps.verseText = null;
+    newProps.verseText = '';
     const wrapper = shallow(<InstructionsArea {...newProps} />);
     expect(toJson(wrapper)).toMatchSnapshot();
     expect(wrapper.text()).toEqual('No selection can be made because the verse is blank.You may fix this by editing the verse.If desired, you may also leave a comment or bookmark this check.');
