@@ -144,4 +144,11 @@ describe('CheckArea component Tests', () => {
     const expectedAlignedGLText = 'God\'s';
     expect(wrapper.instance().getAlignedGLText()).toEqual(expectedAlignedGLText);
   });
+
+  test('Test getAlignedGLText() function in CheckArea Component where the GL align is not found so uses the Greek', () => {
+    const nonExistantQuote = 'does-not-exist';
+    props.contextIdReducer.contextId.quote = nonExistantQuote;
+    const wrapper = shallow(<CheckArea {...props} />);
+    expect(wrapper.instance().getAlignedGLText()).toEqual(nonExistantQuote);
+  });
 });
