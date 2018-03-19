@@ -1,0 +1,77 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SelectionArea component Tests Check SelectionArea component 1`] = `
+<div
+  style={
+    Object {
+      "display": "flex",
+      "flex": 1,
+      "flexDirection": "column",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "display": "flex",
+        "flex": "0 0 45px",
+        "justifyContent": "space-between",
+        "margin": "5px 10px 5px 15px",
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "display": "flex",
+          "flexDirection": "column",
+        }
+      }
+    >
+      <span
+        style={
+          Object {
+            "fontWeight": "bold",
+          }
+        }
+      />
+      <span
+        style={
+          Object {
+            "color": "var(--text-color-light)",
+          }
+        }
+      >
+        Titus
+         
+        1:1
+      </span>
+    </div>
+  </div>
+  <div>
+    <div
+      style={
+        Object {
+          "direction": "ltr",
+          "flex": "auto",
+          "overflowY": "auto",
+          "padding": "0 15px 10px",
+        }
+      }
+    >
+      <RenderSelectionTextComponent
+        actions={Object {}}
+        mode="select"
+        selections={
+          Array [
+            Object {
+              "text": "text",
+            },
+          ]
+        }
+        verseText="verse text"
+      />
+    </div>
+  </div>
+</div>
+`;

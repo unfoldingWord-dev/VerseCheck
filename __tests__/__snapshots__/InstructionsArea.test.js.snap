@@ -1,0 +1,123 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`InstructionsArea component Tests Check InstructionsArea component mode select 1`] = `
+<div
+  style={
+    Object {
+      "overflow": "auto",
+      "padding": "5px",
+      "textAlign": "center",
+    }
+  }
+>
+  <span>
+    Please select the translation for:
+  </span>
+  <br />
+  <span>
+    <strong
+      style={
+        Object {
+          "color": "var(--accent-color)",
+        }
+      }
+    >
+      "God's"
+    </strong>
+  </span>
+  <br />
+</div>
+`;
+
+exports[`InstructionsArea component Tests Test InstructionsArea component default mode) 1`] = `
+<div
+  style={
+    Object {
+      "overflow": "auto",
+      "padding": "5px",
+      "textAlign": "center",
+    }
+  }
+>
+  <span>
+    <strong
+      style={
+        Object {
+          "color": "var(--accent-color)",
+        }
+      }
+    >
+      "God's"
+    </strong>
+  </span>
+  <br />
+  <span>
+    has been translated as:
+  </span>
+  <br />
+  <span>
+    <span
+      key="0"
+    >
+      <strong
+        style={
+          Object {
+            "color": "var(--accent-color)",
+          }
+        }
+      >
+        "selected text"
+      </strong>
+      <span>
+         
+      </span>
+    </span>
+  </span>
+</div>
+`;
+
+exports[`InstructionsArea component Tests Test InstructionsArea component no selections) 1`] = `
+<div
+  style={
+    Object {
+      "overflow": "auto",
+      "padding": "5px",
+      "textAlign": "center",
+    }
+  }
+>
+  <span>
+    No selection has been made.
+  </span>
+  <br />
+  <span>
+    Click the Select button, then select the translation for this check.
+  </span>
+  <br />
+</div>
+`;
+
+exports[`InstructionsArea component Tests Test InstructionsArea component no verse text) 1`] = `
+<div
+  style={
+    Object {
+      "overflow": "auto",
+      "padding": "5px",
+      "textAlign": "center",
+    }
+  }
+>
+  <span>
+    No selection can be made because the verse is blank.
+  </span>
+  <br />
+  <span>
+    You may fix this by editing the verse.
+  </span>
+  <br />
+  <span>
+    If desired, you may also leave a comment or bookmark this check.
+  </span>
+  <br />
+</div>
+`;
