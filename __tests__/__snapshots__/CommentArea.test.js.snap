@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CommentArea component Tests Check CommentArea component 1`] = `
+<div
+  style={
+    Object {
+      "display": "flex",
+      "flex": "auto",
+      "flexDirection": "column",
+      "height": "100%",
+      "padding": "5px 15px 0 15px",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "fontWeight": "bold",
+      }
+    }
+  >
+    <Glyphicon
+      bsClass="glyphicon"
+      glyph="comment"
+      style={
+        Object {
+          "marginRight": "5px",
+        }
+      }
+    />
+    Comment
+  </div>
+  <FormGroup
+    bsClass="form-group"
+    controlId="formControlsTextarea"
+    style={
+      Object {
+        "display": "flex",
+        "flex": "auto",
+      }
+    }
+  >
+    <FormControl
+      autoFocus={true}
+      bsClass="form-control"
+      componentClass="textarea"
+      defaultValue="my comment"
+      onBlur={[Function]}
+      onInput={[Function]}
+      style={
+        Object {
+          "flex": "auto",
+        }
+      }
+      type="text"
+    />
+  </FormGroup>
+</div>
+`;

@@ -1,0 +1,125 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DefaultArea component Tests Check DefaultArea component 1`] = `
+<div
+  style={
+    Object {
+      "WebkitUserSelect": "none",
+      "display": "flex",
+      "flex": 1,
+      "flexDirection": "column",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "display": "flex",
+        "flex": "0 0 45px",
+        "justifyContent": "space-between",
+        "margin": "5px 10px 5px 15px",
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "display": "flex",
+          "flexDirection": "column",
+        }
+      }
+    >
+      <span
+        style={
+          Object {
+            "fontWeight": "bold",
+          }
+        }
+      />
+      <span
+        style={
+          Object {
+            "color": "var(--text-color-light)",
+          }
+        }
+      >
+        Titus
+         
+        1:1
+      </span>
+    </div>
+    <div
+      onClick={[Function]}
+    >
+      <Glyphicon
+        bsClass="glyphicon"
+        glyph="fullscreen"
+        style={
+          Object {
+            "cursor": "pointer",
+          }
+        }
+        title="Click to show expanded verses"
+      />
+    </div>
+    <MyLanguageModal
+      chapter={1}
+      currentVerse={1}
+      dir="ltr"
+      onHide={[Function]}
+      projectDetailsReducer={
+        Object {
+          "manifest": Object {
+            "project": Object {
+              "name": "Titus",
+            },
+            "target_language": Object {
+              "direction": "ltr",
+            },
+          },
+        }
+      }
+      show={false}
+      targetLangBible={Object {}}
+    />
+  </div>
+  <div
+    style={
+      Object {
+        "direction": "ltr",
+        "flex": "auto",
+        "overflowY": "auto",
+        "padding": "0 15px 10px",
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "color": "var(--text-color-light)",
+          "userSelect": "none",
+        }
+      }
+    >
+      <span
+        key="0"
+        style={Object {}}
+      >
+        verse text
+      </span>
+      <span
+        key="1"
+        style={
+          Object {
+            "backgroundColor": "var(--highlight-color)",
+          }
+        }
+      />
+      <span
+        key="2"
+        style={Object {}}
+      />
+    </div>
+  </div>
+</div>
+`;

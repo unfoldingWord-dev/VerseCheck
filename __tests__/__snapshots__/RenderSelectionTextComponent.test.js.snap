@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RenderSelectionTextComponent component Tests Check RenderSelectionTextComponent component 1`] = `
+<div
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+  onMouseUp={[Function]}
+>
+  <span
+    key="0"
+    onClick={[Function]}
+    style={
+      Object {
+        "color": "black",
+      }
+    }
+  >
+    verse text
+  </span>
+</div>
+`;

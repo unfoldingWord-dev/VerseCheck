@@ -1,0 +1,917 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CheckArea component Tests Check CheckArea component mode default 1`] = `
+<div
+  style={
+    Object {
+      "borderBottom": "1px solid var(--border-color)",
+      "display": "flex",
+      "flex": "1 0 130px",
+      "fontSize": "1.1em",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "WebkitUserSelect": "none",
+        "display": "flex",
+        "flex": 1,
+        "flexDirection": "column",
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "display": "flex",
+          "flex": "0 0 45px",
+          "justifyContent": "space-between",
+          "margin": "5px 10px 5px 15px",
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "display": "flex",
+            "flexDirection": "column",
+          }
+        }
+      >
+        <span
+          style={
+            Object {
+              "fontWeight": "bold",
+            }
+          }
+        />
+        <span
+          style={
+            Object {
+              "color": "var(--text-color-light)",
+            }
+          }
+        >
+          Titus
+           
+          1:1
+        </span>
+      </div>
+      <div
+        onClick={[Function]}
+      >
+        <span
+          className="glyphicon glyphicon-fullscreen"
+          style={
+            Object {
+              "cursor": "pointer",
+            }
+          }
+          title="Click to show expanded verses"
+        />
+      </div>
+    </div>
+    <div
+      style={
+        Object {
+          "direction": "ltr",
+          "flex": "auto",
+          "overflowY": "auto",
+          "padding": "0 15px 10px",
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "color": "var(--text-color-light)",
+            "userSelect": "none",
+          }
+        }
+      >
+        <span>
+          This is the verse text
+        </span>
+      </div>
+    </div>
+  </div>
+  <div
+    style={
+      Object {
+        "borderLeft": "1px solid var(--border-color)",
+        "display": "flex",
+        "flex": 1,
+        "justifyContent": "center",
+        "overflowY": "auto",
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "WebkitUserSelect": "none",
+          "alignItems": "center",
+          "display": "flex",
+          "height": "100%",
+          "justifyContent": "center",
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "overflow": "auto",
+            "padding": "5px",
+            "textAlign": "center",
+          }
+        }
+      >
+        <span>
+          No selection has been made.
+        </span>
+        <br />
+        <span>
+          Click the Select button, then select the translation for this check.
+        </span>
+        <br />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`CheckArea component Tests Test CheckArea component mode comment) 1`] = `
+<div
+  style={
+    Object {
+      "borderBottom": "1px solid var(--border-color)",
+      "display": "flex",
+      "flex": "1 0 130px",
+      "fontSize": "1.1em",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "WebkitUserSelect": "none",
+        "display": "flex",
+        "flex": 1,
+        "flexDirection": "column",
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "display": "flex",
+          "flex": "0 0 45px",
+          "justifyContent": "space-between",
+          "margin": "5px 10px 5px 15px",
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "display": "flex",
+            "flexDirection": "column",
+          }
+        }
+      >
+        <span
+          style={
+            Object {
+              "fontWeight": "bold",
+            }
+          }
+        />
+        <span
+          style={
+            Object {
+              "color": "var(--text-color-light)",
+            }
+          }
+        >
+          Titus
+           
+          1:1
+        </span>
+      </div>
+      <div
+        onClick={[Function]}
+      >
+        <span
+          className="glyphicon glyphicon-fullscreen"
+          style={
+            Object {
+              "cursor": "pointer",
+            }
+          }
+          title="Click to show expanded verses"
+        />
+      </div>
+    </div>
+    <div
+      style={
+        Object {
+          "direction": "ltr",
+          "flex": "auto",
+          "overflowY": "auto",
+          "padding": "0 15px 10px",
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "color": "var(--text-color-light)",
+            "userSelect": "none",
+          }
+        }
+      >
+        <span>
+          This is the verse text
+        </span>
+      </div>
+    </div>
+  </div>
+  <div
+    style={
+      Object {
+        "borderLeft": "1px solid var(--border-color)",
+        "display": "flex",
+        "flex": 1,
+        "justifyContent": "center",
+        "overflowY": "auto",
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "display": "flex",
+          "flex": "auto",
+          "flexDirection": "column",
+          "height": "100%",
+          "padding": "5px 15px 0 15px",
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "fontWeight": "bold",
+          }
+        }
+      >
+        <span
+          className="glyphicon glyphicon-comment"
+          style={
+            Object {
+              "marginRight": "5px",
+            }
+          }
+        />
+        Comment
+      </div>
+      <div
+        className="form-group"
+        style={
+          Object {
+            "display": "flex",
+            "flex": "auto",
+          }
+        }
+      >
+        <textarea
+          autoFocus={true}
+          className="form-control"
+          defaultValue="Comment!"
+          id="formControlsTextarea"
+          onBlur={[Function]}
+          onInput={[Function]}
+          style={
+            Object {
+              "flex": "auto",
+            }
+          }
+          type="text"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`CheckArea component Tests Test CheckArea component mode edit) 1`] = `
+<div
+  style={
+    Object {
+      "borderBottom": "1px solid var(--border-color)",
+      "display": "flex",
+      "flex": "1 0 130px",
+      "fontSize": "1.1em",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "WebkitUserSelect": "none",
+        "display": "flex",
+        "flex": 1,
+        "flexDirection": "column",
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "display": "flex",
+          "flex": "0 0 45px",
+          "justifyContent": "space-between",
+          "margin": "5px 10px 5px 15px",
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "display": "flex",
+            "flexDirection": "column",
+          }
+        }
+      >
+        <span
+          style={
+            Object {
+              "fontWeight": "bold",
+            }
+          }
+        />
+        <span
+          style={
+            Object {
+              "color": "var(--text-color-light)",
+            }
+          }
+        >
+          Titus
+           
+          1:1
+        </span>
+      </div>
+      <div
+        onClick={[Function]}
+      >
+        <span
+          className="glyphicon glyphicon-fullscreen"
+          style={
+            Object {
+              "cursor": "pointer",
+            }
+          }
+          title="Click to show expanded verses"
+        />
+      </div>
+    </div>
+    <div
+      style={
+        Object {
+          "direction": "ltr",
+          "flex": "auto",
+          "overflowY": "auto",
+          "padding": "0 15px 10px",
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "color": "var(--text-color-light)",
+            "userSelect": "none",
+          }
+        }
+      >
+        <span>
+          This is the verse text
+        </span>
+      </div>
+    </div>
+  </div>
+  <div
+    style={
+      Object {
+        "borderLeft": "1px solid var(--border-color)",
+        "display": "flex",
+        "flex": 1,
+        "justifyContent": "center",
+        "overflowY": "auto",
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "display": "flex",
+          "flex": "auto",
+          "flexDirection": "column",
+          "height": "100%",
+          "padding": "5px 15px 0 15px",
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "fontWeight": "bold",
+          }
+        }
+      >
+        <span
+          className="glyphicon glyphicon-pencil"
+          style={
+            Object {
+              "marginRight": "5px",
+            }
+          }
+        />
+        Edit Verse
+      </div>
+      <div
+        className="form-group"
+        style={
+          Object {
+            "display": "flex",
+            "flex": "auto",
+            "flexDirection": "column",
+            "marginBottom": "5px",
+          }
+        }
+      >
+        <textarea
+          autoFocus={true}
+          className="form-control"
+          defaultValue="This is the verse text"
+          id="formControlsTextarea"
+          onBlur={[Function]}
+          onInput={[Function]}
+          style={
+            Object {
+              "direction": "ltr",
+              "flex": "auto",
+            }
+          }
+          type="text"
+        />
+        <div
+          style={
+            Object {
+              "flex": "0 0 65px",
+              "fontSize": "0.9em",
+              "marginTop": "5px",
+            }
+          }
+        >
+          First, make changes to verse above
+          <br />
+          <div
+            style={
+              Object {
+                "display": "flex",
+              }
+            }
+          >
+            <div
+              style={
+                Object {
+                  "flex": "1",
+                }
+              }
+            >
+              <div
+                className="checkbox disabled"
+                style={
+                  Object {
+                    "color": "var(--text-color-light)",
+                    "marginLeft": "10px",
+                    "marginRight": "10px",
+                  }
+                }
+              >
+                <label
+                  title=""
+                >
+                  <input
+                    checked={false}
+                    disabled={true}
+                    onChange={[Function]}
+                    type="checkbox"
+                  />
+                  Spelling
+                </label>
+              </div>
+              <div
+                className="checkbox disabled"
+                style={
+                  Object {
+                    "color": "var(--text-color-light)",
+                    "marginLeft": "10px",
+                    "marginRight": "10px",
+                  }
+                }
+              >
+                <label
+                  title=""
+                >
+                  <input
+                    checked={false}
+                    disabled={true}
+                    onChange={[Function]}
+                    type="checkbox"
+                  />
+                  Punctuation
+                </label>
+              </div>
+              <div
+                className="checkbox disabled"
+                style={
+                  Object {
+                    "color": "var(--text-color-light)",
+                    "marginLeft": "10px",
+                    "marginRight": "10px",
+                  }
+                }
+              >
+                <label
+                  title=""
+                >
+                  <input
+                    checked={false}
+                    disabled={true}
+                    onChange={[Function]}
+                    type="checkbox"
+                  />
+                  Word Choice
+                </label>
+              </div>
+            </div>
+            <div
+              style={
+                Object {
+                  "flex": "1",
+                }
+              }
+            >
+              <div
+                className="checkbox disabled"
+                style={
+                  Object {
+                    "color": "var(--text-color-light)",
+                    "marginLeft": "10px",
+                    "marginRight": "10px",
+                  }
+                }
+              >
+                <label
+                  title=""
+                >
+                  <input
+                    checked={false}
+                    disabled={true}
+                    onChange={[Function]}
+                    type="checkbox"
+                  />
+                  Meaning
+                </label>
+              </div>
+              <div
+                className="checkbox disabled"
+                style={
+                  Object {
+                    "color": "var(--text-color-light)",
+                    "marginLeft": "10px",
+                    "marginRight": "10px",
+                  }
+                }
+              >
+                <label
+                  title=""
+                >
+                  <input
+                    checked={false}
+                    disabled={true}
+                    onChange={[Function]}
+                    type="checkbox"
+                  />
+                  Grammar
+                </label>
+              </div>
+              <div
+                className="checkbox disabled"
+                style={
+                  Object {
+                    "color": "var(--text-color-light)",
+                    "marginLeft": "10px",
+                    "marginRight": "10px",
+                  }
+                }
+              >
+                <label
+                  title=""
+                >
+                  <input
+                    checked={false}
+                    disabled={true}
+                    onChange={[Function]}
+                    type="checkbox"
+                  />
+                  Other
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`CheckArea component Tests Test CheckArea component mode select) 1`] = `
+<div
+  style={
+    Object {
+      "borderBottom": "1px solid var(--border-color)",
+      "display": "flex",
+      "flex": "1 0 130px",
+      "fontSize": "1.1em",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "display": "flex",
+        "flex": 1,
+        "flexDirection": "column",
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "display": "flex",
+          "flex": "0 0 45px",
+          "justifyContent": "space-between",
+          "margin": "5px 10px 5px 15px",
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "display": "flex",
+            "flexDirection": "column",
+          }
+        }
+      >
+        <span
+          style={
+            Object {
+              "fontWeight": "bold",
+            }
+          }
+        />
+        <span
+          style={
+            Object {
+              "color": "var(--text-color-light)",
+            }
+          }
+        >
+          Titus
+           
+          1:1
+        </span>
+      </div>
+    </div>
+    <div>
+      <div
+        style={
+          Object {
+            "direction": "ltr",
+            "flex": "auto",
+            "overflowY": "auto",
+            "padding": "0 15px 10px",
+          }
+        }
+      >
+        <div
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          onMouseUp={[Function]}
+        >
+          <span>
+            This is the verse text
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    style={
+      Object {
+        "borderLeft": "1px solid var(--border-color)",
+        "display": "flex",
+        "flex": 1,
+        "justifyContent": "center",
+        "overflowY": "auto",
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "WebkitUserSelect": "none",
+          "alignItems": "center",
+          "display": "flex",
+          "flex": "1",
+          "justifyContent": "center",
+          "overflow": "auto",
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "overflow": "auto",
+            "padding": "5px",
+            "textAlign": "center",
+          }
+        }
+      >
+        <span>
+          Please select the translation for:
+        </span>
+        <br />
+        <span>
+          <strong
+            style={
+              Object {
+                "color": "var(--accent-color)",
+              }
+            }
+          >
+            "God's"
+          </strong>
+        </span>
+        <br />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`CheckArea component Tests Test CheckArea component where GL Aligned Text not found (uses Greek quote instead) 1`] = `
+<div
+  style={
+    Object {
+      "borderBottom": "1px solid var(--border-color)",
+      "display": "flex",
+      "flex": "1 0 130px",
+      "fontSize": "1.1em",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "WebkitUserSelect": "none",
+        "display": "flex",
+        "flex": 1,
+        "flexDirection": "column",
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "display": "flex",
+          "flex": "0 0 45px",
+          "justifyContent": "space-between",
+          "margin": "5px 10px 5px 15px",
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "display": "flex",
+            "flexDirection": "column",
+          }
+        }
+      >
+        <span
+          style={
+            Object {
+              "fontWeight": "bold",
+            }
+          }
+        />
+        <span
+          style={
+            Object {
+              "color": "var(--text-color-light)",
+            }
+          }
+        >
+          Titus
+           
+          1:1
+        </span>
+      </div>
+      <div
+        onClick={[Function]}
+      >
+        <span
+          className="glyphicon glyphicon-fullscreen"
+          style={
+            Object {
+              "cursor": "pointer",
+            }
+          }
+          title="Click to show expanded verses"
+        />
+      </div>
+    </div>
+    <div
+      style={
+        Object {
+          "direction": "ltr",
+          "flex": "auto",
+          "overflowY": "auto",
+          "padding": "0 15px 10px",
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "color": "var(--text-color-light)",
+            "userSelect": "none",
+          }
+        }
+      >
+        <span>
+          This is the verse text
+        </span>
+      </div>
+    </div>
+  </div>
+  <div
+    style={
+      Object {
+        "borderLeft": "1px solid var(--border-color)",
+        "display": "flex",
+        "flex": 1,
+        "justifyContent": "center",
+        "overflowY": "auto",
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "WebkitUserSelect": "none",
+          "alignItems": "center",
+          "display": "flex",
+          "height": "100%",
+          "justifyContent": "center",
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "overflow": "auto",
+            "padding": "5px",
+            "textAlign": "center",
+          }
+        }
+      >
+        <span>
+          No selection has been made.
+        </span>
+        <br />
+        <span>
+          Click the Select button, then select the translation for this check.
+        </span>
+        <br />
+      </div>
+    </div>
+  </div>
+</div>
+`;
