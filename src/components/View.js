@@ -32,23 +32,24 @@ class View extends React.Component {
   }
 
   render() {
+    const {translate} = this.props;
     let titleText;
     let saveArea;
     switch (this.props.mode) {
       case 'edit':
-        titleText = 'Edit Verse';
+        titleText = translate('edit_verse');
         saveArea = <div />;
         break;
       case 'comment':
-        titleText = 'Comment';
+        titleText = translate('comment');
         saveArea = <div />;
         break;
       case 'select':
-        titleText = 'Select';
+        titleText = translate('select');
         saveArea = <div />;
         break;
       default:
-        titleText = 'Step 2. Check';
+        titleText = translate('step2_check');
         saveArea = <SaveArea {...this.props} />;
     }
     return (
@@ -85,6 +86,7 @@ class View extends React.Component {
 }
 
 View.propTypes = {
+  translate: PropTypes.func.isRequired,
   actions: PropTypes.object.isRequired,
   mode: PropTypes.string.isRequired,
   contextIdReducer: PropTypes.shape({

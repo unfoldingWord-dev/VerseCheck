@@ -259,7 +259,7 @@ class VerseCheck extends React.Component {
   }
 
   render() {
-    let verseText = usfmjs.removeMarker(this.verseText());
+    const verseText = usfmjs.removeMarker(this.verseText());
     return (
       <MuiThemeProvider>
         <View
@@ -277,6 +277,7 @@ class VerseCheck extends React.Component {
           tags={this.state.tags}
           dialogModalVisibility={this.state.dialogModalVisibility}
           goToNextOrPrevious={this.state.goToNextOrPrevious}
+          translate={this.props.translate}
         />
       </MuiThemeProvider>
     );

@@ -1,0 +1,22 @@
+{
+  "select": "Select",
+  "step2_check": "Step 2. Check",
+  "comment": "Comment",
+  "edit_verse": "Edit Verse",
+  "save_previous": "Save & Previous",
+  "save_continue": "Save & Continue",
+  "empty_verse": "No selection can be made because the verse is blank.<br/>You may fix this by editing the verse.<br/>If desired, you may also leave a comment or bookmark this check.",
+  "no_selection": "No selection has been made.<br/>Click the Select button, then select the translation for this check.",
+  "please_select": "Please select the translation for:",
+  "translated_as": "has been translated as:",
+  "bookmark": "Bookmark",
+  "cancel": "Cancel",
+  "clear_selection": "Clear Selection",
+  "save": "Save",
+  "spelling": "Spelling",
+  "punctuation": "Punctuation",
+  "word_choice": "Word Choice",
+  "meaning": "Meaning",
+  "grammar": "Grammar",
+  "other": "Other"
+}

@@ -6,7 +6,8 @@ import style from '../css/Style';
 
 let SaveArea = ({
   actions,
-  selectionsReducer
+  selectionsReducer,
+  translate
 }) => {
 
   const handleNext = () => {
@@ -23,12 +24,12 @@ let SaveArea = ({
               onClick={handlePrevious}
       >
         <Glyphicon glyph='share-alt' style={{marginRight: '10px', transform: 'scaleX(-1)'}} />
-        Save & Previous
+        {translate("save_previous")}
       </button>
       <button className='btn-prime'
               onClick={handleNext}
       >
-        Save & Continue
+        {translate("save_continue")}
         <Glyphicon glyph='share-alt' style={{marginLeft: '10px'}} />
       </button>
     </div>
@@ -36,6 +37,7 @@ let SaveArea = ({
 };
 
 SaveArea.propTypes = {
+  translate: PropTypes.func.isRequired,
   actions: PropTypes.shape({
     handleGoToNext: PropTypes.func,
     handleGoToPrevious: PropTypes.func,
