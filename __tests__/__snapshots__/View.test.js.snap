@@ -45,7 +45,7 @@ exports[`View component Tests Integrated View test 1`] = `
         }
       >
         <span>
-          Select
+          select
         </span>
         <div
           style={
@@ -216,7 +216,7 @@ exports[`View component Tests Integrated View test 1`] = `
               }
             >
               <span>
-                Please select the translation for:
+                please_select
               </span>
               <br />
               <span>
@@ -253,7 +253,7 @@ exports[`View component Tests Integrated View test 1`] = `
             }
           }
         >
-          Cancel
+          cancel
         </button>
         <button
           className="btn-second"
@@ -268,7 +268,7 @@ exports[`View component Tests Integrated View test 1`] = `
               }
             }
           />
-          Clear Selection
+          clear_selection
         </button>
         <button
           className="btn-prime"
@@ -283,7 +283,7 @@ exports[`View component Tests Integrated View test 1`] = `
               }
             }
           />
-          Save
+          save
         </button>
       </div>
     </div>

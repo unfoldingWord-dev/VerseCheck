@@ -11,7 +11,7 @@ exports[`InstructionsArea component Tests Check InstructionsArea component mode 
   }
 >
   <span>
-    Please select the translation for:
+    please_select
   </span>
   <br />
   <span>
@@ -52,7 +52,7 @@ exports[`InstructionsArea component Tests Test InstructionsArea component defaul
   </span>
   <br />
   <span>
-    has been translated as:
+    translated_as
   </span>
   <br />
   <span>
@@ -87,11 +87,7 @@ exports[`InstructionsArea component Tests Test InstructionsArea component no sel
   }
 >
   <span>
-    No selection has been made.
-  </span>
-  <br />
-  <span>
-    Click the Select button, then select the translation for this check.
+    no_selection
   </span>
   <br />
 </div>
@@ -108,15 +104,7 @@ exports[`InstructionsArea component Tests Test InstructionsArea component no ver
   }
 >
   <span>
-    No selection can be made because the verse is blank.
-  </span>
-  <br />
-  <span>
-    You may fix this by editing the verse.
-  </span>
-  <br />
-  <span>
-    If desired, you may also leave a comment or bookmark this check.
+    empty_verse
   </span>
   <br />
 </div>

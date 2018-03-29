@@ -28,7 +28,7 @@ exports[`CommentArea component Tests Check CommentArea component 1`] = `
         }
       }
     />
-    Comment
+    comment
   </div>
   <FormGroup
     bsClass="form-group"

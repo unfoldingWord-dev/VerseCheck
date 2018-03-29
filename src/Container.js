@@ -285,6 +285,7 @@ class VerseCheck extends React.Component {
 }
 
 VerseCheck.propTypes = {
+  translate: PropTypes.func.isRequired,
   actions: PropTypes.object.isRequired,
   mode: PropTypes.string,
   contextIdReducer: PropTypes.shape({

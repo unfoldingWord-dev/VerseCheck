@@ -128,11 +128,7 @@ exports[`CheckArea component Tests Check CheckArea component mode default 1`] = 
         }
       >
         <span>
-          No selection has been made.
-        </span>
-        <br />
-        <span>
-          Click the Select button, then select the translation for this check.
+          no_selection
         </span>
         <br />
       </div>
@@ -274,7 +270,7 @@ exports[`CheckArea component Tests Test CheckArea component mode comment) 1`] = 
             }
           }
         />
-        Comment
+        comment
       </div>
       <div
         className="form-group"
@@ -438,7 +434,7 @@ exports[`CheckArea component Tests Test CheckArea component mode edit) 1`] = `
             }
           }
         />
-        Edit Verse
+        edit_verse
       </div>
       <div
         className="form-group"
@@ -510,7 +506,7 @@ exports[`CheckArea component Tests Test CheckArea component mode edit) 1`] = `
                     onChange={[Function]}
                     type="checkbox"
                   />
-                  Spelling
+                  spelling
                 </label>
               </div>
               <div
@@ -532,7 +528,7 @@ exports[`CheckArea component Tests Test CheckArea component mode edit) 1`] = `
                     onChange={[Function]}
                     type="checkbox"
                   />
-                  Punctuation
+                  punctuation
                 </label>
               </div>
               <div
@@ -554,7 +550,7 @@ exports[`CheckArea component Tests Test CheckArea component mode edit) 1`] = `
                     onChange={[Function]}
                     type="checkbox"
                   />
-                  Word Choice
+                  word_choice
                 </label>
               </div>
             </div>
@@ -584,7 +580,7 @@ exports[`CheckArea component Tests Test CheckArea component mode edit) 1`] = `
                     onChange={[Function]}
                     type="checkbox"
                   />
-                  Meaning
+                  meaning
                 </label>
               </div>
               <div
@@ -606,7 +602,7 @@ exports[`CheckArea component Tests Test CheckArea component mode edit) 1`] = `
                     onChange={[Function]}
                     type="checkbox"
                   />
-                  Grammar
+                  grammar
                 </label>
               </div>
               <div
@@ -628,7 +624,7 @@ exports[`CheckArea component Tests Test CheckArea component mode edit) 1`] = `
                     onChange={[Function]}
                     type="checkbox"
                   />
-                  Other
+                  other
                 </label>
               </div>
             </div>
@@ -754,7 +750,7 @@ exports[`CheckArea component Tests Test CheckArea component mode select) 1`] = `
         }
       >
         <span>
-          Please select the translation for:
+          please_select
         </span>
         <br />
         <span>
@@ -903,11 +899,7 @@ exports[`CheckArea component Tests Test CheckArea component where GL Aligned Tex
         }
       >
         <span>
-          No selection has been made.
-        </span>
-        <br />
-        <span>
-          Click the Select button, then select the translation for this check.
+          no_selection
         </span>
         <br />
       </div>

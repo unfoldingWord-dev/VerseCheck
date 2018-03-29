@@ -10,10 +10,12 @@ const ult_titus_1 = '__tests__/fixtures/ult/tit/1.json';
 
 describe('CheckArea component Tests', () => {
   const titus1 = fs.readJSONSync(ult_titus_1);
+  const mock_translate = (text) => { return text; };
   let props;
   
   beforeEach(()=>{
     props = {
+      translate: mock_translate,
       actions: {
         handleGoToNext: () => jest.fn(),
         handleGoToPrevious: () => jest.fn(),

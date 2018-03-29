@@ -6,9 +6,11 @@ import toJson from 'enzyme-to-json';
 
 describe('InstructionsArea component Tests', () => {
   let props;
+  const mock_translate = (text) => { return text; };
 
   beforeEach(()=> {
     props = {
+      translate: mock_translate,
       alignedGLText: 'God\'s',
       selectionsReducer: {
         selections: [{text:'selected text'}]
@@ -22,14 +24,14 @@ describe('InstructionsArea component Tests', () => {
   test('Check InstructionsArea component mode select', () => {
     const wrapper = shallow(<InstructionsArea {...props} />);
     expect(toJson(wrapper)).toMatchSnapshot();
-    expect(wrapper.text()).toEqual('Please select the translation for:"'+props.alignedGLText+'"');
+    expect(wrapper.text()).toEqual('please_select"'+props.alignedGLText+'"');
   });
 
   test('Test InstructionsArea component default mode)', () => {
     props.mode = 'default';
     const wrapper = shallow(<InstructionsArea {...props} />);
     expect(toJson(wrapper)).toMatchSnapshot();
-    expect(wrapper.text()).toEqual('"'+props.alignedGLText+'"has been translated as:"'+props.selectionsReducer.selections[0].text+'" ');
+    expect(wrapper.text()).toEqual('"'+props.alignedGLText+'"translated_as"'+props.selectionsReducer.selections[0].text+'" ');
   });
 
   test('Test InstructionsArea component no selections)', () => {
@@ -37,13 +39,13 @@ describe('InstructionsArea component Tests', () => {
     props.dontShowTranslation = true;
     const wrapper = shallow(<InstructionsArea {...props} />);
     expect(toJson(wrapper)).toMatchSnapshot();
-    expect(wrapper.text()).toEqual('No selection has been made.Click the Select button, then select the translation for this check.');
+    expect(wrapper.text()).toEqual('no_selection');
   });
 
   test('Test InstructionsArea component no verse text)', () => {
     props.verseText = '';
     const wrapper = shallow(<InstructionsArea {...props} />);
     expect(toJson(wrapper)).toMatchSnapshot();
-    expect(wrapper.text()).toEqual('No selection can be made because the verse is blank.You may fix this by editing the verse.If desired, you may also leave a comment or bookmark this check.');
+    expect(wrapper.text()).toEqual('empty_verse');
   });
 });
