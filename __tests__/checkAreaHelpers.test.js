@@ -94,4 +94,36 @@ describe('test checkAreaHelpers.getAlignedGLText()', ()=>{
     // then
     expect(alignedText).toEqual(expectedAlignedText);
   });
+
+  test('en ULT should match ἐκλεκτῶν to "of … chosen people" in Titus 1:1', () => {
+    //given
+    const verseObjects = titus1[1].verseObjects;
+    const contextId = {
+      quote: "ἐκλεκτῶν",
+      occurrence: 1
+    };
+    const expectedAlignedText = 'of … chosen people';
+
+    // when
+    const alignedText = checkAreaHelpers.getAlignedText(verseObjects, [contextId.quote], contextId.occurrence);
+
+    // then
+    expect(alignedText).toEqual(expectedAlignedText);
+  });
+
+  test('en ULT should match ἐγκρατῆ to "and self-controlled" in Titus 1:8', () => {
+    //given
+    const verseObjects = titus1[8].verseObjects;
+    const contextId = {
+      quote: "ἐγκρατῆ",
+      occurrence: 1
+    };
+    const expectedAlignedText = 'and self-controlled';
+
+    // when
+    const alignedText = checkAreaHelpers.getAlignedText(verseObjects, [contextId.quote], contextId.occurrence);
+
+    // then
+    expect(alignedText).toEqual(expectedAlignedText);
+  });
 });
