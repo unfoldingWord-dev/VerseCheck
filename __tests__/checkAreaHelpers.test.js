@@ -111,7 +111,7 @@ describe('test checkAreaHelpers.getAlignedGLText()', ()=>{
     expect(alignedText).toEqual(expectedAlignedText);
   });
 
-  test('en ULT should match ἐγκρατῆ to "" in Titus 1:1', () => {
+  test('en ULT should match ἐγκρατῆ to "and self-controlled" in Titus 1:8', () => {
     //given
     const verseObjects = titus1[8].verseObjects;
     const contextId = {
