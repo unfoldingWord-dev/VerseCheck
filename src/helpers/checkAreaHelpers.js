@@ -67,25 +67,3 @@ export const getAlignedText = (verseObjects, wordsToMatch, occurrenceToMatch, is
   });
   return text;
 };
-
-
-/**
- * extracts word objects from verse object.  If verseObject is word type, return that in array, else if it is a
- *    milestone, then add words found in children to word array.  If no words found return empty array.
- * @param {object} verseObject
- * @return {Array} words found
- */
-export const extractWordsFromVerseObject = (verseObject) => {
-  let words = [];
-  if (typeof(verseObject) === 'object') {
-    if (verseObject.word || verseObject.type === 'word') {
-      words.push(verseObject);
-    } else if (verseObject.type === 'milestone' && verseObject.children) {
-      for (let child of verseObject.children) {
-        const childWords = extractWordsFromVerseObject(child);
-        words = words.concat(childWords);
-      }
-    }
-  }
-  return words;
-};
