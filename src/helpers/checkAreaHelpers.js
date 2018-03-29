@@ -16,7 +16,7 @@ export const getAlignedText = (verseObjects, wordsToMatch, occurrenceToMatch, is
   }
   let separator = DEFAULT_SEPARATOR;
   let needsEllipsis = false;
-  verseObjects.forEach(verseObject => {
+  verseObjects.forEach((verseObject, index) => {
     if ((verseObject.type === 'milestone' || verseObject.type === 'word')) {
       // It is a milestone or a word...we want to handle all of them.
       if ((wordsToMatch.indexOf(verseObject.content) >= 0 && verseObject.occurrence === occurrenceToMatch) || isMatch) {
@@ -39,6 +39,14 @@ export const getAlignedText = (verseObjects, wordsToMatch, occurrenceToMatch, is
           // Handle children of type milestone, appending all the text of the children, isMatch is true
           text += getAlignedText(verseObject.children, wordsToMatch, occurrenceToMatch, true);
         }
+        if (verseObjects[index + 1] && verseObjects[index + 1].type === "text" && text) {
+          // Found some text that is a word separator/punctuation, e.g. the apostrophe between "God" and "s" for "God's"
+          // We want to preserve this so we can show "God's" instead of "God ... s"
+          if (separator === DEFAULT_SEPARATOR) {
+            separator = '';
+          }
+          separator += verseObjects[index + 1].text;
+        }
       } else if (verseObject.children) {
         // Did not find a match, yet still need to go through all the children and see if there's match.
         // If there isn't a match here, i.e. childText is empty, and we have text, we still need 
@@ -55,14 +63,29 @@ export const getAlignedText = (verseObjects, wordsToMatch, occurrenceToMatch, is
           needsEllipsis = true;
         }
       }
-    } else if (verseObject.type === "text" && text) {
-      // Found some text that is a word separator/punctuation, e.g. the apostrophe between "God" and "s" for "God's"
-      // We want to preserve this so we can show "God's" instead of "God ... s"
-      if (separator === DEFAULT_SEPARATOR) {
-        separator = '';
-      }
-      separator += verseObject.text;
     }
   });
   return text;
+};
+
+
+/**
+ * extracts word objects from verse object.  If verseObject is word type, return that in array, else if it is a
+ *    milestone, then add words found in children to word array.  If no words found return empty array.
+ * @param {object} verseObject
+ * @return {Array} words found
+ */
+export const extractWordsFromVerseObject = (verseObject) => {
+  let words = [];
+  if (typeof(verseObject) === 'object') {
+    if (verseObject.word || verseObject.type === 'word') {
+      words.push(verseObject);
+    } else if (verseObject.type === 'milestone' && verseObject.children) {
+      for (let child of verseObject.children) {
+        const childWords = extractWordsFromVerseObject(child);
+        words = words.concat(childWords);
+      }
+    }
+  }
+  return words;
 };
