@@ -53,7 +53,8 @@ class DefaultArea extends React.Component {
     const {
       projectDetailsReducer: {
         manifest
-      }
+      },
+      translate
     } = this.props;
     const { target_language, project } = manifest;
     const bookName = target_language && target_language.book && target_language.book.name ?
@@ -75,7 +76,7 @@ class DefaultArea extends React.Component {
               </span>
           </div>
           <div onClick={() => {this.setState({modalVisibility: true})}}>
-            <Glyphicon glyph="fullscreen" title="Click to show expanded verses" style={{cursor: "pointer"}}/>
+            <Glyphicon glyph="fullscreen" title={translate("click_show_expanded")} style={{cursor: "pointer"}}/>
           </div>
           <MyLanguageModal
             projectDetailsReducer={this.props.projectDetailsReducer}
@@ -96,6 +97,7 @@ class DefaultArea extends React.Component {
 }
 
 DefaultArea.propTypes = {
+  translate: PropTypes.func.isRequired,
   actions: PropTypes.shape({
     validateSelections: PropTypes.func,
   }).isRequired,

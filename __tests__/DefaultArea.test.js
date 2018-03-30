@@ -5,10 +5,12 @@ import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
 
 describe('DefaultArea component Tests', () => {
+  const mock_translate = (text) => { return text; };
   let props;
 
   beforeEach(()=> {
     props = {
+      translate: mock_translate,
       actions: {
         validateSelections: jest.fn(),
       },

@@ -7,15 +7,14 @@ let InstructionsArea = ({
   selectionsReducer,
   dontShowTranslation,
   verseText,
-  mode
+  mode,
+  translate
 }) => {
 
   if (!verseText) {
     return (
       <div style={style.InstructionsArea}>
-        <span>No selection can be made because the verse is blank.</span><br />
-        <span>You may fix this by editing the verse.</span><br />
-        <span>If desired, you may also leave a comment or bookmark this check.</span><br />
+        <span>{translate("empty_verse")}</span><br />
       </div>
     );
   }
@@ -23,8 +22,7 @@ let InstructionsArea = ({
   if (selectionsReducer.selections.length === 0 && dontShowTranslation) {
       return (
         <div style={style.InstructionsArea}>
-          <span>No selection has been made.</span><br />
-          <span>Click the Select button, then select the translation for this check.</span><br />
+          <span>{translate("no_selection")}</span><br />
         </div>
       );
   }
@@ -32,7 +30,7 @@ let InstructionsArea = ({
   if (mode === 'select') {
     return (
       <div style={style.InstructionsArea}>
-        <span>Please select the translation for:</span><br />
+        <span>{translate("please_select")}</span><br />
         <span>
           <strong style={{ color: 'var(--accent-color)' }}>
             {`"${alignedGLText}"`}
@@ -49,7 +47,7 @@ let InstructionsArea = ({
           {`"${alignedGLText}"`}
         </strong>
       </span><br />
-      <span>has been translated as:</span><br />
+      <span>{translate("translated_as")}</span><br />
       <span>
         {selectionsReducer.selections.map((selection, index) => {
           return (
@@ -67,6 +65,7 @@ let InstructionsArea = ({
 };
 
 InstructionsArea.propTypes = {
+  translate: PropTypes.func.isRequired,
   alignedGLText: PropTypes.string.isRequired,
   selectionsReducer: PropTypes.object.isRequired,
   dontShowTranslation: PropTypes.bool,

@@ -14,14 +14,15 @@ let ActionsArea = ({
   remindersReducer,
   saveSelection,
   cancelSelection,
-  clearSelection
+  clearSelection,
+  translate
 }) => {
   const changeModeArea = (
     <div style={style.actionsArea}>
       <Toggle
         toggled={remindersReducer.enabled}
         style={{ margin: "auto 5px", display: "flex" }}
-        label="Bookmark"
+        label={translate("bookmark")}
         labelPosition="right"
         labelStyle={{ color: 'var(--accent-color-dark)', fontWeight: "normal" }}
         thumbSwitchedStyle={{ backgroundColor: 'var(--accent-color-dark)' }}
@@ -35,7 +36,7 @@ let ActionsArea = ({
           onClick={actions.changeMode.bind(this,'select')}
         >
           <Glyphicon glyph='ok' style={{marginRight: '10px'}} />
-          Select
+          {translate("select")}
         </button>
         <button
           style={{ width: "140px", marginRigth: "5px" }}
@@ -43,7 +44,7 @@ let ActionsArea = ({
           onClick={actions.changeMode.bind(this,'edit')}
         >
           <Glyphicon glyph='pencil' style={{marginRight: '10px'}} />
-          Edit Verse
+          {translate("edit_verse")}
         </button>
         <button
           style={{ width: "140px" }}
@@ -51,7 +52,7 @@ let ActionsArea = ({
           onClick={actions.changeMode.bind(this,'comment')}
         >
           <Glyphicon glyph='comment' style={{marginRight: '10px'}} />
-          Comment
+          {translate("comment")}
         </button>
       </div>
     </div>
@@ -62,14 +63,14 @@ let ActionsArea = ({
         <button className='btn-second'
                 onClick={actions.cancelEditVerse.bind(this)}
         >
-          Cancel
+          {translate("cancel")}
         </button>
         <button className='btn-prime'
                 disabled={!tags.length}
                 onClick={actions.saveEditVerse.bind(this)}
         >
           <Glyphicon glyph='ok' style={{marginRight: '10px'}} />
-          Save
+          {translate("save")}
         </button>
       </div>
   );
@@ -79,14 +80,14 @@ let ActionsArea = ({
         <button className='btn-second'
                 onClick={actions.cancelComment.bind(this)}
         >
-          Cancel
+          {translate("cancel")}
         </button>
         <button className='btn-prime'
                 disabled={!commentChanged}
                 onClick={actions.saveComment.bind(this)}
         >
           <Glyphicon glyph='ok' style={{marginRight: '10px'}} />
-          Save
+          {translate("save")}
         </button>
       </div>
   );
@@ -98,7 +99,7 @@ let ActionsArea = ({
           style={{ alignSelf: 'flex-start'}}
           onClick={cancelSelection.bind(this)}
         >
-          Cancel
+          {translate("cancel")}
         </button>
         <button
           className='btn-second'
@@ -106,7 +107,7 @@ let ActionsArea = ({
           onClick={clearSelection.bind(this)}
         >
           <Glyphicon glyph='erase' style={{marginRight: '10px'}} />
-          Clear Selection
+          {translate("clear_selection")}
         </button>
         <button
           className='btn-prime'
@@ -114,7 +115,7 @@ let ActionsArea = ({
           onClick={saveSelection.bind(this)}
         >
           <Glyphicon glyph='ok' style={{marginRight: '10px'}} />
-          Save
+          {translate("save")}
         </button>
       </div>
   );

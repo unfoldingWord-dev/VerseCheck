@@ -5,13 +5,14 @@ import style from '../css/Style';
 
 const CommentArea = ({
   actions,
-  comment
+  comment,
+  translate
 }) => {
   return (
     <div style={style.commentArea}>
       <div style={{fontWeight: 'bold'}}>
         <Glyphicon glyph='comment' style={{marginRight: '5px'}} />
-        Comment
+        {translate("comment")}
       </div>
       <FormGroup style={{flex: 'auto', display: 'flex' }} controlId="formControlsTextarea">
         <FormControl autoFocus
@@ -28,6 +29,7 @@ const CommentArea = ({
 };
 
 CommentArea.propTypes = {
+  translate: PropTypes.func.isRequired,
   actions: PropTypes.shape({
     handleComment: PropTypes.func,
     checkComment: PropTypes.func,

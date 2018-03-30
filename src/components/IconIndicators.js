@@ -6,7 +6,8 @@ const IconIndicators = ({
   verseEdited,
   selectionsReducer,
   commentsReducer,
-  remindersReducer
+  remindersReducer,
+  translate
 }) => {
   return (
     <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
@@ -17,7 +18,7 @@ const IconIndicators = ({
           color: "var(--reverse-color)",
           opacity: selectionsReducer.selections.length > 0 ? 1 : 0.2
         }}
-        title={selectionsReducer.selections.length > 0 ? "Selections were found for this check" : "No selections were found for this check"}
+        title={selectionsReducer.selections.length > 0 ? translate("check.selections_found") : translate("check.no_selections_found")}
       />
        <Glyphicon
         glyph="pencil"
@@ -26,7 +27,7 @@ const IconIndicators = ({
           color: "var(--reverse-color)",
           opacity: verseEdited ? 1 : 0.2
         }}
-        title={verseEdited ? "Verse edits were found for this check" : "No Verse edits were found for this check"}
+        title={verseEdited ? translate("check.verse_edits_found") : translate("check.no_verse_edits_found")}
       />
        <Glyphicon
         glyph="comment"
@@ -35,7 +36,7 @@ const IconIndicators = ({
           color: "var(--reverse-color)",
           opacity: commentsReducer.text && commentsReducer.text.length > 0 ? 1 : 0.2
         }}
-        title={commentsReducer.text && commentsReducer.text.length > 0 ? "Comments were found for this check" : "No comments were found for this check"}
+        title={commentsReducer.text && commentsReducer.text.length > 0 ? translate("check.comments_found") : translate("check.no_comments_found")}
       />
        <Glyphicon
         glyph="bookmark"
@@ -44,13 +45,14 @@ const IconIndicators = ({
           color: "var(--reverse-color)",
           opacity: remindersReducer.enabled ? 1 : 0.2
         }}
-        title={remindersReducer.enabled ? "This check has been bookmarked for review" : "This check has not been bookmarked for review"}
+        title={remindersReducer.enabled ? translate("check.bookmarked") : translate("check.not_bookmarked")}
       />
     </div>
   );
 };
 
 IconIndicators.propTypes = {
+  translate: PropTypes.func.isRequired,
   verseEdited: PropTypes.bool.isRequired,
   selectionsReducer: PropTypes.shape({
     selections: PropTypes.array

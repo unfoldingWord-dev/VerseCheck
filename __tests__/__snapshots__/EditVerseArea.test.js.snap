@@ -1,0 +1,616 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`EditVerseArea component Tests Check EditVerseArea component 1`] = `
+<div
+  style={
+    Object {
+      "display": "flex",
+      "flex": "auto",
+      "flexDirection": "column",
+      "height": "100%",
+      "padding": "5px 15px 0 15px",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "fontWeight": "bold",
+      }
+    }
+  >
+    <Glyphicon
+      bsClass="glyphicon"
+      glyph="pencil"
+      style={
+        Object {
+          "marginRight": "5px",
+        }
+      }
+    />
+    edit_verse
+  </div>
+  <FormGroup
+    bsClass="form-group"
+    controlId="formControlsTextarea"
+    style={
+      Object {
+        "display": "flex",
+        "flex": "auto",
+        "flexDirection": "column",
+        "marginBottom": "5px",
+      }
+    }
+  >
+    <FormControl
+      autoFocus={true}
+      bsClass="form-control"
+      componentClass="textarea"
+      defaultValue="This is the verse text"
+      onBlur={[Function]}
+      onInput={[Function]}
+      style={
+        Object {
+          "direction": "ltr",
+          "flex": "auto",
+        }
+      }
+      type="text"
+    />
+    <div
+      style={
+        Object {
+          "flex": "0 0 65px",
+          "fontSize": "0.9em",
+          "marginTop": "5px",
+        }
+      }
+    >
+      first_make_change
+      <br />
+      <div
+        style={
+          Object {
+            "display": "flex",
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "flex": "1",
+            }
+          }
+        >
+          <Checkbox
+            bsClass="checkbox"
+            checked={false}
+            disabled={true}
+            inline={false}
+            key="spelling"
+            onChange={[Function]}
+            style={
+              Object {
+                "color": "var(--text-color-light)",
+                "marginLeft": "10px",
+                "marginRight": "10px",
+              }
+            }
+            title=""
+          >
+            spelling
+          </Checkbox>
+          <Checkbox
+            bsClass="checkbox"
+            checked={false}
+            disabled={true}
+            inline={false}
+            key="punctuation"
+            onChange={[Function]}
+            style={
+              Object {
+                "color": "var(--text-color-light)",
+                "marginLeft": "10px",
+                "marginRight": "10px",
+              }
+            }
+            title=""
+          >
+            punctuation
+          </Checkbox>
+          <Checkbox
+            bsClass="checkbox"
+            checked={false}
+            disabled={true}
+            inline={false}
+            key="wordChoice"
+            onChange={[Function]}
+            style={
+              Object {
+                "color": "var(--text-color-light)",
+                "marginLeft": "10px",
+                "marginRight": "10px",
+              }
+            }
+            title=""
+          >
+            word_choice
+          </Checkbox>
+        </div>
+        <div
+          style={
+            Object {
+              "flex": "1",
+            }
+          }
+        >
+          <Checkbox
+            bsClass="checkbox"
+            checked={false}
+            disabled={true}
+            inline={false}
+            key="meaning"
+            onChange={[Function]}
+            style={
+              Object {
+                "color": "var(--text-color-light)",
+                "marginLeft": "10px",
+                "marginRight": "10px",
+              }
+            }
+            title=""
+          >
+            meaning
+          </Checkbox>
+          <Checkbox
+            bsClass="checkbox"
+            checked={false}
+            disabled={true}
+            inline={false}
+            key="grammar"
+            onChange={[Function]}
+            style={
+              Object {
+                "color": "var(--text-color-light)",
+                "marginLeft": "10px",
+                "marginRight": "10px",
+              }
+            }
+            title=""
+          >
+            grammar
+          </Checkbox>
+          <Checkbox
+            bsClass="checkbox"
+            checked={false}
+            disabled={true}
+            inline={false}
+            key="other"
+            onChange={[Function]}
+            style={
+              Object {
+                "color": "var(--text-color-light)",
+                "marginLeft": "10px",
+                "marginRight": "10px",
+              }
+            }
+            title=""
+          >
+            other
+          </Checkbox>
+        </div>
+      </div>
+    </div>
+  </FormGroup>
+</div>
+`;
+
+exports[`EditVerseArea component Tests Check EditVerseArea component select all 1`] = `
+<div
+  style={
+    Object {
+      "display": "flex",
+      "flex": "auto",
+      "flexDirection": "column",
+      "height": "100%",
+      "padding": "5px 15px 0 15px",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "fontWeight": "bold",
+      }
+    }
+  >
+    <Glyphicon
+      bsClass="glyphicon"
+      glyph="pencil"
+      style={
+        Object {
+          "marginRight": "5px",
+        }
+      }
+    />
+    edit_verse
+  </div>
+  <FormGroup
+    bsClass="form-group"
+    controlId="formControlsTextarea"
+    style={
+      Object {
+        "display": "flex",
+        "flex": "auto",
+        "flexDirection": "column",
+        "marginBottom": "5px",
+      }
+    }
+  >
+    <FormControl
+      autoFocus={true}
+      bsClass="form-control"
+      componentClass="textarea"
+      defaultValue="This is the verse text"
+      onBlur={[Function]}
+      onInput={[Function]}
+      style={
+        Object {
+          "direction": "ltr",
+          "flex": "auto",
+        }
+      }
+      type="text"
+    />
+    <div
+      style={
+        Object {
+          "flex": "0 0 65px",
+          "fontSize": "0.9em",
+          "marginTop": "5px",
+        }
+      }
+    >
+      first_make_change
+      <br />
+      <div
+        style={
+          Object {
+            "display": "flex",
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "flex": "1",
+            }
+          }
+        >
+          <Checkbox
+            bsClass="checkbox"
+            checked={true}
+            disabled={true}
+            inline={false}
+            key="spelling"
+            onChange={[Function]}
+            style={
+              Object {
+                "color": "var(--text-color-light)",
+                "marginLeft": "10px",
+                "marginRight": "10px",
+              }
+            }
+            title=""
+          >
+            spelling
+          </Checkbox>
+          <Checkbox
+            bsClass="checkbox"
+            checked={true}
+            disabled={true}
+            inline={false}
+            key="punctuation"
+            onChange={[Function]}
+            style={
+              Object {
+                "color": "var(--text-color-light)",
+                "marginLeft": "10px",
+                "marginRight": "10px",
+              }
+            }
+            title=""
+          >
+            punctuation
+          </Checkbox>
+          <Checkbox
+            bsClass="checkbox"
+            checked={true}
+            disabled={true}
+            inline={false}
+            key="wordChoice"
+            onChange={[Function]}
+            style={
+              Object {
+                "color": "var(--text-color-light)",
+                "marginLeft": "10px",
+                "marginRight": "10px",
+              }
+            }
+            title=""
+          >
+            word_choice
+          </Checkbox>
+        </div>
+        <div
+          style={
+            Object {
+              "flex": "1",
+            }
+          }
+        >
+          <Checkbox
+            bsClass="checkbox"
+            checked={true}
+            disabled={true}
+            inline={false}
+            key="meaning"
+            onChange={[Function]}
+            style={
+              Object {
+                "color": "var(--text-color-light)",
+                "marginLeft": "10px",
+                "marginRight": "10px",
+              }
+            }
+            title=""
+          >
+            meaning
+          </Checkbox>
+          <Checkbox
+            bsClass="checkbox"
+            checked={true}
+            disabled={true}
+            inline={false}
+            key="grammar"
+            onChange={[Function]}
+            style={
+              Object {
+                "color": "var(--text-color-light)",
+                "marginLeft": "10px",
+                "marginRight": "10px",
+              }
+            }
+            title=""
+          >
+            grammar
+          </Checkbox>
+          <Checkbox
+            bsClass="checkbox"
+            checked={true}
+            disabled={true}
+            inline={false}
+            key="other"
+            onChange={[Function]}
+            style={
+              Object {
+                "color": "var(--text-color-light)",
+                "marginLeft": "10px",
+                "marginRight": "10px",
+              }
+            }
+            title=""
+          >
+            other
+          </Checkbox>
+        </div>
+      </div>
+    </div>
+  </FormGroup>
+</div>
+`;
+
+exports[`EditVerseArea component Tests Check EditVerseArea component select all 2`] = `
+<div
+  style={
+    Object {
+      "display": "flex",
+      "flex": "auto",
+      "flexDirection": "column",
+      "height": "100%",
+      "padding": "5px 15px 0 15px",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "fontWeight": "bold",
+      }
+    }
+  >
+    <Glyphicon
+      bsClass="glyphicon"
+      glyph="pencil"
+      style={
+        Object {
+          "marginRight": "5px",
+        }
+      }
+    />
+    edit_verse
+  </div>
+  <FormGroup
+    bsClass="form-group"
+    controlId="formControlsTextarea"
+    style={
+      Object {
+        "display": "flex",
+        "flex": "auto",
+        "flexDirection": "column",
+        "marginBottom": "5px",
+      }
+    }
+  >
+    <FormControl
+      autoFocus={true}
+      bsClass="form-control"
+      componentClass="textarea"
+      defaultValue="This is the verse text"
+      onBlur={[Function]}
+      onInput={[Function]}
+      style={
+        Object {
+          "direction": "ltr",
+          "flex": "auto",
+        }
+      }
+      type="text"
+    />
+    <div
+      style={
+        Object {
+          "flex": "0 0 65px",
+          "fontSize": "0.9em",
+          "marginTop": "5px",
+        }
+      }
+    >
+      next_change_reason
+      <br />
+      <div
+        style={
+          Object {
+            "display": "flex",
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "flex": "1",
+            }
+          }
+        >
+          <Checkbox
+            bsClass="checkbox"
+            checked={false}
+            disabled={false}
+            inline={false}
+            key="spelling"
+            onChange={[Function]}
+            style={
+              Object {
+                "color": "var(--text-color-dark)",
+                "marginLeft": "10px",
+                "marginRight": "10px",
+              }
+            }
+            title=""
+          >
+            spelling
+          </Checkbox>
+          <Checkbox
+            bsClass="checkbox"
+            checked={false}
+            disabled={false}
+            inline={false}
+            key="punctuation"
+            onChange={[Function]}
+            style={
+              Object {
+                "color": "var(--text-color-dark)",
+                "marginLeft": "10px",
+                "marginRight": "10px",
+              }
+            }
+            title=""
+          >
+            punctuation
+          </Checkbox>
+          <Checkbox
+            bsClass="checkbox"
+            checked={false}
+            disabled={false}
+            inline={false}
+            key="wordChoice"
+            onChange={[Function]}
+            style={
+              Object {
+                "color": "var(--text-color-dark)",
+                "marginLeft": "10px",
+                "marginRight": "10px",
+              }
+            }
+            title=""
+          >
+            word_choice
+          </Checkbox>
+        </div>
+        <div
+          style={
+            Object {
+              "flex": "1",
+            }
+          }
+        >
+          <Checkbox
+            bsClass="checkbox"
+            checked={false}
+            disabled={false}
+            inline={false}
+            key="meaning"
+            onChange={[Function]}
+            style={
+              Object {
+                "color": "var(--text-color-dark)",
+                "marginLeft": "10px",
+                "marginRight": "10px",
+              }
+            }
+            title=""
+          >
+            meaning
+          </Checkbox>
+          <Checkbox
+            bsClass="checkbox"
+            checked={false}
+            disabled={false}
+            inline={false}
+            key="grammar"
+            onChange={[Function]}
+            style={
+              Object {
+                "color": "var(--text-color-dark)",
+                "marginLeft": "10px",
+                "marginRight": "10px",
+              }
+            }
+            title=""
+          >
+            grammar
+          </Checkbox>
+          <Checkbox
+            bsClass="checkbox"
+            checked={false}
+            disabled={false}
+            inline={false}
+            key="other"
+            onChange={[Function]}
+            style={
+              Object {
+                "color": "var(--text-color-dark)",
+                "marginLeft": "10px",
+                "marginRight": "10px",
+              }
+            }
+            title=""
+          >
+            other
+          </Checkbox>
+        </div>
+      </div>
+    </div>
+  </FormGroup>
+</div>
+`;

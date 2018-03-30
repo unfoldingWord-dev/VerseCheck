@@ -6,9 +6,11 @@ import toJson from 'enzyme-to-json';
 
 describe('CommentArea component Tests', () => {
   let props;
+  const mock_translate = (text) => { return text; };
 
   beforeEach(()=> {
     props = {
+      translate: mock_translate,
       actions: {
         handleComment: jest.fn(),
         checkComment: jest.fn(),
@@ -20,6 +22,6 @@ describe('CommentArea component Tests', () => {
   test('Check CommentArea component', () => {
     const wrapper = shallow(<CommentArea {...props} />);
     expect(toJson(wrapper)).toMatchSnapshot();
-    expect(wrapper.text()).toEqual('<Glyphicon />Comment<FormGroup />');
+    expect(wrapper.text()).toEqual('<Glyphicon />comment<FormGroup />');
   });
 });
