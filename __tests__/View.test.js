@@ -9,6 +9,7 @@ const project = '__tests__/fixtures/project/loadedProjectShortened.json';
 
 describe('View component Tests', () => {
   test('Integrated View test', () => {
+    const mock_translate = (text) => { return text; };
     let props = fs.readJSONSync(project);
     props.actions = {
       handleGoToNext: () => jest.fn(),
@@ -35,6 +36,7 @@ describe('View component Tests', () => {
     };
     props = {
       ...props,
+      translate: mock_translate,
       cancelSelection: () => jest.fn(),
       clearSelection: () => jest.fn(),
       saveSelection: () => jest.fn(),

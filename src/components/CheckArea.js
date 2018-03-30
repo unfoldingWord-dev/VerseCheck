@@ -40,7 +40,8 @@ class CheckArea extends Component {
       verseChanged,
       comment,
       selectionsReducer,
-      projectDetailsReducer
+      projectDetailsReducer,
+      translate
     } = this.props;
     const alignedGLText = this.getAlignedGLText();
 
@@ -54,11 +55,12 @@ class CheckArea extends Component {
             verseChanged={verseChanged}
             actions={actions}
             dir={projectDetailsReducer.manifest.target_language.direction}
+            translate={translate}
           />
         );
         break;
       case 'comment':
-        modeArea = <CommentArea comment={comment} actions={actions} />;
+        modeArea = <CommentArea comment={comment} actions={actions} translate={translate} />;
         break;
       case 'select':
         modeArea = (
@@ -68,6 +70,7 @@ class CheckArea extends Component {
               selectionsReducer={selectionsReducer}
               alignedGLText={alignedGLText}
               mode={mode}
+              translate={translate}
             />
           </div>);
         break;
@@ -80,6 +83,7 @@ class CheckArea extends Component {
               verseText={verseText}
               selectionsReducer={selectionsReducer}
               alignedGLText={alignedGLText}
+              translate={translate}
             />
           </div>
         );
@@ -102,6 +106,7 @@ class CheckArea extends Component {
 }
 
 CheckArea.propTypes = {
+  translate: PropTypes.func.isRequired,
   actions: PropTypes.object.isRequired,
   mode: PropTypes.string.isRequired,
   tags: PropTypes.array.isRequired,
