@@ -38,7 +38,7 @@ describe('View component Tests', () => {
       cancelSelection: () => jest.fn(),
       clearSelection: () => jest.fn(),
       saveSelection: () => jest.fn(),
-      goToNextOrPrevious: () => jest.fn()
+      goToNextOrPrevious: () => null
     };
 
     const component = renderer.create(
