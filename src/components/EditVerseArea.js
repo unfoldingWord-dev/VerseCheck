@@ -9,17 +9,18 @@ let EditVerseArea = ({
   verseChanged,
   verseText,
   dir,
+  translate
 }) => {
   const tagList1 = [
-    ["spelling", "Spelling"],
-    ["punctuation", "Punctuation"],
-    ["wordChoice", "Word Choice"],
+    ["spelling", translate("spelling")],
+    ["punctuation", translate("punctuation")],
+    ["wordChoice", translate("word_choice")],
   ];
 
   const tagList2 = [
-    ["meaning", "Meaning"],
-    ["grammar", "Grammar"],
-    ["other", "Other"]
+    ["meaning", translate("meaning")],
+    ["grammar", translate("grammar")],
+    ["other", translate("other")]
   ];
 
   const checkboxesColumn1 = tagList1.map(tag =>
@@ -46,13 +47,13 @@ let EditVerseArea = ({
     </Checkbox>
   );
 
-  let checkBoxText = verseChanged ? "Next, select reason(s) for change" : "First, make changes to verse above";
+  let checkBoxText = verseChanged ? translate("next_change_reason") : translate("first_make_change");
 
   return (
     <div style={style.editArea}>
       <div style={{fontWeight: 'bold'}}>
         <Glyphicon glyph='pencil' style={{marginRight: '5px'}} />
-        Edit Verse
+        {translate("edit_verse")}
       </div>
       <FormGroup style={{flex: 'auto', display: 'flex', flexDirection: 'column', marginBottom: '5px'}} controlId='formControlsTextarea'>
         <FormControl autoFocus
@@ -81,6 +82,7 @@ let EditVerseArea = ({
 };
 
 EditVerseArea.propTypes = {
+  translate: PropTypes.func.isRequired,
   actions: PropTypes.shape({
     handleTagsCheckbox: PropTypes.func,
     handleEditVerse: PropTypes.func,
