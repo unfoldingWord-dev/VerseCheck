@@ -98,7 +98,7 @@ View.propTypes = {
     groupsData: PropTypes.object
   }).isRequired,
   dialogModalVisibility: PropTypes.bool.isRequired,
-  goToNextOrPrevious: PropTypes.func,
+  goToNextOrPrevious: PropTypes.string,
   selectionsReducer: PropTypes.object.isRequired,
   verseEditReducer: PropTypes.object.isRequired,
   commentsReducer: PropTypes.object.isRequired,

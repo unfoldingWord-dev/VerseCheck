@@ -46,7 +46,7 @@ SaveArea.propTypes = {
   selectionsReducer: PropTypes.shape({
     selections: PropTypes.array
   }).isRequired,
-  goToNextOrPrevious: PropTypes.func,
+  goToNextOrPrevious: PropTypes.string,
   skipToPrevious: PropTypes.func,
   skipToNext: PropTypes.func,
   handleClose: PropTypes.func,
