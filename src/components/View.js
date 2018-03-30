@@ -65,6 +65,7 @@ class View extends React.Component {
                 verseEditReducer={this.props.verseEditReducer}
                 commentsReducer={this.props.commentsReducer}
                 remindersReducer={this.props.remindersReducer}
+                translate={translate}
               />
             </div>
             <CheckArea {...this.props} />

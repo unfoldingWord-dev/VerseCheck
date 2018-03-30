@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import {Dialog, CardHeader} from 'material-ui';
 import {Glyphicon} from 'react-bootstrap';
+import {getTranslatedParts} from '../helpers/localizationHelpers';
 
 class DialogComponent extends Component {
   constructor(props) {
@@ -33,7 +34,7 @@ class DialogComponent extends Component {
           }
         }
       >
-      Skip
+        {translate("skip")}
       </button>,
       <button
         key={2}
@@ -45,13 +46,13 @@ class DialogComponent extends Component {
           }
         }
       >
-      Close
+        {translate("close")}
       </button>
     ];
 
     const headerContent = (
       <div>
-        <span>{"Attention:"}</span>
+        <span>{translate("attention")}</span>
         <Glyphicon
           onClick={this.props.handleClose}
           glyph={"remove"}
@@ -59,7 +60,9 @@ class DialogComponent extends Component {
         />
        </div>
     );
-
+    
+    let select = getTranslatedParts(translate, "select_translation", "${span}", 3);
+    let skip = getTranslatedParts(translate, "can_skip", "${span}", 3);
     return (
       <div>
         <Dialog
@@ -74,13 +77,10 @@ class DialogComponent extends Component {
         >{headerContent}</CardHeader><br /><br />
           <div>
             <p>
-              Please <span style={{color: "var(--accent-color)", fontWeight: "bold"}}>select </span>
-              the correct translation for your current check.
+              {select[0]} <span style={{color: "var(--accent-color)", fontWeight: "bold"}}> {select[1]} </span> {select[1]}
             </p>
             <p>
-              If you are unable to perform this check, you may
-              <span style={{color: "var(--accent-color)", fontWeight: "bold"}}> skip it </span>
-              and come back to it later.
+              {skip[0]} <span style={{color: "var(--accent-color)", fontWeight: "bold"}}> {skip[1]} </span> {skip[1]}
             </p>
           </div>
         </Dialog>
