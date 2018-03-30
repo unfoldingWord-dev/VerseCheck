@@ -64,7 +64,7 @@ exports[`View component Tests Integrated View test 1`] = `
                 "opacity": 0.2,
               }
             }
-            title="No selections were found for this check"
+            title="check.no_selections_found"
           />
           <span
             className="glyphicon glyphicon-pencil"
@@ -75,7 +75,7 @@ exports[`View component Tests Integrated View test 1`] = `
                 "opacity": 0.2,
               }
             }
-            title="No Verse edits were found for this check"
+            title="check.no_verse_edits_found"
           />
           <span
             className="glyphicon glyphicon-comment"
@@ -86,7 +86,7 @@ exports[`View component Tests Integrated View test 1`] = `
                 "opacity": 0.2,
               }
             }
-            title="No comments were found for this check"
+            title="check.no_comments_found"
           />
           <span
             className="glyphicon glyphicon-bookmark"
@@ -97,7 +97,7 @@ exports[`View component Tests Integrated View test 1`] = `
                 "opacity": 0.2,
               }
             }
-            title="This check has not been bookmarked for review"
+            title="check.not_bookmarked"
           />
         </div>
       </div>

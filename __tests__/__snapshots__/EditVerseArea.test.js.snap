@@ -66,7 +66,7 @@ exports[`EditVerseArea component Tests Check EditVerseArea component 1`] = `
         }
       }
     >
-      First, make changes to verse above
+      first_make_change
       <br />
       <div
         style={
@@ -271,7 +271,7 @@ exports[`EditVerseArea component Tests Check EditVerseArea component select all 
         }
       }
     >
-      First, make changes to verse above
+      first_make_change
       <br />
       <div
         style={
@@ -476,7 +476,7 @@ exports[`EditVerseArea component Tests Check EditVerseArea component select all 
         }
       }
     >
-      Next, select reason(s) for change
+      next_change_reason
       <br />
       <div
         style={

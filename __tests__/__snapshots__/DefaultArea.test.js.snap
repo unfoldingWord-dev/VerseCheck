@@ -59,7 +59,7 @@ exports[`DefaultArea component Tests Check DefaultArea component 1`] = `
             "cursor": "pointer",
           }
         }
-        title="Click to show expanded verses"
+        title="click_show_expanded"
       />
     </div>
     <MyLanguageModal
