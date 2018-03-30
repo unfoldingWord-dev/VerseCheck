@@ -18,5 +18,12 @@
   "word_choice": "शब्दों का चयन",
   "meaning": "अर्थ",
   "grammar": "व्याकरण",
-  "other": "अन्य"
+  "other": "अन्य",
+  "next_change_reason": "इसके बाद, परिवर्तन का कारण चुनें",
+  "first_make_change": "सबसे पहले, उपरोक्त कविता में परिवर्तन करें",
+  "close": "बंद करे",
+  "attention": "ध्यान:",
+  "select_translation": "कृपया ${highlight_start} चुनें ${highlight_end} अपने वर्तमान जांच के लिए सही अनुवाद।",
+  "can_skip": "यदि आप इस जांच को करने में असमर्थ हैं, तो आप ${highlight_start} को ${highlight_end} को छोड़ सकते हैं और बाद में वापस आ सकते हैं।",
+  "skip": "छोड़ें"
 }

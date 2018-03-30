@@ -18,5 +18,12 @@
   "word_choice": "Word Choice",
   "meaning": "Meaning",
   "grammar": "Grammar",
-  "other": "Other"
+  "other": "Other",
+  "next_change_reason": "Next, select reason(s) for change",
+  "first_make_change": "First, make changes to verse above",
+  "close": "Close",
+  "attention": "Attention:",
+  "select_translation": "Please ${highlight_start} select ${highlight_end} the correct translation for your current check.",
+  "can_skip": "If you are unable to perform this check, you may ${highlight_start} skip it ${highlight_end} and come back to it later.",
+  "skip": "Skip"
 }

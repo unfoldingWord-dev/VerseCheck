@@ -79,6 +79,7 @@ class View extends React.Component {
           goToNextOrPrevious={this.props.goToNextOrPrevious}
           skipToNext={this.props.actions.skipToNext}
           skipToPrevious={this.props.actions.skipToPrevious}
+          translate={translate}
         />
       </div>
     );

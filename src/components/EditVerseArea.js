@@ -47,7 +47,7 @@ let EditVerseArea = ({
     </Checkbox>
   );
 
-  let checkBoxText = verseChanged ? "Next, select reason(s) for change" : "First, make changes to verse above";
+  let checkBoxText = verseChanged ? translate("next_change_reason") : translate("first_make_change");
 
   return (
     <div style={style.editArea}>

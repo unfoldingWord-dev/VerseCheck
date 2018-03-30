@@ -20,7 +20,7 @@ class DialogComponent extends Component {
   }
 
   render() {
-    let {dialogModalVisibility} = this.props;
+    let {dialogModalVisibility, translate} = this.props;
 
     const actions = [
       <button
@@ -90,6 +90,7 @@ class DialogComponent extends Component {
 }
 
 DialogComponent.propTypes = {
+  translate: PropTypes.func.isRequired,
   goToNextOrPrevious: PropTypes.func,
   skipToPrevious: PropTypes.func.isRequired,
   skipToNext: PropTypes.func.isRequired,
