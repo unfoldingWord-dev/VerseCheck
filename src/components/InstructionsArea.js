@@ -2,10 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import style from '../css/Style';
 const ELLIPSIS = '…';
+export const QuoatationMarks = ({ children }) => <strong style={{ color: 'var(--accent-color)' }}>{'"'}{children}{'"'}</strong>;
+export const Ellipsis = () => <strong style={{ color: 'var(--accent-color)' }}>{` ${ELLIPSIS} `}</strong>;
 
 function renderTextSelection(selections) {
-  const QuoatationMarks = ({ children }) => <strong style={{ color: 'var(--accent-color)' }}>{'"'}{children}{'"'}</strong>;
-  const Ellipsis = () => <strong style={{ color: 'var(--accent-color)' }}>{` ${ELLIPSIS} `}</strong>;
   if (selections.length === 2) {
     return (
       <QuoatationMarks>

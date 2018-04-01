@@ -30,35 +30,32 @@ exports[`InstructionsArea component Tests Check InstructionsArea component mode 
 `;
 
 exports[`InstructionsArea component Tests Test InstructionsArea component default mode) 1`] = `
-<div
-  style={
+<InstructionsArea
+  alignedGLText="God's"
+  dontShowTranslation={false}
+  mode="default"
+  selectionsReducer={
     Object {
-      "overflow": "auto",
-      "padding": "5px",
-      "textAlign": "center",
+      "selections": Array [
+        Object {
+          "text": "selected text",
+        },
+      ],
     }
   }
+  translate={[Function]}
+  verseText="This is the verse text"
 >
-  <span>
-    <strong
-      style={
-        Object {
-          "color": "var(--accent-color)",
-        }
+  <div
+    style={
+      Object {
+        "overflow": "auto",
+        "padding": "5px",
+        "textAlign": "center",
       }
-    >
-      "God's"
-    </strong>
-  </span>
-  <br />
-  <span>
-    translated_as
-  </span>
-  <br />
-  <span>
-    <span
-      key="0"
-    >
+    }
+  >
+    <span>
       <strong
         style={
           Object {
@@ -66,14 +63,37 @@ exports[`InstructionsArea component Tests Test InstructionsArea component defaul
           }
         }
       >
-        "selected text"
+        "God's"
       </strong>
-      <span>
-         
-      </span>
     </span>
-  </span>
-</div>
+    <br />
+    <span>
+      translated_as
+    </span>
+    <br />
+    <span>
+      <QuoatationMarks
+        style={
+          Object {
+            "color": "var(--accent-color)",
+          }
+        }
+      >
+        <strong
+          style={
+            Object {
+              "color": "var(--accent-color)",
+            }
+          }
+        >
+          "
+          selected text
+          "
+        </strong>
+      </QuoatationMarks>
+    </span>
+  </div>
+</InstructionsArea>
 `;
 
 exports[`InstructionsArea component Tests Test InstructionsArea component no selections) 1`] = `

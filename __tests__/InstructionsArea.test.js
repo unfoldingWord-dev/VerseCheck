@@ -1,7 +1,7 @@
 /* eslint-env jest */
 import React from 'react';
-import InstructionsArea from '../src/components/InstructionsArea';
-import { shallow } from 'enzyme';
+import InstructionsArea, { QuoatationMarks } from '../src/components/InstructionsArea';
+import { shallow, mount } from 'enzyme';
 import toJson from 'enzyme-to-json';
 
 describe('InstructionsArea component Tests', () => {
@@ -29,9 +29,9 @@ describe('InstructionsArea component Tests', () => {
 
   test('Test InstructionsArea component default mode)', () => {
     props.mode = 'default';
-    const wrapper = shallow(<InstructionsArea {...props} />);
+    const wrapper = mount(<InstructionsArea {...props} />);
     expect(toJson(wrapper)).toMatchSnapshot();
-    expect(wrapper.text()).toEqual('"'+props.alignedGLText+'"translated_as"'+props.selectionsReducer.selections[0].text+'" ');
+    expect(wrapper.text()).toEqual('"'+props.alignedGLText+'"translated_as"'+props.selectionsReducer.selections[0].text+'"');
   });
 
   test('Test InstructionsArea component no selections)', () => {
