@@ -1,40 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import style from '../css/Style';
-const ELLIPSIS = '…';
 export const QuoatationMarks = ({ children }) => <strong style={{ color: 'var(--accent-color)' }}>{'"'}{children}{'"'}</strong>;
 export const Ellipsis = () => <strong style={{ color: 'var(--accent-color)' }}>{` ${ELLIPSIS} `}</strong>;
-
-function renderTextSelection(selections) {
-  if (selections.length === 2) {
-    return (
-      <QuoatationMarks>
-        {selections.map((selection, index) =>
-          <span key={index}>
-            <strong style={{ color: 'var(--accent-color)' }}>
-              {`${selection.text.trim()}`}
-            </strong>
-            {selections[index + 1] ? <span>{" "}</span> : null}
-          </span>
-        )}
-      </QuoatationMarks>
-    );
-  } else if (selections.length > 1) {
-    return (
-      <QuoatationMarks>
-        {selections[0].text.trim()}
-        <Ellipsis />
-        {selections[selections.length - 1].text.trim()}
-      </QuoatationMarks>
-    );
-  } else {
-    return (
-      <QuoatationMarks style={{ color: 'var(--accent-color)' }}>
-        {selections[0].text.trim()}
-      </QuoatationMarks>
-    );
-  }
-}
 
 let InstructionsArea = ({
   alignedGLText,
@@ -42,7 +10,8 @@ let InstructionsArea = ({
   dontShowTranslation,
   verseText,
   mode,
-  translate
+  translate,
+  getOrderedVerseObjectsFromString
 }) => {
 
   if (!verseText) {
@@ -82,7 +51,7 @@ let InstructionsArea = ({
         </strong>
       </span><br />
       <span>{translate("translated_as")}</span><br />
-      <span>{renderTextSelection(selectionsReducer.selections)}</span>
+      <span>{renderTextSelection(selectionsReducer.selections, verseText, getOrderedVerseObjectsFromString)}</span>
     </div>
   );
 };
@@ -97,3 +66,48 @@ InstructionsArea.propTypes = {
 };
 
 export default InstructionsArea;
+// const beginningSelectedWord = selections[0].text.trim();
+// const endSelectedWord = selections[selections.length - 1].text.trim();
+// const betweenRegex = new RegExp(beginningSelectedWord + '.*?(\\S?).*?' + endSelectedWord);
+// return (verseText.match(betweenRegex) || [])[1];
+
+const ELLIPSIS = '…';
+function shouldRenderEllipsis(selections, verseText, getOrderedVerseObjectsFromString) {
+  const beginningSelectedWord = selections[0].text.trim();
+  const beginningSelectedOccurrence = selections[0].occurrence;
+  const beginningSelectedOccurrences = selections[0].occurrences;
+  const endSelectedWord = selections[selections.length - 1].text.trim();
+  const verseTextObjects = getOrderedVerseObjectsFromString(verseText);
+  const selectedBeginningTextObjectIndex = verseTextObjects.findIndex(({text, occurrence, occurrences}) =>
+    text === beginningSelectedWord &&
+    occurrence === beginningSelectedOccurrence &&
+    occurrences === beginningSelectedOccurrences
+  );
+  const secondVerseTextObject = verseTextObjects[selectedBeginningTextObjectIndex + 1] || {};
+  return secondVerseTextObject.text !== endSelectedWord;
+}
+
+function renderTextSelection(selections, verseText, getOrderedVerseObjectsFromString) {
+  if (shouldRenderEllipsis(selections, verseText, getOrderedVerseObjectsFromString)) {
+    return (
+      <QuoatationMarks>
+        {selections[0].text.trim()}
+        <Ellipsis />
+        {selections[selections.length - 1].text.trim()}
+      </QuoatationMarks>
+    );
+  } else {
+    return (
+      <QuoatationMarks>
+        {selections.map((selection, index) =>
+          <span key={index}>
+            <strong style={{ color: 'var(--accent-color)' }}>
+              {`${selection.text.trim()}`}
+            </strong>
+            {selections[index + 1] ? <span>{" "}</span> : null}
+          </span>
+        )}
+      </QuoatationMarks>
+    );
+  }
+}
