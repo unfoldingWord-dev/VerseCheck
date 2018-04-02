@@ -1,6 +1,6 @@
 /* eslint-env jest */
 import React from 'react';
-import InstructionsArea, { QuoatationMarks } from '../src/components/InstructionsArea';
+import InstructionsArea from '../src/components/InstructionsArea';
 import { shallow, mount } from 'enzyme';
 import toJson from 'enzyme-to-json';
 
@@ -13,10 +13,10 @@ describe('InstructionsArea component Tests', () => {
       translate: mock_translate,
       alignedGLText: 'God\'s',
       selectionsReducer: {
-        selections: [{text:'selected text'}]
+        selections: [{text:'Mungu', occurrence:1, occurrences:1}]
       },
       dontShowTranslation: false,
-      verseText: 'This is the verse text',
+      verseText: 'Lakini huruma ya Mungu na wetu na upendo wake kwa wanadamu ulipoonekana, ',
       mode: 'select'
     };
   });
@@ -36,18 +36,18 @@ describe('InstructionsArea component Tests', () => {
 
   test('Test InstructionsArea component default mode with 1 selection)', () => {
     props.mode = 'default';
-    props.selectionsReducer.selections = [{text:'selected text'}, {text:'another selected text'}];
+    props.selectionsReducer.selections = [{text:'Mungu', occurrence:1, occurrences:1}, {text:'na', occurrence:1, occurrences:2}];
     const wrapper = mount(<InstructionsArea {...props} />);
     expect(toJson(wrapper)).toMatchSnapshot();
-    expect(wrapper.text()).toEqual(`"${props.alignedGLText}"translated_as"selected text another selected text"`);
+    expect(wrapper.text()).toEqual(`"${props.alignedGLText}"translated_as"Mungu na"`);
   });
 
   test('Test InstructionsArea component default mode with multiple selections)', () => {
     props.mode = 'default';
-    props.selectionsReducer.selections = [{text:'selected text'}, {text:'another selected text'}, {text:'Alot of selections'}];
+    props.selectionsReducer.selections = [{text:'Mungu', occurrence:1, occurrences:1}, {text:'na', occurrence:2, occurrences:2}];
     const wrapper = mount(<InstructionsArea {...props} />);
     expect(toJson(wrapper)).toMatchSnapshot();
-    expect(wrapper.text()).toEqual(`"${props.alignedGLText}"translated_as"selected text … Alot of selections"`);
+    expect(wrapper.text()).toEqual(`"${props.alignedGLText}"translated_as"Mungu … na"`);
   });
 
 
