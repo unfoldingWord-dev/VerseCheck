@@ -29,6 +29,177 @@ exports[`InstructionsArea component Tests Check InstructionsArea component mode 
 </div>
 `;
 
+exports[`InstructionsArea component Tests Test InstructionsArea component default mode with 1 selection) 1`] = `
+<InstructionsArea
+  alignedGLText="God's"
+  dontShowTranslation={false}
+  mode="default"
+  selectionsReducer={
+    Object {
+      "selections": Array [
+        Object {
+          "text": "selected text",
+        },
+        Object {
+          "text": "another selected text",
+        },
+      ],
+    }
+  }
+  translate={[Function]}
+  verseText="This is the verse text"
+>
+  <div
+    style={
+      Object {
+        "overflow": "auto",
+        "padding": "5px",
+        "textAlign": "center",
+      }
+    }
+  >
+    <span>
+      <strong
+        style={
+          Object {
+            "color": "var(--accent-color)",
+          }
+        }
+      >
+        "God's"
+      </strong>
+    </span>
+    <br />
+    <span>
+      translated_as
+    </span>
+    <br />
+    <span>
+      <QuoatationMarks>
+        <strong
+          style={
+            Object {
+              "color": "var(--accent-color)",
+            }
+          }
+        >
+          "
+          <span
+            key="0"
+          >
+            <strong
+              style={
+                Object {
+                  "color": "var(--accent-color)",
+                }
+              }
+            >
+              selected text
+            </strong>
+            <span>
+               
+            </span>
+          </span>
+          <span
+            key="1"
+          >
+            <strong
+              style={
+                Object {
+                  "color": "var(--accent-color)",
+                }
+              }
+            >
+              another selected text
+            </strong>
+          </span>
+          "
+        </strong>
+      </QuoatationMarks>
+    </span>
+  </div>
+</InstructionsArea>
+`;
+
+exports[`InstructionsArea component Tests Test InstructionsArea component default mode with multiple selections) 1`] = `
+<InstructionsArea
+  alignedGLText="God's"
+  dontShowTranslation={false}
+  mode="default"
+  selectionsReducer={
+    Object {
+      "selections": Array [
+        Object {
+          "text": "selected text",
+        },
+        Object {
+          "text": "another selected text",
+        },
+        Object {
+          "text": "Alot of selections",
+        },
+      ],
+    }
+  }
+  translate={[Function]}
+  verseText="This is the verse text"
+>
+  <div
+    style={
+      Object {
+        "overflow": "auto",
+        "padding": "5px",
+        "textAlign": "center",
+      }
+    }
+  >
+    <span>
+      <strong
+        style={
+          Object {
+            "color": "var(--accent-color)",
+          }
+        }
+      >
+        "God's"
+      </strong>
+    </span>
+    <br />
+    <span>
+      translated_as
+    </span>
+    <br />
+    <span>
+      <QuoatationMarks>
+        <strong
+          style={
+            Object {
+              "color": "var(--accent-color)",
+            }
+          }
+        >
+          "
+          selected text
+          <Ellipsis>
+            <strong
+              style={
+                Object {
+                  "color": "var(--accent-color)",
+                }
+              }
+            >
+               … 
+            </strong>
+          </Ellipsis>
+          Alot of selections
+          "
+        </strong>
+      </QuoatationMarks>
+    </span>
+  </div>
+</InstructionsArea>
+`;
+
 exports[`InstructionsArea component Tests Test InstructionsArea component default mode) 1`] = `
 <InstructionsArea
   alignedGLText="God's"
