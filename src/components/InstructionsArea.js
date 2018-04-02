@@ -66,25 +66,17 @@ InstructionsArea.propTypes = {
 };
 
 export default InstructionsArea;
-// const beginningSelectedWord = selections[0].text.trim();
-// const endSelectedWord = selections[selections.length - 1].text.trim();
-// const betweenRegex = new RegExp(beginningSelectedWord + '.*?(\\S?).*?' + endSelectedWord);
-// return (verseText.match(betweenRegex) || [])[1];
 
 const ELLIPSIS = '…';
-function shouldRenderEllipsis(selections, verseText, getOrderedVerseObjectsFromString) {
-  const beginningSelectedWord = selections[0].text.trim();
-  const beginningSelectedOccurrence = selections[0].occurrence;
-  const beginningSelectedOccurrences = selections[0].occurrences;
+function shouldRenderEllipsis(selections, verseText) {
   const endSelectedWord = selections[selections.length - 1].text.trim();
-  const verseTextObjects = getOrderedVerseObjectsFromString(verseText);
-  const selectedBeginningTextObjectIndex = verseTextObjects.findIndex(({text, occurrence, occurrences}) =>
-    text === beginningSelectedWord &&
-    occurrence === beginningSelectedOccurrence &&
-    occurrences === beginningSelectedOccurrences
-  );
-  const secondVerseTextObject = verseTextObjects[selectedBeginningTextObjectIndex + 1] || {};
-  return secondVerseTextObject.text !== endSelectedWord;
+  const endSelectedWordOccurrence = selections[selections.length - 1].occurrence;
+  const beginningSelectedWord = selections[0].text.trim();
+  const beginningSelectedWordOccurrence = selections[0].occurrence;
+  const indexOfBeginningSelection = verseText.split(beginningSelectedWord, beginningSelectedWordOccurrence).join(beginningSelectedWord).length;
+  const indexOfEndSelection = verseText.split(endSelectedWord, endSelectedWordOccurrence).join(endSelectedWord).length;
+  const textBetweenSelection = verseText.substring(indexOfBeginningSelection + beginningSelectedWord.length, indexOfEndSelection);
+  return (indexOfEndSelection !== indexOfBeginningSelection) && textBetweenSelection.match(/\S/);
 }
 
 function renderTextSelection(selections, verseText, getOrderedVerseObjectsFromString) {
