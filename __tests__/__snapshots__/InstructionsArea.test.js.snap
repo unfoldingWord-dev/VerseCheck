@@ -79,47 +79,65 @@ exports[`InstructionsArea component Tests Test InstructionsArea component defaul
     </span>
     <br />
     <span>
-      <QuoatationMarks>
-        <strong
-          style={
+      <Component
+        selections={
+          Array [
             Object {
-              "color": "var(--accent-color)",
+              "occurrence": 1,
+              "occurrences": 1,
+              "text": "Mungu",
+            },
+            Object {
+              "occurrence": 1,
+              "occurrences": 2,
+              "text": "na",
+            },
+          ]
+        }
+        verseText="Lakini huruma ya Mungu na wetu na upendo wake kwa wanadamu ulipoonekana, "
+      >
+        <QuoatationMarks>
+          <strong
+            style={
+              Object {
+                "color": "var(--accent-color)",
+              }
             }
-          }
-        >
-          "
-          <span
-            key="0"
           >
-            <strong
-              style={
-                Object {
-                  "color": "var(--accent-color)",
-                }
-              }
+            "
+            <span
+              key="0"
             >
-              Mungu
-            </strong>
-            <span>
-               
+              <strong
+                style={
+                  Object {
+                    "color": "var(--accent-color)",
+                  }
+                }
+              >
+                Mungu
+              </strong>
+              <span>
+                 
+              </span>
             </span>
-          </span>
-          <span
-            key="1"
-          >
-            <strong
-              style={
-                Object {
-                  "color": "var(--accent-color)",
-                }
-              }
+            <span
+              key="1"
             >
-              na
-            </strong>
-          </span>
-          "
-        </strong>
-      </QuoatationMarks>
+              <strong
+                style={
+                  Object {
+                    "color": "var(--accent-color)",
+                  }
+                }
+              >
+                na
+              </strong>
+            </span>
+            "
+          </strong>
+        </QuoatationMarks>
+      </Component>
     </span>
   </div>
 </InstructionsArea>
@@ -175,31 +193,49 @@ exports[`InstructionsArea component Tests Test InstructionsArea component defaul
     </span>
     <br />
     <span>
-      <QuoatationMarks>
-        <strong
-          style={
+      <Component
+        selections={
+          Array [
             Object {
-              "color": "var(--accent-color)",
-            }
-          }
-        >
-          "
-          Mungu
-          <Ellipsis>
-            <strong
-              style={
-                Object {
-                  "color": "var(--accent-color)",
-                }
+              "occurrence": 1,
+              "occurrences": 1,
+              "text": "Mungu",
+            },
+            Object {
+              "occurrence": 2,
+              "occurrences": 2,
+              "text": "na",
+            },
+          ]
+        }
+        verseText="Lakini huruma ya Mungu na wetu na upendo wake kwa wanadamu ulipoonekana, "
+      >
+        <QuoatationMarks>
+          <strong
+            style={
+              Object {
+                "color": "var(--accent-color)",
               }
-            >
-               … 
-            </strong>
-          </Ellipsis>
-          na
-          "
-        </strong>
-      </QuoatationMarks>
+            }
+          >
+            "
+            Mungu
+            <Ellipsis>
+              <strong
+                style={
+                  Object {
+                    "color": "var(--accent-color)",
+                  }
+                }
+              >
+                 … 
+              </strong>
+            </Ellipsis>
+            na
+            "
+          </strong>
+        </QuoatationMarks>
+      </Component>
     </span>
   </div>
 </InstructionsArea>
@@ -250,31 +286,44 @@ exports[`InstructionsArea component Tests Test InstructionsArea component defaul
     </span>
     <br />
     <span>
-      <QuoatationMarks>
-        <strong
-          style={
+      <Component
+        selections={
+          Array [
             Object {
-              "color": "var(--accent-color)",
-            }
-          }
-        >
-          "
-          <span
-            key="0"
-          >
-            <strong
-              style={
-                Object {
-                  "color": "var(--accent-color)",
-                }
+              "occurrence": 1,
+              "occurrences": 1,
+              "text": "Mungu",
+            },
+          ]
+        }
+        verseText="Lakini huruma ya Mungu na wetu na upendo wake kwa wanadamu ulipoonekana, "
+      >
+        <QuoatationMarks>
+          <strong
+            style={
+              Object {
+                "color": "var(--accent-color)",
               }
+            }
+          >
+            "
+            <span
+              key="0"
             >
-              Mungu
-            </strong>
-          </span>
-          "
-        </strong>
-      </QuoatationMarks>
+              <strong
+                style={
+                  Object {
+                    "color": "var(--accent-color)",
+                  }
+                }
+              >
+                Mungu
+              </strong>
+            </span>
+            "
+          </strong>
+        </QuoatationMarks>
+      </Component>
     </span>
   </div>
 </InstructionsArea>
