@@ -264,7 +264,6 @@ class VerseCheck extends React.Component {
       <MuiThemeProvider>
         <View
           {...this.props}
-          getOrderedVerseObjectsFromString={this.props.actions.getOrderedVerseObjectsFromString}
           actions={this.actions}
           cancelSelection={this.cancelSelection.bind(this)}
           clearSelection={this.clearSelection.bind(this)}

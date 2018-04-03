@@ -71,7 +71,6 @@ class CheckArea extends Component {
               alignedGLText={alignedGLText}
               mode={mode}
               translate={translate}
-              getOrderedVerseObjectsFromString={this.props.getOrderedVerseObjectsFromString}
             />
           </div>);
         break;
@@ -80,7 +79,6 @@ class CheckArea extends Component {
         modeArea = (
           <div style={{ WebkitUserSelect: 'none', display: "flex", justifyContent: "center", alignItems: "center", height: "100%" }}>
             <InstructionsArea
-              getOrderedVerseObjectsFromString={this.props.getOrderedVerseObjectsFromString}
               dontShowTranslation={true}
               verseText={verseText}
               selectionsReducer={selectionsReducer}
