@@ -79,7 +79,7 @@ exports[`InstructionsArea component Tests Test InstructionsArea component defaul
     </span>
     <br />
     <span>
-      <Component
+      <InstructionsAreaTextSelection
         selections={
           Array [
             Object {
@@ -137,7 +137,7 @@ exports[`InstructionsArea component Tests Test InstructionsArea component defaul
             "
           </strong>
         </QuoatationMarks>
-      </Component>
+      </InstructionsAreaTextSelection>
     </span>
   </div>
 </InstructionsArea>
@@ -193,7 +193,7 @@ exports[`InstructionsArea component Tests Test InstructionsArea component defaul
     </span>
     <br />
     <span>
-      <Component
+      <InstructionsAreaTextSelection
         selections={
           Array [
             Object {
@@ -235,7 +235,7 @@ exports[`InstructionsArea component Tests Test InstructionsArea component defaul
             "
           </strong>
         </QuoatationMarks>
-      </Component>
+      </InstructionsAreaTextSelection>
     </span>
   </div>
 </InstructionsArea>
@@ -286,7 +286,7 @@ exports[`InstructionsArea component Tests Test InstructionsArea component defaul
     </span>
     <br />
     <span>
-      <Component
+      <InstructionsAreaTextSelection
         selections={
           Array [
             Object {
@@ -323,7 +323,7 @@ exports[`InstructionsArea component Tests Test InstructionsArea component defaul
             "
           </strong>
         </QuoatationMarks>
-      </Component>
+      </InstructionsAreaTextSelection>
     </span>
   </div>
 </InstructionsArea>
