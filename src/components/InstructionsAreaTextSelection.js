@@ -8,7 +8,7 @@ let InstructionsAreaTextSelection = ({ selections, verseText }) => {
     return (
       <QuoatationMarks>
         {selections[0].text.trim()}
-        <Ellipsis />
+        <strong style={{ color: 'var(--accent-color)' }}>{` ${ELLIPSIS} `}</strong>
         {selections[selections.length - 1].text.trim()}
       </QuoatationMarks>
     );
@@ -34,10 +34,8 @@ InstructionsAreaTextSelection.propTypes = {
   verseText: PropTypes.string.isRequired
 };
 
-export const QuoatationMarks = ({ children }) => <strong style={{ color: 'var(--accent-color)' }}>{'"'}{children}{'"'}</strong>;
+const QuoatationMarks = ({ children }) => <strong style={{ color: 'var(--accent-color)' }}>{'"'}{children}{'"'}</strong>;
 
 QuoatationMarks.propTypes = {
   children: PropTypes.object.isRequired
 };
-
-export const Ellipsis = () => <strong style={{ color: 'var(--accent-color)' }}>{` ${ELLIPSIS} `}</strong>;

@@ -220,17 +220,15 @@ exports[`InstructionsArea component Tests Test InstructionsArea component defaul
           >
             "
             Mungu
-            <Ellipsis>
-              <strong
-                style={
-                  Object {
-                    "color": "var(--accent-color)",
-                  }
+            <strong
+              style={
+                Object {
+                  "color": "var(--accent-color)",
                 }
-              >
-                 … 
-              </strong>
-            </Ellipsis>
+              }
+            >
+               … 
+            </strong>
             na
             "
           </strong>
