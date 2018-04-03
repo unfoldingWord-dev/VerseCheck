@@ -37,5 +37,5 @@ InstructionsAreaTextSelection.propTypes = {
 const QuoatationMarks = ({ children }) => <strong style={{ color: 'var(--accent-color)' }}>{'"'}{children}{'"'}</strong>;
 
 QuoatationMarks.propTypes = {
-  children: PropTypes.object.isRequired
+  children: PropTypes.array.isRequired
 };
