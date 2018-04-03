@@ -165,7 +165,7 @@ class VerseCheck extends React.Component {
         }
 
         const save = () => {
-          actions.addVerseEdit(before, _this.state.verseText, _this.state.tags, username);
+          actions.editTargetVerse(chapter, verse, before, _this.state.verseText, _this.state.tags, username);
           _this.setState({
             mode: 'default',
             selections: _this.props.selectionsReducer.selections,
