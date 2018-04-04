@@ -1,7 +1,7 @@
 /* eslint-env jest */
 import React from 'react';
 import InstructionsArea from '../src/components/InstructionsArea';
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 import toJson from 'enzyme-to-json';
 
 describe('InstructionsArea component Tests', () => {
@@ -13,10 +13,10 @@ describe('InstructionsArea component Tests', () => {
       translate: mock_translate,
       alignedGLText: 'God\'s',
       selectionsReducer: {
-        selections: [{text:'selected text'}]
+        selections: [{text:'Mungu', occurrence:1, occurrences:1}]
       },
       dontShowTranslation: false,
-      verseText: 'This is the verse text',
+      verseText: 'Lakini huruma ya Mungu na wetu na upendo wake kwa wanadamu ulipoonekana, ',
       mode: 'select'
     };
   });
@@ -29,10 +29,27 @@ describe('InstructionsArea component Tests', () => {
 
   test('Test InstructionsArea component default mode)', () => {
     props.mode = 'default';
-    const wrapper = shallow(<InstructionsArea {...props} />);
+    const wrapper = mount(<InstructionsArea {...props} />);
     expect(toJson(wrapper)).toMatchSnapshot();
-    expect(wrapper.text()).toEqual('"'+props.alignedGLText+'"translated_as"'+props.selectionsReducer.selections[0].text+'" ');
+    expect(wrapper.text()).toEqual('"'+props.alignedGLText+'"translated_as"'+props.selectionsReducer.selections[0].text+'"');
   });
+
+  test('Test InstructionsArea component default mode with 1 selection)', () => {
+    props.mode = 'default';
+    props.selectionsReducer.selections = [{text:'Mungu', occurrence:1, occurrences:1}, {text:'na', occurrence:1, occurrences:2}];
+    const wrapper = mount(<InstructionsArea {...props} />);
+    expect(toJson(wrapper)).toMatchSnapshot();
+    expect(wrapper.text()).toEqual(`"${props.alignedGLText}"translated_as"Mungu na"`);
+  });
+
+  test('Test InstructionsArea component default mode with multiple selections)', () => {
+    props.mode = 'default';
+    props.selectionsReducer.selections = [{text:'Mungu', occurrence:1, occurrences:1}, {text:'na', occurrence:2, occurrences:2}];
+    const wrapper = mount(<InstructionsArea {...props} />);
+    expect(toJson(wrapper)).toMatchSnapshot();
+    expect(wrapper.text()).toEqual(`"${props.alignedGLText}"translated_as"Mungu … na"`);
+  });
+
 
   test('Test InstructionsArea component no selections)', () => {
     props.selectionsReducer.selections = [];

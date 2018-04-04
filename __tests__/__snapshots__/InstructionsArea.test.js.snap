@@ -29,36 +29,40 @@ exports[`InstructionsArea component Tests Check InstructionsArea component mode 
 </div>
 `;
 
-exports[`InstructionsArea component Tests Test InstructionsArea component default mode) 1`] = `
-<div
-  style={
+exports[`InstructionsArea component Tests Test InstructionsArea component default mode with 1 selection) 1`] = `
+<InstructionsArea
+  alignedGLText="God's"
+  dontShowTranslation={false}
+  mode="default"
+  selectionsReducer={
     Object {
-      "overflow": "auto",
-      "padding": "5px",
-      "textAlign": "center",
+      "selections": Array [
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "text": "Mungu",
+        },
+        Object {
+          "occurrence": 1,
+          "occurrences": 2,
+          "text": "na",
+        },
+      ],
     }
   }
+  translate={[Function]}
+  verseText="Lakini huruma ya Mungu na wetu na upendo wake kwa wanadamu ulipoonekana, "
 >
-  <span>
-    <strong
-      style={
-        Object {
-          "color": "var(--accent-color)",
-        }
+  <div
+    style={
+      Object {
+        "overflow": "auto",
+        "padding": "5px",
+        "textAlign": "center",
       }
-    >
-      "God's"
-    </strong>
-  </span>
-  <br />
-  <span>
-    translated_as
-  </span>
-  <br />
-  <span>
-    <span
-      key="0"
-    >
+    }
+  >
+    <span>
       <strong
         style={
           Object {
@@ -66,14 +70,261 @@ exports[`InstructionsArea component Tests Test InstructionsArea component defaul
           }
         }
       >
-        "selected text"
+        "God's"
       </strong>
-      <span>
-         
-      </span>
     </span>
-  </span>
-</div>
+    <br />
+    <span>
+      translated_as
+    </span>
+    <br />
+    <span>
+      <InstructionsAreaTextSelection
+        selections={
+          Array [
+            Object {
+              "occurrence": 1,
+              "occurrences": 1,
+              "text": "Mungu",
+            },
+            Object {
+              "occurrence": 1,
+              "occurrences": 2,
+              "text": "na",
+            },
+          ]
+        }
+        verseText="Lakini huruma ya Mungu na wetu na upendo wake kwa wanadamu ulipoonekana, "
+      >
+        <QuoatationMarks>
+          <strong
+            style={
+              Object {
+                "color": "var(--accent-color)",
+              }
+            }
+          >
+            "
+            <span
+              key="0"
+            >
+              <strong
+                style={
+                  Object {
+                    "color": "var(--accent-color)",
+                  }
+                }
+              >
+                Mungu
+              </strong>
+              <span>
+                 
+              </span>
+            </span>
+            <span
+              key="1"
+            >
+              <strong
+                style={
+                  Object {
+                    "color": "var(--accent-color)",
+                  }
+                }
+              >
+                na
+              </strong>
+            </span>
+            "
+          </strong>
+        </QuoatationMarks>
+      </InstructionsAreaTextSelection>
+    </span>
+  </div>
+</InstructionsArea>
+`;
+
+exports[`InstructionsArea component Tests Test InstructionsArea component default mode with multiple selections) 1`] = `
+<InstructionsArea
+  alignedGLText="God's"
+  dontShowTranslation={false}
+  mode="default"
+  selectionsReducer={
+    Object {
+      "selections": Array [
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "text": "Mungu",
+        },
+        Object {
+          "occurrence": 2,
+          "occurrences": 2,
+          "text": "na",
+        },
+      ],
+    }
+  }
+  translate={[Function]}
+  verseText="Lakini huruma ya Mungu na wetu na upendo wake kwa wanadamu ulipoonekana, "
+>
+  <div
+    style={
+      Object {
+        "overflow": "auto",
+        "padding": "5px",
+        "textAlign": "center",
+      }
+    }
+  >
+    <span>
+      <strong
+        style={
+          Object {
+            "color": "var(--accent-color)",
+          }
+        }
+      >
+        "God's"
+      </strong>
+    </span>
+    <br />
+    <span>
+      translated_as
+    </span>
+    <br />
+    <span>
+      <InstructionsAreaTextSelection
+        selections={
+          Array [
+            Object {
+              "occurrence": 1,
+              "occurrences": 1,
+              "text": "Mungu",
+            },
+            Object {
+              "occurrence": 2,
+              "occurrences": 2,
+              "text": "na",
+            },
+          ]
+        }
+        verseText="Lakini huruma ya Mungu na wetu na upendo wake kwa wanadamu ulipoonekana, "
+      >
+        <QuoatationMarks>
+          <strong
+            style={
+              Object {
+                "color": "var(--accent-color)",
+              }
+            }
+          >
+            "
+            Mungu
+            <strong
+              style={
+                Object {
+                  "color": "var(--accent-color)",
+                }
+              }
+            >
+               … 
+            </strong>
+            na
+            "
+          </strong>
+        </QuoatationMarks>
+      </InstructionsAreaTextSelection>
+    </span>
+  </div>
+</InstructionsArea>
+`;
+
+exports[`InstructionsArea component Tests Test InstructionsArea component default mode) 1`] = `
+<InstructionsArea
+  alignedGLText="God's"
+  dontShowTranslation={false}
+  mode="default"
+  selectionsReducer={
+    Object {
+      "selections": Array [
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "text": "Mungu",
+        },
+      ],
+    }
+  }
+  translate={[Function]}
+  verseText="Lakini huruma ya Mungu na wetu na upendo wake kwa wanadamu ulipoonekana, "
+>
+  <div
+    style={
+      Object {
+        "overflow": "auto",
+        "padding": "5px",
+        "textAlign": "center",
+      }
+    }
+  >
+    <span>
+      <strong
+        style={
+          Object {
+            "color": "var(--accent-color)",
+          }
+        }
+      >
+        "God's"
+      </strong>
+    </span>
+    <br />
+    <span>
+      translated_as
+    </span>
+    <br />
+    <span>
+      <InstructionsAreaTextSelection
+        selections={
+          Array [
+            Object {
+              "occurrence": 1,
+              "occurrences": 1,
+              "text": "Mungu",
+            },
+          ]
+        }
+        verseText="Lakini huruma ya Mungu na wetu na upendo wake kwa wanadamu ulipoonekana, "
+      >
+        <QuoatationMarks>
+          <strong
+            style={
+              Object {
+                "color": "var(--accent-color)",
+              }
+            }
+          >
+            "
+            <span
+              key="0"
+            >
+              <strong
+                style={
+                  Object {
+                    "color": "var(--accent-color)",
+                  }
+                }
+              >
+                Mungu
+              </strong>
+            </span>
+            "
+          </strong>
+        </QuoatationMarks>
+      </InstructionsAreaTextSelection>
+    </span>
+  </div>
+</InstructionsArea>
 `;
 
 exports[`InstructionsArea component Tests Test InstructionsArea component no selections) 1`] = `
