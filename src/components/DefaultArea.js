@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 // helpers
 import {
   selectionArray,
-  occurrencesInString,
   normalizeString
 } from '../utils/selectionHelpers';
 // components
@@ -92,9 +91,6 @@ class DefaultArea extends React.Component {
 
 DefaultArea.propTypes = {
   translate: PropTypes.func.isRequired,
-  actions: PropTypes.shape({
-    validateSelections: PropTypes.func,
-  }).isRequired,
   contextIdReducer: PropTypes.shape({
     contextId: PropTypes.object
   }).isRequired,
