@@ -13,6 +13,8 @@ import ActionsArea from './components/ActionsArea';
 import SaveArea from './components/SaveArea';
 import DialogComponent from './components/DialogComponent';
 import IconIndicators from './components/IconIndicators';
+//helpers
+import * as checkAreaHelpers from './helpers/checkAreaHelpers';
 
 class VerseCheck extends React.Component {
   constructor(props) {
@@ -33,6 +35,7 @@ class VerseCheck extends React.Component {
     this.saveSelection = this.saveSelection.bind(this);
     this.cancelSelection = this.cancelSelection.bind(this);
     this.clearSelection = this.clearSelection.bind(this);
+    this.handleSkip = this.handleSkip.bind(this);
     
     let _this = this;
 
@@ -281,18 +284,45 @@ class VerseCheck extends React.Component {
     return result;
   }
 
+  getAlignedGLText() {
+    const {
+      projectDetailsReducer: {currentProjectToolsSelectedGL},
+      contextIdReducer: {contextId},
+      resourcesReducer:{bibles},
+      toolsReducer:{currentToolName}
+    } = this.props;
+    let alignedGLText = contextId.quote;
+    const selectedGL = currentProjectToolsSelectedGL[currentToolName];
+    if (bibles[selectedGL] && bibles[selectedGL]['ult']) {
+      const verseObjects = bibles[selectedGL]['ult'][contextId.reference.chapter][contextId.reference.verse].verseObjects;
+      const wordsToMatch = contextId.quote.split(' ');
+      const alignedText = checkAreaHelpers.getAlignedText(verseObjects, wordsToMatch, contextId.occurrence);
+      if (alignedText) {
+        alignedGLText = alignedText;
+      }
+    }
+    return alignedGLText;
+  }
+
+  handleSkip(e) {
+    e.preventDefault();
+    if (this.state.goToNextOrPrevious == "next") {
+      this.actions.skipToNext();
+    } else if (this.state.goToNextOrPrevious == "previous") {
+      this.actions.skipToPrevious();
+    }
+  }
+
   render() {
     const verseText = usfmjs.removeMarker(this.verseText());
+    const alignedGLText = this.getAlignedGLText();
     const {
-      actions,
       translate,
-      verseEditReducer,
       commentsReducer,
       remindersReducer,
       projectDetailsReducer,
       contextIdReducer,
       resourcesReducer,
-      toolsReducer,
       selectionsReducer
     } = this.props;
 
@@ -328,10 +358,8 @@ class VerseCheck extends React.Component {
               <div style={style.titleBar}>
                 <span>{titleText}</span>
                 <IconIndicators
-                  actions={this.actions}
                   verseEdited={this.findIfVerseEdited()}
                   selections={selectionsReducer.selections}
-                  verseEditReducer={verseEditReducer}
                   comment={commentsReducer.text}
                   bookmarkEnabled={remindersReducer.enabled}
                   translate={translate} />
@@ -349,7 +377,7 @@ class VerseCheck extends React.Component {
                 projectDetailsReducer={projectDetailsReducer}
                 contextId={contextIdReducer.contextId}
                 bibles={resourcesReducer.bibles}
-                currentToolName={toolsReducer.currentToolName} />
+                alignedGLText={alignedGLText} />
               <ActionsArea
                 mode={this.state.mode}
                 tags={this.state.tags}
@@ -366,12 +394,9 @@ class VerseCheck extends React.Component {
             {saveArea}
           </div>
           <DialogComponent
+            handleSkip={this.handleSkip}
             dialogModalVisibility={this.state.dialogModalVisibility}
-            handleOpen={actions.handleOpenDialog}
-            handleClose={actions.handleCloseDialog}
-            goToNextOrPrevious={this.state.goToNextOrPrevious}
-            skipToNext={actions.skipToNext}
-            skipToPrevious={actions.skipToPrevious}
+            handleClose={this.actions.handleCloseDialog}
             translate={translate} />
         </div>
       </MuiThemeProvider>
