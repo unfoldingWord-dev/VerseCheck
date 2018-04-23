@@ -47,8 +47,7 @@ SaveArea.propTypes = {
   goToNextOrPrevious: PropTypes.string,
   skipToPrevious: PropTypes.func,
   skipToNext: PropTypes.func,
-  handleClose: PropTypes.func,
-  dialogModalVisibility: PropTypes.bool.isRequired
+  handleClose: PropTypes.func
 };
 
 export default SaveArea;

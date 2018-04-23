@@ -262,23 +262,13 @@ class VerseCheck extends React.Component {
     const verseText = usfmjs.removeMarker(this.verseText());
     const {
       translate,
-      actions,
-      mode,
       verseEditReducer,
       commentsReducer,
       remindersReducer,
-      tags,
-      verseChanged,
       projectDetailsReducer,
       contextIdReducer,
       resourcesReducer,
       toolsReducer,
-      dialogModalVisibility,
-      goToNextOrPrevious,
-      commentChanged,
-      saveSelection,
-      cancelSelection,
-      clearSelection,
       groupsDataReducer,
       selectionsReducer  
     } = this.props;
@@ -314,6 +304,8 @@ class VerseCheck extends React.Component {
 }
 
 VerseCheck.propTypes = {
+  remindersReducer: PropTypes.object.isRequired,
+  verseEditReducer: PropTypes.object.isRequired,
   groupsDataReducer: PropTypes.object.isRequired,
   toolsReducer: PropTypes.object.isRequired,
   translate: PropTypes.func.isRequired,

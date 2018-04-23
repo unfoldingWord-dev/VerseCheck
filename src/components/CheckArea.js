@@ -13,7 +13,7 @@ import * as checkAreaHelpers from '../helpers/checkAreaHelpers';
 class CheckArea extends Component {
   getAlignedGLText() {
     const {
-      projectDetailsReducer: {currentProjectToolsSelectedGL, manifest},
+      projectDetailsReducer: {currentProjectToolsSelectedGL},
       contextId,
       bibles,
       currentToolName
@@ -128,20 +128,15 @@ CheckArea.propTypes = {
   verseText: PropTypes.string.isRequired,
   verseChanged: PropTypes.bool.isRequired,
   comment: PropTypes.string.isRequired,
-  contextIdReducer: PropTypes.shape({
-    contextId: PropTypes.object
-  }).isRequired,
-  newSelections: PropTypes.array,
+  contextId: PropTypes.object,
+  selections: PropTypes.array.isRequired,
+  newSelections: PropTypes.array.isRequired,
   projectDetailsReducer: PropTypes.shape({
     manifest: PropTypes.object,
     currentProjectToolsSelectedGL: PropTypes.object
   }).isRequired,
-  resourcesReducer: PropTypes.shape({
-    bibles: PropTypes.object
-  }).isRequired,
-  toolsReducer: PropTypes.shape({
-    currentToolName: PropTypes.string
-  }).isRequired
+  bibles: PropTypes.object,
+  currentToolName: PropTypes.string
 };
 
 export default CheckArea;

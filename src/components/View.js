@@ -12,7 +12,7 @@ import isEqual from 'deep-equal';
 class View extends React.Component {
 
   findIfVerseEdited() {
-    const {contextId, groupsData, projectDetailsReducer, bibles, currentToolName} = this.props;
+    const {contextId, groupsData} = this.props;
     let result = false;
 
     if (groupsData[contextId.groupId]) {
@@ -85,7 +85,7 @@ class View extends React.Component {
                 selections={selections}
                 verseEditReducer={verseEditReducer}
                 comment={comment}
-                remindersReducer={remindersReducer}
+                bookmarkEnabled={remindersReducer.enabled}
                 translate={translate}
               />
             </div>
@@ -133,6 +133,9 @@ class View extends React.Component {
 }
 
 View.propTypes = {
+  bibles: PropTypes.object.isRequired,
+  currentToolName: PropTypes.string.isRequired,
+  projectDetailsReducer: PropTypes.object.isRequired,
   newSelections: PropTypes.array.isRequired,
   commentChanged: PropTypes.bool.isRequired,
   selections: PropTypes.array.isRequired,
@@ -146,12 +149,8 @@ View.propTypes = {
   translate: PropTypes.func.isRequired,
   actions: PropTypes.object.isRequired,
   mode: PropTypes.string.isRequired,
-  contextIdReducer: PropTypes.shape({
-    contextId: PropTypes.object
-  }).isRequired,
-  groupsDataReducer: PropTypes.shape({
-    groupsData: PropTypes.object
-  }).isRequired,
+  contextId: PropTypes.object,
+  groupsData: PropTypes.object,
   dialogModalVisibility: PropTypes.bool.isRequired,
   goToNextOrPrevious: PropTypes.string,
   verseEditReducer: PropTypes.object.isRequired,
