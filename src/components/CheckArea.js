@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 // components
 import DefaultArea from './DefaultArea';
@@ -13,10 +13,10 @@ import * as checkAreaHelpers from '../helpers/checkAreaHelpers';
 class CheckArea extends Component {
   getAlignedGLText() {
     const {
-      projectDetailsReducer: {currentProjectToolsSelectedGL},
-      contextIdReducer: { contextId },
-      resourcesReducer: { bibles },
-      toolsReducer: {currentToolName}
+      projectDetailsReducer: {currentProjectToolsSelectedGL, manifest},
+      contextId,
+      bibles,
+      currentToolName
     } = this.props;
     let alignedGLText = contextId.quote;
     const selectedGL = currentProjectToolsSelectedGL[currentToolName];
@@ -33,15 +33,18 @@ class CheckArea extends Component {
 
   render() {
     const {
+      contextId,
       actions,
       mode,
       tags,
       verseText,
       verseChanged,
       comment,
-      selectionsReducer,
+      newSelections,
+      selections,
       projectDetailsReducer,
-      translate
+      translate,
+      bibles
     } = this.props;
     const alignedGLText = this.getAlignedGLText();
 
@@ -64,10 +67,10 @@ class CheckArea extends Component {
         break;
       case 'select':
         modeArea = (
-          <div style={{ WebkitUserSelect: 'none', display: "flex", flex: "1", justifyContent: "center", alignItems: "center", overflow: "auto" }}>
+          <div style={{WebkitUserSelect: 'none', display: "flex", flex: "1", justifyContent: "center", alignItems: "center", overflow: "auto"}}>
             <InstructionsArea
               verseText={verseText}
-              selectionsReducer={selectionsReducer}
+              selections={selections}
               alignedGLText={alignedGLText}
               mode={mode}
               translate={translate}
@@ -77,11 +80,11 @@ class CheckArea extends Component {
       case 'default':
       default:
         modeArea = (
-          <div style={{ WebkitUserSelect: 'none', display: "flex", justifyContent: "center", alignItems: "center", height: "100%" }}>
+          <div style={{WebkitUserSelect: 'none', display: "flex", justifyContent: "center", alignItems: "center", height: "100%"}}>
             <InstructionsArea
               dontShowTranslation={true}
               verseText={verseText}
-              selectionsReducer={selectionsReducer}
+              selections={selections}
               alignedGLText={alignedGLText}
               translate={translate}
             />
@@ -93,11 +96,23 @@ class CheckArea extends Component {
       <div style={style.checkArea}>
         {mode === 'select' ?
           <SelectionArea
-            {...this.props}
+            verseText={verseText}
+            selections={newSelections}
+            mode={mode}
+            manifest={projectDetailsReducer.manifest}
+            reference={contextId.reference}
+            actions={actions} /> :
+          <DefaultArea
+            reference={contextId.reference}
             actions={actions}
-          /> :
-          <DefaultArea {...this.props} />}
-        <div style={{ borderLeft: '1px solid var(--border-color)', flex: 1, overflowY: "auto", display:'flex', justifyContent:'center' }}>
+            translate={translate}
+            manifest={projectDetailsReducer.manifest}
+            verseText={verseText}
+            selections={selections}
+            bibles={bibles}
+          />
+        }
+        <div style={{borderLeft: '1px solid var(--border-color)', flex: 1, overflowY: "auto", display: 'flex', justifyContent: 'center'}}>
           {modeArea}
         </div>
       </div>
@@ -116,9 +131,7 @@ CheckArea.propTypes = {
   contextIdReducer: PropTypes.shape({
     contextId: PropTypes.object
   }).isRequired,
-  selectionsReducer: PropTypes.shape({
-    selections: PropTypes.array
-  }).isRequired,
+  newSelections: PropTypes.array,
   projectDetailsReducer: PropTypes.shape({
     manifest: PropTypes.object,
     currentProjectToolsSelectedGL: PropTypes.object

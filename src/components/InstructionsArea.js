@@ -6,7 +6,7 @@ import InstructionsAreaTextSelection from './InstructionsAreaTextSelection';
 
 let InstructionsArea = ({
   alignedGLText,
-  selectionsReducer,
+  selections,
   dontShowTranslation,
   verseText,
   mode,
@@ -21,7 +21,7 @@ let InstructionsArea = ({
     );
   }
 
-  if (selectionsReducer.selections.length === 0 && dontShowTranslation) {
+  if (selections.length === 0 && dontShowTranslation) {
     return (
       <div style={style.InstructionsArea}>
         <span>{translate("no_selection")}</span><br />
@@ -52,7 +52,7 @@ let InstructionsArea = ({
       <span>{translate("translated_as")}</span><br />
       <span>
         <InstructionsAreaTextSelection
-          selections={selectionsReducer.selections}
+          selections={selections}
           verseText={verseText} />
       </span>
     </div>
@@ -62,7 +62,7 @@ let InstructionsArea = ({
 InstructionsArea.propTypes = {
   translate: PropTypes.func.isRequired,
   alignedGLText: PropTypes.string.isRequired,
-  selectionsReducer: PropTypes.object.isRequired,
+  selections: PropTypes.array.isRequired,
   dontShowTranslation: PropTypes.bool,
   verseText: PropTypes.string.isRequired,
   mode: PropTypes.string

@@ -6,16 +6,16 @@ import style from '../css/Style';
 
 let SaveArea = ({
   actions,
-  selectionsReducer,
+  selections,
   translate
 }) => {
 
   const handleNext = () => {
-    selectionsReducer.selections.length > 0 ? actions.handleGoToNext() : actions.handleOpenDialog("next");
+    selections.length > 0 ? actions.handleGoToNext() : actions.handleOpenDialog("next");
   };
 
   const handlePrevious = () => {
-    selectionsReducer.selections.length > 0 ? actions.handleGoToPrevious() : actions.handleOpenDialog("previous");
+    selections.length > 0 ? actions.handleGoToPrevious() : actions.handleOpenDialog("previous");
   };
 
   return (
@@ -43,9 +43,7 @@ SaveArea.propTypes = {
     handleGoToPrevious: PropTypes.func,
     handleOpenDialog: PropTypes.func
   }).isRequired,
-  selectionsReducer: PropTypes.shape({
-    selections: PropTypes.array
-  }).isRequired,
+  selections: PropTypes.array,
   goToNextOrPrevious: PropTypes.string,
   skipToPrevious: PropTypes.func,
   skipToNext: PropTypes.func,

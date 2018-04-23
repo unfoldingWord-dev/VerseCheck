@@ -69,7 +69,7 @@ class VerseCheck extends React.Component {
         props.actions.goToPrevious();
       },
       changeSelectionsInLocalState(selections) {
-        _this.setState({ selections });
+        _this.setState({selections});
       },
       changeMode(mode) {
         _this.setState({
@@ -118,7 +118,7 @@ class VerseCheck extends React.Component {
         if (!newState.tags.includes(tag)) {
           newState.tags.push(tag);
         } else {
-          newState.tags = newState.tags.filter( _tag => _tag !== tag);
+          newState.tags = newState.tags.filter(_tag => _tag !== tag);
         }
         _this.setState(newState);
       },
@@ -179,7 +179,7 @@ class VerseCheck extends React.Component {
         } else {
           // alert the user if the text is blank
           let message = 'You are saving a blank verse. Please confirm.';
-          _this.props.actions.openOptionDialog(message, (option)=> {
+          _this.props.actions.openOptionDialog(message, (option) => {
             if (option !== "Cancel") save();
             _this.props.actions.closeAlertDialog();
           }, "Save Blank Verse", "Cancel");
@@ -208,8 +208,8 @@ class VerseCheck extends React.Component {
   componentWillReceiveProps(nextProps) {
     if (nextProps.contextIdReducer.contextId != this.props.contextIdReducer.contextId) {
       let selections = Array.from(nextProps.selectionsReducer.selections);
-      const { chapter, verse } = nextProps.contextIdReducer.contextId.reference || {};
-      const { targetBible } = nextProps.resourcesReducer.bibles.targetLanguage || {};
+      const {chapter, verse} = nextProps.contextIdReducer.contextId.reference || {};
+      const {targetBible} = nextProps.resourcesReducer.bibles.targetLanguage || {};
       let verseText = targetBible && targetBible[chapter] ? targetBible[chapter][verse] : "";
       if (Array.isArray(verseText)) verseText = verseText[0];
       // normalize whitespace in case selection has contiguous whitespace _this isn't captured
@@ -245,9 +245,9 @@ class VerseCheck extends React.Component {
   }
 
   verseText() {
-    const { chapter, verse, bookId } = this.props.contextIdReducer.contextId.reference;
+    const {chapter, verse, bookId} = this.props.contextIdReducer.contextId.reference;
     const bookAbbr = this.props.projectDetailsReducer.manifest.project.id;
-    const { targetBible } = this.props.resourcesReducer.bibles.targetLanguage;
+    const {targetBible} = this.props.resourcesReducer.bibles.targetLanguage;
     let verseText = "";
     if (targetBible && targetBible[chapter] && bookId == bookAbbr) {
       verseText = targetBible && targetBible[chapter] ? targetBible[chapter][verse] : "";
@@ -260,24 +260,53 @@ class VerseCheck extends React.Component {
 
   render() {
     const verseText = usfmjs.removeMarker(this.verseText());
+    const {
+      translate,
+      actions,
+      mode,
+      verseEditReducer,
+      commentsReducer,
+      remindersReducer,
+      tags,
+      verseChanged,
+      projectDetailsReducer,
+      contextIdReducer,
+      resourcesReducer,
+      toolsReducer,
+      dialogModalVisibility,
+      goToNextOrPrevious,
+      commentChanged,
+      saveSelection,
+      cancelSelection,
+      clearSelection,
+      groupsDataReducer,
+      selectionsReducer  
+    } = this.props;
     return (
       <MuiThemeProvider>
         <View
-          {...this.props}
+          verseEditReducer={verseEditReducer}
+          remindersReducer={remindersReducer}
+          projectDetailsReducer={projectDetailsReducer}
+          currentToolName={toolsReducer.currentToolName}
+          bibles={resourcesReducer.bibles}
+          contextId={contextIdReducer.contextId}
+          groupsData={groupsDataReducer.groupsData}
           actions={this.actions}
           cancelSelection={this.cancelSelection.bind(this)}
           clearSelection={this.clearSelection.bind(this)}
           saveSelection={this.saveSelection.bind(this)}
           mode={this.state.mode}
-          comment={this.props.commentsReducer.text}
+          comment={commentsReducer.text}
           commentChanged={this.state.commentChanged}
           verseText={verseText}
           verseChanged={this.state.verseChanged}
-          selections={this.state.selections}
+          selections={selectionsReducer.selections}
+          newSelections={this.state.selections}
           tags={this.state.tags}
           dialogModalVisibility={this.state.dialogModalVisibility}
           goToNextOrPrevious={this.state.goToNextOrPrevious}
-          translate={this.props.translate}
+          translate={translate}
         />
       </MuiThemeProvider>
     );
@@ -285,6 +314,8 @@ class VerseCheck extends React.Component {
 }
 
 VerseCheck.propTypes = {
+  groupsDataReducer: PropTypes.object.isRequired,
+  toolsReducer: PropTypes.object.isRequired,
   translate: PropTypes.func.isRequired,
   actions: PropTypes.object.isRequired,
   mode: PropTypes.string,

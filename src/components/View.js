@@ -12,14 +12,7 @@ import isEqual from 'deep-equal';
 class View extends React.Component {
 
   findIfVerseEdited() {
-    const {
-      contextIdReducer: {
-        contextId
-      },
-      groupsDataReducer: {
-        groupsData
-      }
-    } = this.props;
+    const {contextId, groupsData, projectDetailsReducer, bibles, currentToolName} = this.props;
     let result = false;
 
     if (groupsData[contextId.groupId]) {
@@ -32,10 +25,33 @@ class View extends React.Component {
   }
 
   render() {
-    const {translate} = this.props;
+    const {
+      translate,
+      actions,
+      mode,
+      verseEditReducer,
+      remindersReducer,
+      tags,
+      verseText,
+      verseChanged,
+      comment,
+      projectDetailsReducer,
+      contextId,
+      bibles,
+      currentToolName,
+      dialogModalVisibility,
+      goToNextOrPrevious,
+      commentChanged,
+      selections,
+      saveSelection,
+      cancelSelection,
+      clearSelection,
+      newSelections
+    } = this.props;
+
     let titleText;
     let saveArea;
-    switch (this.props.mode) {
+    switch (mode) {
       case 'edit':
         titleText = translate('edit_verse');
         saveArea = <div />;
@@ -50,36 +66,65 @@ class View extends React.Component {
         break;
       default:
         titleText = translate('step2_check');
-        saveArea = <SaveArea {...this.props} />;
+        saveArea = (
+          <SaveArea
+            actions={actions}
+            selections={selections}
+            translate={translate}
+          />);
     }
     return (
       <div style={style.verseCheck}>
-        <div style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
+        <div style={{display: 'flex', flexDirection: 'column', height: '100%'}}>
           <div style={style.verseCheckCard}>
             <div style={style.titleBar}>
               <span>{titleText}</span>
               <IconIndicators
-                actions={this.props.actions}
+                actions={actions}
                 verseEdited={this.findIfVerseEdited()}
-                selectionsReducer={this.props.selectionsReducer}
-                verseEditReducer={this.props.verseEditReducer}
-                commentsReducer={this.props.commentsReducer}
-                remindersReducer={this.props.remindersReducer}
+                selections={selections}
+                verseEditReducer={verseEditReducer}
+                comment={comment}
+                remindersReducer={remindersReducer}
                 translate={translate}
               />
             </div>
-            <CheckArea {...this.props} />
-            <ActionsArea {...this.props} />
+            <CheckArea
+              actions={actions}
+              mode={mode}
+              tags={tags}
+              verseText={verseText}
+              verseChanged={verseChanged}
+              comment={comment}
+              newSelections={newSelections}
+              selections={selections}
+              translate={translate}
+              projectDetailsReducer={projectDetailsReducer}
+              contextId={contextId}
+              bibles={bibles}
+              currentToolName={currentToolName} />
+            <ActionsArea
+              tags={tags}
+              mode={mode}
+              actions={actions}
+              commentChanged={commentChanged}
+              selections={selections}
+              newSelections={newSelections}
+              remindersReducer={remindersReducer}
+              saveSelection={saveSelection}
+              cancelSelection={cancelSelection}
+              clearSelection={clearSelection}
+              translate={translate} />
           </div>
           {saveArea}
         </div>
         <DialogComponent
-          dialogModalVisibility={this.props.dialogModalVisibility}
-          handleOpen={this.props.actions.handleOpenDialog}
-          handleClose={this.props.actions.handleCloseDialog}
-          goToNextOrPrevious={this.props.goToNextOrPrevious}
-          skipToNext={this.props.actions.skipToNext}
-          skipToPrevious={this.props.actions.skipToPrevious}
+          dialogModalVisibility={dialogModalVisibility}
+          handleOpen={actions.handleOpenDialog}
+          handleClose={actions.handleCloseDialog}
+          goToNextOrPrevious={goToNextOrPrevious}
+          skipToNext={actions.skipToNext}
+          skipToPrevious={actions.skipToPrevious}
           translate={translate}
         />
       </div>
@@ -88,6 +133,16 @@ class View extends React.Component {
 }
 
 View.propTypes = {
+  newSelections: PropTypes.array.isRequired,
+  commentChanged: PropTypes.bool.isRequired,
+  selections: PropTypes.array.isRequired,
+  saveSelection: PropTypes.func.isRequired,
+  cancelSelection: PropTypes.func.isRequired,
+  clearSelection: PropTypes.func.isRequired,
+  tags: PropTypes.array.isRequired,
+  verseText: PropTypes.string.isRequired,
+  verseChanged: PropTypes.bool.isRequired,
+  comment: PropTypes.string,
   translate: PropTypes.func.isRequired,
   actions: PropTypes.object.isRequired,
   mode: PropTypes.string.isRequired,
@@ -99,9 +154,7 @@ View.propTypes = {
   }).isRequired,
   dialogModalVisibility: PropTypes.bool.isRequired,
   goToNextOrPrevious: PropTypes.string,
-  selectionsReducer: PropTypes.object.isRequired,
   verseEditReducer: PropTypes.object.isRequired,
-  commentsReducer: PropTypes.object.isRequired,
   remindersReducer: PropTypes.object.isRequired
 };
 

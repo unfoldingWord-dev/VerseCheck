@@ -20,8 +20,8 @@ class MyLanguageModal extends Component {
   }
 
   render() {
-    let { show, onHide, targetLangBible, chapter, currentVerse, projectDetailsReducer} = this.props;
-    const { target_language, project } = projectDetailsReducer.manifest;
+    let { show, onHide, targetLangBible, chapter, currentVerse, manifest} = this.props;
+    const { target_language, project } = manifest;
     const title = target_language && target_language.book && target_language.book.name ?
         target_language.book.name :
         project.name;
@@ -85,9 +85,7 @@ MyLanguageModal.propTypes = {
   targetLangBible: PropTypes.object,
   chapter: PropTypes.number,
   currentVerse: PropTypes.number,
-  projectDetailsReducer: PropTypes.shape({
-    manifest: PropTypes.object
-  }).isRequired,
+  manifest: PropTypes.object,
   dir: PropTypes.string.isRequired
 };
 

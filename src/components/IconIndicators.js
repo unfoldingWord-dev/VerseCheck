@@ -4,10 +4,11 @@ import { Glyphicon } from 'react-bootstrap';
 
 const IconIndicators = ({
   verseEdited,
-  selectionsReducer,
+  selections,
   commentsReducer,
   remindersReducer,
-  translate
+  translate,
+  comment
 }) => {
   return (
     <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
@@ -16,9 +17,9 @@ const IconIndicators = ({
         style={{
           margin: '0px 20px',
           color: "var(--reverse-color)",
-          opacity: selectionsReducer.selections.length > 0 ? 1 : 0.2
+          opacity: selections.length > 0 ? 1 : 0.2
         }}
-        title={selectionsReducer.selections.length > 0 ? translate("check.selections_found") : translate("check.no_selections_found")}
+        title={selections.length > 0 ? translate("check.selections_found") : translate("check.no_selections_found")}
       />
        <Glyphicon
         glyph="pencil"
@@ -34,9 +35,9 @@ const IconIndicators = ({
         style={{
           margin: '0px 20px',
           color: "var(--reverse-color)",
-          opacity: commentsReducer.text && commentsReducer.text.length > 0 ? 1 : 0.2
+          opacity: comment && comment.length > 0 ? 1 : 0.2
         }}
-        title={commentsReducer.text && commentsReducer.text.length > 0 ? translate("check.comments_found") : translate("check.no_comments_found")}
+        title={comment && comment.length > 0 ? translate("check.comments_found") : translate("check.no_comments_found")}
       />
        <Glyphicon
         glyph="bookmark"

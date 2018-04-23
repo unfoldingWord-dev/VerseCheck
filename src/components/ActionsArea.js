@@ -9,8 +9,8 @@ let ActionsArea = ({
   mode,
   actions,
   commentChanged,
-  selectionsReducer,
   selections,
+  newSelections,
   remindersReducer,
   saveSelection,
   cancelSelection,
@@ -111,7 +111,7 @@ let ActionsArea = ({
         </button>
         <button
           className='btn-prime'
-          disabled={isEqual(selections, selectionsReducer.selections)}
+          disabled={isEqual(newSelections, selections)}
           onClick={saveSelection.bind(this)}
         >
           <Glyphicon glyph='ok' style={{marginRight: '10px'}} />
