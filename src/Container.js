@@ -4,9 +4,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import usfmjs from 'usfm-js';
-import View from './components/View';
+import style from './css/Style';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import {optimizeSelections, normalizeString} from './utils/selectionHelpers';
+import isEqual from 'deep-equal';
+import CheckArea from './components/CheckArea';
+import ActionsArea from './components/ActionsArea';
+import SaveArea from './components/SaveArea';
+import DialogComponent from './components/DialogComponent';
+import IconIndicators from './components/IconIndicators';
 
 class VerseCheck extends React.Component {
   constructor(props) {
@@ -24,7 +30,10 @@ class VerseCheck extends React.Component {
       dialogModalVisibility: false,
       goToNextOrPrevious: null
     };
-
+    this.saveSelection = this.saveSelection.bind(this);
+    this.cancelSelection = this.cancelSelection.bind(this);
+    this.clearSelection = this.clearSelection.bind(this);
+    
     let _this = this;
 
     this.tagList = [
@@ -258,9 +267,24 @@ class VerseCheck extends React.Component {
     return verseText;
   }
 
+
+  findIfVerseEdited() {
+    const {contextIdReducer: {contextId}, groupsDataReducer: {groupsData}} = this.props;
+    let result = false;
+
+    if (groupsData[contextId.groupId]) {
+      let groupData = groupsData[contextId.groupId].filter(groupData => {
+        return isEqual(groupData.contextId, contextId);
+      });
+      result = groupData[0].verseEdits;
+    }
+    return result;
+  }
+
   render() {
     const verseText = usfmjs.removeMarker(this.verseText());
     const {
+      actions,
       translate,
       verseEditReducer,
       commentsReducer,
@@ -269,35 +293,87 @@ class VerseCheck extends React.Component {
       contextIdReducer,
       resourcesReducer,
       toolsReducer,
-      groupsDataReducer,
-      selectionsReducer  
+      selectionsReducer
     } = this.props;
+
+    let titleText;
+    let saveArea;
+    switch (this.state.mode) {
+      case 'edit':
+        titleText = translate('edit_verse');
+        saveArea = <div />;
+        break;
+      case 'comment':
+        titleText = translate('comment');
+        saveArea = <div />;
+        break;
+      case 'select':
+        titleText = translate('select');
+        saveArea = <div />;
+        break;
+      default:
+        titleText = translate('step2_check');
+        saveArea = (
+          <SaveArea
+            actions={this.actions}
+            selections={selectionsReducer.selections}
+            translate={translate} />);
+    }
+
     return (
       <MuiThemeProvider>
-        <View
-          verseEditReducer={verseEditReducer}
-          remindersReducer={remindersReducer}
-          projectDetailsReducer={projectDetailsReducer}
-          currentToolName={toolsReducer.currentToolName}
-          bibles={resourcesReducer.bibles}
-          contextId={contextIdReducer.contextId}
-          groupsData={groupsDataReducer.groupsData}
-          actions={this.actions}
-          cancelSelection={this.cancelSelection.bind(this)}
-          clearSelection={this.clearSelection.bind(this)}
-          saveSelection={this.saveSelection.bind(this)}
-          mode={this.state.mode}
-          comment={commentsReducer.text}
-          commentChanged={this.state.commentChanged}
-          verseText={verseText}
-          verseChanged={this.state.verseChanged}
-          selections={selectionsReducer.selections}
-          newSelections={this.state.selections}
-          tags={this.state.tags}
-          dialogModalVisibility={this.state.dialogModalVisibility}
-          goToNextOrPrevious={this.state.goToNextOrPrevious}
-          translate={translate}
-        />
+        <div style={style.verseCheck}>
+          <div style={{display: 'flex', flexDirection: 'column', height: '100%'}}>
+            <div style={style.verseCheckCard}>
+              <div style={style.titleBar}>
+                <span>{titleText}</span>
+                <IconIndicators
+                  actions={this.actions}
+                  verseEdited={this.findIfVerseEdited()}
+                  selections={selectionsReducer.selections}
+                  verseEditReducer={verseEditReducer}
+                  comment={commentsReducer.text}
+                  bookmarkEnabled={remindersReducer.enabled}
+                  translate={translate} />
+              </div>
+              <CheckArea
+                actions={this.actions}
+                mode={this.state.mode}
+                tags={this.state.tags}
+                verseText={verseText}
+                verseChanged={this.state.verseChanged}
+                comment={commentsReducer.text}
+                newSelections={this.state.selections}
+                selections={selectionsReducer.selections}
+                translate={translate}
+                projectDetailsReducer={projectDetailsReducer}
+                contextId={contextIdReducer.contextId}
+                bibles={resourcesReducer.bibles}
+                currentToolName={toolsReducer.currentToolName} />
+              <ActionsArea
+                mode={this.state.mode}
+                tags={this.state.tags}
+                actions={this.actions}
+                commentChanged={this.state.commentChanged}
+                selections={selectionsReducer.selections}
+                newSelections={this.state.selections}
+                remindersReducer={remindersReducer}
+                saveSelection={this.saveSelection}
+                cancelSelection={this.cancelSelection}
+                clearSelection={this.clearSelection}
+                translate={translate} />
+            </div>
+            {saveArea}
+          </div>
+          <DialogComponent
+            dialogModalVisibility={this.state.dialogModalVisibility}
+            handleOpen={actions.handleOpenDialog}
+            handleClose={actions.handleCloseDialog}
+            goToNextOrPrevious={this.state.goToNextOrPrevious}
+            skipToNext={actions.skipToNext}
+            skipToPrevious={actions.skipToPrevious}
+            translate={translate} />
+        </div>
       </MuiThemeProvider>
     );
   }

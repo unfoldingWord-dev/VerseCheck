@@ -70,8 +70,7 @@ class View extends React.Component {
           <SaveArea
             actions={actions}
             selections={selections}
-            translate={translate}
-          />);
+            translate={translate} />);
     }
     return (
       <div style={style.verseCheck}>
@@ -86,8 +85,7 @@ class View extends React.Component {
                 verseEditReducer={verseEditReducer}
                 comment={comment}
                 bookmarkEnabled={remindersReducer.enabled}
-                translate={translate}
-              />
+                translate={translate} />
             </div>
             <CheckArea
               actions={actions}
@@ -125,8 +123,7 @@ class View extends React.Component {
           goToNextOrPrevious={goToNextOrPrevious}
           skipToNext={actions.skipToNext}
           skipToPrevious={actions.skipToPrevious}
-          translate={translate}
-        />
+          translate={translate} />
       </div>
     );
   }
