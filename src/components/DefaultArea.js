@@ -25,12 +25,6 @@ class DefaultArea extends React.Component {
     let verseTextSpans = <span>{verseText}</span>;
     if (selections && selections.length > 0) {
       let _selectionArray = selectionArray(verseText, selections);
-      selections.forEach(selection => {
-        if (StringUtils.occurrencesInString(verseText,selection.text) !== selection.occurrences) {
-          // validate selections and remove ones that do not apply
-          this.props.actions.validateSelections(verseText);
-        }
-      });
       verseTextSpans = _selectionArray.map((selection, index) => {
         let style = selection.selected ? { backgroundColor: 'var(--highlight-color)' } : {};
         return (
@@ -96,9 +90,6 @@ class DefaultArea extends React.Component {
 
 DefaultArea.propTypes = {
   translate: PropTypes.func.isRequired,
-  actions: PropTypes.shape({
-    validateSelections: PropTypes.func,
-  }).isRequired,
   contextIdReducer: PropTypes.shape({
     contextId: PropTypes.object
   }).isRequired,
