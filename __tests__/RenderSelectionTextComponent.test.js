@@ -3,7 +3,6 @@ import React from 'react';
 import RenderSelectionTextComponent from '../src/components/RenderSelectionTextComponent';
 import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
-import { getCurrentWindowSelection } from '../src/helpers/windowSelectionHelpers';
 
 describe('RenderSelectionTextComponent component Tests', () => {
   let props;
