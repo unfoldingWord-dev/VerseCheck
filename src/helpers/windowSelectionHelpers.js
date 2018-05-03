@@ -1,4 +1,4 @@
-import StringUtils from 'tc-strings';
+import { generateSelection } from 'selections';
 
 /**
  * @description - Gets the selection object from the currently selected text from the Web UI
@@ -12,7 +12,7 @@ export const getSelectionFromCurrentWindowSelection = (entireText) => {
   const selectedText = getSelectedTextFromWindowSelection(windowSelection);
   const prescedingText = getPrescedingTextFromWindowSelection(windowSelection);
   // Some edge cases leave a weird selection remaining, let's clean up.
-  selection = StringUtils.generateSelection(selectedText, prescedingText, entireText);
+  selection = generateSelection(selectedText, prescedingText, entireText);
   window.getSelection().empty();
   return selection;
 };
