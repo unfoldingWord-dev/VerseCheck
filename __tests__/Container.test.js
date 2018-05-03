@@ -10,6 +10,7 @@ const project = '__tests__/fixtures/project/loadedProjectShortened.json';
 describe('Container component Tests', () => {
   test('Test Container', () => {
     let props = fs.readJSONSync(project);
+    props.translate = k => k;
     const wrapper = shallow(<Container {...props} />);
     expect(toJson(wrapper)).toMatchSnapshot();
   });

@@ -105,7 +105,7 @@ exports[`DefaultArea component Tests Check DefaultArea component 1`] = `
         key="0"
         style={Object {}}
       >
-        verse text
+        verse 
       </span>
       <span
         key="1"
@@ -114,11 +114,9 @@ exports[`DefaultArea component Tests Check DefaultArea component 1`] = `
             "backgroundColor": "var(--highlight-color)",
           }
         }
-      />
-      <span
-        key="2"
-        style={Object {}}
-      />
+      >
+        text
+      </span>
     </div>
   </div>
 </div>
