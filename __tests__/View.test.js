@@ -40,7 +40,7 @@ describe('View component Tests', () => {
       cancelSelection: () => jest.fn(),
       clearSelection: () => jest.fn(),
       saveSelection: () => jest.fn(),
-      goToNextOrPrevious: () => null
+      goToNextOrPrevious: "next"
     };
 
     const component = renderer.create(

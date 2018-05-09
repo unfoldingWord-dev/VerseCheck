@@ -9032,6 +9032,7 @@ To be \\"faithful\\" to God means to consistently live according to God's teachi
         "toolsMetadata": Array [],
       }
     }
+    translate={[Function]}
     verseChanged={false}
     verseEditReducer={
       Object {

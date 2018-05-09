@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import isEqual from 'deep-equal';
-// helpers
-import * as windowSelectionHelpers from '../helpers/windowSelectionHelpers';
-import * as selectionHelpers from '../helpers/selectionHelpers';
-import * as stringHelpers from '../helpers/stringHelpers';
+import StringUtils from 'tc-strings';
+import { getSelectionFromCurrentWindowSelection } from '../helpers/windowSelectionHelpers';
+import { addSelectionToSelections, 
+  removeSelectionFromSelections, 
+  selectionsToStringSplices } from 'selections';
 
 class RenderSelectionTextComponent extends Component {
 
@@ -21,13 +22,13 @@ class RenderSelectionTextComponent extends Component {
   }
 
   getSelectionText(verseText) {
-    const selection = windowSelectionHelpers.getSelectionFromCurrentWindowSelection(verseText);
+    const selection = getSelectionFromCurrentWindowSelection(verseText);
     this.addSelection(selection);
   }
 
   addSelection(selection) {
     let {selections, verseText} = this.props;
-    selections = selectionHelpers.addSelectionToSelections(selection, selections, verseText);
+    selections = addSelectionToSelections(selection, selections, verseText);
     // console.log(selections); // this is a good place to preview selections before saved in state
     if (selections.length <= 4) {
       this.props.actions.changeSelectionsInLocalState(selections);
@@ -39,7 +40,7 @@ class RenderSelectionTextComponent extends Component {
 
   removeSelection(selection) {
     let {selections, verseText} = this.props;
-    selections = selectionHelpers.removeSelectionFromSelections(selection, selections, verseText);
+    selections = removeSelectionFromSelections(selection, selections, verseText);
     this.props.actions.changeSelectionsInLocalState(selections);
   }
 
@@ -53,7 +54,7 @@ class RenderSelectionTextComponent extends Component {
 
   verseTextSpans(selections, verseText) {
     let verseTextSpans; // return
-    const stringSplices = selectionHelpers.selectionsToStringSplices(verseText, selections);
+    const stringSplices = selectionsToStringSplices(verseText, selections);
     verseTextSpans = stringSplices.map((stringSplice, index) => {
       const selectMode = (this.props.mode === "select"); // use selectMode to conditionally use highlight and remove
       let style = { color: 'black' };
@@ -82,7 +83,7 @@ class RenderSelectionTextComponent extends Component {
   render() {
     let {verseText, selections} = this.props;
     // normalize whitespace for text rendering in order to display highlights with more than one space since html selections show one space
-    verseText = stringHelpers.normalizeString(verseText);
+    verseText = StringUtils.normalizeString(verseText);
     let verseTextSpans = <span>{verseText}</span>;
 
     if (selections && selections.length > 0) {

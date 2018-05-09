@@ -5,7 +5,7 @@ import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
 
 describe('DefaultArea component Tests', () => {
-  const mock_translate = (text) => { return text; };
+  const mock_translate = text => text;
   let props;
 
   beforeEach(()=> {
@@ -43,7 +43,10 @@ describe('DefaultArea component Tests', () => {
         }
       },
       selectionsReducer: {
-        selections: [{text:'text'}]
+        selections: [{
+          text:'text',
+          occurrence: 1
+        }]
       },
       verseText: 'verse text'
     };
