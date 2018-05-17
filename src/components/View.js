@@ -11,18 +11,30 @@ import isEqual from 'deep-equal';
 
 class View extends React.Component {
 
+  /**
+   * returns true if current verse has been edited
+   * @return {boolean}
+   */
   findIfVerseEdited() {
     const groupItemData = this.getGroupDatumForCurrentContext();
     const result = !!groupItemData && groupItemData.verseEdits;
     return result;
   }
 
+  /**
+   * returns true if current verse has been invalidated
+   * @return {boolean}
+   */
   findIfVerseInvalidated() {
     const groupItemData = this.getGroupDatumForCurrentContext();
     const result = !!groupItemData && groupItemData.invalidated;
     return result;
   }
 
+  /**
+   * finds group data for current context (verse)
+   * @return {*}
+   */
   getGroupDatumForCurrentContext() {
     const {
       contextIdReducer: {
@@ -33,13 +45,13 @@ class View extends React.Component {
       }
     } = this.props;
 
-    let groupItemData = null;
+    let groupItemDatum = null;
     if (groupsData[contextId.groupId]) {
-      groupItemData = groupsData[contextId.groupId].find(groupData => {
+      groupItemDatum = groupsData[contextId.groupId].find(groupData => {
         return isEqual(groupData.contextId, contextId);
       });
     }
-    return groupItemData;
+    return groupItemDatum;
   }
 
   render() {

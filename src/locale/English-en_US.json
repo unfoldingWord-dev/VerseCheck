@@ -8,7 +8,7 @@
   "empty_verse": "No selection can be made because the verse is blank.<br/>You may fix this by editing the verse.<br/>If desired, you may also leave a comment or bookmark this check.",
   "no_selection": "No selection has been made.<br/>Click the Select button, then select the translation for this check.",
   "please_select": "Please select the translation for:",
-  "selection_invalidated": "The selection for this check was invalidated.",
+  "selection_invalidated": "The selection for this check was invalidated. ${footnote_start}1${footnote_end}",
   "translated_as": "has been translated as:",
   "bookmark": "Bookmark",
   "cancel": "Cancel",
