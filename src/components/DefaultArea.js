@@ -1,10 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-// helpers
 import {
-  selectionArray,
-  normalizeString
-} from '../utils/selectionHelpers';
+  selectionArray
+} from 'selections';
+import StringUtils from 'tc-strings';
 // components
 import { Glyphicon } from 'react-bootstrap';
 import MyLanguageModal from './MyLanguageModal';
@@ -22,7 +21,7 @@ class DefaultArea extends React.Component {
 
   displayText(verseText, selections) {
     // normalize whitespace for text rendering in order to display highlights with more than one space since html selections show one space
-    verseText = normalizeString(verseText);
+    verseText = StringUtils.normalizeString(verseText);
     let verseTextSpans = <span>{verseText}</span>;
     if (selections && selections.length > 0) {
       let _selectionArray = selectionArray(verseText, selections);

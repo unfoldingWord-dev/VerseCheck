@@ -6,7 +6,8 @@ import PropTypes from 'prop-types';
 import usfmjs from 'usfm-js';
 import View from './components/View';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import {optimizeSelections, normalizeString} from './utils/selectionHelpers';
+import { optimizeSelections }  from 'selections';
+import StringUtils from 'tc-strings';
 
 class VerseCheck extends React.Component {
   constructor(props) {
@@ -213,7 +214,7 @@ class VerseCheck extends React.Component {
       let verseText = targetBible && targetBible[chapter] ? targetBible[chapter][verse] : "";
       if (Array.isArray(verseText)) verseText = verseText[0];
       // normalize whitespace in case selection has contiguous whitespace _this isn't captured
-      verseText = normalizeString(verseText);
+      verseText = StringUtils.normalizeString(verseText);
       const mode = nextProps.selectionsReducer.selections.length > 0 || verseText.length === 0 ? 'default' : 'select';
       this.setState({
         mode: mode,
@@ -253,7 +254,7 @@ class VerseCheck extends React.Component {
       verseText = targetBible && targetBible[chapter] ? targetBible[chapter][verse] : "";
       if (Array.isArray(verseText)) verseText = verseText[0];
       // normalize whitespace in case selection has contiguous whitespace _this isn't captured
-      verseText = normalizeString(verseText);
+      verseText = StringUtils.normalizeString(verseText);
     }
     return verseText;
   }
