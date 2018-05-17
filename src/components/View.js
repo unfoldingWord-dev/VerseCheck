@@ -12,6 +12,18 @@ import isEqual from 'deep-equal';
 class View extends React.Component {
 
   findIfVerseEdited() {
+    const groupItemData = this.getGroupDatumForCurrentContext();
+    const result = !!groupItemData && groupItemData.verseEdits;
+    return result;
+  }
+
+  findIfVerseInvalidated() {
+    const groupItemData = this.getGroupDatumForCurrentContext();
+    const result = !!groupItemData && groupItemData.invalidated;
+    return result;
+  }
+
+  getGroupDatumForCurrentContext() {
     const {
       contextIdReducer: {
         contextId
@@ -20,15 +32,14 @@ class View extends React.Component {
         groupsData
       }
     } = this.props;
-    let result = false;
 
+    let groupItemData = null;
     if (groupsData[contextId.groupId]) {
-      let groupData = groupsData[contextId.groupId].filter(groupData => {
+      groupItemData = groupsData[contextId.groupId].find(groupData => {
         return isEqual(groupData.contextId, contextId);
       });
-      result = groupData[0].verseEdits;
     }
-    return result;
+    return groupItemData;
   }
 
   render() {
@@ -66,9 +77,13 @@ class View extends React.Component {
                 commentsReducer={this.props.commentsReducer}
                 remindersReducer={this.props.remindersReducer}
                 translate={translate}
+                invalidated={this.findIfVerseInvalidated()}
               />
             </div>
-            <CheckArea {...this.props} />
+            <CheckArea
+              {...this.props}
+              invalidated={this.findIfVerseInvalidated()}
+            />
             <ActionsArea {...this.props} />
           </div>
           {saveArea}

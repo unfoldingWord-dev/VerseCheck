@@ -10,7 +10,8 @@ let InstructionsArea = ({
   dontShowTranslation,
   verseText,
   mode,
-  translate
+  translate,
+  invalidated
 }) => {
 
   if (!verseText) {
@@ -27,6 +28,14 @@ let InstructionsArea = ({
         <span>{translate("no_selection")}</span><br />
       </div>
     );
+  }
+
+  function getSelectionString() {
+    let instructions = translate('please_select');
+    if (invalidated) {
+      instructions = translate('selection_invalidated') + "\n" + instructions;
+    }
+    return instructions;
   }
 
   if (mode === 'select') {

@@ -41,7 +41,8 @@ class CheckArea extends Component {
       comment,
       selectionsReducer,
       projectDetailsReducer,
-      translate
+      translate,
+      invalidated
     } = this.props;
     const alignedGLText = this.getAlignedGLText();
 
@@ -71,6 +72,7 @@ class CheckArea extends Component {
               alignedGLText={alignedGLText}
               mode={mode}
               translate={translate}
+              invalidated={invalidated}
             />
           </div>);
         break;
@@ -84,6 +86,7 @@ class CheckArea extends Component {
               selectionsReducer={selectionsReducer}
               alignedGLText={alignedGLText}
               translate={translate}
+              invalidated={invalidated}
             />
           </div>
         );
