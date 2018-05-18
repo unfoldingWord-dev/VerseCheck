@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactTooltip from 'react-tooltip';
 import PropTypes from 'prop-types';
 import style from '../css/Style';
 import InstructionsAreaTextSelection from './InstructionsAreaTextSelection';
@@ -46,7 +45,6 @@ let InstructionsArea = ({
               style={{ 'vertical-align': 'super', 'font-size': '0.8em' }}>
               1 
             </strong>
-            <ReactTooltip />
           </span>
         </div>
       );
