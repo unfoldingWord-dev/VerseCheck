@@ -19,12 +19,11 @@ const IconIndicators = ({
           <InvalidatedIcon
             height={16}
             width={16}
-            color='rgb(255, 255, 255, 0.80)'
+            color='#ffffff'
           />
         </div>
       );
     }
-    return "";
   }
 
   return (

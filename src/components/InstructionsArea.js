@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactTooltip from 'react-tooltip';
 import PropTypes from 'prop-types';
 import style from '../css/Style';
 import InstructionsAreaTextSelection from './InstructionsAreaTextSelection';
@@ -31,16 +32,31 @@ let InstructionsArea = ({
   }
 
   function getSelectionString() {
-    let instructions = translate('please_select');
     if (invalidated) {
-      instructions = translate('selection_invalidated') + "\n" + instructions;
+      return (
+        <div>
+          <span>{translate('selection_invalidated')}
+            <strong
+              data-tip={translate('invalidated_tooltip')}
+              data-place="top"
+              data-effect="float"
+              data-type="dark"
+              data-class="selection-tooltip"
+              data-delay-hide="100"
+              style={{ 'vertical-align': 'super', 'font-size': '0.8em' }}>
+              1 
+            </strong>
+            <ReactTooltip />
+          </span>
+        </div>
+      );
     }
-    return instructions;
   }
 
   if (mode === 'select') {
     return (
       <div style={style.InstructionsArea}>
+        {getSelectionString()}
         <span>{translate("please_select")}</span><br />
         <span>
           <strong style={{ color: 'var(--accent-color)' }}>
@@ -56,6 +72,7 @@ let InstructionsArea = ({
       <span>
         <strong style={{ color: 'var(--accent-color)' }}>
           {`"${alignedGLText}"`}
+          <span>{translate("please_select")}</span><br />
         </strong>
       </span><br />
       <span>{translate("translated_as")}</span><br />
